@@ -32,7 +32,7 @@ Dependencies could be found in `./app/build.gradle` and it might be changed time
 ## Localization  
 Japanese, English and Chinese fully supported, Korean partially supported.  
 Korean strings are provided by [applemintia](https://twitter.com/_applemintia).  
-English strings are provided by [southrop](https://github.com/southrop) & [MightyZanark](https://github.com/MightyZanark) (With some change made by Nyan Fantasia).
+English strings are provided by [southrop](https://github.com/southrop) & [MightyZanark](https://github.com/MightyZanark) (With some change made by Nyan Fantasia).  
 Chinese Traditional strings and improved localization functions are provided by Nyan Fantasia.  
 Any contribution is welcomed, I could handle it.
 

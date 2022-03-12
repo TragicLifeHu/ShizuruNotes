@@ -76,8 +76,8 @@ class UpdateManager private constructor(
                         "zh-Hans" -> appVersionJsonInstance?.messageZhS
                         "zh-Hant" -> appVersionJsonInstance?.messageZhT
                         "system" -> when (Locale.getDefault()){
-                            Locale.TRADITIONAL_CHINESE -> appVersionJsonInstance?.messageZhT
-                            Locale.SIMPLIFIED_CHINESE -> appVersionJsonInstance?.messageZhS
+                            Locale.TAIWAN -> appVersionJsonInstance?.messageZhT
+                            Locale.CHINA -> appVersionJsonInstance?.messageZhS
                             else -> appVersionJsonInstance?.messageJa
                         }
                         else -> appVersionJsonInstance?.messageJa
