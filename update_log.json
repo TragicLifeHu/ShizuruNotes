@@ -1,10 +1,10 @@
 {
-	"versionCode": "66",
-	"versionName": "1.12.2",
+	"versionCode": "67",
+	"versionName": "1.13.0",
 	"recommend": "false",
-	"messageJa": "・英語翻訳の更新",
-	"messageZhS": "・更新英文翻译",
-	"messageZhT": "・更新英文翻譯",
+	"messageJa": "・新スキルの追加\n・一部のイベントが表示されない問題を修正",
+	"messageZhS": "・追加新技能\n・修复部分历史活动未显示的问题",
+	"messageZhT": "・追加新技能\n・修復部分歷史活動未顯示的問題",
 	"infoJa": "",
 	"infoZhS": "",
 	"infoZhT": ""
