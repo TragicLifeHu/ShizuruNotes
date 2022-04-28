@@ -1,5 +1,6 @@
 package com.github.nyanfantasia.shizurunotes.common
 
+import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -41,6 +42,7 @@ class UpdateManager private constructor(
         private const val UPDATE_COMPLETED = 5
         private const val UPDATE_DOWNLOAD_CANCELED = 6
         private const val APP_UPDATE_CHECK_COMPLETED = 11
+        @SuppressLint("StaticFieldLeak")
         private lateinit var updateManager: UpdateManager
 
         fun with(context: Context): UpdateManager{
@@ -75,12 +77,11 @@ class UpdateManager private constructor(
                     val log = when (UserSettings.get().preference.getString(UserSettings.LANGUAGE_KEY, "ja")){
                         "zh-Hans" -> appVersionJsonInstance?.messageZhS
                         "zh-Hant" -> appVersionJsonInstance?.messageZhT
-                        "system" -> when (Locale.getDefault()){
-                            Locale.TAIWAN -> appVersionJsonInstance?.messageZhT
-                            Locale.CHINA -> appVersionJsonInstance?.messageZhS
+                        else -> when (Locale.getDefault().country){
+                            "TW", "HK", "MO" -> appVersionJsonInstance?.messageZhT
+                            "CN" -> appVersionJsonInstance?.messageZhS
                             else -> appVersionJsonInstance?.messageJa
                         }
-                        else -> appVersionJsonInstance?.messageJa
                     }
                     MaterialDialog(mContext, MaterialDialog.DEFAULT_BEHAVIOR)
                         .title(text = I18N.getString(R.string.app_full_name) + "v" + appVersionJsonInstance?.versionName)
@@ -101,12 +102,11 @@ class UpdateManager private constructor(
                 val info = when (UserSettings.get().preference.getString(UserSettings.LANGUAGE_KEY, "ja")){
                     "zh-Hans" -> appVersionJsonInstance?.infoZhS
                     "zh-Hant" -> appVersionJsonInstance?.infoZhT
-                    "system" -> when (Locale.getDefault()){
-                        Locale.TAIWAN -> appVersionJsonInstance?.infoZhT
-                        Locale.CHINA -> appVersionJsonInstance?.infoZhS
+                    else -> when (Locale.getDefault().country) {
+                        "TW", "HK", "MO" -> appVersionJsonInstance?.infoZhT
+                        "CN" -> appVersionJsonInstance?.infoZhS
                         else -> appVersionJsonInstance?.infoJa
                     }
-                    else -> appVersionJsonInstance?.infoJa
                 }
                 if (!info.isNullOrEmpty()) {
                     MaterialDialog(mContext, MaterialDialog.DEFAULT_BEHAVIOR)
