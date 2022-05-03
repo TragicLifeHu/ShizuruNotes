@@ -12,6 +12,7 @@ import android.util.Log;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.collection.SimpleArrayMap;
 
@@ -849,6 +850,7 @@ public final class LogUtils {
             return mSaveDays;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return "process: " + getProcessName()
