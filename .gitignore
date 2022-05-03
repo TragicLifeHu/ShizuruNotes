@@ -89,3 +89,4 @@ app/release/
 
 #vscode files
 .vscode/
+.idea/misc.xml
