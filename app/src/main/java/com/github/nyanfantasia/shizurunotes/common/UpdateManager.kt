@@ -223,9 +223,9 @@ class UpdateManager private constructor(
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val lastVersionJson = response.body?.string()
+                val lastVersionJson = response.body.string()
                 try {
-                    if (lastVersionJson.isNullOrEmpty())
+                    if (lastVersionJson.isEmpty())
                         throw Exception("No response from server.")
                     if (response.code != 200)
                         throw Exception("Abnormal connection state code: ${response.code}")
@@ -262,9 +262,9 @@ class UpdateManager private constructor(
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
-                val lastVersionJson = response.body?.string()
+                val lastVersionJson = response.body.string()
                 try {
-                    if (lastVersionJson.isNullOrEmpty())
+                    if (lastVersionJson.isEmpty())
                         throw Exception("No response from server.")
                     val obj = JSONObject(lastVersionJson)
                     serverVersion = obj.getLong("TruthVersion")
