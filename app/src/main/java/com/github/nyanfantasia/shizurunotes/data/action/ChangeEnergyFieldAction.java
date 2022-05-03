@@ -1,8 +1,8 @@
-package com.github.malitsplus.shizurunotes.data.action;
+package com.github.nyanfantasia.shizurunotes.data.action;
 
-import com.github.malitsplus.shizurunotes.R;
-import com.github.malitsplus.shizurunotes.common.I18N;
-import com.github.malitsplus.shizurunotes.data.Property;
+import com.github.nyanfantasia.shizurunotes.R;
+import com.github.nyanfantasia.shizurunotes.common.I18N;
+import com.github.nyanfantasia.shizurunotes.data.Property;
 
 import java.math.RoundingMode;
 import java.util.ArrayList;
