@@ -1,14 +1,13 @@
-package com.github.nyanfantasia.shizurunotes.data.action;
+package com.github.nyanfantasia.shizurunotes.data.action
 
-import com.github.nyanfantasia.shizurunotes.R;
-import com.github.nyanfantasia.shizurunotes.common.I18N;
-import com.github.nyanfantasia.shizurunotes.data.Property;
+import com.github.nyanfantasia.shizurunotes.R
+import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
+import com.github.nyanfantasia.shizurunotes.data.Property
+import java.math.RoundingMode
 
-import java.math.RoundingMode;
-
-public class NoDamageAction extends ActionParameter {
-
-    enum NoDamageType{
+@Suppress("EnumEntryName")
+class NoDamageAction : ActionParameter() {
+    internal enum class NoDamageType(val value: Int) {
         unknown(0),
         noDamage(1),
         dodgePhysics(2),
@@ -17,48 +16,40 @@ public class NoDamageAction extends ActionParameter {
         debuff(5),
         Break(6);
 
-        private int value;
-        NoDamageType(int value){
-            this.value = value;
-        }
-        public int getValue(){
-            return value;
-        }
-
-        public static NoDamageType parse(int value){
-            for(NoDamageType item : NoDamageType.values()){
-                if(item.getValue() == value)
-                    return item;
+        companion object {
+            fun parse(value: Int): NoDamageType {
+                for (item in values()) {
+                    if (item.value == value) return item
+                }
+                return unknown
             }
-            return unknown;
         }
     }
 
-    private NoDamageType noDamageType;
-
-    @Override
-    protected void childInit() {
-        noDamageType = NoDamageType.parse(actionDetail1);
-        actionValues.add(new ActionValue(actionValue1, actionValue2, null));
+    private var noDamageType: NoDamageType? = null
+    override fun childInit() {
+        noDamageType = NoDamageType.parse(actionDetail1)
+        actionValues.add(ActionValue(actionValue1, actionValue2, null))
     }
 
-    @Override
-    public String localizedDetail(int level, Property property) {
-        switch (noDamageType){
-            case noDamage:
-                return I18N.getString(R.string.Make_s1_to_be_invulnerable_for_s2_sec,
-                        targetParameter.buildTargetClause(),
-                        buildExpression(level, RoundingMode.UNNECESSARY, property));
-            case dodgePhysics:
-                return I18N.getString(R.string.Make_s1_to_be_invulnerable_to_physical_damage_for_s2_sec,
-                        targetParameter.buildTargetClause(),
-                        buildExpression(level, RoundingMode.UNNECESSARY, property));
-            case Break:
-                return I18N.getString(R.string.Make_s1_to_be_invulnerable_to_break_for_s2_sec,
-                        targetParameter.buildTargetClause(),
-                        buildExpression(level, RoundingMode.UNNECESSARY, property));
-            default:
-                return super.localizedDetail(level, property);
+    override fun localizedDetail(level: Int, property: Property): String {
+        return when (noDamageType) {
+            NoDamageType.noDamage -> getString(
+                R.string.Make_s1_to_be_invulnerable_for_s2_sec,
+                targetParameter.buildTargetClause(),
+                buildExpression(level, RoundingMode.UNNECESSARY, property)
+            )
+            NoDamageType.dodgePhysics -> getString(
+                R.string.Make_s1_to_be_invulnerable_to_physical_damage_for_s2_sec,
+                targetParameter.buildTargetClause(),
+                buildExpression(level, RoundingMode.UNNECESSARY, property)
+            )
+            NoDamageType.Break -> getString(
+                R.string.Make_s1_to_be_invulnerable_to_break_for_s2_sec,
+                targetParameter.buildTargetClause(),
+                buildExpression(level, RoundingMode.UNNECESSARY, property)
+            )
+            else -> super.localizedDetail(level, property)
         }
     }
 }

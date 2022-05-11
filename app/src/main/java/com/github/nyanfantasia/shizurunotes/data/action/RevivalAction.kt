@@ -1,48 +1,37 @@
-package com.github.nyanfantasia.shizurunotes.data.action;
+package com.github.nyanfantasia.shizurunotes.data.action
 
-import com.github.nyanfantasia.shizurunotes.R;
-import com.github.nyanfantasia.shizurunotes.common.I18N;
-import com.github.nyanfantasia.shizurunotes.data.Property;
+import com.github.nyanfantasia.shizurunotes.R
+import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
+import com.github.nyanfantasia.shizurunotes.data.Property
+import kotlin.math.roundToInt
 
-public class RevivalAction extends ActionParameter {
+@Suppress("EnumEntryName")
+class RevivalAction : ActionParameter() {
+    internal enum class RevivalType(val value: Int) {
+        unknown(0), normal(1), phoenix(2);
 
-    enum RevivalType{
-        unknown(0),
-        normal(1),
-        phoenix(2);
-
-        private int value;
-        RevivalType(int value){
-            this.value = value;
-        }
-        public int getValue(){
-            return value;
-        }
-
-        public static RevivalType parse(int value){
-            for(RevivalType item : RevivalType.values()){
-                if(item.getValue() == value)
-                    return item;
+        companion object {
+            fun parse(value: Int): RevivalType {
+                for (item in values()) {
+                    if (item.value == value) return item
+                }
+                return unknown
             }
-            return unknown;
         }
     }
 
-    private RevivalType revivalType;
-
-    @Override
-    protected void childInit() {
-        revivalType = RevivalType.parse(actionDetail1);
+    private var revivalType: RevivalType? = null
+    override fun childInit() {
+        revivalType = RevivalType.parse(actionDetail1)
     }
 
-    @Override
-    public String localizedDetail(int level, Property property) {
-        switch (revivalType){
-            case normal:
-                return I18N.getString(R.string.Revive_s1_with_d2_HP,
-                        targetParameter.buildTargetClause(), Math.round(actionValue2.value * 100));
-            default:
-                return super.localizedDetail(level, property);
+    override fun localizedDetail(level: Int, property: Property): String {
+        return when (revivalType) {
+            RevivalType.normal -> getString(
+                R.string.Revive_s1_with_d2_HP,
+                targetParameter.buildTargetClause(), (actionValue2.value * 100).roundToInt()
+            )
+            else -> super.localizedDetail(level, property)
         }
     }
 }

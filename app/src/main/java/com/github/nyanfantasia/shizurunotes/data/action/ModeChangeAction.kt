@@ -1,56 +1,46 @@
-package com.github.nyanfantasia.shizurunotes.data.action;
+package com.github.nyanfantasia.shizurunotes.data.action
 
-import com.github.nyanfantasia.shizurunotes.R;
-import com.github.nyanfantasia.shizurunotes.common.I18N;
-import com.github.nyanfantasia.shizurunotes.utils.Utils;
-import com.github.nyanfantasia.shizurunotes.data.Property;
+import com.github.nyanfantasia.shizurunotes.R
+import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
+import com.github.nyanfantasia.shizurunotes.data.Property
+import com.github.nyanfantasia.shizurunotes.utils.Utils
 
-public class ModeChangeAction extends ActionParameter {
+@Suppress("EnumEntryName")
+class ModeChangeAction : ActionParameter() {
+    internal enum class ModeChangeType(val value: Int) {
+        unknown(0), time(1), energy(2), release(3);
 
-    enum ModeChangeType{
-        unknown(0),
-        time(1),
-        energy(2),
-        release(3);
-
-        private int value;
-        ModeChangeType(int value){
-            this.value = value;
-        }
-        public int getValue(){
-            return value;
-        }
-
-        public static ModeChangeType parse(int value){
-            for(ModeChangeType item : ModeChangeType.values()){
-                if(item.getValue() == value)
-                    return item;
+        companion object {
+            fun parse(value: Int): ModeChangeType {
+                for (item in values()) {
+                    if (item.value == value) return item
+                }
+                return unknown
             }
-            return unknown;
         }
     }
 
-    private ModeChangeType modeChangeType;
-
-    @Override
-    protected void childInit() {
-        modeChangeType = ModeChangeType.parse(actionDetail1);
+    private var modeChangeType: ModeChangeType? = null
+    override fun childInit() {
+        modeChangeType = ModeChangeType.parse(actionDetail1)
     }
 
-    @Override
-    public String localizedDetail(int level, Property property) {
-        switch (modeChangeType){
-            case time:
-                return I18N.getString(R.string.Change_attack_pattern_to_d1_for_s2_sec,
-                        actionDetail2 % 10, actionValue1.valueString());
-            case energy:
-                return I18N.getString(R.string.Cost_s1_TP_sec_change_attack_pattern_to_d2_until_TP_is_zero,
-                        Utils.roundDownDouble(actionValue1.value), actionDetail2 % 10);
-            case release:
-                return I18N.getString(R.string.Change_attack_pattern_back_to_d_after_effect_over,
-                        actionDetail2 % 10);
-            default:
-                return super.localizedDetail(level, property);
+    override fun localizedDetail(level: Int, property: Property): String {
+        return when (modeChangeType) {
+            ModeChangeType.time -> getString(
+                R.string.Change_attack_pattern_to_d1_for_s2_sec,
+                actionDetail2 % 10, actionValue1.valueString()
+            )
+            ModeChangeType.energy -> getString(
+                R.string.Cost_s1_TP_sec_change_attack_pattern_to_d2_until_TP_is_zero,
+                Utils.roundDownDouble(actionValue1.value),
+                actionDetail2 % 10
+            )
+            ModeChangeType.release -> getString(
+                R.string.Change_attack_pattern_back_to_d_after_effect_over,
+                actionDetail2 % 10
+            )
+            else -> super.localizedDetail(level, property)
         }
     }
 }

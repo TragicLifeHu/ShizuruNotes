@@ -1,66 +1,48 @@
-package com.github.nyanfantasia.shizurunotes.data.action;
+package com.github.nyanfantasia.shizurunotes.data.action
 
-import com.github.nyanfantasia.shizurunotes.R;
-import com.github.nyanfantasia.shizurunotes.common.I18N;
-import com.github.nyanfantasia.shizurunotes.data.Property;
+import com.github.nyanfantasia.shizurunotes.R
+import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
+import com.github.nyanfantasia.shizurunotes.data.Property
+import java.math.RoundingMode
 
-import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
+@Suppress("EnumEntryName")
+class DispelAction : ActionParameter() {
+    enum class DispelType(val value: Int) {
+        unknown(0), buff(1), debuff(2), barriers(10);
 
-public class DispelAction extends ActionParameter {
-
-    enum DispelType{
-        unknown(0),
-        buff(1),
-        debuff(2),
-        barriers(10);
-
-        private int value;
-        DispelType(int value){
-            this.value = value;
-        }
-        public int getValue(){
-            return value;
-        }
-
-        public static DispelType parse(int value){
-            for(DispelType item : DispelType.values()){
-                if(item.getValue() == value)
-                    return item;
+        fun description(): String {
+            return when (this) {
+                buff -> getString(R.string.buffs)
+                debuff -> getString(R.string.debuffs)
+                barriers -> getString(R.string.barriers)
+                else -> getString(R.string.unknown)
             }
-            return unknown;
         }
 
-        public String description(){
-            switch (this){
-                case buff:
-                    return I18N.getString(R.string.buffs);
-                case debuff:
-                    return I18N.getString(R.string.debuffs);
-                case barriers:
-                    return I18N.getString(R.string.barriers);
-                default:
-                    return I18N.getString(R.string.unknown);
+        companion object {
+            fun parse(value: Int): DispelType {
+                for (item in values()) {
+                    if (item.value == value) return item
+                }
+                return unknown
             }
         }
     }
 
-    protected DispelType dispelType;
-    protected List<ActionValue> chanceValues = new ArrayList<>();
-
-    @Override
-    protected void childInit() {
-        super.childInit();
-        dispelType = DispelType.parse(actionDetail1);
-        chanceValues.add(new ActionValue(actionValue1, actionValue2, null));
+    private var dispelType: DispelType? = null
+    private var chanceValues: MutableList<ActionValue> = ArrayList()
+    override fun childInit() {
+        super.childInit()
+        dispelType = DispelType.parse(actionDetail1)
+        chanceValues.add(ActionValue(actionValue1, actionValue2, null))
     }
 
-    @Override
-    public String localizedDetail(int level, Property property) {
-        return I18N.getString(R.string.Clear_all_s1_on_s2_with_chance_s3,
-                dispelType.description(),
-                targetParameter.buildTargetClause(),
-                buildExpression(level, chanceValues, RoundingMode.UNNECESSARY, property));
+    override fun localizedDetail(level: Int, property: Property): String {
+        return getString(
+            R.string.Clear_all_s1_on_s2_with_chance_s3,
+            dispelType!!.description(),
+            targetParameter.buildTargetClause(),
+            buildExpression(level, chanceValues, RoundingMode.UNNECESSARY, property)
+        )
     }
 }
