@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(),
     private lateinit var sharedChara: SharedViewModelChara
     private lateinit var sharedClanBattle: SharedViewModelClanBattle
     private lateinit var sharedQuest: SharedViewModelQuest
+    private lateinit var sharedSecretDungeon: SharedViewModelSecretDungeon
     private lateinit var binding: ActivityMainBinding
 
     override fun attachBaseContext(base: Context) {
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity(),
         }
         sharedClanBattle = ViewModelProvider(this)[SharedViewModelClanBattle::class.java]
         sharedQuest = ViewModelProvider(this)[SharedViewModelQuest::class.java]
+        sharedSecretDungeon = ViewModelProvider(this)[SharedViewModelSecretDungeon::class.java]
     }
 
     override fun charaLoadFinished(succeeded: Boolean) {
@@ -113,6 +115,8 @@ class MainActivity : AppCompatActivity(),
         sharedClanBattle.dungeonList = mutableListOf()
         sharedClanBattle.spEventList = mutableListOf()
         sharedQuest.questList.value = mutableListOf()
+        sharedSecretDungeon.secretDungeonScheduleList.value = mutableListOf()
+        sharedSecretDungeon.secretDungeonQuestMap.value = mutableMapOf()
         sharedEquipment.selectedDrops.value = mutableListOf()
         ViewModelProvider(this)[SharedViewModelHatsune::class.java].hatsuneStageList.value = listOf()
         with(ViewModelProvider(this)[CalendarViewModel::class.java]) {
