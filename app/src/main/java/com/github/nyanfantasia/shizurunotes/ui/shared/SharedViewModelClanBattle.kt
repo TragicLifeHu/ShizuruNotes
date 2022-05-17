@@ -2,9 +2,9 @@ package com.github.nyanfantasia.shizurunotes.ui.shared
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.github.nyanfantasia.shizurunotes.data.Enemy
 import com.github.nyanfantasia.shizurunotes.data.ClanBattlePeriod
 import com.github.nyanfantasia.shizurunotes.data.Dungeon
+import com.github.nyanfantasia.shizurunotes.data.Enemy
 import com.github.nyanfantasia.shizurunotes.data.SpEvent
 import com.github.nyanfantasia.shizurunotes.db.DBHelper
 import kotlin.concurrent.thread
@@ -19,6 +19,7 @@ class SharedViewModelClanBattle : ViewModel() {
 
     var dungeonList = mutableListOf<Dungeon>()
     var spEventList = mutableListOf<SpEvent>()
+
 
     /***
      * 从数据库读取所有会战数据。
@@ -39,7 +40,7 @@ class SharedViewModelClanBattle : ViewModel() {
     }
 
     fun loadDungeon(){
-        if (dungeonList.isNullOrEmpty()){
+        if (dungeonList.isEmpty()){
             thread(start = true){
                 loadingFlag.postValue(true)
                 DBHelper.get().getDungeons()?.forEach {
@@ -51,7 +52,7 @@ class SharedViewModelClanBattle : ViewModel() {
     }
 
     fun loadSpEvent() {
-        if (spEventList.isNullOrEmpty()){
+        if (spEventList.isEmpty()){
             thread(start = true){
                 loadingFlag.postValue(true)
                 DBHelper.get().getSpEvents()?.forEach {

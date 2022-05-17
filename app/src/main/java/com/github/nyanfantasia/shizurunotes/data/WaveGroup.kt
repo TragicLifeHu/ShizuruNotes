@@ -1,5 +1,7 @@
 package com.github.nyanfantasia.shizurunotes.data
 
+import com.github.nyanfantasia.shizurunotes.R
+
 
 class WaveGroup(
     val id: Int,
@@ -12,6 +14,6 @@ class WaveGroup(
     fun getEnemyIconUrl(position: Int): String {
         return if (position >= 0 && position < enemyList.size) {
             enemyList[position].iconUrl
-        } else  ""
+        } else "drawable://" + R.drawable.mic_chara_icon_place_holder
     }
 }
