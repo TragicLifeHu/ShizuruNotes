@@ -1,12 +1,10 @@
-package com.github.malitsplus.shizurunotes.ui.secretdungeon
+package com.github.nyanfantasia.shizurunotes.ui.secretdungeon
 
 import androidx.lifecycle.ViewModel
-import com.github.malitsplus.shizurunotes.ui.base.HatsuneStageVT
-import com.github.malitsplus.shizurunotes.ui.base.OnItemActionListener
-import com.github.malitsplus.shizurunotes.ui.base.SecretDungeonScheduleVT
-import com.github.malitsplus.shizurunotes.ui.base.ViewType
-import com.github.malitsplus.shizurunotes.ui.shared.SharedViewModelHatsune
-import com.github.malitsplus.shizurunotes.ui.shared.SharedViewModelSecretDungeon
+import com.github.nyanfantasia.shizurunotes.ui.base.OnItemActionListener
+import com.github.nyanfantasia.shizurunotes.ui.base.SecretDungeonScheduleVT
+import com.github.nyanfantasia.shizurunotes.ui.base.ViewType
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelSecretDungeon
 
 class SecretDungeonViewModel(
     private val sharedSecretDungeon: SharedViewModelSecretDungeon

@@ -1,6 +1,5 @@
 package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.data.SecretDungeonQuest
 import com.github.nyanfantasia.shizurunotes.data.SecretDungeonSchedule
 
 object MasterSecretDungeon {

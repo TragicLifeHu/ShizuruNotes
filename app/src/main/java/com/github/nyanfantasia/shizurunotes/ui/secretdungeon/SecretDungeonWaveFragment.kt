@@ -1,21 +1,20 @@
-package com.github.malitsplus.shizurunotes.ui.secretdungeon
+package com.github.nyanfantasia.shizurunotes.ui.secretdungeon
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.github.malitsplus.shizurunotes.data.WaveGroup
-import com.github.malitsplus.shizurunotes.databinding.FragmentHatsuneWaveBinding
-import com.github.malitsplus.shizurunotes.databinding.FragmentSecretDungeonWaveBinding
-import com.github.malitsplus.shizurunotes.ui.base.ViewType
-import com.github.malitsplus.shizurunotes.ui.base.ViewTypeAdapter
-import com.github.malitsplus.shizurunotes.ui.hatsune.HatsuneWaveFragmentDirections
-import com.github.malitsplus.shizurunotes.ui.hatsune.HatsuneWaveViewModel
-import com.github.malitsplus.shizurunotes.ui.shared.*
+import com.github.nyanfantasia.shizurunotes.data.WaveGroup
+import com.github.nyanfantasia.shizurunotes.databinding.FragmentSecretDungeonWaveBinding
+import com.github.nyanfantasia.shizurunotes.ui.base.ViewType
+import com.github.nyanfantasia.shizurunotes.ui.base.ViewTypeAdapter
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelClanBattle
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelSecretDungeon
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelSecretDungeonFactory
 
 class SecretDungeonWaveFragment : Fragment(), OnSecretDungeonQuestClickListener {
     private lateinit var binding: FragmentSecretDungeonWaveBinding
@@ -34,7 +33,7 @@ class SecretDungeonWaveFragment : Fragment(), OnSecretDungeonQuestClickListener 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSecretDungeonWaveBinding.inflate(inflater, container, false)
         return binding.root
     }

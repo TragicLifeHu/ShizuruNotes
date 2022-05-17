@@ -1,22 +1,20 @@
-package com.github.malitsplus.shizurunotes.ui.secretdungeon
+package com.github.nyanfantasia.shizurunotes.ui.secretdungeon
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.github.malitsplus.shizurunotes.data.SecretDungeonSchedule
-import com.github.malitsplus.shizurunotes.databinding.FragmentSecretDungeonBinding
-import com.github.malitsplus.shizurunotes.ui.BottomNaviFragmentDirections
-import com.github.malitsplus.shizurunotes.ui.base.ViewType
-import com.github.malitsplus.shizurunotes.ui.base.ViewTypeAdapter
-import com.github.malitsplus.shizurunotes.ui.shared.SharedViewModelSecretDungeon
-import com.github.malitsplus.shizurunotes.ui.shared.SharedViewModelSecretDungeonFactory
+import com.github.nyanfantasia.shizurunotes.data.SecretDungeonSchedule
+import com.github.nyanfantasia.shizurunotes.databinding.FragmentSecretDungeonBinding
+import com.github.nyanfantasia.shizurunotes.ui.base.ViewType
+import com.github.nyanfantasia.shizurunotes.ui.base.ViewTypeAdapter
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelSecretDungeon
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelSecretDungeonFactory
 
 class SecretDungeonFragment : Fragment(), OnSecretDungeonScheduleClickListener<SecretDungeonSchedule> {
     private lateinit var binding: FragmentSecretDungeonBinding
@@ -33,7 +31,7 @@ class SecretDungeonFragment : Fragment(), OnSecretDungeonScheduleClickListener<S
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSecretDungeonBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,14 +39,14 @@ class SecretDungeonFragment : Fragment(), OnSecretDungeonScheduleClickListener<S
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedSecretDungeon.loadSecretDungeonSchedules()
-        sharedSecretDungeon.secretDungeonScheduleList.observe(viewLifecycleOwner, Observer {
+        sharedSecretDungeon.secretDungeonScheduleList.observe(viewLifecycleOwner) {
             binding.secretDungeonProgressBar.visibility = if (it.isEmpty()) {
                 View.VISIBLE
             } else {
                 View.GONE
             }
             secretDungeonAdapter.setUpdatedList(secretDungeonVM.viewList)
-        })
+        }
         binding.secretDungeonToolbar.setNavigationOnClickListener {
             it.findNavController().navigateUp()
         }

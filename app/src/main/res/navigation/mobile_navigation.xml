@@ -392,7 +392,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_secret_dungeon"
-        android:name="com.github.malitsplus.shizurunotes.ui.secretdungeon.SecretDungeonFragment"
+        android:name="com.github.nyanfantasia.shizurunotes.ui.secretdungeon.SecretDungeonFragment"
         android:label="fragment_secret_dungeon"
         tools:layout="@layout/fragment_secret_dungeon">
         <action
@@ -405,7 +405,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_secret_dungeon_wave"
-        android:name="com.github.malitsplus.shizurunotes.ui.secretdungeon.SecretDungeonWaveFragment"
+        android:name="com.github.nyanfantasia.shizurunotes.ui.secretdungeon.SecretDungeonWaveFragment"
         android:label="fragment_secret_dungeon_wave"
         tools:layout="@layout/fragment_secret_dungeon_wave">
         <action

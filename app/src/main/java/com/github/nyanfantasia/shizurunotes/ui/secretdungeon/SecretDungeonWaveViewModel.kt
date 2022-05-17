@@ -1,10 +1,11 @@
-package com.github.malitsplus.shizurunotes.ui.secretdungeon
+package com.github.nyanfantasia.shizurunotes.ui.secretdungeon
 
 import androidx.lifecycle.ViewModel
-import com.github.malitsplus.shizurunotes.data.WaveGroup
-import com.github.malitsplus.shizurunotes.ui.base.*
-import com.github.malitsplus.shizurunotes.ui.shared.SharedViewModelHatsune
-import com.github.malitsplus.shizurunotes.ui.shared.SharedViewModelSecretDungeon
+import com.github.nyanfantasia.shizurunotes.data.WaveGroup
+import com.github.nyanfantasia.shizurunotes.ui.base.OnItemActionListener
+import com.github.nyanfantasia.shizurunotes.ui.base.SecretDungeonQuestVT
+import com.github.nyanfantasia.shizurunotes.ui.base.ViewType
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelSecretDungeon
 
 class SecretDungeonWaveViewModel(
     private val sharedSecretDungeon: SharedViewModelSecretDungeon

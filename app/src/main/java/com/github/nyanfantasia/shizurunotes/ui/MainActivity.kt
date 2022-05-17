@@ -67,11 +67,11 @@ class MainActivity : AppCompatActivity(),
 
     private fun initSharedViewModels() {
         sharedEquipment = ViewModelProvider(this)[SharedViewModelEquipment::class.java].apply {
-            equipmentMap.observe(this@MainActivity, {
+            equipmentMap.observe(this@MainActivity) {
                 if (it.isNotEmpty()) {
                     sharedChara.loadData(it)
                 }
-            })
+            }
         }
         sharedChara = ViewModelProvider(this)[SharedViewModelChara::class.java].apply {
             callBack = this@MainActivity

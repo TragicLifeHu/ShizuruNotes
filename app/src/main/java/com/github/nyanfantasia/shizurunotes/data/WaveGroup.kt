@@ -1,7 +1,6 @@
 package com.github.nyanfantasia.shizurunotes.data
 
-import android.net.Uri
-import com.github.malitsplus.shizurunotes.R
+import com.github.nyanfantasia.shizurunotes.R
 
 
 class WaveGroup(
