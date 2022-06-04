@@ -732,4 +732,7 @@
     <string name="Summon_a_field_with_radius_d1_at_position_s2_which_continuous_lose_tp_s3_of_units_within_the_field_for_s4_sec">在%2$s的位置展開半徑 [%1$d] 的領域，每秒失去 [%3$s] TP。持續時間 [%4$s] 秒。</string>
     <string name="Summon_a_field_with_radius_d1_at_position_s2_which_continuous_restore_tp_s3_of_units_within_the_field_for_s4_sec">在%2$s的位置展開半徑 [%1$d] 的領域，每秒恢復 [%3$s] TP。持續時間 [%4$s] 秒。</string>
     <string name="title_secret_dungeon">特殊地下城</string>
+    <string name="s_the_lowest_TP_except_self">除自身以外 TP 最低的%1$s</string>
+    <string name="the_s_th_lowest_TP_except_self">除自身以外 TP %1$s 低的</string>
+    <string name="the_lowest_TP_except_self">除自身以外 TP 最低的</string>
 </resources>
