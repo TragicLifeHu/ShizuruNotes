@@ -6,20 +6,50 @@
 * Android 8+ (由於系統需求，不支援低於 Android 8 的模擬器)
 
 ## 組建
-需要 Android Studio 4.1 或更高版本.
-所有依賴可在 `./app/build.gradle` 中找到.
+需要 Android Studio Arctic Fox 或更高版本.
+
+在組建之前，你可能需要在專案根目錄下新增一个名為 `local.properties` 的檔案 (如未找到).
+
+```sh
+$ touch local.properties
+```
+
+#### Debug 版本 App
+可直接執行以下命令以組建 **Debug 版本** app:
+
+```sh
+$ ./gradlew :app:assembleDebug
+```
+
+#### Release 版本 App
+如果你想組建 Release 版本 App，必須先向 `local.properties` 中新增以下程式碼：
+
+```sh
+signing.storeFile=${PATH_TO_YOUR_KEY_STORE_FILE}
+signing.storePassword=${YOUR_KEY_STORE_PASSWORD}
+signing.keyAlias=${YOUR_KEY_ALIAS}
+signing.keyPassword=${YOUR_KEY_PASSWORD}
+```
+
+之後即可執行以下命令組建 **Release 版本** App：
+
+```sh
+$ ./gradlew :app:assembleRelease
+```
 
 ## 功能
 * 角色資料
-* 角色衍生資料計算
-* 戰隊競賽 Boss 資料
-* 地下城 Boss 資料
+    * 角色衍生資料計算
+    * Rank 數值對比
+* Boss 資料
+    * 公會戰 Boss 資料
+    * 地下城 Boss 資料
+    * 劇情活動 Boss 資料
+    * 伺服全體活動 Boss 資料
 * 裝備資訊
-* 掉落檢索
-* 劇情活動 Boss
+    * 裝備掉落檢索
 * 活動行事曆
-* 活動通知提醒
-* Rank 對比
+    * 活動通知
 
 ## 在地化
 完整支持中文、日文、英文. 部分支援韓文.  
