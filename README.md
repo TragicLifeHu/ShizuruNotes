@@ -8,8 +8,36 @@ It supports the server of Japan and Mainland China at present.
 * Android 8+ (Doesn't support Android Emulator lower than Android 8)
 
 ## Build
-Requires Android Studio 4.1 or later.
-Dependencies could be found in `./app/build.gradle` and it might be changed time to time.  
+Requires Android Studio Arctic Fox or later.  
+
+Before executing build commands, you need to create a `local.properties` in project's root directory if it does not exist.
+
+```sh
+$ touch local.properties
+```
+
+#### Debug Version App
+You can build app with **debug variant** by excuting the following command directly. 
+
+```sh
+$ ./gradlew :app:assembleDebug
+```
+
+#### Release Version App
+If you want to build a release version app, you must add the following lines into `local.properties` first:
+
+```sh
+signing.storeFile=${PATH_TO_YOUR_KEY_STORE_FILE}
+signing.storePassword=${YOUR_KEY_STORE_PASSWORD}
+signing.keyAlias=${YOUR_KEY_ALIAS}
+signing.keyPassword=${YOUR_KEY_PASSWORD}
+```
+
+Then you can excute build command with **release variant**:
+
+```sh
+$ ./gradlew :app:assembleRelease
+```
 
 ## Features
 * Character 
