@@ -37,6 +37,8 @@ signing.keyPassword=${YOUR_KEY_PASSWORD}
 $ ./gradlew :app:assembleRelease
 ```
 
+由於對比原始專案進行改動，本 Repo 可能無法使用以上方式完成組建
+
 ## 功能
 * 角色資料
     * 角色衍生資料計算

@@ -39,6 +39,8 @@ Then you can excute build command with **release variant**:
 $ ./gradlew :app:assembleRelease
 ```
 
+The above instruction is set for OG app, may not work somehow for this repo
+
 ## Features
 * Character 
 * Character Derivative Status & calculation 
