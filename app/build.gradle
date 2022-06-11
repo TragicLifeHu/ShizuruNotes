@@ -11,8 +11,8 @@ android {
         applicationId "com.github.nyanfantasia.shizurunotes"
         minSdk 26
         targetSdk 32
-        versionCode 72
-        versionName "1.15.1"
+        versionCode 73
+        versionName "1.15.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
