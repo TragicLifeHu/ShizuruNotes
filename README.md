@@ -24,22 +24,7 @@ $ ./gradlew :app:assembleDebug
 ```
 
 #### Release Version App
-If you want to build a release version app, you must add the following lines into `local.properties` first:
-
-```sh
-signing.storeFile=${PATH_TO_YOUR_KEY_STORE_FILE}
-signing.storePassword=${YOUR_KEY_STORE_PASSWORD}
-signing.keyAlias=${YOUR_KEY_ALIAS}
-signing.keyPassword=${YOUR_KEY_PASSWORD}
-```
-
-Then you can excute build command with **release variant**:
-
-```sh
-$ ./gradlew :app:assembleRelease
-```
-
-The above instruction is set for OG app, may not work somehow for this repo
+Use Android Studio's "Generate Signed Bundle / APK" function to complete this step
 
 ## Features
 * Character 

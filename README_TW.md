@@ -22,22 +22,7 @@ $ ./gradlew :app:assembleDebug
 ```
 
 #### Release 版本 App
-如果你想組建 Release 版本 App，必須先向 `local.properties` 中新增以下程式碼：
-
-```sh
-signing.storeFile=${PATH_TO_YOUR_KEY_STORE_FILE}
-signing.storePassword=${YOUR_KEY_STORE_PASSWORD}
-signing.keyAlias=${YOUR_KEY_ALIAS}
-signing.keyPassword=${YOUR_KEY_PASSWORD}
-```
-
-之後即可執行以下命令組建 **Release 版本** App：
-
-```sh
-$ ./gradlew :app:assembleRelease
-```
-
-由於對比原始專案進行改動，本 Repo 可能無法使用以上方式完成組建
+請使用 Android Studio `Build` -> `Generate Signed Bundle / APK` 功能完成本作業. 
 
 ## 功能
 * 角色資料
@@ -73,3 +58,6 @@ $ ./gradlew :app:assembleRelease
 
 ## 安裝套件包
 [下載頁面](https://github.com/TragicLifeHu/ShizuruNotes/releases)  
+
+## 捐贈
+本專案因作為二次開發作品，暫不接受捐贈.
