@@ -23,15 +23,15 @@ public class GiveValueAction extends ActionParameter{
         limitValues.add(new ActionValue(actionValue4, actionValue5, null));
         switch ((int) actionValue1.value) {
             case 7:
-                keyType = PropertyKey.atk; break;
+                keyType = PropertyKey.Atk; break;
             case 8:
-                keyType = PropertyKey.magicStr; break;
+                keyType = PropertyKey.MagicStr; break;
             case 9:
-                keyType = PropertyKey.def; break;
+                keyType = PropertyKey.Def; break;
             case 10:
-                keyType = PropertyKey.magicDef; break;
+                keyType = PropertyKey.MagicDef; break;
             default:
-                keyType = PropertyKey.unknown; break;
+                keyType = PropertyKey.Unknown; break;
         }
     }
 

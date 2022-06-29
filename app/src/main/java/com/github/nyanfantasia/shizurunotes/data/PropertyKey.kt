@@ -4,101 +4,100 @@ import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 import com.github.nyanfantasia.shizurunotes.R
 import java.util.ArrayList
 
-@Suppress("EnumEntryName")
 enum class PropertyKey {
-    atk,
-    def,
-    dodge,
-    energyRecoveryRate,
-    energyReduceRate,
-    hp,
-    hpRecoveryRate,
-    lifeSteal,
-    magicCritical,
-    magicDef,
-    magicPenetrate,
-    magicStr,
-    physicalCritical,
-    physicalPenetrate,
-    waveEnergyRecovery,
-    waveHpRecovery,
-    accuracy,
-    unknown;
+    Atk,
+    Def,
+    Dodge,
+    EnergyRecoveryRate,
+    EnergyReduceRate,
+    Hp,
+    HpRecoveryRate,
+    LifeSteal,
+    MagicCritical,
+    MagicDef,
+    MagicPenetrate,
+    MagicStr,
+    PhysicalCritical,
+    PhysicalPenetrate,
+    WaveEnergyRecovery,
+    WaveHpRecovery,
+    Accuracy,
+    Unknown;
 
     val keys: List<PropertyKey>
         get() {
             val all: MutableList<PropertyKey> = ArrayList()
-            all.add(atk)
-            all.add(def)
-            all.add(dodge)
-            all.add(energyRecoveryRate)
-            all.add(energyReduceRate)
-            all.add(hp)
-            all.add(hpRecoveryRate)
-            all.add(lifeSteal)
-            all.add(magicCritical)
-            all.add(magicDef)
-            all.add(magicPenetrate)
-            all.add(magicStr)
-            all.add(physicalCritical)
-            all.add(physicalPenetrate)
-            all.add(waveEnergyRecovery)
-            all.add(waveHpRecovery)
-            all.add(accuracy)
+            all.add(Atk)
+            all.add(Def)
+            all.add(Dodge)
+            all.add(EnergyRecoveryRate)
+            all.add(EnergyReduceRate)
+            all.add(Hp)
+            all.add(HpRecoveryRate)
+            all.add(LifeSteal)
+            all.add(MagicCritical)
+            all.add(MagicDef)
+            all.add(MagicPenetrate)
+            all.add(MagicStr)
+            all.add(PhysicalCritical)
+            all.add(PhysicalPenetrate)
+            all.add(WaveEnergyRecovery)
+            all.add(WaveHpRecovery)
+            all.add(Accuracy)
             return all
         }
 
     fun description(): String {
         return when (this) {
-            atk -> getString(
+            Atk -> getString(
                 R.string.ATK
             )
-            def -> getString(
+            Def -> getString(
                 R.string.DEF
             )
-            dodge -> getString(
+            Dodge -> getString(
                 R.string.Dodge
             )
-            energyRecoveryRate -> getString(
+            EnergyRecoveryRate -> getString(
                 R.string.Energy_Recovery_Rate
             )
-            energyReduceRate -> getString(
+            EnergyReduceRate -> getString(
                 R.string.Energy_Reduce_Rate
             )
-            hp -> getString(
+            Hp -> getString(
                 R.string.HP
             )
-            hpRecoveryRate -> getString(
+            HpRecoveryRate -> getString(
                 R.string.HP_Recovery_Rate
             )
-            lifeSteal -> getString(
+            LifeSteal -> getString(
                 R.string.Life_Steal
             )
-            magicCritical -> getString(
+            MagicCritical -> getString(
                 R.string.Magic_Critical
             )
-            magicDef -> getString(
+            MagicDef -> getString(
                 R.string.Magic_DEF
             )
-            magicPenetrate -> getString(
+            MagicPenetrate -> getString(
                 R.string.Magic_Penetrate
             )
-            magicStr -> getString(
+            MagicStr -> getString(
                 R.string.Magic_STR
             )
-            physicalCritical -> getString(
+            PhysicalCritical -> getString(
                 R.string.Physical_Critical
             )
-            physicalPenetrate -> getString(
+            PhysicalPenetrate -> getString(
                 R.string.Physical_Penetrate
             )
-            waveEnergyRecovery -> getString(
+            WaveEnergyRecovery -> getString(
                 R.string.Wave_Energy_Recovery
             )
-            waveHpRecovery -> getString(
+            WaveHpRecovery -> getString(
                 R.string.Wave_HP_Recovery
             )
-            accuracy -> getString(
+            Accuracy -> getString(
                 R.string.Accuracy
             )
             else -> getString(R.string.Unknown)

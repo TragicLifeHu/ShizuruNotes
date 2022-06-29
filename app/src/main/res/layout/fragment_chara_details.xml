@@ -239,7 +239,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_physical_atk"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.atk)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getAtk)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtMagAtk"
@@ -247,7 +247,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_magical_atk"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.magicStr)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getMagicStr)}" />
 
                             </LinearLayout>
 
@@ -270,7 +270,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_physical_crt"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.physicalCritical)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getPhysicalCritical)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtMagCrt"
@@ -278,7 +278,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_magical_crt"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.magicCritical)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getMagicCritical)}" />
 
                             </LinearLayout>
 
@@ -301,7 +301,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_physical_def"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.def)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getDef)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtMagDef"
@@ -309,7 +309,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_magical_def"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.magicDef)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getMagicDef)}" />
 
                             </LinearLayout>
 
@@ -331,7 +331,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_hp"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.hp)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getHp)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtLifeSteal"
@@ -339,7 +339,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_life_steal"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.lifeSteal)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getLifeSteal)}" />
 
                             </LinearLayout>
 
@@ -361,7 +361,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_energy_recovery"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.energyRecoveryRate)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getEnergyRecoveryRate)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtEngRdc"
@@ -369,7 +369,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_energy_reduce"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.energyReduceRate)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getEnergyReduceRate)}" />
 
                             </LinearLayout>
 
@@ -391,7 +391,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_accuracy"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.accuracy)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getAccuracy)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtDdg"
@@ -399,7 +399,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_dodge"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.dodge)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getDodge)}" />
 
                             </LinearLayout>
 
@@ -421,7 +421,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_wave_hp_recovery"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.waveHpRecovery)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getWaveHpRecovery)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtWavEng"
@@ -429,7 +429,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_wave_energy_recovery"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.waveEnergyRecovery)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getWaveEnergyRecovery)}" />
 
                             </LinearLayout>
 
@@ -451,7 +451,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_physical_penetrate"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.physicalPenetrate)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getPhysicalPenetrate)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtMagPnt"
@@ -459,7 +459,7 @@
                                     android:layout_marginStart="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_magical_penetrate"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.magicPenetrate)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getMagicPenetrate)}" />
 
                             </LinearLayout>
 
@@ -483,7 +483,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_weight="1"
                                     app:sLeftTextString="@string/text_hp_recovery"
-                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.hpRecoveryRate)}" />
+                                    bind:sRightText="@{String.valueOf(detailsVM.mutableChara.charaProperty.getHpRecoveryRate)}" />
 
                                 <com.allen.library.SuperTextView
                                     android:id="@+id/txtPlaceHolder"

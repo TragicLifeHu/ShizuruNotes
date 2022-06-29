@@ -25,13 +25,13 @@ class Equipment(
     override val itemType = ItemType.EQUIPMENT
     var craftMap: Map<Item, Int>? = null
 
-    fun getCeiledProperty(): Property {
+    fun getCeilProperty(): Property {
         return if (equipmentId in uniqueEquipmentIdRange) {
             maxEnhanceLevel - 1
         } else {
             maxEnhanceLevel
         }.let {
-            equipmentProperty.plus(equipmentEnhanceRate.multiply(it.toDouble())).ceiled
+            equipmentProperty.plus(equipmentEnhanceRate.multiply(it.toDouble())).ceil
         }
     }
 
@@ -41,7 +41,7 @@ class Equipment(
         } else {
             level
         }.let {
-            equipmentProperty.plus(equipmentEnhanceRate.multiply(it.toDouble())).ceiled
+            equipmentProperty.plus(equipmentEnhanceRate.multiply(it.toDouble())).ceil
         }
     }
 

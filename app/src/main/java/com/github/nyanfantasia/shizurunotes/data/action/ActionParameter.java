@@ -508,7 +508,7 @@ enum PercentModifier{
 enum ClassModifier{
     unknown(0),
     physical(1),
-    magical(2),
+    magic(2),
     inevitablePhysical(3);
 
     private int value;
@@ -529,7 +529,7 @@ enum ClassModifier{
 
     public String description(){
         switch (this){
-            case magical:
+            case magic:
                 return I18N.getString(R.string.magical);
             case physical:
                 return I18N.getString(R.string.physical);

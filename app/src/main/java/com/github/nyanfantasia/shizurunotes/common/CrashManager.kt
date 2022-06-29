@@ -1,8 +1,8 @@
 package com.github.nyanfantasia.shizurunotes.common
 
 import android.content.Context
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 
 class CrashManager(
     private val context: Context,

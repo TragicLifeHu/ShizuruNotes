@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             bind:sLeftTextString="@string/text_physical_atk"
-            bind:sRightText="@{String.valueOf(itemModel.atk)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getAtk)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/mgc_atk"
@@ -47,7 +47,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent"
             bind:sLeftTextString="@string/text_magical_atk"
-            bind:sRightText="@{String.valueOf(itemModel.magicStr)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getMagicStr)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/phy_crt"
@@ -60,7 +60,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phy_atk"
             bind:sLeftTextString="@string/text_physical_crt"
-            bind:sRightText="@{String.valueOf(itemModel.physicalCritical)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getPhysicalCritical)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/mgc_crt"
@@ -73,7 +73,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/mgc_atk"
             bind:sLeftTextString="@string/text_magical_crt"
-            bind:sRightText="@{String.valueOf(itemModel.magicCritical)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getMagicCritical)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/phy_def"
@@ -86,7 +86,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phy_crt"
             bind:sLeftTextString="@string/text_physical_def"
-            bind:sRightText="@{String.valueOf(itemModel.def)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getDef)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/mgc_def"
@@ -99,7 +99,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/mgc_crt"
             bind:sLeftTextString="@string/text_magical_def"
-            bind:sRightText="@{String.valueOf(itemModel.magicDef)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getMagicDef)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/hp"
@@ -112,7 +112,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phy_def"
             bind:sLeftTextString="@string/text_hp"
-            bind:sRightText="@{String.valueOf(itemModel.hp)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getHp)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/life_steal"
@@ -125,7 +125,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/mgc_def"
             bind:sLeftTextString="@string/text_life_steal"
-            bind:sRightText="@{String.valueOf(itemModel.lifeSteal)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getLifeSteal)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/energy_recovery"
@@ -138,7 +138,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hp"
             bind:sLeftTextString="@string/text_energy_recovery"
-            bind:sRightText="@{String.valueOf(itemModel.energyRecoveryRate)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getEnergyRecoveryRate)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/energy_reduce"
@@ -151,7 +151,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/life_steal"
             bind:sLeftTextString="@string/text_energy_reduce"
-            bind:sRightText="@{String.valueOf(itemModel.energyReduceRate)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getEnergyReduceRate)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/acc"
@@ -164,7 +164,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/energy_recovery"
             bind:sLeftTextString="@string/text_accuracy"
-            bind:sRightText="@{String.valueOf(itemModel.accuracy)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getAccuracy)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/ddg"
@@ -177,7 +177,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/energy_reduce"
             bind:sLeftTextString="@string/text_dodge"
-            bind:sRightText="@{String.valueOf(itemModel.dodge)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getDodge)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/wav_hp_rec"
@@ -190,7 +190,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/acc"
             bind:sLeftTextString="@string/text_wave_hp_recovery"
-            bind:sRightText="@{String.valueOf(itemModel.waveHpRecovery)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getWaveHpRecovery)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/wav_energy_rec"
@@ -203,7 +203,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/ddg"
             bind:sLeftTextString="@string/text_wave_energy_recovery"
-            bind:sRightText="@{String.valueOf(itemModel.waveEnergyRecovery)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getWaveEnergyRecovery)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/phy_penetrate"
@@ -216,7 +216,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/wav_hp_rec"
             bind:sLeftTextString="@string/text_physical_penetrate"
-            bind:sRightText="@{String.valueOf(itemModel.physicalPenetrate)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getPhysicalPenetrate)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/mgc_penetrate"
@@ -229,7 +229,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/wav_energy_rec"
             bind:sLeftTextString="@string/text_magical_penetrate"
-            bind:sRightText="@{String.valueOf(itemModel.magicPenetrate)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getMagicPenetrate)}" />
 
         <com.allen.library.SuperTextView
             android:id="@+id/hp_rec"
@@ -242,7 +242,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phy_penetrate"
             bind:sLeftTextString="@string/text_hp_recovery"
-            bind:sRightText="@{String.valueOf(itemModel.hpRecoveryRate)}" />
+            bind:sRightText="@{String.valueOf(itemModel.getHpRecoveryRate)}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

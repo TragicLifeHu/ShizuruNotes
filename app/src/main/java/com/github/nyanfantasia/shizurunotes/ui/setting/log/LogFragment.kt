@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.databinding.FragmentLogBinding
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 
 class LogFragment : Fragment() {
 

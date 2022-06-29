@@ -18,20 +18,20 @@ public class AttackFieldAction extends ActionParameter {
     @Override
     protected void childInit() {
         super.childInit();
-        damageClass = actionDetail1 % 2 == 0 ? ClassModifier.magical : ClassModifier.physical;
+        damageClass = actionDetail1 % 2 == 0 ? ClassModifier.magic : ClassModifier.physical;
         if (actionDetail1 <= 2)
             fieldType = FieldType.normal;
         else
             fieldType = FieldType.repeat;
 
         switch (damageClass){
-            case magical:
+            case magic:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.magicStr));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.MagicStr));
                 break;
             case physical:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.atk));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.Atk));
         }
         durationValues.add(new ActionValue(actionValue5, actionValue6, null));
     }

@@ -9,12 +9,12 @@ class PassiveAction : ActionParameter() {
     private var propertyKey: PropertyKey? = null
     override fun childInit() {
         propertyKey = when (actionDetail1) {
-            1 -> PropertyKey.hp
-            2 -> PropertyKey.atk
-            3 -> PropertyKey.def
-            4 -> PropertyKey.magicStr
-            5 -> PropertyKey.magicDef
-            else -> PropertyKey.unknown
+            1 -> PropertyKey.Hp
+            2 -> PropertyKey.Atk
+            3 -> PropertyKey.Def
+            4 -> PropertyKey.MagicStr
+            5 -> PropertyKey.MagicDef
+            else -> PropertyKey.Unknown
         }
         actionValues.add(ActionValue(actionValue2, actionValue3, null))
     }

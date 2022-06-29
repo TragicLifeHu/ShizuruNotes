@@ -54,13 +54,13 @@ public class RegenerationAction extends ActionParameter {
         regenerationType = RegenerationType.parse(actionDetail2);
         durationValues.add(new ActionValue(actionValue5, actionValue6, null));
         switch (healClass){
-            case magical:
+            case magic:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.magicStr));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.MagicStr));
                 break;
             case physical:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.atk));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.Atk));
                 break;
         }
     }

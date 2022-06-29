@@ -6,10 +6,10 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.text.TextUtils
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.utils.FileUtils
 import com.github.nyanfantasia.shizurunotes.common.Statics
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 import com.github.nyanfantasia.shizurunotes.utils.Utils
 import java.util.*
 import kotlin.collections.ArrayList
@@ -112,19 +112,18 @@ class DBHelper private constructor(
     }
 
     /***
-     * 准备游标
-     * @param tableName 表名
+     * Prepare cursor
+     * @param tableName Table name
      * @param key WHERE [key] IN ([keyValue])
      * @param keyValue WHERE [key] IN ([keyValue])
-     * @return 存有数据的游标
+     * @return Cursor with stored data
      */
-    @SuppressLint("Recycle")
     private fun prepareCursor(
         tableName: String,
         key: String?,
         keyValue: List<String>?
     ): Cursor? {
-        if (!FileUtils.checkFile(FileUtils.getDbFilePath())) return null
+        if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         val db = readableDatabase ?: return null
         return if (key == null || keyValue == null || keyValue.isEmpty()) {
             db.rawQuery("SELECT * FROM $tableName ", null)
@@ -147,11 +146,11 @@ class DBHelper private constructor(
     }
     /******************* Method For Use  */
     /***
-     * 由表名和类名无条件从数据库获取实体列表
-     * @param tableName 表名
-     * @param theClass 类名
-     * @param <T> theClass的类
-     * @return 生成的实体列表
+     * Unconditionally get entity list from database by table name and class name
+     * @param tableName Table name
+     * @param theClass Class name
+     * @param <T> theClass's class
+     * @return List of created instance
     </T> */
     private fun <T> getBeanList(
         tableName: String,
@@ -162,13 +161,13 @@ class DBHelper private constructor(
     }
 
     /***
-     * 由表名、类名、条件键值从数据库获取实体列表
-     * @param tableName 表名
-     * @param theClass 类名
+     * Get entity list from database by table name, class name, condition key value
+     * @param tableName table name
+     * @param theClass Class name
      * @param key WHERE [key] IN ([keyValues])
      * @param keyValues WHERE [key] IN ([keyValues])
-     * @param <T> theClass的类
-     * @return 生成的实体列表
+     * @param <T> theClass's class
+     * @return List of created instance
     </T> */
     private fun <T> getBeanList(
         tableName: String,
@@ -181,13 +180,13 @@ class DBHelper private constructor(
     }
 
     /***
-     * 由表名、类名、条件键值从数据库获取单个实体
-     * @param tableName 表名
-     * @param theClass 类名
+     * Get a single entity from database by table name, class name, condition key value
+     * @param tableName table name
+     * @param theClass Class name
      * @param key WHERE [key] IN ([keyValue])
      * @param keyValue WHERE [key] IN ([keyValue])
-     * @param <T> theClass的类
-     * @return 生成的实体
+     * @param <T> theClass's class
+     * @return Created instance
     </T> */
     private fun <T> getBean(
         tableName: String,
@@ -201,93 +200,54 @@ class DBHelper private constructor(
         return if (data?.isNotEmpty() == true) data[0] else null
     }
 
-//    /***
-//     * 由SQL语句、SQL中的键值从数据库获取单个实体
-//     * @param sql SQL语句
-//     * @param keyValue IN (?) => ?=keyValue
-//     * @param theClass 类名
-//     * @param <T> theClass的类
-//     * @return 生成的实体
-//    </T> */
-//    @SuppressLint("Recycle")
-//    private fun <T> getBeanByRaw(
-//        sql: String?,
-//        keyValue: String,
-//        theClass: Class<*>
-//    ): T? {
-//        if (!Utils.checkFile(Statics.DB_PATH + Statics.DB_FILE)) return null
-//        val cursor =
-//            readableDatabase.rawQuery(sql, arrayOf(keyValue)) ?: return null
-//        val data: List<T>? = cursor2List(cursor, theClass)
-//        return if (data?.isNotEmpty() == true) data[0] else null
-//    }
-
     /***
-     * 由SQL语句、SQL中的键值从数据库获取单个实体
-     * @param sql SQL语句
-     * @param theClass 类名
-     * @param <T> theClass的类
-     * @return 生成的实体
+     * Get a single entity from database by SQL statement, key value in SQL
+     * @param sql SQL statement
+     * @param theClass Class name
+     * @param <T> theClass's class
+     * @return Created instance
     </T> */
     @SuppressLint("Recycle")
     private fun <T> getBeanByRaw(
         sql: String?,
         theClass: Class<*>
     ): T? {
-        if (!FileUtils.checkFile(FileUtils.getDbFilePath())) return null
+        if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         try {
             val cursor =
                 readableDatabase.rawQuery(sql, null) ?: return null
             val data: List<T>? = cursor2List(cursor, theClass)
             return if (data?.isNotEmpty() == true) data[0] else null
         } catch (e: Exception) {
-            LogUtils.file(LogUtils.E, "getBeanByRaw", e.message, e.stackTrace)
+            LogUtils.file(LogUtils.E, "getBeanByRaw", e.message)
             return null
         }
     }
 
-//    /***
-//     * 由SQL语句无条件从数据库获取实体列表
-//     * @param sql SQL语句
-//     * @param theClass 类名
-//     * @param <T> theClass的类
-//     * @return 生成的实体列表
-//    </T> */
-//    @SuppressLint("Recycle")
-//    private fun <T> getBeanListByRaw(
-//        sql: String?,
-//        theClass: Class<*>
-//    ): List<T>? {
-//        if (!Utils.checkFile(Statics.DB_PATH + Statics.DB_FILE)) return null
-//        val cursor = readableDatabase.rawQuery(sql, null) ?: return null
-//        return cursor2List(cursor, theClass)
-//    }
-
     /***
-     * 由SQL语句无条件从数据库获取实体列表
-     * @param sql SQL语句
-     * @param theClass 类名
-     * @param <T> theClass的类
-     * @return 生成的实体列表
+     * Unconditionally get entity list from database by SQL statement
+     * @param sql SQL statement
+     * @param theClass Class name
+     * @param <T> theClass's class
+     * @return List of created instance
     </T> */
-    @SuppressLint("Recycle")
     private fun <T> getBeanListByRaw(
         sql: String?,
         theClass: Class<*>
     ): List<T>? {
-        if (!FileUtils.checkFile(FileUtils.getDbFilePath())) return null
+        if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         try {
             val cursor =
                 readableDatabase.rawQuery(sql, null) ?: return null
             return cursor2List(cursor, theClass)
         } catch (e: Exception) {
-            LogUtils.file(LogUtils.E, "getBeanListByRaw", e.message, e.stackTrace)
+            LogUtils.file(LogUtils.E, "getBeanListByRaw", e.message)
             return null
         }
     }
 
     /***
-     * 删除所有表
+     * drop all table
      * @param db
      */
     private fun dropAll(db: SQLiteDatabase) {
@@ -309,7 +269,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 删除表
+     * drop table
      * @param tableName
      * @return
      */
@@ -324,12 +284,12 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取查询语句的第一行第一列值
+     * Get the value of the first row and first column of the query statement
      * @param sql
      * @return
      */
     private fun getOne(sql: String?): String? {
-        if (!FileUtils.checkFile(FileUtils.getDbFilePath())) return null
+        if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         val cursor = readableDatabase.rawQuery(sql, null)
         cursor.moveToNext()
         val result = cursor.getString(0)
@@ -338,7 +298,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取 int-string map
+     * Get int-string map
      * @param sql
      * @return
      */
@@ -348,7 +308,7 @@ class DBHelper private constructor(
         key: String?,
         value: String?
     ): Map<Int, String>? {
-        if (!FileUtils.checkFile(FileUtils.getDbFilePath())) return null
+        if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         val cursor = readableDatabase.rawQuery(sql, null)
         val result: MutableMap<Int, String> = HashMap()
         while (cursor.moveToNext()) {
@@ -362,7 +322,7 @@ class DBHelper private constructor(
     /************************* public field **************************/
 
     /***
-     * 获取角色基础数据
+     * Get Basic Character data
      */
     fun getCharaBase(): List<RawUnitBasic>? {
         return if (getConversionCount == "0") {
@@ -445,7 +405,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色星级数据
+     * Get Unit Rarity
      */
     fun getUnitRarity(unitId: Int): RawUnitRarity? {
         return getBeanByRaw<RawUnitRarity>(
@@ -460,7 +420,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色星级数据
+     * Get Unit Rarity List
      */
     fun getUnitRarityList(unitId: Int): List<RawUnitRarity>? {
         return getBeanListByRaw(
@@ -475,10 +435,10 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色剧情数据
+     * Get Character Story Status
      */
     fun getCharaStoryStatus(charaId: Int): List<RawCharaStoryStatus>? {
-        // 国服-> 排除还没有实装的角色剧情
+        // China Server -> Exclude character story that have not yet been implemented
         if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
             return getBeanListByRaw(
                 """
@@ -519,8 +479,8 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色Rank汇总数据
-     * @param unitId 角色id
+     * Get Character Promotion Status
+     * @param unitId Chara id
      * @return
      */
     fun getCharaPromotionStatus(unitId: Int): List<RawPromotionStatus>? {
@@ -536,8 +496,8 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色Rank Bonus
-     * @param unitId 角色id
+     * Get Character Rank Bonus
+     * @param unitId Chara id
      * @return
      */
     fun getCharaPromotionBonus(unitId: Int): List<RawPromotionBonus>? {
@@ -561,8 +521,8 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色装备数据
-     * @param unitId 角色id
+     * Get Character Promotion
+     * @param unitId Chara id
      * @return
      */
     fun getCharaPromotion(unitId: Int): List<RawUnitPromotion>? {
@@ -578,11 +538,11 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取装备数据
-     * @param slots 装备ids
+     * Get Equipment
+     * @param slots Equipment id
      * @return
      */
-    fun getEquipments(slots: ArrayList<Int>?): List<RawEquipmentData>? {
+    fun getEquipments(slots: ArrayList<Int?>): List<RawEquipmentData>? {
         return getBeanListByRaw(
             """
                 SELECT 
@@ -598,7 +558,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取所有装备数据
+     * Get All Equipments
      */
     fun getEquipmentAll(): List<RawEquipmentData>? {
         return getBeanListByRaw(
@@ -640,11 +600,11 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取装备强化数据
-     * @param slots 装备ids
+     * Get Equipment Enhance
+     * @param slots Equipment id
      * @return
      */
-    fun getEquipmentEnhance(slots: ArrayList<Int>?): List<RawEquipmentEnhanceData>? {
+    fun getEquipmentEnhance(slots: ArrayList<Int?>): List<RawEquipmentEnhanceData>? {
         return getBeanListByRaw(
             """
                 SELECT * 
@@ -656,8 +616,8 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取装备强化数据
-     * @param equipmentId 装备ids
+     * Get Equipment Enhance
+     * @param equipmentId Equipment id
      * @return
      */
     fun getEquipmentEnhance(equipmentId: Int): RawEquipmentEnhanceData? {
@@ -672,7 +632,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取所有装备强化数据
+     * Get Equipment Enhance
      */
     fun getEquipmentEnhance(): List<RawEquipmentEnhanceData>? {
         return getBeanListByRaw(
@@ -685,8 +645,8 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取专属装备数据
-     * @param unitId 角色id
+     * Get Unique Equipment
+     * @param unitId Chara id
      * @return
      */
     fun getUniqueEquipment(unitId: Int): RawUniqueEquipmentData? {
@@ -723,8 +683,8 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取专属装备强化数据
-     * @param unitId 角色id
+     * Get Unique Equipment Enhance
+     * @param unitId Chara id
      * @return
      */
     fun getUniqueEquipmentEnhance(unitId: Int): RawUniqueEquipmentEnhanceData? {
@@ -740,7 +700,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取角色技能数据
+     * Unit Skill Data
      * @param unitId
      * @return
      */
@@ -756,7 +716,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取技能数据
+     * Get Skill Data
      * @param skillId
      * @return
      */
@@ -772,7 +732,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取技能动作数据
+     * Get Skill Action
      * @param actionId
      * @return
      */
@@ -788,7 +748,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取行动顺序
+     * Get Unit Attack Pattern
      * @param unitId
      * @return
      */
@@ -805,23 +765,11 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取会战期次
+     * Get Clan Battle Period
      * @param
      * @return
      */
     fun getClanBattlePeriod(): List<RawClanBattlePeriod>? {
-        // 国服-> 读取1014前记录
-//        if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
-//            return getBeanListByRaw(
-//                """
-//                SELECT *
-//                FROM clan_battle_period
-//                WHERE clan_battle_id <= 1014
-//                ORDER BY clan_battle_id DESC
-//                """,
-//                RawClanBattlePeriod::class.java
-//            )
-//        }
         return getBeanListByRaw(
             """
                 SELECT * 
@@ -834,44 +782,11 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取会战phase
+     * Get clan battle phase
      * @param
      * @return
      */
     fun getClanBattlePhase(clanBattleId: Int): List<RawClanBattlePhase>? {
-        // 国服-> 迎合日服结构
-//        if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
-//            return getBeanListByRaw(
-//                """
-//                SELECT a.clan_battle_id,
-//                CASE
-//                WHEN a.lap_num_from = 1 THEN 1
-//                WHEN a.lap_num_from = 2 AND a.clan_battle_id <= 1009 THEN 2
-//                WHEN a.lap_num_from = 2 THEN 1
-//                WHEN a.lap_num_from = 4 THEN 2
-//                WHEN a.lap_num_from = 6 THEN 3
-//                WHEN a.lap_num_from = 11 THEN 3
-//                WHEN a.lap_num_from = 35 THEN 4
-//                ELSE 1 END 'phase'
-//                ,b1.wave_group_id 'wave_group_id_1'
-//                ,b2.wave_group_id 'wave_group_id_2'
-//                ,b3.wave_group_id 'wave_group_id_3'
-//                ,b4.wave_group_id 'wave_group_id_4'
-//                ,b5.wave_group_id 'wave_group_id_5'
-//                FROM clan_battle_map_data AS a
-//                JOIN clan_battle_boss_group AS b1 ON a.clan_battle_boss_group_id = b1.clan_battle_boss_group_id AND b1.order_num = 1
-//                JOIN clan_battle_boss_group AS b2 ON a.clan_battle_boss_group_id = b2.clan_battle_boss_group_id AND b2.order_num = 2
-//                JOIN clan_battle_boss_group AS b3 ON a.clan_battle_boss_group_id = b3.clan_battle_boss_group_id AND b3.order_num = 3
-//                JOIN clan_battle_boss_group AS b4 ON a.clan_battle_boss_group_id = b4.clan_battle_boss_group_id AND b4.order_num = 4
-//                JOIN clan_battle_boss_group AS b5 ON a.clan_battle_boss_group_id = b5.clan_battle_boss_group_id AND b5.order_num = 5
-//                WHERE 1=1
-//                AND a.clan_battle_id = $clanBattleId
-//                AND (a.lap_num_from <> a.lap_num_to OR a.rsl_unlock_lap = 1)
-//                ORDER BY a.clan_battle_id,a.lap_num_from DESC
-//                """,
-//                RawClanBattlePhase::class.java
-//            )
-//        }
         return getBeanListByRaw(
             """
                 SELECT DISTINCT 
@@ -889,7 +804,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取wave
+     * Get wave
      * @param
      * @return
      */
@@ -907,7 +822,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取wave
+     * Get wave
      * @param
      * @return
      */
@@ -923,64 +838,11 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取enemyList
+     * Get Enemy List
      * @param
      * @return
      */
     fun getEnemy(enemyIdList: List<Int>): List<RawEnemy>? {
-        // 国服->去掉 [enemy_m_parts] 表
-//        if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
-//            return getBeanListByRaw(
-//                """
-//                    SELECT
-//                    a.*
-//                    ,b.union_burst
-//                    ,b.union_burst_evolution
-//                    ,b.main_skill_1
-//                    ,b.main_skill_evolution_1
-//                    ,b.main_skill_2
-//                    ,b.main_skill_evolution_2
-//                    ,b.ex_skill_1
-//                    ,b.ex_skill_evolution_1
-//                    ,b.main_skill_3
-//                    ,b.main_skill_4
-//                    ,b.main_skill_5
-//                    ,b.main_skill_6
-//                    ,b.main_skill_7
-//                    ,b.main_skill_8
-//                    ,b.main_skill_9
-//                    ,b.main_skill_10
-//                    ,b.ex_skill_2
-//                    ,b.ex_skill_evolution_2
-//                    ,b.ex_skill_3
-//                    ,b.ex_skill_evolution_3
-//                    ,b.ex_skill_4
-//                    ,b.ex_skill_evolution_4
-//                    ,b.ex_skill_5
-//                    ,b.sp_skill_1
-//                    ,b.ex_skill_evolution_5
-//                    ,b.sp_skill_2
-//                    ,b.sp_skill_3
-//                    ,b.sp_skill_4
-//                    ,b.sp_skill_5
-//                    ,u.prefab_id
-//                    ,u.atk_type
-//                    ,u.normal_atk_cast_time
-//					,u.search_area_width
-//                    ,u.comment
-//                    FROM
-//                    unit_skill_data b
-//                    ,enemy_parameter a
-//                    LEFT JOIN unit_enemy_data u ON a.unit_id = u.unit_id
-//                    WHERE
-//                    a.unit_id = b.unit_id
-//                    AND a.enemy_id in ( %s )
-//                    """.format(enemyIdList.toString()
-//                    .replace("[", "")
-//                    .replace("]", "")),
-//                RawEnemy::class.java
-//            )
-//        }
         return getBeanListByRaw(
                 """
                     SELECT 
@@ -1040,7 +902,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取第一个enemy
+     * Get first enemy
      * @param
      * @return
      */
@@ -1049,7 +911,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取敌人抗性值
+     * Get Resist Data
      * @param
      * @return
      */
@@ -1065,7 +927,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取友方召唤物
+     * Get Unit Minion
      */
     fun getUnitMinion(minionId: Int): RawUnitMinion? {
         return getBeanByRaw<RawUnitMinion>(
@@ -1113,7 +975,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取敌方召唤物
+     * Get Enemy Minion
      */
     fun getEnemyMinion(enemyId: Int): RawEnemy? {
         return getBeanByRaw<RawEnemy>(
@@ -1144,12 +1006,12 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取迷宫bossList
+     * Get dungeon Boss List
      * @param
      * @return
      */
     fun getDungeons(): List<RawDungeon>? {
-        // 考虑国服未实装的情况
+        // For unimplemented
         val count = getOne("""SELECT COUNT(*) 
                                 FROM sqlite_master 
                                 WHERE type='table' 
@@ -1208,13 +1070,13 @@ class DBHelper private constructor(
      * get secret dungeon schedule list
      */
     fun getSecretDungeonSchedules(): List<RawSecretDungeonSchedule>? {
-        // 考虑国服未实装的情况
+        // For unimplemented
         val count = getOne("""SELECT COUNT(*) 
                                 FROM sqlite_master 
                                 WHERE type='table' 
                                 AND name='secret_dungeon_schedule'""")
         if (!count.equals("1")) {
-            return null;
+            return null
         }
         return getBeanListByRaw(
             """
@@ -1252,7 +1114,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取特殊活动
+     * Get SP Event
      */
     fun getSpEvents(): List<RawSpEvent>? {
         return when(getSpEventCount()) {
@@ -1325,7 +1187,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取所有Quest
+     * Get all Quest
      */
     fun getQuests(): List<RawQuest>? {
         return getBeanListByRaw(
@@ -1337,7 +1199,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取掉落奖励
+     * Get Enemy Reward Data
      */
     fun getEnemyRewardData(dropRewardIdList: List<Int>): List<RawEnemyRewardData>? {
         return getBeanListByRaw(
@@ -1353,7 +1215,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取campaign日程
+     * Get the campaign schedule
      */
     fun getCampaignSchedule(nowTimeString: String?): List<RawScheduleCampaign>? {
         var sqlString = " SELECT * FROM campaign_schedule "
@@ -1364,7 +1226,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取free gacha日程
+     * Get free gacha schedule
      */
     fun getFreeGachaSchedule(nowTimeString: String?): List<RawScheduleFreeGacha>? {
         var sqlString = " SELECT * FROM campaign_freegacha "
@@ -1375,7 +1237,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取hatsune日程
+     * Get hatsune schedule
      */
     fun getHatsuneSchedule(nowTimeString: String?): List<RawScheduleHatsune>? {
         var sqlString = """
@@ -1393,7 +1255,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取hatsune一般boss数据
+     * Get hatsune general boss data
      */
     fun getHatsuneBattle(eventId: Int): List<RawHatsuneBoss>? {
         return getBeanListByRaw(
@@ -1411,7 +1273,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取hatsune SP boss数据
+     * Get hatsune SP boss data
      */
     fun getHatsuneSP(eventId: Int): List<RawHatsuneSpecialBattle>? {
         return getBeanListByRaw(
@@ -1426,7 +1288,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取露娜塔日程
+     * Get the Luna Tower schedule
      */
     fun getTowerSchedule(nowTimeString: String?): List<RawTowerSchedule>? {
         var sqlString = " SELECT * FROM tower_schedule "
@@ -1437,7 +1299,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取装备碎片
+     * Get Equipment Pieces
      */
     fun getEquipmentPiece(): List<RawEquipmentPiece>? {
         return getBeanListByRaw(" SELECT * FROM equipment_data WHERE equipment_id >= 113000 ",
@@ -1446,7 +1308,7 @@ class DBHelper private constructor(
     }
 
     /***
-     * 获取异常状态map
+     * Get exception status map
      * @param
      * @return
      */
@@ -1483,7 +1345,7 @@ class DBHelper private constructor(
         }
 
     /***
-     * 随机生成16位随机英数字符串
+     * Randomly generate a 16-bit random alphanumeric string
      * @return
      */
     val randomId: String

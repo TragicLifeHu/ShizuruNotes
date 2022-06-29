@@ -13,13 +13,13 @@ import android.os.Message
 import androidx.annotation.StringRes
 import androidx.core.content.FileProvider
 import com.afollestad.materialdialogs.MaterialDialog
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.BuildConfig
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
 import com.github.nyanfantasia.shizurunotes.utils.BrotliUtils
 import com.github.nyanfantasia.shizurunotes.utils.FileUtils
 import com.github.nyanfantasia.shizurunotes.utils.JsonUtils
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 import okhttp3.*
 import org.json.JSONObject
 import java.io.File
@@ -170,7 +170,7 @@ class UpdateManager private constructor(
              */
             override fun dbUpdateCompleted() {
                 LogUtils.file(LogUtils.I, "DB update finished.")
-                val newFileHash = FileUtils.getFileMD5ToString(FileUtils.getDbFilePath())
+                val newFileHash = FileUtils.getFileMD5ToString(FileUtils.dbFilePath)
                 if (UserSettings.get().getDBHash() == newFileHash) {
                     LogUtils.file(LogUtils.W, "duplicate DB file.")
                     UserSettings.get().setDBHash(newFileHash)
@@ -331,15 +331,15 @@ class UpdateManager private constructor(
         thread(start = true){
             try {
                 if (forceDownload) {
-                    FileUtils.deleteDirectory(File(FileUtils.getDbDirectoryPath()))
+                    FileUtils.deleteDirectory(File(FileUtils.dbDirectoryPath))
                 }
                 val conn = URL(Statics.DB_FILE_URL).openConnection() as HttpURLConnection
                 maxLength = conn.contentLength
                 val inputStream = conn.inputStream
-                if (!File(FileUtils.getDbDirectoryPath()).exists()) {
-                    if (!File(FileUtils.getDbDirectoryPath()).mkdirs()) throw Exception("Cannot create DB path.")
+                if (!File(FileUtils.dbDirectoryPath).exists()) {
+                    if (!File(FileUtils.dbDirectoryPath).mkdirs()) throw Exception("Cannot create DB path.")
                 }
-                val compressedFile = File(FileUtils.getCompressedDbFilePath())
+                val compressedFile = File(FileUtils.compressedDbFilePath)
                 if (compressedFile.exists()) {
                     FileUtils.deleteFile(compressedFile)
                 }
@@ -369,9 +369,9 @@ class UpdateManager private constructor(
     }
 
     fun doDecompress(){
-        FileUtils.deleteFile(FileUtils.getDbFilePath())
+        FileUtils.deleteFile(FileUtils.dbFilePath)
         LogUtils.file(LogUtils.I, "Start decompress DB.")
-        BrotliUtils.deCompress(FileUtils.getCompressedDbFilePath(), true)
+        BrotliUtils.deCompress(FileUtils.compressedDbFilePath, true)
         updateHandler.sendEmptyMessage(UPDATE_COMPLETED)
     }
 

@@ -49,7 +49,7 @@ class DropFragment : Fragment() {
         mAdapter = GridSelectAdapter(requireContext(), sharedEquipment)
 
         //根据屏幕大小调整每行显示图标数
-        if (Utils.getScreenRatio() < 2.0) {
+        if (Utils.screenRatio < 2.0) {
             maxSpanNum = 5
         }
 

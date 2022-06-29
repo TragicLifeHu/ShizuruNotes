@@ -56,9 +56,9 @@ class AnalyzeViewModel(
         get() {
             val criticalRate = chara?.let {
                 val critical = if (it.atkType == 1) {
-                    property4Analyze.value?.getPhysicalCritical()
+                    property4Analyze.value?.getPhysicalCritical
                 } else {
-                    property4Analyze.value?.getMagicCritical()
+                    property4Analyze.value?.getMagicCritical
                 } ?: 0
                 UnitUtils.getCriticalRate(critical, it.maxCharaLevel, enemyLevel) * 100.0
             } ?: 0.0
@@ -68,7 +68,7 @@ class AnalyzeViewModel(
     val hpAbsorbRateText: String
         get() {
             val hpAbsorbRate = property4Analyze.value?.let {
-                UnitUtils.getHpAbsorbRate(it.getLifeSteal(), enemyLevel) * 100.0
+                UnitUtils.getHpAbsorbRate(it.getLifeSteal, enemyLevel) * 100.0
             } ?: 0.0
             return I18N.getString(R.string.percent_modifier_s, Utils.getOneDecimalPlaces(hpAbsorbRate))
         }
@@ -107,7 +107,7 @@ class AnalyzeViewModel(
                 "100%"
             } else {
                 property4Analyze.value?.let {
-                    val rate = UnitUtils.getAccuracyRate(it.getAccuracy(), enemyDodge) * 100.0
+                    val rate = UnitUtils.getAccuracyRate(it.getAccuracy, enemyDodge) * 100.0
                     I18N.getString(R.string.percent_modifier_s, Utils.getOneDecimalPlaces(rate))
                 } ?: "100%"
             }
@@ -116,7 +116,7 @@ class AnalyzeViewModel(
     val dodgeRateText: String
         get() {
             return property4Analyze.value?.let {
-                val rate = UnitUtils.getDodgeRate(enemyAccuracy, it.getDodge()) * 100.0
+                val rate = UnitUtils.getDodgeRate(enemyAccuracy, it.getDodge) * 100.0
                 I18N.getString(R.string.percent_modifier_s, Utils.getOneDecimalPlaces(rate))
             } ?: "0%"
         }

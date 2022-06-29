@@ -14,13 +14,13 @@ class ComparisonListViewModel(
     private val sharedViewModelChara: SharedViewModelChara
 ) : ViewModel() {
 
-    val comparisonList = mutableListOf<RankComparison>()
+    private val comparisonList = mutableListOf<RankComparison>()
     val liveComparisonList = MutableLiveData<List<RankComparison>>()
 
-    var selectedAttackType: String = "0"
-    var selectedPosition: String = "0"
-    var selectedSort: String = "0"
-    var isAsc: Boolean = false
+    private var selectedAttackType: String = "0"
+    private var selectedPosition: String = "0"
+    private var selectedSort: String = "0"
+    private var isAsc: Boolean = false
 
     val attackTypeMap = mapOf(
         0 to I18N.getString(R.string.ui_chip_any),
@@ -74,40 +74,40 @@ class ComparisonListViewModel(
             val valueB: Int
             when (selectedSort) {
                 "0" -> {
-                    valueA = a.property.getEnergyRecoveryRate()
-                    valueB = b.property.getEnergyRecoveryRate()
+                    valueA = a.property.getEnergyRecoveryRate
+                    valueB = b.property.getEnergyRecoveryRate
                 }
                 "1" -> {
-                    valueA = a.property.getEnergyReduceRate()
-                    valueB = b.property.getEnergyReduceRate()
+                    valueA = a.property.getEnergyReduceRate
+                    valueB = b.property.getEnergyReduceRate
                 }
                 "2" -> {
-                    valueA = a.property.getAtk()
-                    valueB = b.property.getAtk()
+                    valueA = a.property.getAtk
+                    valueB = b.property.getAtk
                 }
                 "3" -> {
-                    valueA = a.property.getMagicStr()
-                    valueB = b.property.getMagicStr()
+                    valueA = a.property.getMagicStr
+                    valueB = b.property.getMagicStr
                 }
                 "4" -> {
-                    valueA = a.property.getDef()
-                    valueB = b.property.getDef()
+                    valueA = a.property.getDef
+                    valueB = b.property.getDef
                 }
                 "5" -> {
-                    valueA = a.property.getMagicDef()
-                    valueB = b.property.getMagicDef()
+                    valueA = a.property.getMagicDef
+                    valueB = b.property.getMagicDef
                 }
                 "6" -> {
-                    valueA = a.property.getPhysicalCritical()
-                    valueB = b.property.getPhysicalCritical()
+                    valueA = a.property.getPhysicalCritical
+                    valueB = b.property.getPhysicalCritical
                 }
                 "7" -> {
-                    valueA = a.property.getMagicCritical()
-                    valueB = b.property.getMagicCritical()
+                    valueA = a.property.getMagicCritical
+                    valueB = b.property.getMagicCritical
                 }
                 "8" -> {
-                    valueA = a.property.getHp()
-                    valueB = b.property.getHp()
+                    valueA = a.property.getHp
+                    valueB = b.property.getHp
                 }
                 else -> {
                     valueA = a.chara.unitId
@@ -134,11 +134,11 @@ class ComparisonListViewModel(
         return type == "0" || type.toInt() == chara.atkType
     }
 
-    fun refreshList() {
+    private fun refreshList() {
         comparisonList.clear()
         val rankFrom = sharedViewModelChara.rankComparisonFrom
         val rankTo = sharedViewModelChara.rankComparisonTo
-        //考虑用户手快，charaList可能还在loading的情况
+        //Considering that the user may abuse, the charaList may still be loading
         for (i in 1..25) {
             if (sharedViewModelChara.loadingFlag.value == false) {
                 break

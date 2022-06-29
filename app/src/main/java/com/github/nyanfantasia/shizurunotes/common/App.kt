@@ -42,7 +42,7 @@ class App : Application() {
     }
 
     private fun initSingleton() {
-        Utils.setApp(this)
+        Utils.app = this
         UserSettings.with(this)
         initUserServer()
         DBHelper.with(this)

@@ -15,12 +15,12 @@ public class HealAction extends ActionParameter {
         healClass = ClassModifier.parse(actionDetail1);
         percentModifier = PercentModifier.parse((int)actionValue1.value);
         switch (healClass){
-            case magical:
-                actionValues.add(new ActionValue(actionValue4, actionValue5, PropertyKey.magicStr));
+            case magic:
+                actionValues.add(new ActionValue(actionValue4, actionValue5, PropertyKey.MagicStr));
                 actionValues.add(new ActionValue(actionValue2, actionValue3, null));
                 break;
             case physical:
-                actionValues.add(new ActionValue(actionValue4, actionValue5, PropertyKey.atk));
+                actionValues.add(new ActionValue(actionValue4, actionValue5, PropertyKey.Atk));
                 actionValues.add(new ActionValue(actionValue2, actionValue3, null));
                 break;
             default:

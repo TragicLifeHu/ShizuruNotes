@@ -40,14 +40,14 @@ public class DamageAction extends ActionParameter {
         decideTargetAtkType = DecideTargetAtkType.parse(actionDetail2);
 
         switch (damageClass) {
-            case magical:
+            case magic:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.magicStr));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.MagicStr));
                 break;
             case physical:
             case inevitablePhysical:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.atk));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.Atk));
                 break;
             default:
         }

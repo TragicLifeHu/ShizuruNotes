@@ -17,11 +17,11 @@ import java.util.*
  *
  */
 class Skill(
-    val skillId: Int,
+    private val skillId: Int,
     val skillClass: SkillClass,
     val enemySkillLevel: Int = 0
 ) {
-    //java类用构造器
+    //java class constructor
     constructor(skillId: Int, skillClass: SkillClass) : this(skillId, skillClass, 0)
 
     enum class SkillClass(val value: String) {
@@ -141,13 +141,13 @@ class Skill(
         }
     }
 
-    val actions: List<Action> = mutableListOf()
+    val actions: MutableList<Action> = mutableListOf()
     var actionRawList: List<ActionRaw> = ArrayList()
-    var skillType = 0
-    var skillAreaWidth = 0
-    var skillCastTime = 0.0
-    var bossUbCoolTime = 0.0
-    var iconType = 0
+    private var skillType = 0
+    private var skillAreaWidth = 0
+    private var skillCastTime = 0.0
+    private var bossUbCoolTime = 0.0
+    private var iconType = 0
     val castTimeText: String
         get() = I18N.getString(R.string.text_cast_time) + skillCastTime + "s"
     val ubCoolTimeText: String
@@ -164,16 +164,16 @@ class Skill(
     init {
         DBHelper.get().getSkillData(this.skillId)?.setSkillData(this)
         actions.forEach { action ->
-            //向actionList中填入具体值
+            //Fill in specific values into actionList
             DBHelper.get().getSkillAction(action.actionId)?.setActionData(action)
         }
         actions.forEach { action ->
-            //先检查dependAction
+            //check dependAction first
             if (action.dependActionId != 0) {
                 for (searched in actions) {
                     if (searched.actionId == action.dependActionId) {
                         action.dependAction = searched
-                        //添加childrenActions
+                        //Add childrenActions
                         if (searched.childrenAction == null) {
                             searched.childrenAction = mutableListOf()
                         }
@@ -185,9 +185,9 @@ class Skill(
         }
         actions.forEach { action ->
             action.buildParameter()
-            //如果是召唤技能还需要再读库
+            //If it is a summoning skill, need to read the database again
             if (action.parameter is SummonAction){
-                //我方召唤物
+                //friendly minion
                 if (enemySkillLevel == 0) {
                     action.parameter.actionDetail2.let { unitId ->
                         val minion = DBHelper.get().getUnitMinion(unitId)?.unitMinion
@@ -205,7 +205,7 @@ class Skill(
                         }
                     }
                 }
-                //敌方召唤物
+                //enemy minion
                 else {
                     action.parameter.actionDetail2.let { enemyId ->
                         var isDuplicate = false
@@ -291,8 +291,8 @@ class Skill(
         val actionId: Int,
         val dependActionId: Int
     ) {
-        var classId = 0
-        var actionType = 0
+        private var classId = 0
+        private var actionType = 0
         var actionDetail1 = 0
         var actionDetail2 = 0
         var actionDetail3 = 0
@@ -301,14 +301,14 @@ class Skill(
         var actionValue3 = 0.0
         var actionValue4 = 0.0
         var actionValue5 = 0.0
-        var actionValue6 = 0.0
-        var actionValue7 = 0.0
-        var targetAssignment = 0
-        var targetArea = 0
+        private var actionValue6 = 0.0
+        private var actionValue7 = 0.0
+        private var targetAssignment = 0
+        private var targetArea = 0
         var targetRange = 0
         var targetType = 0
-        var targetNumber = 0
-        var targetCount = 0
+        private var targetNumber = 0
+        private var targetCount = 0
 
         fun setActionData(
             classId: Int,

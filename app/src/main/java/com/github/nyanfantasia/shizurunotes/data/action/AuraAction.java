@@ -51,19 +51,19 @@ public class AuraAction extends ActionParameter {
 
         public String description(){
             switch (this){
-                case atk: return PropertyKey.atk.description();
-                case def: return PropertyKey.def.description();
-                case magicStr: return PropertyKey.magicStr.description();
-                case magicDef: return PropertyKey.magicDef.description();
-                case dodge: return PropertyKey.dodge.description();
-                case physicalCritical: return PropertyKey.physicalCritical.description();
-                case magicalCritical: return PropertyKey.magicCritical.description();
-                case energyRecoverRate: return PropertyKey.energyRecoveryRate.description();
-                case lifeSteal: return PropertyKey.lifeSteal.description();
+                case atk: return PropertyKey.Atk.description();
+                case def: return PropertyKey.Def.description();
+                case magicStr: return PropertyKey.MagicStr.description();
+                case magicDef: return PropertyKey.MagicDef.description();
+                case dodge: return PropertyKey.Dodge.description();
+                case physicalCritical: return PropertyKey.PhysicalCritical.description();
+                case magicalCritical: return PropertyKey.MagicCritical.description();
+                case energyRecoverRate: return PropertyKey.EnergyRecoveryRate.description();
+                case lifeSteal: return PropertyKey.LifeSteal.description();
                 case moveSpeed: return I18N.getString(R.string.Move_Speed);
                 case physicalCriticalDamage: return I18N.getString(R.string.Physical_Critical_Damage);
                 case magicalCriticalDamage: return I18N.getString(R.string.Magical_Critical_Damage);
-                case accuracy: return PropertyKey.accuracy.description();
+                case accuracy: return PropertyKey.Accuracy.description();
                 case receivedCriticalDamage: return I18N.getString(R.string.Received_Critical_Damage);
                 case receivedDamage: return I18N.getString(R.string.received_damage);
                 case receivedPhysicalDamage: return I18N.getString(R.string.received_physical_damage);

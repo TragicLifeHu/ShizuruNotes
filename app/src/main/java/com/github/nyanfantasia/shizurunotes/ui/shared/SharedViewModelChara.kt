@@ -2,11 +2,11 @@ package com.github.nyanfantasia.shizurunotes.ui.shared
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.common.Statics
 import com.github.nyanfantasia.shizurunotes.data.*
 import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
 import com.github.nyanfantasia.shizurunotes.db.MasterUniqueEquipment
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 import kotlin.concurrent.thread
 
 class SharedViewModelChara : ViewModel() {

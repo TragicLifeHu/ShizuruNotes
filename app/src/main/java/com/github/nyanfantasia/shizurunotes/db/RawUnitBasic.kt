@@ -7,33 +7,33 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-@Suppress("PropertyName")
+@Suppress("PropertyName", "PrivatePropertyName")
 class RawUnitBasic {
     var unit_id = 0
-    var unit_conversion_id = 0
-    var unit_name: String? = null
-    var prefab_id = 0
-    var move_speed = 0
-    var search_area_width = 0
-    var atk_type = 0
-    var normal_atk_cast_time = 0.0
-    var guild_id = 0
-    var comment: String? = null
+    private var unit_conversion_id = 0
+    private var unit_name: String? = null
+    private var prefab_id = 0
+    private var move_speed = 0
+    private var search_area_width = 0
+    private var atk_type = 0
+    private var normal_atk_cast_time = 0.0
+    private var guild_id = 0
+    private var comment: String? = null
     var start_time: String? = null
     var age: String? = null
     var guild: String? = null
     var race: String? = null
     var height: String? = null
     var weight: String? = null
-    var birth_month: String? = null
-    var birth_day: String? = null
-    var blood_type: String? = null
-    var favorite: String? = null
-    var voice: String? = null
-    var catch_copy: String? = null
-    var self_text: String? = null
-    var actual_name: String? = null
-    var kana: String? = null
+    private var birth_month: String? = null
+    private var birth_day: String? = null
+    private var blood_type: String? = null
+    private var favorite: String? = null
+    private var voice: String? = null
+    private var catch_copy: String? = null
+    private var self_text: String? = null
+    private var actual_name: String? = null
+    private var kana: String? = null
     fun setCharaBasic(chara: Chara) {
         chara.charaId = unit_id / 100
         chara.unitId = unit_id

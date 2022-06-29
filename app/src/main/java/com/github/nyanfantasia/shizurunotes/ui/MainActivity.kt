@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun checkDbFile(): Boolean {
-        return FileUtils.checkFileAndSize(FileUtils.getDbFilePath(), 50)
+        return FileUtils.checkFileAndSize(FileUtils.dbFilePath, 50)
     }
 
     private fun loadData() {

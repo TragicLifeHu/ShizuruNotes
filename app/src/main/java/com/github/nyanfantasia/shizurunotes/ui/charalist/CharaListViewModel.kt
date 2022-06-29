@@ -36,10 +36,10 @@ class CharaListViewModel(
 
     val liveCharaList = MutableLiveData<List<Chara>>()
 
-    var selectedAttackType: String = "0"
-    var selectedPosition: String = "0"
-    var selectedSort: String = "0"
-    var isAsc: Boolean = false
+    private var selectedAttackType: String = "0"
+    private var selectedPosition: String = "0"
+    private var selectedSort: String = "0"
+    private var isAsc: Boolean = false
     var searchText: CharSequence = ""
 
     private val attackTypeMap = mapOf(
@@ -123,48 +123,48 @@ class CharaListViewModel(
                     valueB = b.searchAreaWidth
                 }
                 "2" -> {
-                    valueA = a.charaProperty.getAtk()
-                    valueB = b.charaProperty.getAtk()
+                    valueA = a.charaProperty.getAtk
+                    valueB = b.charaProperty.getAtk
                 }
                 "3" -> {
-                    valueA = a.charaProperty.getMagicStr()
-                    valueB = b.charaProperty.getMagicStr()
+                    valueA = a.charaProperty.getMagicStr
+                    valueB = b.charaProperty.getMagicStr
                 }
                 "4" -> {
-                    valueA = a.charaProperty.getPhysicalCritical()
-                    valueB = b.charaProperty.getPhysicalCritical()
+                    valueA = a.charaProperty.getPhysicalCritical
+                    valueB = b.charaProperty.getPhysicalCritical
                 }
                 "5" -> {
-                    valueA = a.charaProperty.getMagicCritical()
-                    valueB = b.charaProperty.getMagicCritical()
+                    valueA = a.charaProperty.getMagicCritical
+                    valueB = b.charaProperty.getMagicCritical
                 }
                 "6" -> {
-                    valueA = a.charaProperty.getDef()
-                    valueB = b.charaProperty.getDef()
+                    valueA = a.charaProperty.getDef
+                    valueB = b.charaProperty.getDef
                 }
                 "7" -> {
-                    valueA = a.charaProperty.getMagicDef()
-                    valueB = b.charaProperty.getMagicDef()
+                    valueA = a.charaProperty.getMagicDef
+                    valueB = b.charaProperty.getMagicDef
                 }
                 "8" -> {
-                    valueA = a.charaProperty.getHp()
-                    valueB = b.charaProperty.getHp()
+                    valueA = a.charaProperty.getHp
+                    valueB = b.charaProperty.getHp
                 }
                 "9" -> {
-                    valueA = a.charaProperty.effectivePhysicalHP
-                    valueB = b.charaProperty.effectivePhysicalHP
+                    valueA = a.charaProperty.effectivePhysicalHp
+                    valueB = b.charaProperty.effectivePhysicalHp
                 }
                 "10" -> {
-                    valueA = a.charaProperty.effectiveMagicalHP
-                    valueB = b.charaProperty.effectiveMagicalHP
+                    valueA = a.charaProperty.effectiveMagicalHp
+                    valueB = b.charaProperty.effectiveMagicalHp
                 }
                 "11" -> {
-                    valueA = a.charaProperty.getEnergyRecoveryRate()
-                    valueB = b.charaProperty.getEnergyRecoveryRate()
+                    valueA = a.charaProperty.getEnergyRecoveryRate
+                    valueB = b.charaProperty.getEnergyRecoveryRate
                 }
                 "12" -> {
-                    valueA = a.charaProperty.getEnergyReduceRate()
-                    valueB = b.charaProperty.getEnergyReduceRate()
+                    valueA = a.charaProperty.getEnergyReduceRate
+                    valueB = b.charaProperty.getEnergyReduceRate
                 }
                 "13" -> {
                     valueA = try {
@@ -227,17 +227,17 @@ class CharaListViewModel(
     private fun setSortValue(chara: Chara, sortValue: String) {
         when (sortValue) {
             "1" -> chara.sortValue = chara.searchAreaWidth.toString()
-            "2" -> chara.sortValue = chara.charaProperty.getAtk().toString()
-            "3" -> chara.sortValue = chara.charaProperty.getMagicStr().toString()
-            "4" -> chara.sortValue = chara.charaProperty.getPhysicalCritical().toString()
-            "5" -> chara.sortValue = chara.charaProperty.getMagicCritical().toString()
-            "6" -> chara.sortValue = chara.charaProperty.getDef().toString()
-            "7" -> chara.sortValue = chara.charaProperty.getMagicDef().toString()
-            "8" -> chara.sortValue = chara.charaProperty.getHp().toString()
-            "9" -> chara.sortValue = chara.charaProperty.effectivePhysicalHP.toString()
-            "10" -> chara.sortValue = chara.charaProperty.effectiveMagicalHP.toString()
-            "11" -> chara.sortValue = chara.charaProperty.getEnergyRecoveryRate().toString()
-            "12" -> chara.sortValue = chara.charaProperty.getEnergyReduceRate().toString()
+            "2" -> chara.sortValue = chara.charaProperty.atk.toString()
+            "3" -> chara.sortValue = chara.charaProperty.magicStr.toString()
+            "4" -> chara.sortValue = chara.charaProperty.physicalCritical.toString()
+            "5" -> chara.sortValue = chara.charaProperty.magicCritical.toString()
+            "6" -> chara.sortValue = chara.charaProperty.def.toString()
+            "7" -> chara.sortValue = chara.charaProperty.magicDef.toString()
+            "8" -> chara.sortValue = chara.charaProperty.hp.toString()
+            "9" -> chara.sortValue = chara.charaProperty.effectivePhysicalHp.toString()
+            "10" -> chara.sortValue = chara.charaProperty.effectiveMagicalHp.toString()
+            "11" -> chara.sortValue = chara.charaProperty.energyRecoveryRate.toString()
+            "12" -> chara.sortValue = chara.charaProperty.energyReduceRate.toString()
             "13" -> {
                 if (chara.actualName == "出雲 宮子" || chara.actualName == "出云宫子") {
                     chara.sortValue = I18N.getString(R.string.aged_s, chara.age)

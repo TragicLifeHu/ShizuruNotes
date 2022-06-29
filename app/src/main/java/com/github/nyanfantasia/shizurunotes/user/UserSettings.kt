@@ -5,9 +5,9 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.utils.FileUtils
 import com.github.nyanfantasia.shizurunotes.utils.JsonUtils
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -70,7 +70,7 @@ class UserSettings private constructor(
                         }
                     }
                 } catch (e: IOException) {
-                    LogUtils.file(LogUtils.E, "GetUserJson", e.message, e.stackTrace)
+                    LogUtils.file(LogUtils.E, "GetUserJson", e.message)
                 }
             }
             return stringBuilder.toString()
@@ -102,7 +102,7 @@ class UserSettings private constructor(
                     fos.write(json.toByteArray())
                 }
             } catch (e: IOException) {
-                LogUtils.file(LogUtils.E, "SaveUserJson", e.message, e.stackTrace)
+                LogUtils.file(LogUtils.E, "SaveUserJson", e.message)
             }
         }
     }

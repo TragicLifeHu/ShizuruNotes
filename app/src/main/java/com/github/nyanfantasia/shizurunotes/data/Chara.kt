@@ -2,11 +2,11 @@ package com.github.nyanfantasia.shizurunotes.data
 
 import android.text.format.DateFormat
 import androidx.annotation.DrawableRes
+import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.I18N
 import com.github.nyanfantasia.shizurunotes.data.action.PassiveAction
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
-import com.github.nyanfantasia.shizurunotes.utils.LogUtils
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
@@ -135,14 +135,14 @@ class Chara: Cloneable {
     fun getAllEquipmentProperty(rank: Int): Property {
         val property = Property()
         rankEquipments[rank]?.forEach {
-            property.plusEqual(it.getCeiledProperty())
+            property.plusEqual(it.getCeilProperty())
         }
         return property
     }
 
     val uniqueEquipmentProperty: Property
         get() {
-            return uniqueEquipment?.getCeiledProperty() ?: Property()
+            return uniqueEquipment?.getCeilProperty() ?: Property()
         }
 
     fun getPassiveSkillProperty(rarity: Int): Property {

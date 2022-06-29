@@ -73,4 +73,5 @@ dependencies {
     implementation 'com.github.lygttpod:SuperTextView:2.4.2'
     implementation 'com.afollestad.material-dialogs:core:3.3.0'
     implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+    implementation 'com.blankj:utilcodex:1.31.0'
 }

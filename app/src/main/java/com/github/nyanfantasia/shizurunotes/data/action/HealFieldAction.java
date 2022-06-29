@@ -19,7 +19,7 @@ public class HealFieldAction extends ActionParameter {
     @Override
     protected void childInit() {
         super.childInit();
-        healClass = actionDetail1 % 2 == 0 ? ClassModifier.magical : ClassModifier.physical;
+        healClass = actionDetail1 % 2 == 0 ? ClassModifier.magic : ClassModifier.physical;
         percentModifier = PercentModifier.parse(actionDetail2);
         if (actionDetail1 <= 2)
             fieldType = FieldType.normal;
@@ -27,13 +27,13 @@ public class HealFieldAction extends ActionParameter {
             fieldType = FieldType.repeat;
 
         switch (healClass){
-            case magical:
+            case magic:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.magicStr));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.MagicStr));
                 break;
             case physical:
                 actionValues.add(new ActionValue(actionValue1, actionValue2, null));
-                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.atk));
+                actionValues.add(new ActionValue(actionValue3, actionValue4, PropertyKey.Atk));
         }
         durationValues.add(new ActionValue(actionValue5, actionValue6, null));
     }
