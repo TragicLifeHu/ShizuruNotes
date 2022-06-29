@@ -709,12 +709,12 @@
     <string name="This_damage_type_is_judged_by_the_lower_defence_value_of_targeted_enemy">本傷害的類型會切換為目標防禦數值較低項的類型，再進行計算。</string>
     <string name="feared">恐慌狀態中</string>
     <string name="magic_defence_decreased">魔法防禦力降低狀態中</string>
-    <string name="short_physical_atk">物攻 %s</string>
-    <string name="short_physical_def">物防 %s</string>
-    <string name="short_magical_atk">魔攻 %s</string>
-    <string name="short_magical_def">魔防 %s</string>
+    <string name="short_physical_atk">物攻\n%s</string>
+    <string name="short_physical_def">物防\n%s</string>
+    <string name="short_magical_atk">魔攻\n%s</string>
+    <string name="short_magical_def">魔防\n%s</string>
     <string name="short_hp">HP %s</string>
-    <string name="short_energy_recovery">TP上 %s</string>
+    <string name="short_energy_recovery">TP上\n%s</string>
     <string name="level_d1_rank_d2">Lv %1$d        Rank %2$d</string>
     <string name="HP_Regeneration_Down">HP回復量減少</string>
     <string name="Damage_By_Behaviour">行動時受到傷害</string>
