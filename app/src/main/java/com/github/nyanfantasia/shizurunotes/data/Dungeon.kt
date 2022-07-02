@@ -13,7 +13,7 @@ class Dungeon(
         if (mode == 0) {
             ""
         } else {
-            "MODE$mode"
+            "MODE $mode"
         }
     }
 }

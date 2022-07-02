@@ -10,13 +10,13 @@ class ToadAction : ActionParameter() {
     private var durationValues: MutableList<ActionValue> = ArrayList()
     override fun childInit() {
         super.childInit()
-        durationValues.add(ActionValue(actionValue1, actionValue2, null))
+        durationValues.add(ActionValue(actionValue1!!, actionValue2!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Polymorph_s1_for_s2_sec,
-            targetParameter.buildTargetClause(),
+            targetParameter!!.buildTargetClause(),
             buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)
         )
     }

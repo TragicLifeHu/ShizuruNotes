@@ -15,13 +15,13 @@ class LoopMotionRepeatAction : ActionParameter() {
             getString(R.string.use_d_after_break, actionDetail3 % 10)
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         val mainClause = getString(
             R.string.Repeat_effect_d1_every_s2_sec_up_to_s3_sec_break_if_taken_more_than_s4_damage,
             actionDetail1 % 10,
-            actionValue2.valueString(),
-            actionValue1.valueString(),
-            actionValue3.valueString()
+            actionValue2!!.valueString(),
+            actionValue1!!.valueString(),
+            actionValue3!!.valueString()
         )
         return if (successClause != null && failureClause != null) mainClause + successClause + failureClause else if (successClause != null) mainClause + successClause else if (failureClause != null) mainClause + failureClause else mainClause
     }

@@ -6,10 +6,10 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 
 class IgnoreDecoyAction : ActionParameter() {
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Ignore_the_other_units_taunt_when_attacking_s,
-            targetParameter.buildTargetClause()
+            targetParameter!!.buildTargetClause()
         )
     }
 }

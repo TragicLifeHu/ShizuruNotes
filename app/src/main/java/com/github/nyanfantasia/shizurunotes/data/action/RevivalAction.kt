@@ -5,17 +5,16 @@ import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 import com.github.nyanfantasia.shizurunotes.data.Property
 import kotlin.math.roundToInt
 
-@Suppress("EnumEntryName")
 class RevivalAction : ActionParameter() {
     internal enum class RevivalType(val value: Int) {
-        unknown(0), normal(1), phoenix(2);
+        Unknown(0), Normal(1), Phoenix(2);
 
         companion object {
             fun parse(value: Int): RevivalType {
                 for (item in values()) {
                     if (item.value == value) return item
                 }
-                return unknown
+                return Unknown
             }
         }
     }
@@ -25,11 +24,11 @@ class RevivalAction : ActionParameter() {
         revivalType = RevivalType.parse(actionDetail1)
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String? {
         return when (revivalType) {
-            RevivalType.normal -> getString(
+            RevivalType.Normal -> getString(
                 R.string.Revive_s1_with_d2_HP,
-                targetParameter.buildTargetClause(), (actionValue2.value * 100).roundToInt()
+                targetParameter!!.buildTargetClause(), (actionValue2!!.value * 100).roundToInt()
             )
             else -> super.localizedDetail(level, property)
         }

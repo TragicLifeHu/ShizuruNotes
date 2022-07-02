@@ -6,7 +6,7 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 
 class ChangeBodyWidthAction : ActionParameter() {
 
-    override fun localizedDetail(level: Int, property: Property): String {
-        return getString(R.string.Change_body_width_to_s, actionValue1.valueString())
+    override fun localizedDetail(level: Int, property: Property?): String {
+        return getString(R.string.Change_body_width_to_s, actionValue1!!.valueString())
     }
 }

@@ -5,16 +5,15 @@ import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 import com.github.nyanfantasia.shizurunotes.data.Property
 import java.math.RoundingMode
 
-@Suppress("EnumEntryName")
 class DispelAction : ActionParameter() {
     enum class DispelType(val value: Int) {
-        unknown(0), buff(1), debuff(2), barriers(10);
+        Unknown(0), Buff(1), Debuff(2), Barriers(10);
 
         fun description(): String {
             return when (this) {
-                buff -> getString(R.string.buffs)
-                debuff -> getString(R.string.debuffs)
-                barriers -> getString(R.string.barriers)
+                Buff -> getString(R.string.buffs)
+                Debuff -> getString(R.string.debuffs)
+                Barriers -> getString(R.string.barriers)
                 else -> getString(R.string.unknown)
             }
         }
@@ -24,7 +23,7 @@ class DispelAction : ActionParameter() {
                 for (item in values()) {
                     if (item.value == value) return item
                 }
-                return unknown
+                return Unknown
             }
         }
     }
@@ -34,14 +33,14 @@ class DispelAction : ActionParameter() {
     override fun childInit() {
         super.childInit()
         dispelType = DispelType.parse(actionDetail1)
-        chanceValues.add(ActionValue(actionValue1, actionValue2, null))
+        chanceValues.add(ActionValue(actionValue1!!, actionValue2!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Clear_all_s1_on_s2_with_chance_s3,
             dispelType!!.description(),
-            targetParameter.buildTargetClause(),
+            targetParameter!!.buildTargetClause(),
             buildExpression(level, chanceValues, RoundingMode.UNNECESSARY, property)
         )
     }

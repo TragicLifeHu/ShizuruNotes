@@ -6,10 +6,10 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 
 class MovePartsAction : ActionParameter() {
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Move_Part_d1_d2_forward_then_return,
-            actionValue4.value.toInt(), (-actionValue1.value).toInt()
+            actionValue4!!.value.toInt(), (-actionValue1!!.value).toInt()
         )
     }
 }

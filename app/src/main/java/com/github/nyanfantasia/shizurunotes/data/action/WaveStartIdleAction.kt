@@ -6,10 +6,10 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 
 class WaveStartIdleAction : ActionParameter() {
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Appear_after_s_sec_since_wave_start,
-            actionValue1.valueString()
+            actionValue1!!.valueString()
         )
     }
 }

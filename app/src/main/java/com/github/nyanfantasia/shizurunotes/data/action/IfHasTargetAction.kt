@@ -4,7 +4,7 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 
 class IfHasTargetAction : ActionParameter() {
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String? {
         return super.localizedDetail(level, property)
     }
 }

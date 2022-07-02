@@ -23,7 +23,7 @@ class LogTextFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLogTextBinding.inflate(inflater, container, false).apply {
             logText = args.logText
         }
@@ -44,7 +44,7 @@ class LogTextFragment : Fragment() {
         toolbar.setOnMenuItemClickListener {
             when(it.itemId) {
                 R.id.menu_copy -> {
-                    val clipboard = getSystemService<ClipboardManager>(requireContext(), ClipboardManager::class.java)
+                    val clipboard = getSystemService(requireContext(), ClipboardManager::class.java)
                     val clip = ClipData.newPlainText("logText", args.logText)
                     clipboard?.setPrimaryClip(clip)
                     Snackbar

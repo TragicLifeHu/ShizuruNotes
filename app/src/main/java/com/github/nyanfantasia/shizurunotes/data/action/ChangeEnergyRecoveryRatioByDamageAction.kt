@@ -21,12 +21,12 @@ class ChangeEnergyRecoveryRatioByDamageAction : ActionParameter() {
             return childrenActionString.toString()
         }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.change_energy_recovery_ratio_of_action_s1_to_s2_when_s3_get_damage,
             childrenActionString,
-            actionValue1.valueString(),
-            targetParameter.buildTargetClause()
+            actionValue1!!.valueString(),
+            targetParameter!!.buildTargetClause()
         )
     }
 }

@@ -11,14 +11,14 @@ class FearAction : ActionParameter() {
     private var chanceValues: MutableList<ActionValue> = ArrayList()
     override fun childInit() {
         super.childInit()
-        durationValues.add(ActionValue(actionValue1, actionValue2, null))
-        chanceValues.add(ActionValue(actionValue3, actionValue4, null))
+        durationValues.add(ActionValue(actionValue1!!, actionValue2!!, null))
+        chanceValues.add(ActionValue(actionValue3!!, actionValue4!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Fear_s1_with_s2_chance_for_s3_sec,
-            targetParameter.buildTargetClause(),
+            targetParameter!!.buildTargetClause(),
             buildExpression(level, chanceValues, RoundingMode.UNNECESSARY, property),
             buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)
         )

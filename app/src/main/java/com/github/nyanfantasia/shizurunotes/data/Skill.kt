@@ -56,7 +56,7 @@ class Skill(
         EX4_EVO("E4+"),
         EX5("E5"),
         EX5_EVO("E5+"),
-        SP_UB("SPUB"),
+        SP_UB("SP UB"),
         UNKNOWN("");
 
         fun description(): String {
@@ -264,9 +264,9 @@ class Skill(
             var original = actions[i].parameter.localizedDetail(level, property)
             var result: List<MatchResult>? = null
             if (UserSettings.get().getExpression() == UserSettings.EXPRESSION_ORIGINAL) {
-                result = Regex("""##.+?##""").findAll(original).toList()
+                result = Regex("""##.+?##""").findAll(original.toString()).toList()
                 result.forEach {
-                    original = original.replace(it.value, it.value.replace("##", "  "))
+                    original = original!!.replace(it.value, it.value.replace("##", "  "))
                 }
             }
             builder.append(original)

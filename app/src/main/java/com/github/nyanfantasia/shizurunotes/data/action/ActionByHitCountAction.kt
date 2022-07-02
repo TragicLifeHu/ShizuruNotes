@@ -28,14 +28,14 @@ class ActionByHitCountAction : ActionParameter() {
     private var durationValues: MutableList<ActionValue> = ArrayList()
     override fun childInit() {
         conditionType = ConditionType.parse(actionDetail1)
-        durationValues.add(ActionValue(actionValue3, actionValue4, null))
+        durationValues.add(ActionValue(actionValue3!!, actionValue4!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
-        val limitation: String = if (actionValue5.value > 0) {
+    override fun localizedDetail(level: Int, property: Property?): String? {
+        val limitation: String = if (actionValue5!!.value > 0) {
             getString(
                 R.string.max_s_times,
-                roundIfNeed(actionValue5.value)
+                roundIfNeed(actionValue5!!.value)
             )
         } else {
             ""
@@ -45,7 +45,7 @@ class ActionByHitCountAction : ActionParameter() {
                 R.string.Use_d1_s2_every_s3_hits_in_next_s4_sec,
                 actionDetail2 % 10,
                 limitation,
-                roundIfNeed(actionValue1.value),
+                roundIfNeed(actionValue1!!.value),
                 buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)
             )
             else -> super.localizedDetail(level, property)

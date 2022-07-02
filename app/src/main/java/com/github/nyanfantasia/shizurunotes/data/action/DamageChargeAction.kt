@@ -7,13 +7,13 @@ import java.math.RoundingMode
 
 class DamageChargeAction : ActionParameter() {
     override fun childInit() {
-        actionValues.add(ActionValue(actionValue1, actionValue2, null))
+        actionValues.add(ActionValue(actionValue1!!, actionValue2!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Charge_for_s1_sec_and_deal_s2_damage_taken_additional_damage_on_the_next_effect,
-            actionValue3.valueString(), buildExpression(level, RoundingMode.UNNECESSARY, property)
+            actionValue3!!.valueString(), buildExpression(level, RoundingMode.UNNECESSARY, property)
         )
     }
 }

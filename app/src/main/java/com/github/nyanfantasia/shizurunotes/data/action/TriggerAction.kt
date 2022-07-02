@@ -37,44 +37,44 @@ class TriggerAction : ActionParameter() {
         triggerType = TriggerType.parse(actionDetail1)
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String? {
         return when (triggerType) {
             TriggerType.hp -> getString(
                 R.string.Trigger_HP_is_below_d,
-                actionValue3.value.roundToInt()
+                actionValue3!!.value.roundToInt()
             )
             TriggerType.limitTime -> getString(
                 R.string.Trigger_Left_time_is_below_s_sec,
-                actionValue3.value.roundToInt()
+                actionValue3!!.value.roundToInt()
             )
             TriggerType.damage -> getString(
                 R.string.Trigger_d_on_damaged,
-                actionValue1.value.roundToInt()
+                actionValue1!!.value.roundToInt()
             )
             TriggerType.dead -> getString(
                 R.string.Trigger_d_on_dead,
-                actionValue1.value.roundToInt()
+                actionValue1!!.value.roundToInt()
             )
             TriggerType.critical -> getString(
                 R.string.Trigger_d_on_critical_damaged,
-                actionValue1.value.roundToInt()
+                actionValue1!!.value.roundToInt()
             )
             TriggerType.stealthFree -> getString(
                 R.string.Trigger_d_on_stealth,
-                actionValue1.value.roundToInt()
+                actionValue1!!.value.roundToInt()
             )
             TriggerType.Break -> getString(
                 R.string.Trigger_d1_on_break_and_last_for_s2_sec,
-                actionValue1.value.roundToInt(),
-                actionValue3.value
+                actionValue1!!.value.roundToInt(),
+                actionValue3!!.value
             )
             TriggerType.dot -> getString(
                 R.string.Trigger_d_on_dot_damaged,
-                actionValue1.value.roundToInt()
+                actionValue1!!.value.roundToInt()
             )
             TriggerType.allBreak -> getString(
                 R.string.Trigger_d_on_all_targets_break,
-                actionValue1.value.roundToInt()
+                actionValue1!!.value.roundToInt()
             )
             else -> super.localizedDetail(level, property)
         }

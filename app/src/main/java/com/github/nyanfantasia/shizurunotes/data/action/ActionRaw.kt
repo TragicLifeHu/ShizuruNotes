@@ -2,8 +2,8 @@ package com.github.nyanfantasia.shizurunotes.data.action
 
 class ActionRaw     //public String description;
     (var actionId: Int, var dependAction: Int) {
-    var classId = 0
-    var actionType = 0
+    private var classId = 0
+    private var actionType = 0
     var actionDetail1 = 0
     var actionDetail2 = 0
     var actionDetail3 = 0
@@ -14,12 +14,12 @@ class ActionRaw     //public String description;
     var actionValue5 = 0.0
     var actionValue6 = 0.0
     var actionValue7 = 0.0
-    var targetAssignment = 0
-    var targetArea = 0
+    private var targetAssignment = 0
+    private var targetArea = 0
     var targetRange = 0
     var targetType = 0
-    var targetNumber = 0
-    var targetCount = 0
+    private var targetNumber = 0
+    private var targetCount = 0
     fun setActionData(
         classId: Int,
         actionType: Int,

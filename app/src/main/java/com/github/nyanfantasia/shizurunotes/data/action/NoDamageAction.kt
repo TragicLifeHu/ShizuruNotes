@@ -5,15 +5,14 @@ import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 import com.github.nyanfantasia.shizurunotes.data.Property
 import java.math.RoundingMode
 
-@Suppress("EnumEntryName")
 class NoDamageAction : ActionParameter() {
     internal enum class NoDamageType(val value: Int) {
-        unknown(0),
-        noDamage(1),
-        dodgePhysics(2),
-        dodgeAll(3),
-        abnormal(4),
-        debuff(5),
+        Unknown(0),
+        NoDamage(1),
+        DodgePhysics(2),
+        DodgeAll(3),
+        Abnormal(4),
+        Debuff(5),
         Break(6);
 
         companion object {
@@ -21,7 +20,7 @@ class NoDamageAction : ActionParameter() {
                 for (item in values()) {
                     if (item.value == value) return item
                 }
-                return unknown
+                return Unknown
             }
         }
     }
@@ -29,24 +28,24 @@ class NoDamageAction : ActionParameter() {
     private var noDamageType: NoDamageType? = null
     override fun childInit() {
         noDamageType = NoDamageType.parse(actionDetail1)
-        actionValues.add(ActionValue(actionValue1, actionValue2, null))
+        actionValues.add(ActionValue(actionValue1!!, actionValue2!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String? {
         return when (noDamageType) {
-            NoDamageType.noDamage -> getString(
+            NoDamageType.NoDamage -> getString(
                 R.string.Make_s1_to_be_invulnerable_for_s2_sec,
-                targetParameter.buildTargetClause(),
+                targetParameter!!.buildTargetClause(),
                 buildExpression(level, RoundingMode.UNNECESSARY, property)
             )
-            NoDamageType.dodgePhysics -> getString(
+            NoDamageType.DodgePhysics -> getString(
                 R.string.Make_s1_to_be_invulnerable_to_physical_damage_for_s2_sec,
-                targetParameter.buildTargetClause(),
+                targetParameter!!.buildTargetClause(),
                 buildExpression(level, RoundingMode.UNNECESSARY, property)
             )
             NoDamageType.Break -> getString(
                 R.string.Make_s1_to_be_invulnerable_to_break_for_s2_sec,
-                targetParameter.buildTargetClause(),
+                targetParameter!!.buildTargetClause(),
                 buildExpression(level, RoundingMode.UNNECESSARY, property)
             )
             else -> super.localizedDetail(level, property)

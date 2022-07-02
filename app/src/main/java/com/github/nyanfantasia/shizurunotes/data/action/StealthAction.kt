@@ -6,7 +6,7 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 
 class StealthAction : ActionParameter() {
 
-    override fun localizedDetail(level: Int, property: Property): String {
-        return getString(R.string.Stealth_for_s_sec, actionValue1.valueString())
+    override fun localizedDetail(level: Int, property: Property?): String {
+        return getString(R.string.Stealth_for_s_sec, actionValue1!!.valueString())
     }
 }

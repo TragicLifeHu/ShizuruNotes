@@ -10,11 +10,11 @@ class AccumulativeDamageAction : ActionParameter() {
     private val stackValues: MutableList<ActionValue> = ArrayList()
     override fun childInit() {
         super.childInit()
-        actionValues.add(ActionValue(actionValue2, actionValue3, null))
-        stackValues.add(ActionValue(actionValue4, actionValue5, null))
+        actionValues.add(ActionValue(actionValue2!!, actionValue3!!, null))
+        stackValues.add(ActionValue(actionValue4!!, actionValue5!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Add_additional_s1_damage_per_attack_with_max_s2_stacks_to_current_target,
             buildExpression(level, property),

@@ -45,7 +45,7 @@ class CharaListViewModel(
     private val attackTypeMap = mapOf(
         0 to I18N.getString(R.string.ui_chip_any),
         1 to I18N.getString(R.string.ui_chip_atk_type_physical),
-        2 to I18N.getString(R.string.ui_chip_atk_type_magical)
+        2 to I18N.getString(R.string.ui_chip_atk_type_magic)
     )
 
     private val positionMap = mapOf(
@@ -59,11 +59,11 @@ class CharaListViewModel(
         0 to I18N.getString(R.string.ui_chip_sort_new),
         1 to I18N.getString(R.string.ui_chip_sort_position),
         2 to I18N.getString(R.string.ui_chip_sort_physical_atk),
-        3 to I18N.getString(R.string.ui_chip_sort_magical_atk),
+        3 to I18N.getString(R.string.ui_chip_sort_magic_atk),
         4 to I18N.getString(R.string.ui_chip_sort_physical_critical),
         5 to I18N.getString(R.string.ui_chip_sort_magical_critical),
         6 to I18N.getString(R.string.ui_chip_sort_physical_def),
-        7 to I18N.getString(R.string.ui_chip_sort_magical_def),
+        7 to I18N.getString(R.string.ui_chip_sort_magic_def),
         8 to I18N.getString(R.string.ui_chip_sort_hp),
         9 to I18N.getString(R.string.ui_chip_sort_effective_physical_hp),
         10 to I18N.getString(R.string.ui_chip_sort_effective_magical_hp),

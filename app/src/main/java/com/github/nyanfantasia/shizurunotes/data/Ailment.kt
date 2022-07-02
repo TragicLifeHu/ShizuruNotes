@@ -3,7 +3,6 @@ package com.github.nyanfantasia.shizurunotes.data
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 
-@Suppress("EnumEntryName")
 class Ailment(type: Int, detail: Int) {
     inner class AilmentDetail {
         @JvmField
@@ -31,23 +30,23 @@ class Ailment(type: Int, detail: Int) {
     }
 
     enum class DotDetail(val value: Int) {
-        detain(0),
-        poison(1),
-        burn(2),
-        curse(3),
-        violentPoison(4),
-        hex(5),
-        compensation(6),
-        unknown(-1);
+        Detain(0),
+        Poison(1),
+        Burn(2),
+        Curse(3),
+        ViolentPoison(4),
+        Hex(5),
+        Compensation(6),
+        Unknown(-1);
 
         fun description(): String {
             return when (this) {
-                detain -> getString(R.string.Detain_Damage)
-                poison -> getString(R.string.Poison)
-                burn -> getString(R.string.Burn)
-                curse -> getString(R.string.Curse)
-                violentPoison -> getString(R.string.Violent_Poison)
-                hex -> getString(R.string.Hex)
+                Detain -> getString(R.string.Detain_Damage)
+                Poison -> getString(R.string.Poison)
+                Burn -> getString(R.string.Burn)
+                Curse -> getString(R.string.Curse)
+                ViolentPoison -> getString(R.string.Violent_Poison)
+                Hex -> getString(R.string.Hex)
                 else -> getString(R.string.Unknown)
             }
         }
@@ -57,18 +56,18 @@ class Ailment(type: Int, detail: Int) {
                 for (item in values()) {
                     if (item.value == value) return item
                 }
-                return unknown
+                return Unknown
             }
         }
     }
 
     enum class CharmDetail(val value: Int) {
-        charm(0), confuse(1);
+        Charm(0), Confuse(1);
 
         fun description(): String {
             return when {
-                this == charm -> getString(R.string.Charm)
-                this == confuse -> getString(R.string.Confuse)
+                this == Charm -> getString(R.string.Charm)
+                this == Confuse -> getString(R.string.Confuse)
                 else -> getString(R.string.Unknown)
             }
         }
@@ -84,32 +83,32 @@ class Ailment(type: Int, detail: Int) {
     }
 
     enum class ActionDetail(val value: Int) {
-        slow(1),
-        haste(2),
-        paralyse(3),
-        freeze(4),
-        bind(5),
-        sleep(6),
-        stun(7),
-        petrify(8),
-        detain(9),
-        faint(10),
-        timeStop(11),
-        unknown(12);
+        Slow(1),
+        Haste(2),
+        Paralyse(3),
+        Freeze(4),
+        Bind(5),
+        Sleep(6),
+        Stun(7),
+        Petrify(8),
+        Detain(9),
+        Faint(10),
+        TimeStop(11),
+        Unknown(12);
 
         fun description(): String {
             return when (this) {
-                slow -> getString(R.string.Slow)
-                haste -> getString(R.string.Haste)
-                paralyse -> getString(R.string.Paralyse)
-                freeze -> getString(R.string.Freeze)
-                bind -> getString(R.string.Bind)
-                sleep -> getString(R.string.Sleep)
-                stun -> getString(R.string.Stun)
-                petrify -> getString(R.string.Petrify)
-                detain -> getString(R.string.Detain)
-                faint -> getString(R.string.Faint)
-                timeStop -> getString(R.string.time_stop)
+                Slow -> getString(R.string.Slow)
+                Haste -> getString(R.string.Haste)
+                Paralyse -> getString(R.string.Paralyse)
+                Freeze -> getString(R.string.Freeze)
+                Bind -> getString(R.string.Bind)
+                Sleep -> getString(R.string.Sleep)
+                Stun -> getString(R.string.Stun)
+                Petrify -> getString(R.string.Petrify)
+                Detain -> getString(R.string.Detain)
+                Faint -> getString(R.string.Faint)
+                TimeStop -> getString(R.string.time_stop)
                 else -> getString(R.string.Unknown)
             }
         }
@@ -119,56 +118,56 @@ class Ailment(type: Int, detail: Int) {
                 for (item in values()) {
                     if (item.value == value) return item
                 }
-                return unknown
+                return Unknown
             }
         }
     }
 
     enum class AilmentType(val value: Int) {
-        knockBack(3),
-        action(8),
-        dot(9),
-        charm(11),
-        darken(12),
-        silence(13),
-        confuse(19),
-        instantDeath(30),
-        countBlind(56),
-        inhibitHeal(59),
-        attackSeal(60),
-        fear(61),
-        awe(62),
-        toad(69),
-        maxHP(70),
-        hPRegenerationDown(76),
-        damageTakenIncreased(78),
-        damageByBehaviour(79),
-        unknown(80);
+        KnockBack(3),
+        Action(8),
+        Dot(9),
+        Charm(11),
+        Darken(12),
+        Silence(13),
+        Confuse(19),
+        InstantDeath(30),
+        CountBlind(56),
+        InhibitHeal(59),
+        AttackSeal(60),
+        Fear(61),
+        Awe(62),
+        Toad(69),
+        MaxHp(70),
+        HpRegenerationDown(76),
+        DamageTakenIncreased(78),
+        DamageByBehaviour(79),
+        Unknown(80);
 
         fun description(): String {
             return when (this) {
-                knockBack -> getString(R.string.Knock_Back)
-                action -> getString(R.string.Action)
-                dot -> getString(R.string.Dot)
-                charm -> getString(R.string.Charm)
-                darken -> getString(R.string.Blind)
-                silence -> getString(R.string.Silence)
-                instantDeath -> getString(R.string.Instant_Death)
-                confuse -> getString(R.string.Confuse)
-                countBlind -> getString(R.string.Count_Blind)
-                inhibitHeal -> getString(R.string.Inhibit_Heal)
-                fear -> getString(R.string.Fear)
-                attackSeal -> getString(R.string.Seal)
-                awe -> getString(R.string.Awe)
-                toad -> getString(R.string.Polymorph)
-                maxHP -> getString(R.string.Changing_Max_HP)
-                hPRegenerationDown -> getString(
+                KnockBack -> getString(R.string.Knock_Back)
+                Action -> getString(R.string.Action)
+                Dot -> getString(R.string.Dot)
+                Charm -> getString(R.string.Charm)
+                Darken -> getString(R.string.Blind)
+                Silence -> getString(R.string.Silence)
+                InstantDeath -> getString(R.string.Instant_Death)
+                Confuse -> getString(R.string.Confuse)
+                CountBlind -> getString(R.string.Count_Blind)
+                InhibitHeal -> getString(R.string.Inhibit_Heal)
+                Fear -> getString(R.string.Fear)
+                AttackSeal -> getString(R.string.Seal)
+                Awe -> getString(R.string.Awe)
+                Toad -> getString(R.string.Polymorph)
+                MaxHp -> getString(R.string.Changing_Max_HP)
+                HpRegenerationDown -> getString(
                     R.string.HP_Regeneration_Down
                 )
-                damageTakenIncreased -> getString(
+                DamageTakenIncreased -> getString(
                     R.string.Damage_Taken_Increased
                 )
-                damageByBehaviour -> getString(
+                DamageByBehaviour -> getString(
                     R.string.Damage_By_Behaviour
                 )
                 else -> getString(R.string.Unknown_Effect)
@@ -180,7 +179,7 @@ class Ailment(type: Int, detail: Int) {
                 for (item in values()) {
                     if (item.value == value) return item
                 }
-                return unknown
+                return Unknown
             }
         }
     }
@@ -197,13 +196,13 @@ class Ailment(type: Int, detail: Int) {
     init {
         ailmentDetail = AilmentDetail()
         when (ailmentType) {
-            AilmentType.action -> ailmentDetail!!.setDetail(ActionDetail.parse(detail))
-            AilmentType.dot, AilmentType.damageByBehaviour -> ailmentDetail!!.setDetail(
+            AilmentType.Action -> ailmentDetail!!.setDetail(ActionDetail.parse(detail))
+            AilmentType.Dot, AilmentType.DamageByBehaviour -> ailmentDetail!!.setDetail(
                 DotDetail.parse(
                     detail
                 )
             )
-            AilmentType.charm -> ailmentDetail!!.setDetail(CharmDetail.parse(detail))
+            AilmentType.Charm -> ailmentDetail!!.setDetail(CharmDetail.parse(detail))
             else -> ailmentDetail = null
         }
     }

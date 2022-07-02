@@ -25,7 +25,7 @@ class ComparisonListViewModel(
     val attackTypeMap = mapOf(
         0 to I18N.getString(R.string.ui_chip_any),
         1 to I18N.getString(R.string.ui_chip_atk_type_physical),
-        2 to I18N.getString(R.string.ui_chip_atk_type_magical)
+        2 to I18N.getString(R.string.ui_chip_atk_type_magic)
     )
 
     val positionMap = mapOf(
@@ -39,9 +39,9 @@ class ComparisonListViewModel(
         0 to I18N.getString(R.string.ui_chip_sort_tp_up),
         1 to I18N.getString(R.string.ui_chip_sort_tp_reduce),
         2 to I18N.getString(R.string.ui_chip_sort_physical_atk),
-        3 to I18N.getString(R.string.ui_chip_sort_magical_atk),
+        3 to I18N.getString(R.string.ui_chip_sort_magic_atk),
         4 to I18N.getString(R.string.ui_chip_sort_physical_def),
-        5 to I18N.getString(R.string.ui_chip_sort_magical_def),
+        5 to I18N.getString(R.string.ui_chip_sort_magic_def),
         6 to I18N.getString(R.string.ui_chip_sort_physical_critical),
         7 to I18N.getString(R.string.ui_chip_sort_magical_critical),
         8 to I18N.getString(R.string.ui_chip_sort_hp)

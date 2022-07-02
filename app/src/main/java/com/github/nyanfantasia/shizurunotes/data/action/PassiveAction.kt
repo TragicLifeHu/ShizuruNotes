@@ -16,10 +16,10 @@ class PassiveAction : ActionParameter() {
             5 -> PropertyKey.MagicDef
             else -> PropertyKey.Unknown
         }
-        actionValues.add(ActionValue(actionValue2, actionValue3, null))
+        actionValues.add(ActionValue(actionValue2!!, actionValue3!!, null))
     }
 
-    override fun localizedDetail(level: Int, property: Property): String {
+    override fun localizedDetail(level: Int, property: Property?): String {
         return getString(
             R.string.Raise_s1_s2,
             buildExpression(level, property),
@@ -31,7 +31,7 @@ class PassiveAction : ActionParameter() {
         return Property.getPropertyWithKeyAndValue(
             null,
             propertyKey,
-            actionValue2.value + actionValue3.value * level
+            actionValue2!!.value + actionValue3!!.value * level
         )
     }
 }
