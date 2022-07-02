@@ -31,12 +31,12 @@ class NotificationManager private constructor(
         }
     }
 
-    var futureSchedule: MutableList<EventSchedule> = mutableListOf()
+    private var futureSchedule: MutableList<EventSchedule> = mutableListOf()
 
     private val notificationTypeMap = mapOf(
-        NORMAL_BEFORE to CampaignType.dropAmountNormal,
-        DUNGEON_BEFORE_2 to CampaignType.manaDungeon,
-        DUNGEON_BEFORE to CampaignType.manaDungeon,
+        NORMAL_BEFORE to CampaignType.DropAmountNormal,
+        DUNGEON_BEFORE_2 to CampaignType.ManaDungeon,
+        DUNGEON_BEFORE to CampaignType.ManaDungeon,
         HATSUNE_LAST to EventType.Hatsune,
         HATSUNE_LAST_HOUR to EventType.Hatsune,
         TOWER_LAST_HOUR to EventType.Tower
@@ -49,7 +49,7 @@ class NotificationManager private constructor(
         }
     }
 
-    fun refreshNotification() {
+    private fun refreshNotification() {
         futureSchedule.forEach {
             prepareAlarm(it, false)
         }
@@ -80,10 +80,10 @@ class NotificationManager private constructor(
     private fun prepareAlarm(eventSchedule: EventSchedule, cancel: Boolean) {
         if (eventSchedule is CampaignSchedule) {
             when (eventSchedule.campaignType) {
-                CampaignType.dropAmountNormal -> {
+                CampaignType.DropAmountNormal -> {
                     setOrCancelAlarm(eventSchedule, NORMAL_BEFORE, cancel)
                 }
-                CampaignType.manaDungeon -> {
+                CampaignType.ManaDungeon -> {
                     setOrCancelAlarm(eventSchedule, DUNGEON_BEFORE_2, cancel)
                     setOrCancelAlarm(eventSchedule, DUNGEON_BEFORE, cancel)
                 }

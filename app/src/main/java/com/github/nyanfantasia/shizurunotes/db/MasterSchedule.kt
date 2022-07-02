@@ -25,7 +25,7 @@ class MasterSchedule {
         }
         DBHelper.get().getHatsuneSchedule(null)?.forEach {
             scheduleList.add(EventSchedule(
-                it.event_id, it.title, EventType.Hatsune,
+                it.event_id, it.title!!, EventType.Hatsune,
                 LocalDateTime.parse(it.start_time, formatter),
                 LocalDateTime.parse(it.end_time, formatter)
             ))

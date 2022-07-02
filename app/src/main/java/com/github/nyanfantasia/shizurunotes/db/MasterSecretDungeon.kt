@@ -5,10 +5,12 @@ import com.github.nyanfantasia.shizurunotes.data.SecretDungeonSchedule
 object MasterSecretDungeon {
 
     fun getSecretDungeonSchedules(): List<SecretDungeonSchedule> {
-        val instances = DBHelper.get().getSecretDungeonSchedules().let { raws ->
+        val instances = DBHelper.get().getSecretDungeonSchedules().let { raw ->
             mutableListOf<SecretDungeonSchedule>().apply {
-                raws?.forEach { raw ->
-                    this.add(SecretDungeonSchedule(raw.dungeon_area_id, raw.start_time, raw.end_time))
+                raw?.forEach { raw ->
+                    this.add(SecretDungeonSchedule(raw.dungeon_area_id, raw.start_time!!,
+                        raw.end_time!!
+                    ))
                 }
             }
         }

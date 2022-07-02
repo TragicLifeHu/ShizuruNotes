@@ -16,11 +16,11 @@ class MasterHatsune {
                 schedule.event_id,
                 LocalDateTime.parse(schedule.start_time, formatter),
                 LocalDateTime.parse(schedule.end_time, formatter),
-                schedule.title
+                schedule.title!!
             )
             DBHelper.get().getHatsuneBattle(schedule.event_id)?.forEach { battle ->
                 DBHelper.get().getWaveGroupData(battle.wave_group_id_1)?.let {
-                    hatsuneStage.battleWaveGroupMap[battle.quest_name] = it.getWaveGroup(true).also { w ->
+                    hatsuneStage.battleWaveGroupMap[battle.quest_name!!] = it.getWaveGroup(true).also { w ->
                         if (hatsuneStage.enemyIcon == Statics.UNKNOWN_ICON) {
                             hatsuneStage.enemyIcon = w.enemyList[0].iconUrl
                         }

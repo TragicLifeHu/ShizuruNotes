@@ -302,6 +302,7 @@ class DBHelper private constructor(
      * @param sql
      * @return
      */
+    @Suppress("SameParameterValue")
     @SuppressLint("Range")
     private fun getIntStringMap(
         sql: String,

@@ -56,14 +56,14 @@ class RawResistData {
     var ailment_48 = 0
     var ailment_49 = 0
     var ailment_50 = 0
-    val resistData: Map<String, Int?>
+    val resistData: Map<String, Int>
         get() {
             if (ailmentMap == null) {
                 ailmentMap = get().ailmentMap
             }
-            val resultMap: MutableMap<String, Int?> = HashMap()
+            val resultMap: MutableMap<String, Int> = HashMap()
             for ((key, value) in ailmentMap!!) {
-                resultMap[value] = getValueFromObject(this, "ailment_$key") as Int?
+                resultMap[value] = getValueFromObject(this, "ailment_$key") as Int
             }
             return resultMap
         }

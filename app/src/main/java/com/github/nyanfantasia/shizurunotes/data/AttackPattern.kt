@@ -11,23 +11,11 @@ import com.github.nyanfantasia.shizurunotes.data.Skill.SkillClass
 class AttackPattern(
     var patternId: Int,
     var unitId: Int,
-    var loopStart: Int,
-    var loopEnd: Int,
-    var rawAttackPatterns: List<Int>
+    private var loopStart: Int,
+    private var loopEnd: Int,
+    private var rawAttackPatterns: List<Int>
 ) {
     var items: MutableList<AttackPatternItem> = ArrayList()
-
-    //    public AttackPattern setItems(){
-    //        items.clear();
-    //        for(int i = 0; i < rawAttackPatterns.size(); i++){
-    //            if (i >= loopEnd)
-    //                break;
-    //
-    //            int raw = rawAttackPatterns.get(i);
-    //            items.add(new AttackPatternItem(raw, getLoopText(i), ""));
-    //        }
-    //        return this;
-    //    }
 
     fun setItems(skills: List<Skill>, atkType: Int): AttackPattern {
         items.clear()

@@ -32,8 +32,8 @@ class MasterEquipment {
 
             equipmentMap[it.equipment_id] = Equipment(
                 it.equipment_id,
-                it.equipment_name,
-                it.description.replace("\\n", ""),
+                it.equipment_name!!,
+                it.description!!.replace("\\n", ""),
                 it.promotion_level,
                 it.craft_flg,
                 it.equipment_enhance_point,
@@ -42,7 +42,7 @@ class MasterEquipment {
                 it.max_equipment_enhance_level,
                 it.property,
                 enhanceProperty,
-                it.catalog,
+                it.catalog!!,
                 it.rarity
             )
         }
