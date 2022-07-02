@@ -1,12 +1,11 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.data.EquipmentPiece;
+import com.github.nyanfantasia.shizurunotes.data.EquipmentPiece
 
-public class RawEquipmentPiece {
-    public int equipment_id;
-    public String equipment_name;
-
-    public EquipmentPiece getEquipmentPiece() {
-        return new EquipmentPiece(equipment_id, equipment_name);
-    }
+@Suppress("PropertyName")
+class RawEquipmentPiece {
+    var equipment_id = 0
+    var equipment_name: String? = null
+    val equipmentPiece: EquipmentPiece
+        get() = EquipmentPiece(equipment_id, equipment_name!!)
 }

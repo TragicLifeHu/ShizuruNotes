@@ -1,76 +1,75 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.data.Property;
+import com.github.nyanfantasia.shizurunotes.data.Property
 
-public class RawEquipmentData {
-    public int equipment_id;
-    public String equipment_name;
-    public String description;
-    public int promotion_level;
-    public int craft_flg;
-    public int equipment_enhance_point;
-    public int sale_price;
-    public int require_level;
-    public int max_equipment_enhance_level;
-    public double hp;
-    public double atk;
-    public double magic_str;
-    public double def;
-    public double magic_def;
-    public double physical_critical;
-    public double magic_critical;
-    public double wave_hp_recovery;
-    public double wave_energy_recovery;
-    public double dodge;
-    public double physical_penetrate;
-    public double magic_penetrate;
-    public double life_steal;
-    public double hp_recovery_rate;
-    public double energy_recovery_rate;
-    public double energy_reduce_rate;
-    public double accuracy;
-    public String catalog;
-    public int rarity;
-    public int condition_equipment_id_1;
-    public int consume_num_1;
-    public int condition_equipment_id_2;
-    public int consume_num_2;
-    public int condition_equipment_id_3;
-    public int consume_num_3;
-    public int condition_equipment_id_4;
-    public int consume_num_4;
-    public int condition_equipment_id_5;
-    public int consume_num_5;
-    public int condition_equipment_id_6;
-    public int consume_num_6;
-    public int condition_equipment_id_7;
-    public int consume_num_7;
-    public int condition_equipment_id_8;
-    public int consume_num_8;
-    public int condition_equipment_id_9;
-    public int consume_num_9;
-    public int condition_equipment_id_10;
-    public int consume_num_10;
-
-    public Property getProperty(){
-        return new Property(
-                hp,
-                atk,
-                magic_str,
-                def,
-                magic_def,
-                physical_critical,
-                magic_critical,
-                wave_hp_recovery,
-                wave_energy_recovery,
-                dodge,
-                physical_penetrate,
-                magic_penetrate,
-                life_steal,
-                hp_recovery_rate,
-                energy_recovery_rate,
-                energy_reduce_rate,
-                accuracy
-        );
-    }
+@Suppress("PropertyName")
+class RawEquipmentData {
+    var equipment_id = 0
+    var equipment_name: String? = null
+    var description: String? = null
+    var promotion_level = 0
+    var craft_flg = 0
+    var equipment_enhance_point = 0
+    var sale_price = 0
+    var require_level = 0
+    var max_equipment_enhance_level = 0
+    var hp = 0.0
+    var atk = 0.0
+    var magic_str = 0.0
+    var def = 0.0
+    var magic_def = 0.0
+    var physical_critical = 0.0
+    var magic_critical = 0.0
+    var wave_hp_recovery = 0.0
+    var wave_energy_recovery = 0.0
+    var dodge = 0.0
+    var physical_penetrate = 0.0
+    var magic_penetrate = 0.0
+    var life_steal = 0.0
+    var hp_recovery_rate = 0.0
+    var energy_recovery_rate = 0.0
+    var energy_reduce_rate = 0.0
+    var accuracy = 0.0
+    var catalog: String? = null
+    var rarity = 0
+    var condition_equipment_id_1 = 0
+    var consume_num_1 = 0
+    var condition_equipment_id_2 = 0
+    var consume_num_2 = 0
+    var condition_equipment_id_3 = 0
+    var consume_num_3 = 0
+    var condition_equipment_id_4 = 0
+    var consume_num_4 = 0
+    var condition_equipment_id_5 = 0
+    var consume_num_5 = 0
+    var condition_equipment_id_6 = 0
+    var consume_num_6 = 0
+    var condition_equipment_id_7 = 0
+    var consume_num_7 = 0
+    var condition_equipment_id_8 = 0
+    var consume_num_8 = 0
+    var condition_equipment_id_9 = 0
+    var consume_num_9 = 0
+    var condition_equipment_id_10 = 0
+    var consume_num_10 = 0
+    val property: Property
+        get() = Property(
+            hp,
+            atk,
+            magic_str,
+            def,
+            magic_def,
+            physical_critical,
+            magic_critical,
+            wave_hp_recovery,
+            wave_energy_recovery,
+            dodge,
+            physical_penetrate,
+            magic_penetrate,
+            life_steal,
+            hp_recovery_rate,
+            energy_recovery_rate,
+            energy_reduce_rate,
+            accuracy
+        )
 }

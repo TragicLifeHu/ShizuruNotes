@@ -1,7 +1,8 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-public class RawSecretDungeonSchedule {
-    public int dungeon_area_id;
-    public String start_time;
-    public String end_time;
+@Suppress("PropertyName")
+class RawSecretDungeonSchedule {
+    var dungeon_area_id = 0
+    var start_time: String? = null
+    var end_time: String? = null
 }

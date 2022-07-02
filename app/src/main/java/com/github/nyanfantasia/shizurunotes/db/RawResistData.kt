@@ -1,78 +1,74 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.utils.Utils;
+import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
+import com.github.nyanfantasia.shizurunotes.utils.Utils.getValueFromObject
 
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class RawResistData {
-    public int resist_status_id;
-    public int ailment_1;
-    public int ailment_2;
-    public int ailment_3;
-    public int ailment_4;
-    public int ailment_5;
-    public int ailment_6;
-    public int ailment_7;
-    public int ailment_8;
-    public int ailment_9;
-    public int ailment_10;
-    public int ailment_11;
-    public int ailment_12;
-    public int ailment_13;
-    public int ailment_14;
-    public int ailment_15;
-    public int ailment_16;
-    public int ailment_17;
-    public int ailment_18;
-    public int ailment_19;
-    public int ailment_20;
-    public int ailment_21;
-    public int ailment_22;
-    public int ailment_23;
-    public int ailment_24;
-    public int ailment_25;
-    public int ailment_26;
-    public int ailment_27;
-    public int ailment_28;
-    public int ailment_29;
-    public int ailment_30;
-    public int ailment_31;
-    public int ailment_32;
-    public int ailment_33;
-    public int ailment_34;
-    public int ailment_35;
-    public int ailment_36;
-    public int ailment_37;
-    public int ailment_38;
-    public int ailment_39;
-    public int ailment_40;
-    public int ailment_41;
-    public int ailment_42;
-    public int ailment_43;
-    public int ailment_44;
-    public int ailment_45;
-    public int ailment_46;
-    public int ailment_47;
-    public int ailment_48;
-    public int ailment_49;
-    public int ailment_50;
-
-    public static Map<Integer, String> ailmentMap;
-
-    public Map<String, Integer> getResistData(){
-        if (ailmentMap == null){
-            ailmentMap = DBHelper.get().getAilmentMap();
+@Suppress("PropertyName")
+class RawResistData {
+    var resist_status_id = 0
+    var ailment_1 = 0
+    var ailment_2 = 0
+    var ailment_3 = 0
+    var ailment_4 = 0
+    var ailment_5 = 0
+    var ailment_6 = 0
+    var ailment_7 = 0
+    var ailment_8 = 0
+    var ailment_9 = 0
+    var ailment_10 = 0
+    var ailment_11 = 0
+    var ailment_12 = 0
+    var ailment_13 = 0
+    var ailment_14 = 0
+    var ailment_15 = 0
+    var ailment_16 = 0
+    var ailment_17 = 0
+    var ailment_18 = 0
+    var ailment_19 = 0
+    var ailment_20 = 0
+    var ailment_21 = 0
+    var ailment_22 = 0
+    var ailment_23 = 0
+    var ailment_24 = 0
+    var ailment_25 = 0
+    var ailment_26 = 0
+    var ailment_27 = 0
+    var ailment_28 = 0
+    var ailment_29 = 0
+    var ailment_30 = 0
+    var ailment_31 = 0
+    var ailment_32 = 0
+    var ailment_33 = 0
+    var ailment_34 = 0
+    var ailment_35 = 0
+    var ailment_36 = 0
+    var ailment_37 = 0
+    var ailment_38 = 0
+    var ailment_39 = 0
+    var ailment_40 = 0
+    var ailment_41 = 0
+    var ailment_42 = 0
+    var ailment_43 = 0
+    var ailment_44 = 0
+    var ailment_45 = 0
+    var ailment_46 = 0
+    var ailment_47 = 0
+    var ailment_48 = 0
+    var ailment_49 = 0
+    var ailment_50 = 0
+    val resistData: Map<String, Int?>
+        get() {
+            if (ailmentMap == null) {
+                ailmentMap = get().ailmentMap
+            }
+            val resultMap: MutableMap<String, Int?> = HashMap()
+            for ((key, value) in ailmentMap!!) {
+                resultMap[value] = getValueFromObject(this, "ailment_$key") as Int?
+            }
+            return resultMap
         }
 
-        Map<String, Integer> resultMap = new HashMap<>();
-        for (Map.Entry<Integer, String> entry: ailmentMap.entrySet()){
-            resultMap.put(
-                    entry.getValue(),
-                    (Integer) Utils.getValueFromObject(this, "ailment_" + entry.getKey())
-            );
-        }
-        return resultMap;
+    companion object {
+        var ailmentMap: Map<Int, String>? = null
     }
 }

@@ -1,50 +1,50 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.utils.Utils;
-import com.github.nyanfantasia.shizurunotes.data.EnemyRewardData;
-import com.github.nyanfantasia.shizurunotes.data.RewardData;
+import com.github.nyanfantasia.shizurunotes.utils.Utils.getValueFromObject
+import com.github.nyanfantasia.shizurunotes.data.EnemyRewardData
+import com.github.nyanfantasia.shizurunotes.data.RewardData
+import java.util.ArrayList
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class RawEnemyRewardData {
-    public int drop_reward_id;
-    public int drop_count;
-    public int reward_type_1;
-    public int reward_id_1;
-    public int reward_num_1;
-    public int odds_1;
-    public int reward_type_2;
-    public int reward_id_2;
-    public int reward_num_2;
-    public int odds_2;
-    public int reward_type_3;
-    public int reward_id_3;
-    public int reward_num_3;
-    public int odds_3;
-    public int reward_type_4;
-    public int reward_id_4;
-    public int reward_num_4;
-    public int odds_4;
-    public int reward_type_5;
-    public int reward_id_5;
-    public int reward_num_5;
-    public int odds_5;
-
-    public EnemyRewardData getEnemyRewardData() {
-        List<RewardData> rewardDataList = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
-            int rewardId = (int)Utils.getValueFromObject(this, "reward_id_" + i);
-            if (rewardId != 0) {
-                rewardDataList.add(new RewardData(
-                        (int)Utils.getValueFromObject(this, "reward_type_" + i),
-                        rewardId,
-                        (int)Utils.getValueFromObject(this, "reward_num_" + i),
-                        (int)Utils.getValueFromObject(this, "odds_" + i)
-                ));
+@Suppress("PropertyName")
+class RawEnemyRewardData {
+    var drop_reward_id = 0
+    var drop_count = 0
+    var reward_type_1 = 0
+    var reward_id_1 = 0
+    var reward_num_1 = 0
+    var odds_1 = 0
+    var reward_type_2 = 0
+    var reward_id_2 = 0
+    var reward_num_2 = 0
+    var odds_2 = 0
+    var reward_type_3 = 0
+    var reward_id_3 = 0
+    var reward_num_3 = 0
+    var odds_3 = 0
+    var reward_type_4 = 0
+    var reward_id_4 = 0
+    var reward_num_4 = 0
+    var odds_4 = 0
+    var reward_type_5 = 0
+    var reward_id_5 = 0
+    var reward_num_5 = 0
+    var odds_5 = 0
+    val enemyRewardData: EnemyRewardData
+        get() {
+            val rewardDataList: MutableList<RewardData> = ArrayList()
+            for (i in 1..5) {
+                val rewardId = getValueFromObject(this, "reward_id_$i") as Int
+                if (rewardId != 0) {
+                    rewardDataList.add(
+                        RewardData(
+                            getValueFromObject(this, "reward_type_$i") as Int,
+                            rewardId,
+                            getValueFromObject(this, "reward_num_$i") as Int,
+                            getValueFromObject(this, "odds_$i") as Int
+                        )
+                    )
+                }
             }
+            return EnemyRewardData(rewardDataList)
         }
-        return new EnemyRewardData(rewardDataList);
-    }
-
 }

@@ -219,7 +219,7 @@ class DBHelper private constructor(
             val data: List<T>? = cursor2List(cursor, theClass)
             return if (data?.isNotEmpty() == true) data[0] else null
         } catch (e: Exception) {
-            LogUtils.file(LogUtils.E, "getBeanByRaw", e.message)
+            LogUtils.file(LogUtils.E, "getBeanByRaw" + ":" + e.message, e.stackTrace)
             return null
         }
     }
@@ -241,7 +241,7 @@ class DBHelper private constructor(
                 readableDatabase.rawQuery(sql, null) ?: return null
             return cursor2List(cursor, theClass)
         } catch (e: Exception) {
-            LogUtils.file(LogUtils.E, "getBeanListByRaw", e.message)
+            LogUtils.file(LogUtils.E, "getBeanListByRaw" + ":" + e.message, e.stackTrace)
             return null
         }
     }

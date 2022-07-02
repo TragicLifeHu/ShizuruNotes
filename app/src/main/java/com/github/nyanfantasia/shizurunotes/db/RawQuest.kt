@@ -1,49 +1,56 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.data.Quest;
-import com.github.nyanfantasia.shizurunotes.data.WaveGroup;
+import com.github.nyanfantasia.shizurunotes.data.Quest
+import com.github.nyanfantasia.shizurunotes.data.WaveGroup
+import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
+import java.util.*
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class RawQuest {
-    public int quest_id;
-    public int area_id;
-    public String quest_name;
-    public int wave_group_id_1;
-    public int wave_group_id_2;
-    public int wave_group_id_3;
-    public int reward_image_1;
-    public int reward_image_2;
-    public int reward_image_3;
-    public int reward_image_4;
-    public int reward_image_5;
-
-    public Quest getQuest(){
-        List<WaveGroup> waveGroupList = new ArrayList<>();
-        List<RawWaveGroup> rawWaveGroupList = DBHelper.get().getWaveGroupData(new ArrayList<>(Arrays.asList(wave_group_id_1, wave_group_id_2, wave_group_id_3)));
-        if (rawWaveGroupList != null){
-            for (RawWaveGroup rawWaveGroup : rawWaveGroupList){
-                waveGroupList.add(rawWaveGroup.getWaveGroup(false));
+@Suppress("PropertyName", "PrivatePropertyName")
+class RawQuest {
+    private var quest_id = 0
+    private var area_id = 0
+    private var quest_name: String? = null
+    private var wave_group_id_1 = 0
+    private var wave_group_id_2 = 0
+    private var wave_group_id_3 = 0
+    private var reward_image_1 = 0
+    private var reward_image_2 = 0
+    private var reward_image_3 = 0
+    private var reward_image_4 = 0
+    private var reward_image_5 = 0
+    val quest: Quest
+        get() {
+            val waveGroupList: MutableList<WaveGroup> = ArrayList()
+            val rawWaveGroupList = get().getWaveGroupData(
+                ArrayList(
+                    listOf(
+                        wave_group_id_1,
+                        wave_group_id_2,
+                        wave_group_id_3
+                    )
+                )
+            )
+            if (rawWaveGroupList != null) {
+                for (rawWaveGroup in rawWaveGroupList) {
+                    waveGroupList.add(rawWaveGroup.getWaveGroup(false))
+                }
             }
+            val rewardImages = ArrayList<Int>()
+            if (reward_image_1 > 100000) {
+                rewardImages.add(reward_image_1)
+            }
+            if (reward_image_2 > 100000) {
+                rewardImages.add(reward_image_2)
+            }
+            if (reward_image_3 > 100000) {
+                rewardImages.add(reward_image_3)
+            }
+            if (reward_image_4 > 100000) {
+                rewardImages.add(reward_image_4)
+            }
+            if (reward_image_5 > 100000) {
+                rewardImages.add(reward_image_5)
+            }
+            return Quest(quest_id, area_id, quest_name!!, waveGroupList, rewardImages)
         }
-        ArrayList<Integer> rewardImages = new ArrayList<>();
-        if (reward_image_1 > 100000) {
-            rewardImages.add(reward_image_1);
-        }
-        if (reward_image_2 > 100000) {
-            rewardImages.add(reward_image_2);
-        }
-        if (reward_image_3 > 100000) {
-            rewardImages.add(reward_image_3);
-        }
-        if (reward_image_4 > 100000) {
-            rewardImages.add(reward_image_4);
-        }
-        if (reward_image_5 > 100000) {
-            rewardImages.add(reward_image_5);
-        }
-        return new Quest(quest_id, area_id, quest_name, waveGroupList, rewardImages);
-    }
 }

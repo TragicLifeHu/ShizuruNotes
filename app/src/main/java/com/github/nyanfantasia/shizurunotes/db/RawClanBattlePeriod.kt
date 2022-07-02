@@ -1,22 +1,21 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.data.ClanBattlePeriod;
+import com.github.nyanfantasia.shizurunotes.data.ClanBattlePeriod
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class RawClanBattlePeriod {
-    public int clan_battle_id;
-    public int release_month;
-    public String start_time;
-    public String end_time;
-
-    public ClanBattlePeriod transToClanBattlePeriod(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd H:mm:ss");
-        return new ClanBattlePeriod(
-                clan_battle_id,
-                LocalDateTime.parse(start_time, formatter),
-                LocalDateTime.parse(end_time, formatter)
-        );
+@Suppress("PropertyName")
+class RawClanBattlePeriod {
+    var clan_battle_id = 0
+    var release_month = 0
+    var start_time: String? = null
+    var end_time: String? = null
+    fun transToClanBattlePeriod(): ClanBattlePeriod {
+        val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd H:mm:ss")
+        return ClanBattlePeriod(
+            clan_battle_id,
+            LocalDateTime.parse(start_time, formatter),
+            LocalDateTime.parse(end_time, formatter)
+        )
     }
 }

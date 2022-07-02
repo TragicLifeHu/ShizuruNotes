@@ -1,8 +1,9 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-public class RawScheduleHatsune {
-    public int event_id;
-    public String title;
-    public String start_time;
-    public String end_time;
+@Suppress("PropertyName")
+class RawScheduleHatsune {
+    var event_id = 0
+    var title: String? = null
+    var start_time: String? = null
+    var end_time: String? = null
 }

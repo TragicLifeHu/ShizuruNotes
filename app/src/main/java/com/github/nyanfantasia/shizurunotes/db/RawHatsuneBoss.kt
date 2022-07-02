@@ -1,10 +1,11 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-public class RawHatsuneBoss {
-    public int event_id;
-    public int boss_id;
-    public int area_id;
-    public int difficulty;
-    public String quest_name;
-    public int wave_group_id_1;
+@Suppress("PropertyName")
+class RawHatsuneBoss {
+    var event_id = 0
+    var boss_id = 0
+    var area_id = 0
+    var difficulty = 0
+    var quest_name: String? = null
+    var wave_group_id_1 = 0
 }

@@ -1,42 +1,49 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-import com.github.nyanfantasia.shizurunotes.data.Dungeon;
-import com.github.nyanfantasia.shizurunotes.data.Enemy;
-import com.google.common.collect.Lists;
+import com.github.nyanfantasia.shizurunotes.data.Dungeon
+import com.github.nyanfantasia.shizurunotes.data.Enemy
+import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
+import com.google.common.collect.Lists
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class RawDungeon {
-    public int dungeon_area_id;
-    public String dungeon_name;
-    public String description;
-    public int mode;
-    public int wave_group_id;
-    public int enemy_id_1;
-    public int enemy_id_2;
-    public int enemy_id_3;
-    public int enemy_id_4;
-    public int enemy_id_5;
-
-    public Dungeon getDungeon(){
-        List<RawEnemy> rawEnemyList = DBHelper.get().getEnemy(Lists.newArrayList(enemy_id_1, enemy_id_2, enemy_id_3, enemy_id_4, enemy_id_5));
-        List<Enemy> enemyList = new ArrayList<>();
-        for (RawEnemy raw: rawEnemyList) {
-            enemyList.add(raw.getEnemy());
-        }
-        if (enemyList.size() > 0){
-            return new Dungeon(
+@Suppress("PropertyName", "PrivatePropertyName")
+class RawDungeon {
+    private var dungeon_area_id = 0
+    private var dungeon_name: String? = null
+    var description: String? = null
+    var mode = 0
+    private var wave_group_id = 0
+    private var enemy_id_1 = 0
+    private var enemy_id_2 = 0
+    private var enemy_id_3 = 0
+    private var enemy_id_4 = 0
+    private var enemy_id_5 = 0
+    val dungeon: Dungeon?
+        get() {
+            val rawEnemyList = get().getEnemy(
+                Lists.newArrayList(
+                    enemy_id_1,
+                    enemy_id_2,
+                    enemy_id_3,
+                    enemy_id_4,
+                    enemy_id_5
+                )
+            )
+            val enemyList: MutableList<Enemy> = ArrayList()
+            for (raw in rawEnemyList!!) {
+                enemyList.add(raw.enemy)
+            }
+            return if (enemyList.size > 0) {
+                Dungeon(
                     dungeon_area_id,
                     wave_group_id,
                     enemy_id_1,
                     mode,
-                    dungeon_name,
-                    description,
+                    dungeon_name!!,
+                    description!!,
                     enemyList
-            );
-        } else {
-            return null;
+                )
+            } else {
+                null
+            }
         }
-    }
 }

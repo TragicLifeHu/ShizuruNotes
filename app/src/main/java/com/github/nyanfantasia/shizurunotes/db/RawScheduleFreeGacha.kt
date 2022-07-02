@@ -1,13 +1,14 @@
-package com.github.nyanfantasia.shizurunotes.db;
+package com.github.nyanfantasia.shizurunotes.db
 
-public class RawScheduleFreeGacha {
-    public int id;
-    public int campaign_id;
-    public int freegacha_1;
-    public int freegacha_10;
-    public String start_time;
-    public String end_time;
-    public int stock_10_flag;
-    public int relation_id;
-    public int relation_count;
+@Suppress("PropertyName")
+class RawScheduleFreeGacha {
+    var id = 0
+    var campaign_id = 0
+    var freegacha_1 = 0
+    var freegacha_10 = 0
+    var start_time: String? = null
+    var end_time: String? = null
+    var stock_10_flag = 0
+    var relation_id = 0
+    var relation_count = 0
 }
