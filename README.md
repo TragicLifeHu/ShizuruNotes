@@ -8,7 +8,7 @@ It supports the server of Japan and Mainland China at present.
 * Android 8+ (Doesn't support Android Emulator lower than Android 8)
 
 ## Build
-Requires Android Studio Arctic Fox or later.  
+Better to use Android Studio Chipmunk (2021.2.1) or later.  
 
 Before executing build commands, you need to create a `local.properties` in project's root directory if it does not exist.
 
@@ -24,7 +24,8 @@ $ ./gradlew :app:assembleDebug
 ```
 
 #### Release Version App
-Use Android Studio's "Generate Signed Bundle / APK" function to complete this step
+Use Android Studio's "Generate Signed Bundle / APK" function to complete this step,  
+due to different structure between this repo and the original one.
 
 ## Features
 * Character 
@@ -38,11 +39,11 @@ Use Android Studio's "Generate Signed Bundle / APK" function to complete this st
 * Event Notification 
 * Rank Comparison   
 
-## Differences between the [Original ShizuruNotes](https://github.com/MalitsPlus/ShizuruNotes)
+## Differences between the [Original Repo](https://github.com/MalitsPlus/ShizuruNotes)
 * Better internationalization
-* Kotlin migration (Working)
-* Dependencies cleanup (Almost done)
-* TBD
+* Fully wrote in Kotlin (Although there maybe a lot of workaround because of the Database structure)
+* Dependencies all cleaned up, now no more third-party code exists
+* Use Jetpack Compose to build new UI (Working in my another repository, TBD)
 
 ## Localization  
 Japanese, English and Chinese fully supported, Korean partially supported.  

@@ -6,7 +6,8 @@
 * Android 8+ (由於系統需求，不支援低於 Android 8 的模擬器)
 
 ## 組建
-需要 Android Studio Arctic Fox 或更高版本.
+最好使用 Android Studio Chipmunk (2021.2.1) 或更高版本.  
+本專案已無法輕易使用 Eclipse 進行後續開發作業.  
 
 在組建之前，你可能需要在專案根目錄下新增一个名為 `local.properties` 的檔案 (如未找到).
 
@@ -22,7 +23,8 @@ $ ./gradlew :app:assembleDebug
 ```
 
 #### Release 版本 App
-請使用 Android Studio `Build` -> `Generate Signed Bundle / APK` 功能完成本作業. 
+由於專案結構對比原版進行修改，請使用 Android Studio `Build` -> `Generate Signed Bundle / APK` 功能完成本作業，   
+因本人能力問題造成的不便，敬請諒解.  
 
 ## 功能
 * 角色資料
@@ -59,5 +61,6 @@ $ ./gradlew :app:assembleDebug
 ## 安裝套件包
 [下載頁面](https://github.com/TragicLifeHu/ShizuruNotes/releases)  
 
-## 捐贈
-本專案因作為二次開發作品，暫不接受捐贈.
+## 支援開發
+本專案因作為二次開發作品，暫不接受捐贈.  
+如果你會使用完整的 PHP 語言，希望能與你討論台版 API 相關事項 (發布 issues).
