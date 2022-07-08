@@ -1,9 +1,9 @@
 {
-	"versionCode": "75",
-	"versionName": "1.16.1",
+	"versionCode": "76",
+	"versionName": "1.16.2",
 	"recommend": "false",
-	"messageJa": "・データ初期化失敗の問題を修正",
-	"messageZhS": "・修复角色数据加载失败的bug",
+	"messageJa": "・データ、クラバト初期化失敗の問題を修正",
+	"messageZhS": "・修复角色数据加载失败和公会战页面无法打开的bug",
 	"messageZhT": "・修復資料載入失敗的 bug",
 	"infoJa": "",
 	"infoZhS": "",
