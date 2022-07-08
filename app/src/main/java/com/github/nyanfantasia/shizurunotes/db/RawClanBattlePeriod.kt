@@ -10,6 +10,7 @@ class RawClanBattlePeriod {
     var release_month = 0
     var start_time: String? = null
     var end_time: String? = null
+
     fun transToClanBattlePeriod(): ClanBattlePeriod {
         val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd H:mm:ss")
         return ClanBattlePeriod(

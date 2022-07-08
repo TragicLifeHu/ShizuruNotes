@@ -25,7 +25,18 @@ class Enemy (
     val skills = mutableListOf<Skill>()
     val children = mutableListOf<Enemy>()
 
-    fun setBasic(unitId: Int, name: String, comment: String, level: Int, prefabId: Int, atkType: Int, searchAreaWidth: Int, normalAtkCastTime: Double, resistStatusId: Int, property: Property){
+    fun setBasic(
+        unitId: Int,
+        name: String,
+        comment: String,
+        level: Int,
+        prefabId: Int,
+        atkType: Int,
+        searchAreaWidth: Int,
+        normalAtkCastTime: Double,
+        resistStatusId: Int,
+        property: Property
+    ){
         this.unitId = unitId
         this.name = name
         this.comment = comment
