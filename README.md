@@ -23,7 +23,7 @@ You can build app with **debug variant** by excuting the following command direc
 $ ./gradlew :app:assembleDebug
 ```
 
-#### Release Version App
+### Release Version App
 Use Android Studio's "Generate Signed Bundle / APK" function to complete this step,  
 due to different structure between this repo and the original one.
 
