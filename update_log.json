@@ -1,10 +1,10 @@
 {
-	"versionCode": "73",
-	"versionName": "1.15.2",
+	"versionCode": "75",
+	"versionName": "1.16.1",
 	"recommend": "false",
-	"messageJa": "・英語翻訳の追加",
-	"messageZhS": "・追加英文翻译",
-	"messageZhT": "・更新英文翻譯",
+	"messageJa": "・データ初期化失敗の問題を修正",
+	"messageZhS": "・修复角色数据加载失败的bug",
+	"messageZhT": "・修復資料載入失敗的 bug",
 	"infoJa": "",
 	"infoZhS": "",
 	"infoZhT": ""
