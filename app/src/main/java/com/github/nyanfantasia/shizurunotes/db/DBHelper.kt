@@ -502,7 +502,7 @@ class DBHelper private constructor(
      * @return
      */
     fun getCharaPromotionBonus(unitId: Int): List<RawPromotionBonus>? {
-        // 考虑国服未实装的情况
+        // Consider unimplemented situation
         val count = getOne("""SELECT COUNT(*) 
                                 FROM sqlite_master 
                                 WHERE type='table' 
