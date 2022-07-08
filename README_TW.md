@@ -15,14 +15,14 @@
 $ touch local.properties
 ```
 
-#### Debug 版本 App
+### Debug 版本 App
 可直接執行以下命令以組建 **Debug 版本** app:
 
 ```sh
 $ ./gradlew :app:assembleDebug
 ```
 
-#### Release 版本 App
+### Release 版本 App
 由於專案結構對比原版進行修改，請使用 Android Studio `Build` -> `Generate Signed Bundle / APK` 功能完成本作業，   
 因本人能力問題造成的不便，敬請諒解.  
 

@@ -16,14 +16,14 @@ Before executing build commands, you need to create a `local.properties` in proj
 $ touch local.properties
 ```
 
-#### Debug Version App
+### Debug Version App
 You can build app with **debug variant** by excuting the following command directly. 
 
 ```sh
 $ ./gradlew :app:assembleDebug
 ```
 
-#### Release Version App
+### Release Version App
 Use Android Studio's "Generate Signed Bundle / APK" function to complete this step,  
 due to different structure between this repo and the original one.
 
