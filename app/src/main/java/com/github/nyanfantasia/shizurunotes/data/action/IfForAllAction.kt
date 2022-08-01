@@ -91,6 +91,11 @@ class IfForAllAction : ActionParameter() {
                     R.string.counter_d3_is_greater_than_or_equal_to_d1_then_use_d2,
                     actionDetail1 % 10, actionDetail2 % 10, actionDetail1 % 100 / 10
                 )
+            } else if(actionDetail1 == 1800){
+                trueClause = getString(
+                    R.string.Performs_d1_if_s2_is_a_multi_target_unit,
+                    actionDetail2 % 10, targetParameter!!.buildTargetClause()
+                )
             } else if (actionDetail1 in 6000..6999 && actionValue3!!.value == 0.0) {
                 trueClause = getString(
                     R.string.use_d1_to_s2_in_state_of_ID_d3,
@@ -189,6 +194,11 @@ class IfForAllAction : ActionParameter() {
                 falseClause = getString(
                     R.string.counter_d3_is_less_than_d1_then_use_d2,
                     actionDetail1 % 10, actionDetail3 % 10, actionDetail1 % 100 / 10
+                )
+            } else if(actionDetail1 == 1800){
+                trueClause = getString(
+                    R.string.Performs_d1_if_s2_is_not_a_multi_target_unit,
+                    actionDetail3 % 10, targetParameter!!.buildTargetClause()
                 )
             } else if (actionDetail1 in 6000..6999 && actionValue3!!.value == 0.0) {
                 falseClause = getString(

@@ -48,6 +48,12 @@ class IfForChildrenAction : ActionParameter() {
                             actionDetail2 % 10, targetParameter!!.buildTargetClause(true)
                         )
                     }
+                    1800 -> {
+                        trueClause = getString(
+                            R.string.Performs_d1_to_s2_if_it_is_a_multi_target_unit,
+                            actionDetail2 % 10, targetParameter!!.buildTargetClause()
+                        )
+                    }
                     in 6000..6999 -> {
                         trueClause = getString(
                             R.string.use_d1_to_s2_in_state_of_ID_d3,
@@ -98,6 +104,12 @@ class IfForChildrenAction : ActionParameter() {
                             actionDetail3 % 10, targetParameter!!.buildTargetClause(true)
                         )
                     }
+                    1800 -> {
+                        trueClause = getString(
+                            R.string.Performs_d1_to_s2_if_it_is_not_a_multi_target_unit,
+                            actionDetail3 % 10, targetParameter!!.buildTargetClause()
+                        )
+                    }
                     in 6000..6999 -> {
                         falseClause = getString(
                             R.string.use_d1_to_s2_if_not_in_state_of_ID_d3,
@@ -112,8 +124,24 @@ class IfForChildrenAction : ActionParameter() {
     }
 
     override fun localizedDetail(level: Int, property: Property?): String? {
-        if (actionDetail1 == 100 || actionDetail1 == 101 || actionDetail1 == 200 || actionDetail1 == 300 || actionDetail1 == 500 || actionDetail1 == 501 || actionDetail1 == 502 || actionDetail1 == 503 || actionDetail1 == 504 || actionDetail1 == 511 || actionDetail1 == 512 || actionDetail1 in 600..899 || actionDetail1 in 901..999
-            || actionDetail1 == 1300 || actionDetail1 == 1400 || actionDetail1 == 1600 || actionDetail1 in 6000..6999
+        if (actionDetail1 == 100 ||
+            actionDetail1 == 101 ||
+            actionDetail1 == 200 ||
+            actionDetail1 == 300 ||
+            actionDetail1 == 500 ||
+            actionDetail1 == 501 ||
+            actionDetail1 == 502 ||
+            actionDetail1 == 503 ||
+            actionDetail1 == 504 ||
+            actionDetail1 == 511 ||
+            actionDetail1 == 512 ||
+            actionDetail1 in 600..899 ||
+            actionDetail1 in 901..999 ||
+            actionDetail1 == 1300 ||
+            actionDetail1 == 1400 ||
+            actionDetail1 == 1600 ||
+            actionDetail1 == 1800 ||
+            actionDetail1 in 6000..6999
         ) {
             if (trueClause != null && falseClause != null) return getString(
                 R.string.Condition_s,
