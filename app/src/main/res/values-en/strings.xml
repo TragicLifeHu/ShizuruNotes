@@ -680,7 +680,7 @@
     <string name="s1_will_be_applied_the_s2_once_they_take_any_actions_will_take_s3_damage_every_second_lasted_4s_seconds">When %1$s does an action, make it take [%3$s] %2$s damage. Lasts for [%4$s]</string>
     <string name="this_buff_is_constant">This effect is not affected by any buffs or debuffs (But is affected by Dispel).</string>
     <string name="drag_s1_to_a_position_s2_forward_of_the_caster">Pulls %1$s to position [%2$s] in front of caster.</string>
-    <string name="hint_text_search_no_result">Unable to find any matching characters.\nMake sure you\'re searching in Japanese.</string>
+    <string name="hint_text_search_no_result">Unable to find any matching characters</string>
     <string name="DMG_shall_be_increased_by_s_percents_of_base_DMG_through_each_tick">This damage is increased by [%s%%] from its base damage every second.</string>
     <string name="Modifier_add_s1_lost_hp_total_hp_of_s2_behind_self_to_value_d3_of_effect_d4">Raises Parameter %3$d of [Action %4$d] by [%1$s × (%2$s HP Lost / Max HP)]</string>
     <string name="Increase_s1_ATK_SPD_by_s2_for_s3_sec">Raises the Attack Speed of %1$s by [%2$s%%] for [%3$s]s. This effect can be stacked with other Attack Speed modifying skills.</string>
@@ -729,4 +729,10 @@
     <string name="Performs_d1_if_s2_is_not_a_multi_target_unit">If %2$s is not Multi-Target, performs [Action %1$s].</string>
     <string name="Performs_d1_to_s2_if_it_is_a_multi_target_unit">If %2$s is Multi-Target, performs [Action %1$s] on it.</string>
     <string name="Performs_d1_to_s2_if_it_is_not_a_multi_target_unit">If %2$s is not Multi-Target, performs [Action %1$s] on it.</string>
+    <string name="image_save_to_storage">Saved Image to Storage</string>
+    <string name="save_image_not_supported_sdk_level">This system is not supported to save Images</string>
+    <string name="save_image_confirmation">Are you sure to save the image?</string>
+    <string name="save_image_message">Save for multiple times will result in duplicated images</string>
+    <string name="save_image_decline">Cancel</string>
+    <string name="save_image_accept">OK</string>
 </resources>

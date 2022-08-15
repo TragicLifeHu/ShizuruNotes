@@ -99,8 +99,11 @@ class CharaListViewModel(
         val charaToShow: MutableList<Chara> = ArrayList()
         sharedViewModelChara.charaList.value?.forEach { chara ->
             if (searchText?.isNotEmpty() == true) {
-                if (chara.unitName.startsWith(searchText)
-                    || chara.kana.startsWith(searchText)
+                if (chara.unitName.contains(searchText)
+                    || chara.kana.contains(searchText)
+                    || chara.actualName.replace(" ","").contains(searchText)
+                    || chara.romajiName.contains(searchText, ignoreCase = true)
+                    || chara.englishName.contains(searchText, ignoreCase = true)
                 ) {
                     setSortValue(chara, selectedSort)
                     charaToShow.add(chara)

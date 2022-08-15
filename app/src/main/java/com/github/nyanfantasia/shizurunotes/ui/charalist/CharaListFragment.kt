@@ -83,7 +83,7 @@ class CharaListFragment : Fragment(), OnCharaActionListener
     }
 
     private fun setObserver() {
-        charaListVM.liveCharaList.observe(viewLifecycleOwner, {
+        charaListVM.liveCharaList.observe(viewLifecycleOwner) {
             if (sharedChara.charaList.value.isNullOrEmpty() && sharedChara.loadingFlag.value == false && sharedEquipment.loadingFlag.value == false) {
                 setHintTextVisibility(downloadDb = true)
             } else if (sharedChara.charaList.value?.isNotEmpty() == true && it.isEmpty()) {
@@ -92,25 +92,25 @@ class CharaListFragment : Fragment(), OnCharaActionListener
                 setHintTextVisibility()
             }
             charaListAdapter.setUpdatedList(charaListVM.getViewList(it))
-        })
+        }
 
-        sharedChara.loadingFlag.observe(viewLifecycleOwner, {
+        sharedChara.loadingFlag.observe(viewLifecycleOwner) {
             binding.charaListProgressBar.visibility = if (it) {
                 View.VISIBLE
             } else {
                 View.GONE
             }
-        })
+        }
 
-        sharedEquipment.loadingFlag.observe(viewLifecycleOwner, {
+        sharedEquipment.loadingFlag.observe(viewLifecycleOwner) {
             if (it) {
                 binding.charaListProgressBar.visibility = View.VISIBLE
             }
-        })
+        }
 
-        sharedChara.charaList.observe(viewLifecycleOwner, {
+        sharedChara.charaList.observe(viewLifecycleOwner) {
             updateList()
-        })
+        }
     }
 
     private fun setDropdownText(){

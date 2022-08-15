@@ -679,7 +679,7 @@
     <string name="s1_will_be_applied_the_s2_once_they_take_any_actions_will_take_s3_damage_every_second_lasted_4s_seconds">每當%1$s行動時，使其受到 [%3$s] %2$s傷害，持續時間 [%4$s] 秒。</string>
     <string name="this_buff_is_constant">此效果不會受到其他改變數值效果的影響（會受到驅散等直接解除效果的影響）。</string>
     <string name="drag_s1_to_a_position_s2_forward_of_the_caster">將%1$s拉至自身前方 [%2$s] 的位置。</string>
-    <string name="hint_text_search_no_result">未檢索到該角色\n（目前僅支援角色名及其平假名）</string>
+    <string name="hint_text_search_no_result">未檢索到該角色</string>
     <string name="DMG_shall_be_increased_by_s_percents_of_base_DMG_through_each_tick">並且此傷害每秒會增加基礎傷害的 [%s%%]。</string>
     <string name="Modifier_add_s1_lost_hp_total_hp_of_s2_behind_self_to_value_d3_of_effect_d4">使 [動作 %4$d] 的係數%3$d 提高 [%1$s * (%2$s損失的HP / 最大HP)]。</string>
     <string name="Increase_s1_ATK_SPD_by_s2_for_s3_sec">提高%1$s的行動速度 [%2$s%%]，持續時間 [%3$s] 秒。本效果可與其他行動速度變化效果疊加。</string>
@@ -739,4 +739,10 @@
     <string name="Performs_d1_if_s2_is_not_a_multi_target_unit">%2$s不是多目標單位的場合，使用 [動作%1$s]。</string>
     <string name="Performs_d1_to_s2_if_it_is_a_multi_target_unit">%2$s是多目標單位的場合，對其使用 [動作%1$s]。</string>
     <string name="Performs_d1_to_s2_if_it_is_not_a_multi_target_unit">%2$s不是多目標單位的場合，對其使用 [動作%1$s]。</string>
+    <string name="image_save_to_storage">已儲存圖像</string>
+    <string name="save_image_not_supported_sdk_level">目前作業系統不支援儲存圖像</string>
+    <string name="save_image_confirmation">是否儲存圖像？</string>
+    <string name="save_image_message">多次儲存會產生重複的圖像</string>
+    <string name="save_image_decline">取消</string>
+    <string name="save_image_accept">確定</string>
 </resources>
