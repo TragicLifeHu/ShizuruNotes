@@ -25,7 +25,7 @@ object Statics {
     const val DB_FILE_URL_CN = "$API_URL/db/$DB_FILE_NAME_COMPRESSED_CN"
 
     //  Resource URL
-    const val IMAGE_URL = "$API_URL/card/full/%d.webp@h300"
+    const val IMAGE_URL = "$API_URL/card/full/%d.webp"
     const val ICON_URL = "$API_URL/icon/unit/%d.webp"
     const val SHADOW_ICON_URL = "$API_URL/icon/unit_shadow/%d.webp"
     const val SKILL_ICON_URL = "$API_URL/icon/skill/%d.webp"
