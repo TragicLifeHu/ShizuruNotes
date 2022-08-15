@@ -116,6 +116,7 @@ object KanaUtils {
             "グレア" to "grea",
             "エミリア" to "emilia",
             "アメス" to "ames",
+            "ヴァンピィ" to "vampy",
         )
         return katakana2Romaji(priconnedString)
     }
