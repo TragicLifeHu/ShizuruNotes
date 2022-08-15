@@ -19,13 +19,13 @@
 
         <ListPreference
             app:key="expressionStyle2"
-            app:title="@string/setting_kill_expression_title"
+            app:title="@string/setting_skill_expression_title"
             app:defaultValue="0"
             app:useSimpleSummaryProvider="true"
             app:icon="@drawable/mic_symbols"
             app:entries="@array/setting_kill_expression_options"
             app:entryValues="@array/setting_kill_expression_values"
-            app:dialogTitle="@string/setting_kill_expression_title" />
+            app:dialogTitle="@string/setting_skill_expression_title" />
 
         <SwitchPreferenceCompat
             app:key="limitClanBattleNum"
@@ -34,13 +34,20 @@
             app:summary="@string/setting_limit_clan_battle_num_description"
             app:title="@string/setting_limit_clan_battle_num" />
 
+        <SwitchPreferenceCompat
+            app:key="showCharaActualName"
+            app:defaultValue="false"
+            app:icon="@drawable/mic_limit"
+            app:summary="@string/setting_show_actual_name_description"
+            app:title="@string/setting_show_actual_name" />
+
         <!--
         <SwitchPreferenceCompat
             app:key="expressionStyle"
             app:defaultValue="false"
             app:icon="@drawable/mic_symbols"
             app:summary="@string/setting_kill_expression_summary"
-            app:title="@string/setting_kill_expression_title" />
+            app:title="@string/setting_skill_expression_title" />
         -->
 
     </PreferenceCategory>

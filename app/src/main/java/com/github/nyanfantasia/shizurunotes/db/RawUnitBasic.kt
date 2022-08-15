@@ -3,6 +3,7 @@ package com.github.nyanfantasia.shizurunotes.db
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.Statics
 import com.github.nyanfantasia.shizurunotes.data.Chara
+import com.github.nyanfantasia.shizurunotes.user.UserSettings
 import com.github.nyanfantasia.shizurunotes.utils.KanaUtils
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -42,6 +43,7 @@ class RawUnitBasic {
         chara.unitName = unit_name!!
         chara.romajiName = KanaUtils.katakana2Romaji(unit_name!!)
         chara.englishName = KanaUtils.katakana2English(unit_name!!)
+        chara.subName = if (UserSettings.get().getActualNameStatus()) actual_name!! else "CV: $voice"
         chara.prefabId = prefab_id
         chara.searchAreaWidth = search_area_width
         chara.atkType = atk_type

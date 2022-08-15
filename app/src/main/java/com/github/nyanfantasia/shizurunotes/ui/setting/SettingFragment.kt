@@ -30,13 +30,13 @@ class SettingFragment : PreferenceFragmentCompat() {
     ) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
-        //app版本提示
+        //App version
         findPreference<Preference>(UserSettings.APP_VERSION)?.apply {
             summary = BuildConfig.VERSION_NAME
             isSelectable = false
         }
 
-        //数据库版本
+        //Database version
         findPreference<Preference>(DB_VERSION)?.apply {
             onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 it.isEnabled = false
@@ -51,7 +51,7 @@ class SettingFragment : PreferenceFragmentCompat() {
             }
         }
 
-        //重下数据库，暂时停用
+        //Retry download database, disabled
 //        findPreference<Preference>("reDownloadDb")?.apply {
 //            onPreferenceClickListener = Preference.OnPreferenceClickListener {
 //                UpdateManager.get().forceDownloadDb()
@@ -59,7 +59,7 @@ class SettingFragment : PreferenceFragmentCompat() {
 //            }
 //        }
 
-        //日志
+        //Log
         findPreference<Preference>(UserSettings.LOG)?.apply {
             onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val action = SettingContainerFragmentDirections.actionNavSettingContainerToNavLog()
@@ -68,7 +68,7 @@ class SettingFragment : PreferenceFragmentCompat() {
             }
         }
 
-        //关于
+        //About
         findPreference<Preference>(UserSettings.ABOUT)?.apply {
             onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val action = SettingContainerFragmentDirections.actionNavSettingContainerToNavSettingAbout()
@@ -77,7 +77,7 @@ class SettingFragment : PreferenceFragmentCompat() {
             }
         }
 
-        //语言选择框
+        //Language selection
         val languagePreference = findPreference<ListPreference>(UserSettings.LANGUAGE_KEY)
         if (languagePreference != null) {
             languagePreference.onPreferenceChangeListener =
@@ -94,7 +94,7 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
         }
 
-        //服务器选择
+        //Server selection
         val serverPreference = findPreference<ListPreference>(UserSettings.SERVER_KEY)
         if (serverPreference != null) {
             serverPreference.onPreferenceClickListener =

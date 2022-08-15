@@ -142,7 +142,7 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
                         val singleItems = I18N.getStringArray(R.array.setting_kill_expression_options)
                         val checkedItem = UserSettings.get().getExpression()
                         MaterialAlertDialogBuilder(requireContext())
-                            .setTitle(I18N.getString(R.string.setting_kill_expression_title))
+                            .setTitle(I18N.getString(R.string.setting_skill_expression_title))
                             .setSingleChoiceItems(singleItems, checkedItem) { dialog, which ->
                                 if (UserSettings.get().getExpression() != which) {
                                     UserSettings.get().setExpression(which)

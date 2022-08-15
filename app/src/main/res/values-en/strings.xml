@@ -26,7 +26,7 @@
     <string name="community_dialog_title">Join the community</string>
     <string name="community_dialog_text">Join our community!\n(primarily for Chinese speakers)</string>
     <string name="setting_language_dialog_title">Language</string>
-    <string name="setting_kill_expression_title">Skill Formulas</string>
+    <string name="setting_skill_expression_title">Skill Formulas</string>
     <string name="setting_kill_expression_summary">Show formulas instead of values</string>
     <string name="do_not_show_anymore">Don\'t show again</string>
     <string-array name="setting_kill_expression_options">
@@ -735,4 +735,6 @@
     <string name="save_image_message">Save for multiple times will result in duplicated images</string>
     <string name="save_image_decline">Cancel</string>
     <string name="save_image_accept">OK</string>
+    <string name="setting_show_actual_name">Show Actual Name</string>
+    <string name="setting_show_actual_name_description">Show Character\'s Voice Actor Name, or Actual Name</string>
 </resources>

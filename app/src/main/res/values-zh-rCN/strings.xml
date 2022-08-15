@@ -15,7 +15,7 @@
     <string name="community_dialog_title">加入社区交流</string>
     <string name="community_dialog_text">为方便各位骑士君讨论游戏，我们新建立了井盖「公主连接」群，这里有国服日服台服大佬，欢迎大家来吹水，讨论攻略，交流xp。\n同时可以在这里反馈静流笔记的bug，以及你对静流笔记的建议。国服、日服、台服均可加入！</string>
     <string name="setting_language_dialog_title">Language</string>
-    <string name="setting_kill_expression_title">技能公式</string>
+    <string name="setting_skill_expression_title">技能公式</string>
     <string name="setting_kill_expression_summary">在技能动作详情中显示计算公式</string>
     <string name="do_not_show_anymore">不再显示此提示</string>
     <string-array name="setting_language_options">
@@ -718,4 +718,6 @@
     <string name="save_image_message">多次保存会导致图像重复</string>
     <string name="save_image_decline">取消</string>
     <string name="save_image_accept">确定</string>
+    <string name="setting_show_actual_name">展示角色本名</string>
+    <string name="setting_show_actual_name_description">展示角色声优名，或是本名</string>
 </resources>

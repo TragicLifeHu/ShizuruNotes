@@ -231,17 +231,17 @@ class CharaListViewModel(
     private fun setSortValue(chara: Chara, sortValue: String) {
         when (sortValue) {
             "1" -> chara.sortValue = chara.searchAreaWidth.toString()
-            "2" -> chara.sortValue = chara.charaProperty.atk.toString()
-            "3" -> chara.sortValue = chara.charaProperty.magicStr.toString()
-            "4" -> chara.sortValue = chara.charaProperty.physicalCritical.toString()
-            "5" -> chara.sortValue = chara.charaProperty.magicCritical.toString()
-            "6" -> chara.sortValue = chara.charaProperty.def.toString()
-            "7" -> chara.sortValue = chara.charaProperty.magicDef.toString()
-            "8" -> chara.sortValue = chara.charaProperty.hp.toString()
+            "2" -> chara.sortValue = chara.charaProperty.getAtk.toString()
+            "3" -> chara.sortValue = chara.charaProperty.getMagicStr.toString()
+            "4" -> chara.sortValue = chara.charaProperty.getPhysicalCritical.toString()
+            "5" -> chara.sortValue = chara.charaProperty.getMagicCritical.toString()
+            "6" -> chara.sortValue = chara.charaProperty.getDef.toString()
+            "7" -> chara.sortValue = chara.charaProperty.getMagicDef.toString()
+            "8" -> chara.sortValue = chara.charaProperty.getHp.toString()
             "9" -> chara.sortValue = chara.charaProperty.effectivePhysicalHp.toString()
             "10" -> chara.sortValue = chara.charaProperty.effectiveMagicalHp.toString()
-            "11" -> chara.sortValue = chara.charaProperty.energyRecoveryRate.toString()
-            "12" -> chara.sortValue = chara.charaProperty.energyReduceRate.toString()
+            "11" -> chara.sortValue = chara.charaProperty.getEnergyRecoveryRate.toString()
+            "12" -> chara.sortValue = chara.charaProperty.getEnergyReduceRate.toString()
             "13" -> {
                 if (chara.actualName == "出雲 宮子" || chara.actualName == "出云宫子") {
                     chara.sortValue = I18N.getString(R.string.aged_s, chara.age)

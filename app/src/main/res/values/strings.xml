@@ -48,7 +48,7 @@
         <item>jp</item>
         <item>cn</item>
     </string-array>
-    <string name="setting_kill_expression_title">スキル計算式</string>
+    <string name="setting_skill_expression_title">スキル計算式</string>
     <string-array name="setting_kill_expression_options">
         <item>値</item>
         <item>計算式</item>
@@ -780,4 +780,6 @@
     <string name="save_image_confirmation">画像を保存しますか？</string>
     <string name="save_image_decline">キャンセル</string>
     <string name="save_image_accept">確認</string>
+    <string name="setting_show_actual_name">実名表示</string>
+    <string name="setting_show_actual_name_description">声優名表示、または実名表示</string>
 </resources>

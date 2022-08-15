@@ -22,6 +22,7 @@ class UserSettings private constructor(
         const val SERVER_KEY = "server"
         const val EXPRESSION_STYLE = "expressionStyle2"
         const val LIMIT_CLAN_BATTLE_KEY = "limitClanBattleNum"
+        const val SHOW_CHARA_ACTUAL_NAME = "showCharaActualName"
         const val BADGE_KEY = "isBadgeVisible"
         const val HIDE_SERVER_SWITCH_HINT_KEY = "hideServerSwitchHint"
         const val LOG = "log"
@@ -155,6 +156,9 @@ class UserSettings private constructor(
     }
     fun getClanBattleLimit(): Boolean {
         return preference.getBoolean(LIMIT_CLAN_BATTLE_KEY, false)
+    }
+    fun getActualNameStatus(): Boolean {
+        return preference.getBoolean(SHOW_CHARA_ACTUAL_NAME, false)
     }
     fun getBadgeVisibility(): Boolean {
         return preference.getBoolean(BADGE_KEY, true)

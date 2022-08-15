@@ -42,6 +42,7 @@ class Chara: Cloneable {
     lateinit var unitName: String
     lateinit var romajiName: String
     lateinit var englishName: String
+    lateinit var subName: String
     lateinit var guild: String
     lateinit var race: String
     lateinit var height: String
