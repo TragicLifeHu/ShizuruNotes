@@ -1,10 +1,10 @@
 {
-	"versionCode": "77",
-	"versionName": "1.16.3",
+	"versionCode": "79",
+	"versionName": "1.17.0",
 	"recommend": "false",
-	"messageJa": "・新スキルの追加",
-	"messageZhS": "・追加新技能",
-	"messageZhT": "・追加 美美(夏日) 新技能",
+	"messageJa": "・召喚物のステータス計算式を修正",
+	"messageZhS": "・修正召唤物的状态参数计算公式",
+	"messageZhT": "・修正召喚物狀態參數計算公式",
 	"infoJa": "",
 	"infoZhS": "",
 	"infoZhT": ""
