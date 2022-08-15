@@ -1,9 +1,11 @@
 package com.github.nyanfantasia.shizurunotes.ui.charadetails
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -16,10 +18,10 @@ import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.I18N
 import com.github.nyanfantasia.shizurunotes.data.Chara
 import com.github.nyanfantasia.shizurunotes.databinding.FragmentCharaDetailsBinding
-import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelChara
-import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelCharaFactory
 import com.github.nyanfantasia.shizurunotes.ui.base.AttackPatternContainerAdapter
 import com.github.nyanfantasia.shizurunotes.ui.base.BaseHintAdapter
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelChara
+import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelCharaFactory
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -79,6 +81,17 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            bigImageView.setOnLongClickListener {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                // detailsVM.mutableChara.value!!.imageUrl
+                // detailsVM.mutableChara.value!!.unitId
+                Toast.makeText(
+                    it.context,
+                    "There will be able to save this image to Storage in the future",
+                    Toast.LENGTH_LONG
+                ).show()}
+                true
+            }
             toolbar.setNavigationOnClickListener { view ->
                 view.findNavController().navigateUp()
             }
