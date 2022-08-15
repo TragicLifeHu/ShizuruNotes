@@ -1,5 +1,7 @@
 package com.github.nyanfantasia.shizurunotes.ui.charadetails
 
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +16,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionInflater
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.I18N
 import com.github.nyanfantasia.shizurunotes.data.Chara
@@ -23,9 +28,11 @@ import com.github.nyanfantasia.shizurunotes.ui.base.BaseHintAdapter
 import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelChara
 import com.github.nyanfantasia.shizurunotes.ui.shared.SharedViewModelCharaFactory
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
+import com.github.nyanfantasia.shizurunotes.utils.Utils
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-// TODO: 改成使用ViewType接口和适配器，避免NestedScrollView一次性渲染全部视图造成丢帧
+// TODO: Changed to use the ViewType interface and adapter,
+//  to avoid frame loss caused by NestedScrollView rendering all views at one time
 class CharaDetailsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var detailsViewModel: CharaDetailsViewModel
@@ -83,13 +90,42 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
         binding.apply {
             bigImageView.setOnLongClickListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                // detailsVM.mutableChara.value!!.imageUrl
-                // detailsVM.mutableChara.value!!.unitId
-                Toast.makeText(
-                    it.context,
-                    "There will be able to save this image to Storage in the future",
-                    Toast.LENGTH_LONG
-                ).show()}
+
+                    MaterialAlertDialogBuilder(bigImageView.context)
+                        .setTitle(R.string.save_image_confirmation)
+                        .setMessage(R.string.save_image_message)
+                        .setPositiveButton(R.string.save_image_accept) { _, _ ->
+
+                            val imgUrl = sharedChara.selectedChara?.imageUrl?.removeSuffix("@w800")
+                            Glide.with(this.bigImageView)
+                                .asBitmap()
+                                .load(imgUrl)
+                                .into(
+                                    object : CustomTarget<Bitmap>() {
+                                        override fun onResourceReady(
+                                            resource: Bitmap,
+                                            transition: Transition<in Bitmap>?
+                                        ) {
+                                            val unitId = sharedChara.selectedChara?.unitId
+                                            Utils.saveBitmap(it.context, resource, "$unitId.png")
+                                        }
+
+                                        override fun onLoadCleared(placeholder: Drawable?) {
+                                            // this is called when imageView is cleared on lifecycle call or for
+                                            // some other reason.
+                                            // if you are referencing the bitmap somewhere else too other than this imageView
+                                            // clear it here as you can no longer have the bitmap
+                                        }
+                                    })
+                            Toast.makeText(it.context, R.string.image_save_to_storage, Toast.LENGTH_LONG).show()
+
+                        }
+                        .setNegativeButton(R.string.save_image_decline) { _, _ -> }
+                        .show()
+
+                } else {
+                    Toast.makeText(it.context, R.string.save_image_not_supported_sdk_level, Toast.LENGTH_LONG).show()
+                }
                 true
             }
             toolbar.setNavigationOnClickListener { view ->
@@ -121,7 +157,7 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
             }
         }
 
-        // 技能循环
+        // Skill loop
         val adapterAttackPattern = AttackPatternContainerAdapter(context).apply {
             initializeItems(detailsViewModel.mutableChara.value?.attackPatternList)
         }
@@ -139,14 +175,14 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
             adapter = adapterAttackPattern
         }
 
-        // 技能 Recycler
+        // Skill Recycler
         val layoutManagerSkill = LinearLayoutManager(context)
         binding.skillRecycler.apply {
             layoutManager = layoutManagerSkill
             adapter = adapterSkill
         }
 
-        // 观察chara变化（1.0.0去掉rank下拉框后已经可以删掉了，留着备用）
+        // Observe the changes of chara (it can be deleted after removing the rank drop-down box in 1.0.0, keep it as a backup)
         detailsViewModel.mutableChara.observe(viewLifecycleOwner) { chara: Chara ->
             binding.detailsVM = detailsViewModel
             adapterSkill.update(chara.skills)
