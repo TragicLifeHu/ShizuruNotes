@@ -43,6 +43,9 @@ due to different structure between this repo and the original one.
 * Better internationalization
 * Fully wrote in Kotlin (Although there maybe a lot of workaround because of the Database structure)
 * Dependencies all cleaned up, now no more third-party code exists
+* Save Character Card Image to Device Local Storage
+* Switch display between Character's Voice Actor Name & Actual Name
+* Improved Search result
 * Use Jetpack Compose to build new UI (Working in my another repository, TBD)
 
 ## Localization  
@@ -57,6 +60,7 @@ ShizuruNotes is highly inspired by the following illustrious repos, thanks them:
 * [PrincessGuide](https://github.com/superk589/PrincessGuide)
 * [redive_master_db_diff](https://github.com/esterTion/redive_master_db_diff)
 * [DereHelper](https://github.com/Lazyeraser/DereHelper)
+* Authors of some snippets from StackOverFlow
 
 ShizuruNotes also uses [these](OPENSOURCE.md) open source software.
 
