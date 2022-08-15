@@ -104,6 +104,7 @@ class CharaListViewModel(
                     || chara.actualName.replace(" ","").contains(searchText)
                     || chara.romajiName.contains(searchText, ignoreCase = true)
                     || chara.englishName.contains(searchText, ignoreCase = true)
+                    || chara.voice.replace(" ","").contains(searchText)
                 ) {
                     setSortValue(chara, selectedSort)
                     charaToShow.add(chara)
