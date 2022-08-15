@@ -37,7 +37,7 @@
         <SwitchPreferenceCompat
             app:key="showCharaActualName"
             app:defaultValue="false"
-            app:icon="@drawable/mic_limit"
+            app:icon="@drawable/mic_chara"
             app:summary="@string/setting_show_actual_name_description"
             app:title="@string/setting_show_actual_name" />
 
