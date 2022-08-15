@@ -16,7 +16,7 @@ class MasterHatsune {
                 schedule.event_id,
                 LocalDateTime.parse(schedule.start_time, formatter),
                 LocalDateTime.parse(schedule.end_time, formatter),
-                schedule.title!!
+                schedule.title!!.replace("\\n", "")
             )
             DBHelper.get().getHatsuneBattle(schedule.event_id)?.forEach { battle ->
                 DBHelper.get().getWaveGroupData(battle.wave_group_id_1)?.let {
