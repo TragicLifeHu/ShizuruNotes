@@ -59,6 +59,7 @@ $ ./gradlew :app:assembleDebug
 * [PrincessGuide](https://github.com/superk589/PrincessGuide)
 * [redive_master_db_diff](https://github.com/esterTion/redive_master_db_diff)
 * [DereHelper](https://github.com/Lazyeraser/DereHelper)
+* [pcr-tool](https://github.com/wthee/pcr-tool)
 * 來自 StackOverFlow 的零散程式碼片段之作者們
 
 靜流筆記還使用了[這些](OPENSOURCE.md)開源工具.

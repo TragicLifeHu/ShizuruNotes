@@ -60,6 +60,7 @@ ShizuruNotes is highly inspired by the following illustrious repos, thanks them:
 * [PrincessGuide](https://github.com/superk589/PrincessGuide)
 * [redive_master_db_diff](https://github.com/esterTion/redive_master_db_diff)
 * [DereHelper](https://github.com/Lazyeraser/DereHelper)
+* [pcr-tool](https://github.com/wthee/pcr-tool)
 * Authors of some snippets from StackOverFlow
 
 ShizuruNotes also uses [these](OPENSOURCE.md) open source software.

@@ -30,6 +30,7 @@
     </string-array>
     <string-array name="setting_server_options">
         <item>日版</item>
+        <item>台版</item>
         <item>陸版</item>
     </string-array>
     <string name="setting_limit_clan_battle_num">限制戰隊競賽資料取得數</string>

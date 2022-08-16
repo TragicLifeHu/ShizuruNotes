@@ -33,6 +33,7 @@
     </string-array>
     <string-array name="setting_server_options">
         <item>日服</item>
+        <item>台服</item>
         <item>国服</item>
     </string-array>
     <string name="setting_limit_clan_battle_num">限制会战数据</string>

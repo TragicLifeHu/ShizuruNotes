@@ -17,7 +17,7 @@ object JsonUtils {
     }
 
     /**
-     * Json对象转Java对象
+     * Json object to Java object
      * @param json
      * @param type Example.class
      * @return
@@ -28,9 +28,9 @@ object JsonUtils {
     }
 
     /**
-     * Json数组转Java数组（列表）
+     * Json array to Java array (List)
      * @param json
-     * @param type 数组元素的类
+     * @param type Class of array elements
      * @return
      */
     fun <T> getListFromJson(json: String?, type: Type?): List<T> {
@@ -54,8 +54,8 @@ object JsonUtils {
     }
 
     /**
-     * Java对象转Json
-     * @param bean 对象实例
+     * Java object to Json
+     * @param bean object instance
      * @return
      */
     fun <T> getJsonFromBean(bean: T): String {
@@ -64,8 +64,8 @@ object JsonUtils {
     }
 
     /**
-     * Java List转Json数组
-     * @param list List实例
+     * Java List to Json array
+     * @param list List instance
      * @return
      */
     fun <T> getJsonFromList(list: List<T>?): String {

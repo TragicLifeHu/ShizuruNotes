@@ -42,10 +42,12 @@
     </string-array>
     <string-array name="setting_server_options">
         <item>日本鯖</item>
-        <item>大陸鯖</item>
+        <item>台湾鯖</item>
+        <item>中国鯖</item>
     </string-array>
     <string-array name="setting_server_values">
         <item>jp</item>
+        <item>tw</item>
         <item>cn</item>
     </string-array>
     <string name="setting_skill_expression_title">スキル計算式</string>

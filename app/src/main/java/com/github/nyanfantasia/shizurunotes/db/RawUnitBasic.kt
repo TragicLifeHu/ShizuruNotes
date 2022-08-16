@@ -80,6 +80,9 @@ class RawUnitBasic {
         if (unit_name!!.startsWith("モニカ") && voice == "辻あゆみ") {
             chara.age = "17"
         }
+        if (unit_name!!.startsWith("莫妮卡") && voice == "辻あゆみ") {
+            chara.age = "17"
+        }
         // 109301: ルゥ
         if (unit_id == 109301) {
             chara.age = "16"

@@ -29,12 +29,14 @@ class UserSettings private constructor(
         const val DB_VERSION = "dbVersion_new"
         const val DB_VERSION_JP = "dbVersion_jp"
         const val DB_VERSION_CN = "dbVersion_cn"
+        const val DB_VERSION_TW = "dbVersion_tw"
         const val APP_VERSION = "appVersion"
         const val ABOUT = "about"
         const val EXPRESSION_VALUE = 0
         const val EXPRESSION_EXPRESSION = 1
         const val EXPRESSION_ORIGINAL = 2
         const val SERVER_JP = "jp"
+        const val SERVER_TW = "tw"
         const val SERVER_CN = "cn"
         const val LAST_DB_HASH = "last_db_hash"
         const val ABNORMAL_EXIT = "abnormal_exit"
@@ -115,6 +117,8 @@ class UserSettings private constructor(
     fun getDbVersion(): Long {
         return if (preference.getString(SERVER_KEY, null) == SERVER_CN) {
             preference.getLong(DB_VERSION_CN, 0)
+        } else if (preference.getString(SERVER_KEY, null) == SERVER_TW) {
+            preference.getLong(DB_VERSION_TW, 0)
         } else {
             preference.getLong(DB_VERSION_JP, 0)
         }
@@ -136,6 +140,13 @@ class UserSettings private constructor(
                     preference.edit().putLong(DB_VERSION_JP, newVersion).apply()
                 } else {
                     preference.edit().putLong(DB_VERSION_JP, newVersion).commit()
+                }
+            }
+            SERVER_TW -> {
+                if (async) {
+                    preference.edit().putLong(DB_VERSION_TW, newVersion).apply()
+                } else {
+                    preference.edit().putLong(DB_VERSION_TW, newVersion).commit()
                 }
             }
             SERVER_CN -> {

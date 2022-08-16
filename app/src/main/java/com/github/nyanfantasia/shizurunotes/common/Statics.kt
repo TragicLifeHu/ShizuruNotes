@@ -3,6 +3,8 @@ package com.github.nyanfantasia.shizurunotes.common
 object Statics {
     //  API URL
     const val API_URL = "https://redive.estertion.win"
+    const val TW_TRUTH_VERSION_API_URL = "https://github.com/KiruyaMomochi/RediveData/raw/master"
+    const val TW_DB_API_URL = "https://wthee.xyz"
 
     //  database string for use
     @JvmField
@@ -17,6 +19,12 @@ object Statics {
     const val DB_FILE_NAME_JP = "redive_jp.db"
     const val LATEST_VERSION_URL_JP = "$API_URL/last_version_jp.json"
     const val DB_FILE_URL_JP = "$API_URL/db/$DB_FILE_NAME_COMPRESSED_JP"
+
+    //  TW database
+    const val DB_FILE_NAME_COMPRESSED_TW = "redive_tw.db.br"
+    const val DB_FILE_NAME_TW = "redive_tw.db"
+    const val LATEST_VERSION_URL_TW = "$TW_TRUTH_VERSION_API_URL/config.json"
+    const val DB_FILE_URL_TW = "$TW_DB_API_URL/db/$DB_FILE_NAME_COMPRESSED_TW"
 
     //  CN database
     const val DB_FILE_NAME_COMPRESSED_CN = "redive_cn.db.br"

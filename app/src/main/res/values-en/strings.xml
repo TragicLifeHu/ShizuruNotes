@@ -36,6 +36,7 @@
     </string-array>
     <string-array name="setting_server_options">
         <item>Japan</item>
+        <item>Taiwan</item>
         <item>China</item>
     </string-array>
     <string name="setting_limit_clan_battle_num">Limit Clan Battles Displayed</string>

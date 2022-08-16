@@ -59,6 +59,12 @@ class App : Application() {
                 Statics.LATEST_VERSION_URL = Statics.LATEST_VERSION_URL_JP
                 Statics.DB_FILE_URL = Statics.DB_FILE_URL_JP
             }
+            "tw" -> {
+                Statics.DB_FILE_NAME = Statics.DB_FILE_NAME_TW
+                Statics.DB_FILE_NAME_COMPRESSED = Statics.DB_FILE_NAME_COMPRESSED_TW
+                Statics.LATEST_VERSION_URL = Statics.LATEST_VERSION_URL_TW
+                Statics.DB_FILE_URL = Statics.DB_FILE_URL_TW
+            }
             "cn" -> {
                 Statics.DB_FILE_NAME = Statics.DB_FILE_NAME_CN
                 Statics.DB_FILE_NAME_COMPRESSED = Statics.DB_FILE_NAME_COMPRESSED_CN
