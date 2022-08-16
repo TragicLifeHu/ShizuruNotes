@@ -737,4 +737,5 @@
     <string name="save_image_accept">OK</string>
     <string name="setting_show_actual_name">Show Actual Name</string>
     <string name="setting_show_actual_name_description">Show Character\'s Voice Actor Name, or Actual Name</string>
+    <string name="save_image_no_chara_selected">No resource can be downloaded</string>
 </resources>

@@ -89,7 +89,9 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             bigImageView.setOnLongClickListener {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                if (sharedChara.selectedChara == null) {
+                    Toast.makeText(it.context, R.string.save_image_no_chara_selected, Toast.LENGTH_LONG).show()
+                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
 
                     MaterialAlertDialogBuilder(bigImageView.context)
                         .setTitle(R.string.save_image_confirmation)
@@ -120,7 +122,7 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
                             Toast.makeText(it.context, R.string.image_save_to_storage, Toast.LENGTH_LONG).show()
 
                         }
-                        .setNegativeButton(R.string.save_image_decline) { _, _ -> }
+                        .setNegativeButton(R.string.save_image_decline, null)
                         .show()
 
                 } else {

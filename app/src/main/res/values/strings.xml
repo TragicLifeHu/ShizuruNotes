@@ -782,4 +782,5 @@
     <string name="save_image_accept">確認</string>
     <string name="setting_show_actual_name">実名表示</string>
     <string name="setting_show_actual_name_description">声優名表示、または実名表示</string>
+    <string name="save_image_no_chara_selected">ダウンロードできる画像がありません</string>
 </resources>
