@@ -749,6 +749,6 @@
     <string name="setting_show_actual_name">顯示角色本名</string>
     <string name="setting_show_actual_name_description">顯示角色聲優名，或是本名</string>
     <string name="save_image_no_chara_selected">無可用圖像資源</string>
-    <string name="Performs_d1_on_s2_if_the_target_possesses_a_barrier">%2$s擁有護盾時，對其使用 [动作%1$s]。</string>
-    <string name="Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier">%2$s未擁有護盾時，對其使用 [动作%1$s]。</string>
+    <string name="Performs_d1_on_s2_if_the_target_possesses_a_barrier">%2$s擁有護盾時，對其使用 [動作%1$s]。</string>
+    <string name="Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier">%2$s未擁有護盾時，對其使用 [動作%1$s]。</string>
 </resources>
