@@ -785,4 +785,6 @@
     <string name="setting_show_actual_name">実名表示</string>
     <string name="setting_show_actual_name_description">声優名表示、または実名表示</string>
     <string name="save_image_no_chara_selected">ダウンロードできる画像がありません</string>
+    <string name="Performs_d1_on_s2_if_the_target_possesses_a_barrier">%2$s はバリアに保護されている場合、それに [アクション%1$s] を使う。</string>
+    <string name="Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier">%2$s はバリアに保護されていない場合、それに [アクション%1$s] を使う。</string>
 </resources>

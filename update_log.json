@@ -1,10 +1,10 @@
 {
-	"versionCode": "79",
-	"versionName": "1.17.0",
+	"versionCode": "80",
+	"versionName": "1.17.1",
 	"recommend": "false",
-	"messageJa": "・召喚物のステータス計算式を修正",
-	"messageZhS": "・修正召唤物的状态参数计算公式",
-	"messageZhT": "・修正召喚物狀態參數計算公式",
+	"messageJa": "・新スキルの追加\n・カード画像ダウンロード機能追加",
+	"messageZhS": "・追加新技能",
+	"messageZhT": "・追加角色技能: 愛梅斯\n・新增下載卡面功能\n・新增台版資料功能",
 	"infoJa": "",
 	"infoZhS": "",
 	"infoZhT": ""
