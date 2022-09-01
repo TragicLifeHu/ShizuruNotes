@@ -725,11 +725,11 @@
     <string name="short_dodge">回避\n%s</string>
     <string name="short_wave_hp_recovery">HP自\n%s</string>
     <string name="short_wave_energy_recovery">TP自\n%s</string>
-    <string name="Make_s1_invisible_for_s2_cancels_on_taking_damage">使%1$s進入隱匿狀態，持續時間 [%2$s] 秒。本效果會在受到傷害時解除。</string>
+    <string name="Make_s1_invisible_for_s2_cancels_on_taking_damage">使%1$s進入隱密狀態，持續時間 [%2$s] 秒。本效果會在受到傷害時解除。</string>
     <string name="Reduce_s1_all_damage_taken_by_s2_for_s3_sec">降低%2$s受到的所有傷害 [%1$s%%]，持續時間 [%3$s] 秒。</string>
     <string name="Reduce_s1_magic_damage_taken_by_s2_for_s3_sec">降低%2$s受到的魔法傷害 [%1$s%%]，持續時間 [%3$s] 秒。</string>
     <string name="Reduce_s1_physical_damage_taken_by_s2_for_s3_sec">降低%2$s受到的物理傷害 [%1$s%%]，持續時間 [%3$s] 秒。</string>
-    <string name="is_invisible">隱匿狀態中</string>
+    <string name="is_invisible">隱密狀態中</string>
     <string name="Summon_a_field_with_radius_d1_at_position_s2_which_continuous_lose_tp_s3_of_units_within_the_field_for_s4_sec">在%2$s的位置展開半徑 [%1$d] 的領域，每秒失去 [%3$s] TP。持續時間 [%4$s] 秒。</string>
     <string name="Summon_a_field_with_radius_d1_at_position_s2_which_continuous_restore_tp_s3_of_units_within_the_field_for_s4_sec">在%2$s的位置展開半徑 [%1$d] 的領域，每秒恢復 [%3$s] TP。持續時間 [%4$s] 秒。</string>
     <string name="title_secret_dungeon">特殊地下城</string>
@@ -749,4 +749,6 @@
     <string name="setting_show_actual_name">顯示角色本名</string>
     <string name="setting_show_actual_name_description">顯示角色聲優名，或是本名</string>
     <string name="save_image_no_chara_selected">無可用圖像資源</string>
+    <string name="Performs_d1_on_s2_if_the_target_possesses_a_barrier">%2$s擁有護盾時，對其使用 [动作%1$s]。</string>
+    <string name="Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier">%2$s未擁有護盾時，對其使用 [动作%1$s]。</string>
 </resources>

@@ -54,6 +54,10 @@ class IfForChildrenAction : ActionParameter() {
                             actionDetail2 % 10, targetParameter!!.buildTargetClause()
                         )
                     }
+                    1900 -> {
+                        trueClause = getString(R.string.Performs_d1_on_s2_if_the_target_possesses_a_barrier,
+                            actionDetail2 % 10, targetParameter!!.buildTargetClause(true))
+                    }
                     in 6000..6999 -> {
                         trueClause = getString(
                             R.string.use_d1_to_s2_in_state_of_ID_d3,
@@ -110,6 +114,10 @@ class IfForChildrenAction : ActionParameter() {
                             actionDetail3 % 10, targetParameter!!.buildTargetClause()
                         )
                     }
+                    1900 -> {
+                        trueClause = getString(R.string.Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier,
+                            actionDetail3 % 10, targetParameter!!.buildTargetClause(true))
+                    }
                     in 6000..6999 -> {
                         falseClause = getString(
                             R.string.use_d1_to_s2_if_not_in_state_of_ID_d3,
@@ -141,6 +149,7 @@ class IfForChildrenAction : ActionParameter() {
             actionDetail1 == 1400 ||
             actionDetail1 == 1600 ||
             actionDetail1 == 1800 ||
+            actionDetail1 == 1900 ||
             actionDetail1 in 6000..6999
         ) {
             if (trueClause != null && falseClause != null) return getString(
