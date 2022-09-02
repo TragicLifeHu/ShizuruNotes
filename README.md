@@ -17,7 +17,7 @@ $ touch local.properties
 ```
 
 ### Debug Version App
-You can build app with **debug variant** by excuting the following command directly. 
+You can build app with **debug variant** by executing the following command directly. 
 
 ```sh
 $ ./gradlew :app:assembleDebug
