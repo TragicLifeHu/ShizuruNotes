@@ -1,8 +1,8 @@
-[繁體中文說明請點選此處](README_TW.md)
+[中文說明請點選此處](README_TW.md)
 
 # ShizuruNotes
 An **unofficial** Android tool application for "Princess Connect Re:Dive".  
-It supports the server of Japan and Mainland China at present.
+It supports the server of Japan, Taiwan and Mainland China at present.
 
 ## Requirement
 * Android 8+ (Doesn't support Android Emulator lower than Android 8)
@@ -45,7 +45,8 @@ due to different structure between this repo and the original one.
 * Dependencies all cleaned up, now no more third-party code exists
 * Save Character Card Image to Device Local Storage
 * Switch display between Character's Voice Actor Name & Actual Name
-* Improved Search result
+* Improved Character Search result
+* Support Taiwan server database
 * Use Jetpack Compose to build new UI (Working in my another repository, TBD)
 
 ## Localization  
