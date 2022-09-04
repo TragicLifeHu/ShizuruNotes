@@ -1,11 +1,11 @@
 {
-	"versionCode": "80",
-	"versionName": "1.17.1",
-	"recommend": "false",
-	"messageJa": "・新スキルの追加\n・カード画像ダウンロード機能追加",
-	"messageZhS": "・追加新技能",
-	"messageZhT": "・追加角色技能: 愛梅斯\n・新增下載卡面功能\n・新增台版資料功能",
-	"infoJa": "",
-	"infoZhS": "",
-	"infoZhT": ""
+  "versionCode": "81",
+  "versionName": "1.17.2",
+  "recommend": "false",
+  "messageJa": "・新スキルの追加",
+  "messageZhS": "・追加新技能",
+  "messageZhT": "・追加角色技能: 真步 (エクスプローラー)",
+  "infoJa": "",
+  "infoZhS": "",
+  "infoZhT": ""
 }
