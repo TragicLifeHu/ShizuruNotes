@@ -41,16 +41,16 @@ class ClanBattleFragment : Fragment() {
 
         sharedClanBattle.apply {
             periodList.observe(
-                viewLifecycleOwner, {
-                    adapter.update(it)
-                }
-            )
+                viewLifecycleOwner
+            ) {
+                adapter.update(it)
+            }
             loadingFlag.observe(
-                viewLifecycleOwner, {
-                    if (it) binding.clanBattleProgressBar.visibility = View.VISIBLE
-                    else binding.clanBattleProgressBar.visibility = View.GONE
-                }
-            )
+                viewLifecycleOwner
+            ) {
+                if (it) binding.clanBattleProgressBar.visibility = View.VISIBLE
+                else binding.clanBattleProgressBar.visibility = View.GONE
+            }
         }
         sharedClanBattle.loadData()
         return binding.root
