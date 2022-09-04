@@ -751,4 +751,5 @@
     <string name="save_image_no_chara_selected">無可用圖像資源</string>
     <string name="Performs_d1_on_s2_if_the_target_possesses_a_barrier">%2$s擁有護盾時，對其使用 [動作%1$s]。</string>
     <string name="Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier">%2$s未擁有護盾時，對其使用 [動作%1$s]。</string>
+    <string name="Adds_s1_marks_to_s5_max_s2_id_d3_lasts_for_s4_sec_removes_1_mark_while_taking_dmg_and_restores_s6_tp">對%5$s追加 [%1$s] 層標記 [ID: %3$d]（最大 [%2$s] 層），持續時間 [%4$s] 秒。當受到傷害時，移除 1 層標記並恢復 [%6$s] TP。</string>
 </resources>
