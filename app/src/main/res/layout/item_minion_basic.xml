@@ -89,7 +89,7 @@
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_hp"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.hp)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getHp)}" />
 
                 <com.allen.library.SuperTextView
                     android:id="@+id/txt_search_area_width"
@@ -117,7 +117,7 @@
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_physical_atk"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.atk)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getAtk)}" />
 
                 <com.allen.library.SuperTextView
                     android:id="@+id/txt_magic_str"
@@ -125,7 +125,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_magical_atk"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.magicStr)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getMagicStr)}" />
 
             </LinearLayout>
 
@@ -145,7 +145,7 @@
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_physical_def"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.def)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getDef)}" />
 
                 <com.allen.library.SuperTextView
                     android:id="@+id/txt_magic_def"
@@ -153,7 +153,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_magical_def"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.magicDef)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getMagicDef)}" />
 
             </LinearLayout>
 
@@ -173,7 +173,7 @@
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_accuracy"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.accuracy)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getAccuracy)}" />
 
                 <com.allen.library.SuperTextView
                     android:id="@+id/txt_dodge"
@@ -181,7 +181,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
                     app:sLeftTextString="@string/text_dodge"
-                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.dodge)}" />
+                    bind:sRightText="@{String.valueOf(itemModel.minionProperty.getDodge)}" />
 
             </LinearLayout>
 
