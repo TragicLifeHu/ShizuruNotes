@@ -55,8 +55,8 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
 
 
-    kapt("com.github.bumptech.glide:compiler:4.13.2")
-    implementation("com.github.bumptech.glide:glide:4.13.2")
+    kapt("com.github.bumptech.glide:compiler:4.14.1")
+    implementation("com.github.bumptech.glide:glide:4.14.1")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.10")
     implementation("com.google.code.gson:gson:2.9.1")
     implementation("androidx.preference:preference-ktx:1.2.0")
