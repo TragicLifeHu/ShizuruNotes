@@ -786,6 +786,7 @@ class DBHelper private constructor(
             """
                 SELECT * 
                 FROM clan_battle_period 
+                WHERE clan_battle_id IN (SELECT DISTINCT clan_battle_id FROM clan_battle_2_map_data) 
                 ORDER BY clan_battle_id DESC 
                 ${if (UserSettings.get().getClanBattleLimit()) "LIMIT 13 " else ""}
                 """,
