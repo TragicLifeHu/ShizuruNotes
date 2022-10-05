@@ -411,7 +411,7 @@
     <string name="venom">猛毒狀態中</string>
     <string name="poisoned_or_venom">中毒或猛毒狀態中</string>
     <string name="breaking">Break 狀態中</string>
-    <string name="Condition_s">條件分歧：%s</string>
+    <string name="Condition_s">條件分歧: %s</string>
     <string name="separator">，</string>
     <string name="Revive_s1_with_d2_HP">使%1$s復活，並恢復其 [%2$d%%] HP（未計算回復量上升產生的影響）。</string>
     <string name="Modifier_add_s1_HP_to_value_d2_of_effect_d3">使 [動作 %3$d] 的係數%2$d提高 [%1$s * HP]。</string>
