@@ -52,10 +52,16 @@ class Enemy (
             attackPatternList.add(it.attackPattern.setItems(skills, atkType))
         }
 
-        iconUrl = if (prefabId in 100000..199999) {
-            Statics.SHADOW_ICON_URL.format(prefabId + 30)
-        } else {
-            Statics.ICON_URL.format(prefabId)
+        iconUrl = when (prefabId) {
+            in 100000..199999 -> {
+                Statics.SHADOW_ICON_URL.format(prefabId + 30)
+            }
+            301305 -> {
+                Statics.ICON_URL.format(301304)
+            }
+            else -> {
+                Statics.ICON_URL.format(prefabId)
+            }
         }
 
         if (resistStatusId != 0){
