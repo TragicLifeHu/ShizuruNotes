@@ -49,34 +49,6 @@ class AttackPattern(
         return if (index + 1 == loopEnd) getString(R.string.loop_end) else ""
     }
 
-    //    public String getEnemyPatternText(String prefix){
-    //        StringBuilder sb = new StringBuilder().append(prefix);
-    //
-    //        boolean isSinglePattern = true;
-    //        for (int it: rawAttackPatterns){
-    //            if (it != 1 && it != 0) {
-    //                isSinglePattern = false;
-    //                break;
-    //            }
-    //        }
-    //        if (isSinglePattern)
-    //            return sb.append(I18N.getString(R.string.text_normal_attack_only)).toString();
-    //
-    //
-    //        for (AttackPatternItem it: items){
-    //            if (it.loopText.equals("")){
-    //                sb.append(it.skillText);
-    //            } else if (it.loopText.equals(I18N.getString(R.string.loop_start))){
-    //                sb.append(I18N.getString(R.string.text_loop_start)).append(it.skillText);
-    //            } else if (it.loopText.equals(I18N.getString(R.string.loop_end))){
-    //                sb.append(it.skillText).append(I18N.getString(R.string.text_loop_end)).append("-");
-    //                break;
-    //            }
-    //            sb.append("-");
-    //        }
-    //        return sb.deleteCharAt(sb.lastIndexOf("-")).toString();
-    //    }
-
     inner class AttackPatternItem(rawAttackPatterns: Int, var loopText: String, var iconUrl: String?) {
         var skillText: String = PatternType.parse(rawAttackPatterns).description()
 
