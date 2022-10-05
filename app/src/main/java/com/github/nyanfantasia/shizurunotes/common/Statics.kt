@@ -3,7 +3,7 @@ package com.github.nyanfantasia.shizurunotes.common
 object Statics {
     //  API URL
     const val API_URL = "https://redive.estertion.win"
-    const val TW_API_URL = "https://github.com/TragicLifeHu/ReDiveMasterData-TW/raw/master/out"
+    private const val TW_API_URL = "https://github.com/TragicLifeHu/ReDiveMasterData-TW/raw/master/out"
 
     //  database string for use
     @JvmField
