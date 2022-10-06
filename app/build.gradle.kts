@@ -35,6 +35,7 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    namespace = "com.github.nyanfantasia.shizurunotes"
 }
 
 dependencies {
