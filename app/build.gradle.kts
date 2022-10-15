@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.6.0-rc01")
+    implementation("androidx.appcompat:appcompat:1.7.0-alpha01")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("com.google.android.material:material:1.8.0-alpha01")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -56,8 +56,8 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
 
 
-    kapt("com.github.bumptech.glide:compiler:4.14.1")
-    implementation("com.github.bumptech.glide:glide:4.14.1")
+    kapt("com.github.bumptech.glide:compiler:4.14.2")
+    implementation("com.github.bumptech.glide:glide:4.14.2")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.10")
     implementation("com.google.code.gson:gson:2.9.1")
     implementation("androidx.preference:preference-ktx:1.2.0")
@@ -69,5 +69,5 @@ dependencies {
     implementation("com.github.lygttpod:SuperTextView:2.4.2")
     implementation("com.afollestad.material-dialogs:core:3.3.0")
     implementation("com.github.mancj:MaterialSearchBar:0.8.5")
-    implementation("com.blankj:utilcodex:1.31.0")
+    implementation("com.blankj:utilcodex:1.31.1")
 }
