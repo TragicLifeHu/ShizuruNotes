@@ -97,6 +97,7 @@ object KanaUtils {
             "パイレーツ" to "pirate",
             "キャンプ" to "camp",
             "プリンセス" to "princess",
+            "エクスプローラー" to "explorer",
             // プリコネ
             "クリスティーナ" to "christina",
             "アリサ" to "alisa",
@@ -117,6 +118,7 @@ object KanaUtils {
             "エミリア" to "emilia",
             "アメス" to "ames",
             "ヴァンピィ" to "vampy",
+            "ネア" to "nia",
         )
         return katakana2Romaji(priconnedString)
     }
