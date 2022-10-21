@@ -13,7 +13,7 @@
     <string name="title_sp_event">特殊活動</string>
     <string name="setting_language_dialog_title">語言</string>
     <string name="setting_skill_expression_title">技能公式</string>
-    <string name="setting_kill_expression_summary">在技能動作詳情中顯示計算公式</string>
+    <string name="setting_skill_expression_summary">在技能動作詳情中顯示計算公式</string>
     <string name="do_not_show_anymore">不再顯示此提示</string>
     <string-array name="setting_language_options">
         <item>跟隨系統</item>
@@ -23,7 +23,7 @@
         <item>한국어</item>
         <item>English</item>
     </string-array>
-    <string-array name="setting_kill_expression_options">
+    <string-array name="setting_skill_expression_options">
         <item>數值</item>
         <item>公式</item>
         <item>原始</item>
@@ -752,4 +752,9 @@
     <string name="Performs_d1_on_s2_if_the_target_possesses_a_barrier">%2$s擁有護盾時，對其使用 [動作%1$s]。</string>
     <string name="Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier">%2$s未擁有護盾時，對其使用 [動作%1$s]。</string>
     <string name="Adds_s1_marks_to_s5_max_s2_id_d3_lasts_for_s4_sec_removes_1_mark_while_taking_dmg_and_restores_s6_tp">對%5$s追加 [%1$s] 層標記 [ID: %3$d]（最大 [%2$s] 層），持續時間 [%4$s] 秒。當受到傷害時，移除 1 層標記並恢復 [%6$s] TP。</string>
+    <string name="s1_the_highest_ATK_except_caster">除自己外物理攻擊最高的%1$s</string>
+    <string name="the_s1_highest_ATK_except_caster">除自己外物理攻擊%1$s高的</string>
+    <string name="the_highest_ATK_except_caster">除自己外物理攻擊最高的</string>
+    <string name="parts">部位</string>
+    <string name="Decreases_s1_healing_received_by_s2_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">當%2$s受到治療時，使治療效果降低 [%1$s]%%，持續 [%3$s] 秒。如果由場地效果觸發，持續時間無限。</string>
 </resources>

@@ -27,9 +27,9 @@
     <string name="community_dialog_text">Join our community!\n(primarily for Chinese speakers)</string>
     <string name="setting_language_dialog_title">Language</string>
     <string name="setting_skill_expression_title">Skill Formulas</string>
-    <string name="setting_kill_expression_summary">Show formulas instead of values</string>
+    <string name="setting_skill_expression_summary">Show formulas instead of values</string>
     <string name="do_not_show_anymore">Don\'t show again</string>
-    <string-array name="setting_kill_expression_options">
+    <string-array name="setting_skill_expression_options">
         <item>Values</item>
         <item>Formulas</item>
         <item>Original</item>

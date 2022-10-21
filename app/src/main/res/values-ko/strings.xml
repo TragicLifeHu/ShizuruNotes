@@ -19,7 +19,7 @@
         <item>English</item>
     </string-array>
     <string name="setting_skill_expression_title">스킬 계산식</string>
-    <string name="setting_kill_expression_summary">스킬 액션의 계산식을 표시</string>
+    <string name="setting_skill_expression_summary">스킬 액션의 계산식을 표시</string>
     <string name="setting_appearance">표시</string>
     <string name="setting_system">시스템</string>
     <string name="setting_db_version">데이터베이스 버젼</string>

@@ -141,7 +141,7 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
                         )
                     }
                     R.id.menu_chara_show_expression -> {
-                        val singleItems = I18N.getStringArray(R.array.setting_kill_expression_options)
+                        val singleItems = I18N.getStringArray(R.array.setting_skill_expression_options)
                         val checkedItem = UserSettings.get().getExpression()
                         MaterialAlertDialogBuilder(requireContext())
                             .setTitle(I18N.getString(R.string.setting_skill_expression_title))

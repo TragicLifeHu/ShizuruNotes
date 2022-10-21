@@ -51,7 +51,7 @@
         <item>cn</item>
     </string-array>
     <string name="setting_skill_expression_title">スキル計算式</string>
-    <string-array name="setting_kill_expression_options">
+    <string-array name="setting_skill_expression_options">
         <item>値</item>
         <item>計算式</item>
         <item>オリジナル</item>
@@ -63,7 +63,7 @@
     </string-array>
     <string name="setting_limit_clan_battle_num">クラバトの表示数を制限</string>
     <string name="setting_limit_clan_battle_num_description">最も近い13期のクラバトデータのみを表示、ロード時間を短縮できます</string>
-    <string name="setting_kill_expression_summary">スキルアクションの計算式を表示</string>
+    <string name="setting_skill_expression_summary">スキルアクションの計算式を表示</string>
     <string name="setting_appearance">表示</string>
     <string name="setting_system">システム</string>
     <string name="setting_server">サーバー</string>
