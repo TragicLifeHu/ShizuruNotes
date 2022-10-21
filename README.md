@@ -10,7 +10,7 @@ It supports the server of Japan, Taiwan and Mainland China at present.
 ## Build
 Better to use Android Studio Chipmunk (2021.2.1) or later.  
 
-Before executing build commands, you need to create a `local.properties` in project's root directory if it does not exist.
+Before building, you need to create a `local.properties` in project's root directory if it does not exist.
 
 ```sh
 $ touch local.properties
@@ -24,8 +24,20 @@ $ ./gradlew :app:assembleDebug
 ```
 
 ### Release Version App
-Use Android Studio's "Generate Signed Bundle / APK" function to complete this step,  
-due to different structure between this repo and the original one.
+If you want to build a release version app, you must add the following lines into `local.properties` first:
+
+```sh
+signing.storeFile=${PATH_TO_YOUR_KEY_STORE_FILE}
+signing.storePassword=${YOUR_KEY_STORE_PASSWORD}
+signing.keyAlias=${YOUR_KEY_ALIAS}
+signing.keyPassword=${YOUR_KEY_PASSWORD}
+```
+
+After that you can build app with **release variant**:
+
+```sh
+$ ./gradlew :app:assembleRelease
+```
 
 ## Features
 * Character 
