@@ -390,7 +390,9 @@ enum class TargetType(val value: Int) {
     TpDescendingOrMaxForward(37),
     BothAtkDescending(38),
     BothAtkAscending(39),
-    EnergyAscBackWithoutOwner(41);
+    EnergyAscBackWithoutOwner(41),
+    ParentTargetParts(42),
+    AtkDecForwardWithoutOwner(43);
 
     enum class ExclusiveAllType {
         Not, Exclusive, HalfExclusive
@@ -500,6 +502,12 @@ enum class TargetType(val value: Int) {
             EnergyAscBackWithoutOwner -> getString(
                 R.string.the_lowest_TP_except_self
             )
+            ParentTargetParts -> getString(
+                R.string.parts
+            )
+            AtkDecForwardWithoutOwner -> getString(
+                R.string.the_highest_ATK_except_caster
+            )
         }
     }
 
@@ -606,6 +614,9 @@ enum class TargetType(val value: Int) {
                 R.string.s_the_lowest_TP_except_self,
                 localizedModifier
             )
+            AtkDecForwardWithoutOwner -> getString(
+                R.string.s1_the_highest_ATK_except_caster
+            )
             else -> description()
         }
     }
@@ -688,6 +699,9 @@ enum class TargetType(val value: Int) {
                 EnergyAscBackWithoutOwner -> getString(
                     R.string.the_s_th_lowest_TP_except_self,
                     localizedModifier
+                )
+                AtkDecForwardWithoutOwner -> getString(
+                    R.string.the_s1_highest_ATK_except_caster
                 )
                 else -> description()
             }
