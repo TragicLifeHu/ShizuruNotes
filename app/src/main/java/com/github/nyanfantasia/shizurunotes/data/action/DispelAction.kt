@@ -7,12 +7,17 @@ import java.math.RoundingMode
 
 class DispelAction : ActionParameter() {
     enum class DispelType(val value: Int) {
-        Unknown(0), Buff(1), Debuff(2), Barriers(10);
+        Unknown(0),
+        Buff(1),
+        Debuff(2),
+        StatusUpBuff(3),
+        Barriers(10);
 
         fun description(): String {
             return when (this) {
                 Buff -> getString(R.string.buffs)
                 Debuff -> getString(R.string.debuffs)
+                StatusUpBuff -> getString(R.string.status_up_buffs)
                 Barriers -> getString(R.string.barriers)
                 else -> getString(R.string.unknown)
             }
