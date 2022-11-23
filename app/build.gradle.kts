@@ -41,7 +41,7 @@ android {
 dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0-alpha01")
     implementation("androidx.core:core-ktx:1.9.0")
-    implementation("com.google.android.material:material:1.8.0-alpha02")
+    implementation("com.google.android.material:material:1.8.0-alpha03")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
@@ -53,7 +53,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("org.apache.commons:commons-compress:1.22")
     implementation(files("libs\\calendarview-3.7.1.aar"))
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.ext:junit:1.1.4")
 
 
     kapt("com.github.bumptech.glide:compiler:4.14.2")
