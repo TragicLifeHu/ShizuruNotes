@@ -757,4 +757,5 @@
     <string name="the_highest_ATK_except_caster">除自己外物理攻擊最高的</string>
     <string name="parts">部位</string>
     <string name="Decreases_s1_healing_received_by_s2_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">當%2$s受到治療時，使治療效果降低 [%1$s]%%，持續 [%3$s] 秒。如果由場地效果觸發，持續時間無限。</string>
+    <string name="status_up_buffs">增益效果</string>
 </resources>
