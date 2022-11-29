@@ -446,6 +446,7 @@ open class ActionParameter {
                 95 -> SpyAction()
                 96 -> ChangeEnergyFieldAction()
                 97 -> ChangeEnergyByDamageAction()
+                98 -> EnergyDamageReduceAction();
                 else -> ActionParameter()
             }
         }
