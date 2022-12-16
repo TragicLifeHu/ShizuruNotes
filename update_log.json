@@ -1,10 +1,10 @@
 {
-  "versionCode": "90",
-  "versionName": "1.20.0",
+  "versionCode": "91",
+  "versionName": "1.20.1",
   "recommend": "false",
-  "messageJa": "・新SPイベントに対応\n・初心者ボーナスキャンペーンスケジュールをカレンダー上から切り離す",
-  "messageZhS": "・对应新SP活动\n・隐藏新人恒常掉落奖励日程",
-  "messageZhT": "・新增特殊活動規則\n・隱藏恆常的新人支援活動日程",
+  "messageJa": "・一部のキャンペーンがカレンダーにて表示されない不具合を修正",
+  "messageZhS": "・修正部分活动未在日历显示的bug",
+  "messageZhT": "・修正行事曆中部分活動消失的錯誤",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
