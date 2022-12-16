@@ -1,10 +1,10 @@
 {
-  "versionCode": "86",
+  "versionCode": "87",
   "versionName": "1.19.0",
   "recommend": "false",
-  "messageJa": "・新SPイベントに対応",
-  "messageZhS": "・对应新SP活动",
-  "messageZhT": "・新增特殊活動規則",
+  "messageJa": "・新SPイベントに対応\n・初心者ボーナスキャンペーンスケジュールをカレンダー上から切り離す",
+  "messageZhS": "・对应新SP活动\n・隐藏新人恒常掉落奖励日程",
+  "messageZhT": "・新增特殊活動規則\n・隱藏恆常的新人支援活動日程",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
