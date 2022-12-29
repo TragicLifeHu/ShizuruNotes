@@ -1,10 +1,10 @@
 {
-  "versionCode": "92",
-  "versionName": "1.20.2",
+  "versionCode": "93",
+  "versionName": "1.21.0",
   "recommend": "false",
-  "messageJa": "・一部のキャンペーンがカレンダーにて表示されない不具合を修正",
-  "messageZhS": "・修正部分活动未在日历显示的bug",
-  "messageZhT": "・修正行事曆中部分活動消失的錯誤",
+  "messageJa": "・スキル説明文の修正\n・クラバトシーズンの表示画面を修正",
+  "messageZhS": "・修正技能描述\n・修正公会战期次表示界面",
+  "messageZhT": "・修正技能描述\n・修正戰隊競賽畫面的空白列 (非SQL編輯)",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
