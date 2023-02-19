@@ -1,10 +1,10 @@
 {
-  "versionCode": "93",
-  "versionName": "1.21.0",
+  "versionCode": "96",
+  "versionName": "1.21.3",
   "recommend": "false",
-  "messageJa": "・スキル説明文の修正\n・クラバトシーズンの表示画面を修正",
-  "messageZhS": "・修正技能描述\n・修正公会战期次表示界面",
-  "messageZhT": "・修正技能描述\n・修正戰隊競賽畫面的空白列 (非SQL編輯)",
+  "messageJa": "・スキル説明文の修正\n・大陸サーバー方面に関するバグの修正",
+  "messageZhS": "・修正技能描述\n・修正公会战日期格式引发的闪退",
+  "messageZhT": "・修正技能描述\n・修正公會戰日期格式引發的閃退",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
