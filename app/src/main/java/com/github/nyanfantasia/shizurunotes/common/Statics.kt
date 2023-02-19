@@ -1,5 +1,7 @@
 package com.github.nyanfantasia.shizurunotes.common
 
+import androidx.databinding.ktx.BuildConfig
+
 object Statics {
     //  API URL
     const val API_URL = "https://redive.estertion.win"
@@ -46,4 +48,27 @@ object Statics {
     const val APP_PACKAGE =
         "https://github.com/TragicLifeHu/ShizuruNotes/releases/latest/download/shizurunotes-release.apk"
     const val APK_NAME = "shizurunotes-release.apk"
+
+    //  Static String
+    const val NOTIFICATION_CHANNEL_DEFAULT = "default"
+    const val NOTIFICATION_CHANNEL_LOW = "low"
+
+    const val NOTIFICATION_ACTION = BuildConfig.LIBRARY_PACKAGE_NAME + ".NOTIFICATION"
+    const val NOTIFICATION_EXTRA_TYPE = BuildConfig.LIBRARY_PACKAGE_NAME + ".NOTIFICATION_EXTRA"
+
+    const val NORMAL_BEFORE = "normal_before"
+    const val DUNGEON_BEFORE_2 = "dungeon_before_2"
+    const val DUNGEON_BEFORE = "dungeon_before"
+    const val HATSUNE_LAST = "hatsune_last"
+    const val HATSUNE_LAST_HOUR = "hatsune_last_hour"
+    const val TOWER_LAST_HOUR = "tower_last_hour"
+
+    val TYPE_STRING_LIST = listOf(
+        NORMAL_BEFORE,
+        DUNGEON_BEFORE_2,
+        DUNGEON_BEFORE,
+        HATSUNE_LAST,
+        HATSUNE_LAST_HOUR,
+        TOWER_LAST_HOUR
+    )
 }

@@ -72,7 +72,7 @@ class Chara: Cloneable {
     var skills = mutableListOf<Skill>()
     val storyStatusList = mutableListOf<OneStoryStatus>()
 
-    val storyProperty: Property by lazy {
+    private val storyProperty: Property by lazy {
         Property().apply {
             storyStatusList.forEach {
                 this.plusEqual(it.allProperty)
@@ -135,7 +135,7 @@ class Chara: Cloneable {
         return rarityPropertyGrowth[rarity]?.multiply(maxCharaLevel.toDouble() + rank) ?: Property()
     }
 
-    fun getAllEquipmentProperty(rank: Int): Property {
+    private fun getAllEquipmentProperty(rank: Int): Property {
         val property = Property()
         rankEquipments[rank]?.forEach {
             property.plusEqual(it.getCeilProperty())
@@ -143,12 +143,12 @@ class Chara: Cloneable {
         return property
     }
 
-    val uniqueEquipmentProperty: Property
+    private val uniqueEquipmentProperty: Property
         get() {
             return uniqueEquipment?.getCeilProperty() ?: Property()
         }
 
-    fun getPassiveSkillProperty(rarity: Int): Property {
+    private fun getPassiveSkillProperty(rarity: Int): Property {
         val property = Property()
         skills.forEach { skill ->
             if (rarity >= 5 && skill.skillClass == Skill.SkillClass.EX1_EVO) {

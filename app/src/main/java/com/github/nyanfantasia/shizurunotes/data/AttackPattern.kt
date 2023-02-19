@@ -4,9 +4,7 @@ package com.github.nyanfantasia.shizurunotes.data
 
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
-import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getStringWithSpace
 import com.github.nyanfantasia.shizurunotes.common.Statics
-import com.github.nyanfantasia.shizurunotes.data.Skill.SkillClass
 
 class AttackPattern(
     var patternId: Int,
@@ -57,77 +55,5 @@ class AttackPattern(
     companion object {
         private const val PHY_ICON = Statics.API_URL + "/icon/equipment/101011.webp"
         private const val MAG_ICON = Statics.API_URL + "/icon/equipment/101251.webp"
-    }
-}
-
-internal enum class PatternType(val value: Int) {
-    none(0),
-    hit(1),
-    main1(1001),
-    main2(1002),
-    main3(1003),
-    main4(1004),
-    main5(1005),
-    main6(1006),
-    main7(1007),
-    main8(1008),
-    main9(1009),
-    main10(1010),
-    sp1(2001),
-    sp2(2002),
-    sp3(2003),
-    sp4(2004),
-    sp5(2005);
-
-    fun skillClass(): SkillClass {
-        return when (this) {
-            main1 -> SkillClass.MAIN1
-            main2 -> SkillClass.MAIN2
-            main3 -> SkillClass.MAIN3
-            main4 -> SkillClass.MAIN4
-            main5 -> SkillClass.MAIN5
-            main6 -> SkillClass.MAIN6
-            main7 -> SkillClass.MAIN7
-            main8 -> SkillClass.MAIN8
-            main9 -> SkillClass.MAIN9
-            main10 -> SkillClass.MAIN10
-            sp1 -> SkillClass.SP1
-            sp2 -> SkillClass.SP2
-            sp3 -> SkillClass.SP3
-            sp4 -> SkillClass.SP4
-            sp5 -> SkillClass.SP5
-            else -> SkillClass.UNKNOWN
-        }
-    }
-
-    fun description(): String {
-        return when (this) {
-            hit -> getStringWithSpace(R.string.hit)
-            main1 -> getStringWithSpace(R.string.main_skill_1)
-            main2 -> getStringWithSpace(R.string.main_skill_2)
-            main3 -> getStringWithSpace(R.string.main_skill_3)
-            main4 -> getStringWithSpace(R.string.main_skill_4)
-            main5 -> getStringWithSpace(R.string.main_skill_5)
-            main6 -> getStringWithSpace(R.string.main_skill_6)
-            main7 -> getStringWithSpace(R.string.main_skill_7)
-            main8 -> getStringWithSpace(R.string.main_skill_8)
-            main9 -> getStringWithSpace(R.string.main_skill_9)
-            main10 -> getStringWithSpace(R.string.main_skill_10)
-            sp1 -> getStringWithSpace(R.string.sp_skill_1)
-            sp2 -> getStringWithSpace(R.string.sp_skill_2)
-            sp3 -> getStringWithSpace(R.string.sp_skill_3)
-            sp4 -> getStringWithSpace(R.string.sp_skill_4)
-            sp5 -> getStringWithSpace(R.string.sp_skill_5)
-            else -> ""
-        }
-    }
-
-    companion object {
-        fun parse(value: Int): PatternType {
-            for (item in values()) {
-                if (item.value == value) return item
-            }
-            return none
-        }
     }
 }

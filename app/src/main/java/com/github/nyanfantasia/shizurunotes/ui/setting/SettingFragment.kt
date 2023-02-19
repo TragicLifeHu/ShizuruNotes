@@ -10,7 +10,7 @@ import com.afollestad.materialdialogs.checkbox.checkBoxPrompt
 import com.github.nyanfantasia.shizurunotes.BuildConfig
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.common.App
-import com.github.nyanfantasia.shizurunotes.common.NotificationManager
+import com.github.nyanfantasia.shizurunotes.common.AppNotificationManager
 import com.github.nyanfantasia.shizurunotes.common.UpdateManager
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
 import com.github.nyanfantasia.shizurunotes.user.UserSettings.Companion.DB_VERSION
@@ -119,7 +119,7 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
             serverPreference.onPreferenceChangeListener =
                 Preference.OnPreferenceChangeListener { _, _ ->
-                    NotificationManager.get().cancelAllAlarm()
+                    AppNotificationManager.get().cancelAllAlarm()
                     thread(start = true){
                         Thread.sleep(100)
                         ProcessPhoenix.triggerRebirth(activity)

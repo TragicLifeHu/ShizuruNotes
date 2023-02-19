@@ -1,6 +1,6 @@
 package com.github.nyanfantasia.shizurunotes.data
 
-class CharaStoryStatus(var charaId: Int, var statusType: Int, var statusRate: Double) {
+class CharaStoryStatus(var charaId: Int, private var statusType: Int, private var statusRate: Double) {
     val property: Property
         get() {
             val property = Property()

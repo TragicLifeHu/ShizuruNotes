@@ -1,75 +1,57 @@
 package com.github.nyanfantasia.shizurunotes.common
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.databinding.ktx.BuildConfig
 import com.github.nyanfantasia.shizurunotes.R
 import com.github.nyanfantasia.shizurunotes.ui.MainActivity
 import kotlin.random.Random
 
-const val NOTIFICATION_CHANNEL_DEFAULT = "default"
-const val NOTIFICATION_CHANNEL_LOW = "low"
-
-const val NOTIFICATION_ACTION = BuildConfig.LIBRARY_PACKAGE_NAME + ".NOTIFICATION"
-const val NOTIFICATION_EXTRA_TYPE = BuildConfig.LIBRARY_PACKAGE_NAME + ".NOTIFICATION_EXTRA"
-
-const val NORMAL_BEFORE = "normal_before"
-const val DUNGEON_BEFORE_2 = "dungeon_before_2"
-const val DUNGEON_BEFORE = "dungeon_before"
-const val HATSUNE_LAST = "hatsune_last"
-const val HATSUNE_LAST_HOUR = "hatsune_last_hour"
-const val TOWER_LAST_HOUR = "tower_last_hour"
-
-val TYPE_STRING_LIST = listOf(
-    NORMAL_BEFORE,
-    DUNGEON_BEFORE_2,
-    DUNGEON_BEFORE,
-    HATSUNE_LAST,
-    HATSUNE_LAST_HOUR,
-    TOWER_LAST_HOUR
-)
-
 class AlarmReceiver : BroadcastReceiver() {
+    @SuppressLint("UnspecifiedImmutableFlag")
     override fun onReceive(context: Context, intent: Intent) {
         when (intent.action) {
-            NOTIFICATION_ACTION -> {
+            Statics.NOTIFICATION_ACTION -> {
                 var title = ""
                 var text = ""
                 var channelId =
-                    NOTIFICATION_CHANNEL_LOW
-                when (intent.extras?.getString(NOTIFICATION_EXTRA_TYPE)) {
-                    NORMAL_BEFORE -> {
+                    Statics.NOTIFICATION_CHANNEL_LOW
+                when (intent.extras?.getString(Statics.NOTIFICATION_EXTRA_TYPE)) {
+                    Statics.NORMAL_BEFORE -> {
                         title = I18N.getString(R.string.notification_normal_before_title)
                         text = I18N.getString(R.string.notification_normal_before_text)
                     }
-                    DUNGEON_BEFORE_2 -> {
+                    Statics.DUNGEON_BEFORE_2 -> {
                         title = I18N.getString(R.string.notification_dungeon_before_2_title)
                         text = I18N.getString(R.string.notification_dungeon_before_2_text)
                     }
-                    DUNGEON_BEFORE -> {
+                    Statics.DUNGEON_BEFORE -> {
                         title = I18N.getString(R.string.notification_dungeon_before_title)
                         text = I18N.getString(R.string.notification_dungeon_before_text)
                     }
-                    HATSUNE_LAST -> {
+                    Statics.HATSUNE_LAST -> {
                         title = I18N.getString(R.string.notification_hatsune_last_title)
                         text = I18N.getString(R.string.notification_hatsune_last_text)
                     }
-                    HATSUNE_LAST_HOUR -> {
+                    Statics.HATSUNE_LAST_HOUR -> {
                         title = I18N.getString(R.string.notification_hatsune_last_hour_title)
                         text = I18N.getString(R.string.notification_hatsune_last_hour_text)
                         channelId =
-                            NOTIFICATION_CHANNEL_DEFAULT
+                            Statics.NOTIFICATION_CHANNEL_DEFAULT
                     }
-                    TOWER_LAST_HOUR -> {
+                    Statics.TOWER_LAST_HOUR -> {
                         title = I18N.getString(R.string.notification_tower_last_hour_title)
                         text = I18N.getString(R.string.notification_tower_last_hour_text)
                         channelId =
-                            NOTIFICATION_CHANNEL_DEFAULT
+                            Statics.NOTIFICATION_CHANNEL_DEFAULT
                     }
                 }
                 val newIntent = Intent(context, MainActivity::class.java)
@@ -87,7 +69,21 @@ class AlarmReceiver : BroadcastReceiver() {
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)
                 with (NotificationManagerCompat.from(context)) {
-                    //暂时不需要保存ID，随机搞一个吧
+                    if (ActivityCompat.checkSelfPermission(
+                            context,
+                            Manifest.permission.POST_NOTIFICATIONS
+                        ) != PackageManager.PERMISSION_GRANTED
+                    ) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return
+                    }
+                    // Random Id generator
                     notify(Random.nextInt(Int.MIN_VALUE, Int.MAX_VALUE), builder.build())
                 }
             }

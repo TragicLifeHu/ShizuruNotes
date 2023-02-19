@@ -6,9 +6,3 @@ interface Item {
     val iconUrl: String
     val itemType: ItemType
 }
-
-enum class ItemType {
-    GENERAL_ITEM,
-    EQUIPMENT,
-    EQUIPMENT_PIECE
-}

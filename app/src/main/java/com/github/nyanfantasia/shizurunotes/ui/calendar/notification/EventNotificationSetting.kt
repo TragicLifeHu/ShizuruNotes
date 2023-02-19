@@ -6,8 +6,8 @@ import androidx.preference.Preference.OnPreferenceChangeListener
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
 import com.github.nyanfantasia.shizurunotes.R
-import com.github.nyanfantasia.shizurunotes.common.NotificationManager
-import com.github.nyanfantasia.shizurunotes.common.TYPE_STRING_LIST
+import com.github.nyanfantasia.shizurunotes.common.AppNotificationManager
+import com.github.nyanfantasia.shizurunotes.common.Statics.TYPE_STRING_LIST
 
 class EventNotificationSetting : PreferenceFragmentCompat(){
 
@@ -21,7 +21,7 @@ class EventNotificationSetting : PreferenceFragmentCompat(){
 
     private fun switchNotification(): (p: Preference, b: Any) -> Boolean {
         return { p , b ->
-            NotificationManager.get().refreshSpecificNotification(p.key, b as Boolean)
+            AppNotificationManager.get().refreshSpecificNotification(p.key, b as Boolean)
             true
         }
     }

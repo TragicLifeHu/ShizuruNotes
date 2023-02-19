@@ -10,11 +10,11 @@ class Enemy (
 ) {
     var unitId = 0
     var level = 0
-    var prefabId = 0
+    private var prefabId = 0
     var atkType = 0
     var searchAreaWidth = 0
-    var normalAtkCastTime = 0.0
-    var resistStatusId: Int? = null
+    private var normalAtkCastTime = 0.0
+    private var resistStatusId: Int? = null
     var isMultiTarget: Boolean = false
     lateinit var name: String
     lateinit var comment: String

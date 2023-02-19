@@ -6,7 +6,7 @@ import com.github.nyanfantasia.shizurunotes.common.Statics
 
 class Equipment(
     val equipmentId: Int,
-    val equipmentName: String,
+    private val equipmentName: String,
     val description: String,
     val promotionLevel: Int,
     val craftFlg: Int,
@@ -14,8 +14,8 @@ class Equipment(
     val salePrice: Int,
     val requireLevel: Int,
     val maxEnhanceLevel: Int,
-    val equipmentProperty: Property,
-    var equipmentEnhanceRate: Property,
+    private val equipmentProperty: Property,
+    private var equipmentEnhanceRate: Property,
     val catalog: String,
     val rarity: Int
 ) : Item {
@@ -84,14 +84,4 @@ class Equipment(
             0
         )
     }
-}
-
-class EquipmentPiece(
-    private val id: Int,
-    private val name: String
-) : Item {
-    override val itemId: Int = id
-    override val itemName: String = name
-    override val itemType: ItemType = ItemType.EQUIPMENT_PIECE
-    override val iconUrl: String = Statics.EQUIPMENT_ICON_URL.format(itemId)
 }

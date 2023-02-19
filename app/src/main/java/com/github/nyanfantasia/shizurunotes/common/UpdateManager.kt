@@ -61,7 +61,7 @@ class UpdateManager private constructor(
     private var progress = 0
     private var hasNewVersion = false
     private val canceled = false
-    val callBack: UpdateCallBack
+    private val callBack: UpdateCallBack
     private val versionInfo: String? = null
     private var progressDialog: MaterialDialog? = null
     private var maxLength = 0

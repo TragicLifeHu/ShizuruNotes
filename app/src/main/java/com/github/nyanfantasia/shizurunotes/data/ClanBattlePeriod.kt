@@ -9,8 +9,8 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 class ClanBattlePeriod(
-    val clanBattleId: Int,
-    val startTime: LocalDateTime,
+    private val clanBattleId: Int,
+    private val startTime: LocalDateTime,
     val endTime: LocalDateTime
 ) {
     val phaseList = mutableListOf<ClanBattlePhase>().apply {

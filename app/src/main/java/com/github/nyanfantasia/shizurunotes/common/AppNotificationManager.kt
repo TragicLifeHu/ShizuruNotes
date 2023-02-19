@@ -1,5 +1,6 @@
 package com.github.nyanfantasia.shizurunotes.common
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -15,18 +16,18 @@ import java.time.LocalDateTime
 import java.time.ZoneOffset
 import kotlin.concurrent.thread
 
-class NotificationManager private constructor(
+class AppNotificationManager private constructor(
     private val mContext: Context
 ) {
     companion object {
-        private lateinit var instance: NotificationManager
+        private lateinit var instance: AppNotificationManager
 
-        fun with (context: Context): NotificationManager {
-            instance = NotificationManager(context)
+        fun with (context: Context): AppNotificationManager {
+            instance = AppNotificationManager(context)
             return instance
         }
 
-        fun get(): NotificationManager {
+        fun get(): AppNotificationManager {
             return instance
         }
     }
@@ -34,12 +35,12 @@ class NotificationManager private constructor(
     private var futureSchedule: MutableList<EventSchedule> = mutableListOf()
 
     private val notificationTypeMap = mapOf(
-        NORMAL_BEFORE to CampaignType.DropAmountNormal,
-        DUNGEON_BEFORE_2 to CampaignType.ManaDungeon,
-        DUNGEON_BEFORE to CampaignType.ManaDungeon,
-        HATSUNE_LAST to EventType.Hatsune,
-        HATSUNE_LAST_HOUR to EventType.Hatsune,
-        TOWER_LAST_HOUR to EventType.Tower
+        Statics.NORMAL_BEFORE to CampaignType.DropAmountNormal,
+        Statics.DUNGEON_BEFORE_2 to CampaignType.ManaDungeon,
+        Statics.DUNGEON_BEFORE to CampaignType.ManaDungeon,
+        Statics.HATSUNE_LAST to EventType.Hatsune,
+        Statics.HATSUNE_LAST_HOUR to EventType.Hatsune,
+        Statics.TOWER_LAST_HOUR to EventType.Tower
     )
 
     fun loadData() {
@@ -81,22 +82,22 @@ class NotificationManager private constructor(
         if (eventSchedule is CampaignSchedule) {
             when (eventSchedule.campaignType) {
                 CampaignType.DropAmountNormal -> {
-                    setOrCancelAlarm(eventSchedule, NORMAL_BEFORE, cancel)
+                    setOrCancelAlarm(eventSchedule, Statics.NORMAL_BEFORE, cancel)
                 }
                 CampaignType.ManaDungeon -> {
-                    setOrCancelAlarm(eventSchedule, DUNGEON_BEFORE_2, cancel)
-                    setOrCancelAlarm(eventSchedule, DUNGEON_BEFORE, cancel)
+                    setOrCancelAlarm(eventSchedule, Statics.DUNGEON_BEFORE_2, cancel)
+                    setOrCancelAlarm(eventSchedule, Statics.DUNGEON_BEFORE, cancel)
                 }
                 else -> {  }
             }
         } else {
             when (eventSchedule.type) {
                 EventType.Hatsune -> {
-                    setOrCancelAlarm(eventSchedule, HATSUNE_LAST, cancel)
-                    setOrCancelAlarm(eventSchedule, HATSUNE_LAST_HOUR, cancel)
+                    setOrCancelAlarm(eventSchedule, Statics.HATSUNE_LAST, cancel)
+                    setOrCancelAlarm(eventSchedule, Statics.HATSUNE_LAST_HOUR, cancel)
                 }
                 EventType.Tower -> {
-                    setOrCancelAlarm(eventSchedule, TOWER_LAST_HOUR, cancel)
+                    setOrCancelAlarm(eventSchedule, Statics.TOWER_LAST_HOUR, cancel)
                 }
                 else -> {  }
             }
@@ -111,6 +112,7 @@ class NotificationManager private constructor(
         }
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private fun setAlarm(eventSchedule: EventSchedule, typeString: String) {
         if (!eventSchedule.startTime.isEqual(eventSchedule.endTime)) {
             val triggerTime = getTriggerTime(eventSchedule, typeString)
@@ -144,6 +146,7 @@ class NotificationManager private constructor(
         }
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private fun cancelAlarm(intent: Intent, id: Int) {
         val alarmMgr = mContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -156,12 +159,12 @@ class NotificationManager private constructor(
 
     private fun getTriggerTime(eventSchedule: EventSchedule, type: String): LocalDateTime {
         return when (type) {
-            DUNGEON_BEFORE_2 -> eventSchedule.startTime.plusDays(-2).withHour(5).withMinute(0).withSecond(0)
-            NORMAL_BEFORE,
-            DUNGEON_BEFORE -> eventSchedule.startTime.plusDays(-1).withHour(5).withMinute(0).withSecond(0)
-            HATSUNE_LAST -> eventSchedule.endTime.withHour(5).withMinute(0).withSecond(0)
-            HATSUNE_LAST_HOUR,
-            TOWER_LAST_HOUR -> eventSchedule.endTime.plusHours(-1)
+            Statics.DUNGEON_BEFORE_2 -> eventSchedule.startTime.plusDays(-2).withHour(5).withMinute(0).withSecond(0)
+            Statics.NORMAL_BEFORE,
+            Statics.DUNGEON_BEFORE -> eventSchedule.startTime.plusDays(-1).withHour(5).withMinute(0).withSecond(0)
+            Statics.HATSUNE_LAST -> eventSchedule.endTime.withHour(5).withMinute(0).withSecond(0)
+            Statics.HATSUNE_LAST_HOUR,
+            Statics.TOWER_LAST_HOUR -> eventSchedule.endTime.plusHours(-1)
             else -> LocalDateTime.MIN
         }
     }
@@ -170,19 +173,19 @@ class NotificationManager private constructor(
         return Intent().apply {
             setClass(mContext, AlarmReceiver::class.java)
             action =
-                NOTIFICATION_ACTION
-            putExtra(NOTIFICATION_EXTRA_TYPE, type)
+                Statics.NOTIFICATION_ACTION
+            putExtra(Statics.NOTIFICATION_EXTRA_TYPE, type)
         }
     }
 
     private fun getSpecificId(eventSchedule: EventSchedule, typeString: String): Int {
         return when (typeString) {
-            NORMAL_BEFORE -> eventSchedule.id + 100000
-            DUNGEON_BEFORE_2 -> eventSchedule.id + 100000
-            DUNGEON_BEFORE -> eventSchedule.id + 200000
-            HATSUNE_LAST -> eventSchedule.id + 100000
-            HATSUNE_LAST_HOUR -> eventSchedule.id + 200000
-            TOWER_LAST_HOUR -> eventSchedule.id + 100000
+            Statics.NORMAL_BEFORE -> eventSchedule.id + 100000
+            Statics.DUNGEON_BEFORE_2 -> eventSchedule.id + 100000
+            Statics.DUNGEON_BEFORE -> eventSchedule.id + 200000
+            Statics.HATSUNE_LAST -> eventSchedule.id + 100000
+            Statics.HATSUNE_LAST_HOUR -> eventSchedule.id + 200000
+            Statics.TOWER_LAST_HOUR -> eventSchedule.id + 100000
             else -> 0
         }
     }

@@ -29,10 +29,10 @@ class App : Application() {
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
-        val channelDefault = NotificationChannel(NOTIFICATION_CHANNEL_DEFAULT, "important", NotificationManager.IMPORTANCE_DEFAULT).apply {
+        val channelDefault = NotificationChannel(Statics.NOTIFICATION_CHANNEL_DEFAULT, "important", NotificationManager.IMPORTANCE_DEFAULT).apply {
             description = "important notification"
         }
-        val channelLow = NotificationChannel(NOTIFICATION_CHANNEL_LOW, "regular", NotificationManager.IMPORTANCE_LOW).apply {
+        val channelLow = NotificationChannel(Statics.NOTIFICATION_CHANNEL_LOW, "regular", NotificationManager.IMPORTANCE_LOW).apply {
             description = "regular notification"
         }
         // Register the channel with the system
@@ -48,7 +48,7 @@ class App : Application() {
         DBHelper.with(this)
         ResourceManager.with(this)
         I18N.application = this
-        com.github.nyanfantasia.shizurunotes.common.NotificationManager.with(this)
+        AppNotificationManager.with(this)
     }
 
     private fun initUserServer() {

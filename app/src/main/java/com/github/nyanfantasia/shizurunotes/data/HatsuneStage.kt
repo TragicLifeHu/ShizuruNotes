@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter
 
 class HatsuneStage(
     val eventId: Int,
-    val startTime: LocalDateTime,
-    val endTime: LocalDateTime,
+    private val startTime: LocalDateTime,
+    private val endTime: LocalDateTime,
     val title: String
 ) {
     val battleWaveGroupMap = mutableMapOf<String, WaveGroup>()
