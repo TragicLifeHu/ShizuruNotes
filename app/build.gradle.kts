@@ -12,8 +12,8 @@ android {
         applicationId = "com.github.nyanfantasia.shizurunotes"
         minSdk = 26
         targetSdk = 33
-        versionCode = 96
-        versionName = "1.21.3"
+        versionCode = 97
+        versionName = "1.21.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -54,6 +54,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-beta01")
     implementation("org.apache.commons:commons-compress:1.22")
     implementation(files("libs\\calendarview-3.7.1.aar"))
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.core:core-ktx:1.9.0")

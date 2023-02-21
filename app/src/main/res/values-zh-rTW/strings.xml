@@ -759,4 +759,6 @@
     <string name="Decreases_s1_healing_received_by_s2_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">當%2$s受到治療時，使治療效果降低 [%1$s]%%，持續 [%3$s] 秒。如果由場地效果觸發，持續時間無限。</string>
     <string name="status_up_buffs">增益效果</string>
     <string name="Reduces_incoming_energy_damage_down_to_s1_percent_of_s2_for_s3_sec">使%2$s受到的TP減少效果量變為原本的值的 [%1$s] 倍，持續時間 [%3$s] 秒。</string>
+    <string name="Multiplies_parameter_d2_of_action_d3_by_s1_x_Number_of_allies">使 [動作%3$d] 的係數%2$d乘以 [%1$s * 友方數量]。</string>
+    <string name="Deploys_a_filed_of_radius_d1_which_s2_attack_speed_of_s3_for_s4_sec">展開半徑 [%1$d] 的領域，使行動速度%2$s [%3$s%%] ，持續時間 [%4$s] 秒。本效果可與其他同種類效果疊加。</string>
 </resources>

@@ -447,6 +447,7 @@ open class ActionParameter {
                 96 -> ChangeEnergyFieldAction()
                 97 -> ChangeEnergyByDamageAction()
                 98 -> EnergyDamageReduceAction()
+                99 -> ChangeSpeedOverwriteFieldAction()
                 else -> ActionParameter()
             }
         }
