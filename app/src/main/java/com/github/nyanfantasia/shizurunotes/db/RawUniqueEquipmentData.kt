@@ -5,16 +5,16 @@ import com.github.nyanfantasia.shizurunotes.data.Equipment
 import com.github.nyanfantasia.shizurunotes.data.Property
 import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
 
-@Suppress("PropertyName", "PrivatePropertyName")
+@Suppress("PropertyName")
 class RawUniqueEquipmentData {
-    private var equipment_id = 0
-    private var equipment_name: String? = null
+    var equipment_id = 0
+    var equipment_name: String? = null
     var description: String? = null
-    private var promotion_level = 0
-    private var craft_flg = 0
-    private var equipment_enhance_point = 0
-    private var sale_price = 0
-    private var require_level = 0
+    var promotion_level = 0
+    var craft_flg = 0
+    var equipment_enhance_point = 0
+    var sale_price = 0
+    var require_level = 0
     var hp = 0.0
     var atk = 0.0
     var magic_str = 0.0
@@ -53,6 +53,12 @@ class RawUniqueEquipmentData {
     var item_id_10 = 0
     var consume_num_10 = 0
     fun getCharaUniqueEquipment(chara: Chara): Equipment {
+        val enhanceData: List<RawUniqueEquipmentEnhanceData>? =
+            get().getUniqueEquipmentEnhance(chara.unitId)
+        val uniqueEquipEnhanceProperties = ArrayList<Property>()
+        for (rawData in enhanceData!!) {
+            uniqueEquipEnhanceProperties.add(rawData.property)
+        }
         return Equipment(
             equipment_id,
             equipment_name!!,
@@ -64,7 +70,7 @@ class RawUniqueEquipmentData {
             require_level,
             chara.maxUniqueEquipmentLevel,
             property,
-            get().getUniqueEquipmentEnhance(chara.unitId)!!.property,
+            uniqueEquipEnhanceProperties,
             "",
             0
         )

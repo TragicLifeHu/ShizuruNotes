@@ -6,7 +6,7 @@ import com.github.nyanfantasia.shizurunotes.common.Statics
 
 class Equipment(
     val equipmentId: Int,
-    private val equipmentName: String,
+    val equipmentName: String,
     val description: String,
     val promotionLevel: Int,
     val craftFlg: Int,
@@ -14,8 +14,8 @@ class Equipment(
     val salePrice: Int,
     val requireLevel: Int,
     val maxEnhanceLevel: Int,
-    private val equipmentProperty: Property,
-    private var equipmentEnhanceRate: Property,
+    val equipmentProperty: Property,
+    var equipmentEnhanceRates: List<Property>,
     val catalog: String,
     val rarity: Int
 ) : Item {
@@ -26,22 +26,23 @@ class Equipment(
     var craftMap: Map<Item, Int>? = null
 
     fun getCeilProperty(): Property {
-        return if (equipmentId in uniqueEquipmentIdRange) {
-            maxEnhanceLevel - 1
-        } else {
-            maxEnhanceLevel
-        }.let {
-            equipmentProperty.plus(equipmentEnhanceRate.multiply(it.toDouble())).ceil
-        }
+        return getEnhancedProperty(maxEnhanceLevel)
     }
 
     fun getEnhancedProperty(level: Int): Property {
+        if (equipmentEnhanceRates.isEmpty()) {
+            return Property()
+        }
         return if (equipmentId in uniqueEquipmentIdRange) {
-            level - 1
+            if (level <= 260 || equipmentEnhanceRates.size == 1) {
+                equipmentProperty.plus(equipmentEnhanceRates[0].multiply((level - 1).toDouble())).ceil
+            } else {
+                equipmentProperty
+                    .plus(equipmentEnhanceRates[0].multiply(259.toDouble())).ceil
+                    .plus(equipmentEnhanceRates[1].multiply((level - 260).toDouble())).ceil
+            }
         } else {
-            level
-        }.let {
-            equipmentProperty.plus(equipmentEnhanceRate.multiply(it.toDouble())).ceil
+            equipmentProperty.plus(equipmentEnhanceRates[0].multiply(level.toDouble())).ceil
         }
     }
 
@@ -79,7 +80,7 @@ class Equipment(
             0,
             0,
             Property(),
-            Property(),
+            listOf(Property(), Property()),
             "",
             0
         )
