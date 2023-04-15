@@ -1,6 +1,6 @@
 package com.github.nyanfantasia.shizurunotes.common
 
-import androidx.databinding.ktx.BuildConfig
+import com.github.nyanfantasia.shizurunotes.BuildConfig
 
 object Statics {
     //  API URL
@@ -53,8 +53,8 @@ object Statics {
     const val NOTIFICATION_CHANNEL_DEFAULT = "default"
     const val NOTIFICATION_CHANNEL_LOW = "low"
 
-    const val NOTIFICATION_ACTION = BuildConfig.LIBRARY_PACKAGE_NAME + ".NOTIFICATION"
-    const val NOTIFICATION_EXTRA_TYPE = BuildConfig.LIBRARY_PACKAGE_NAME + ".NOTIFICATION_EXTRA"
+    const val NOTIFICATION_ACTION = BuildConfig.APPLICATION_ID + ".NOTIFICATION"
+    const val NOTIFICATION_EXTRA_TYPE = BuildConfig.APPLICATION_ID + ".NOTIFICATION_EXTRA"
 
     const val NORMAL_BEFORE = "normal_before"
     const val DUNGEON_BEFORE_2 = "dungeon_before_2"
