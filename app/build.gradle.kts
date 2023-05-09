@@ -4,6 +4,7 @@ plugins {
     id("androidx.navigation.safeargs")
     id("kotlin-kapt")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -58,7 +59,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
 
 
-    kapt("com.github.bumptech.glide:compiler:4.15.1")
+    ksp("com.github.bumptech.glide:ksp:4.15.1")
     implementation("com.github.bumptech.glide:glide:4.15.1")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.11")
     implementation("com.google.code.gson:gson:2.10.1")
