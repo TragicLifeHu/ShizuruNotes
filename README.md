@@ -8,7 +8,7 @@ It supports the server of Japan, Taiwan and Mainland China at present.
 * Android 8+ (Doesn't support Android Emulator lower than Android 8)
 
 ## Build
-Better to use Android Studio Chipmunk (2021.2.1) or later.  
+Must use Android Studio Giraffe (2022.3.1 Beta 2) or later, or you'll get misty errors.  
 
 Before building, you need to create a `local.properties` in project's root directory if it does not exist.
 

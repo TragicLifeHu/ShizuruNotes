@@ -2,9 +2,9 @@
   "versionCode": "100",
   "versionName": "1.22.2",
   "recommend": "false",
-  "messageJa": "・日付文字列のフォーマットの問題を修正",
-  "messageZhS": "・修复日历字符串格式化问题",
-  "messageZhT": "・修正字串格式化問題",
+  "messageJa": "・新スキルの追加",
+  "messageZhS": "・追加新技能",
+  "messageZhT": "・新增技能",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
