@@ -85,7 +85,9 @@ enum class ActionType(val value: Int) {
     SpyAction(95),
     ChangeEnergyFieldAction(96),
     ChangeEnergyByDamageAction(97),
-    EnergyDamageReduceAction(98);
+    EnergyDamageReduceAction(98),
+    ChangeSpeedOverwriteFieldAction(99),
+    UnableStateGuardAction(100);
 
     companion object {
         @JvmStatic
