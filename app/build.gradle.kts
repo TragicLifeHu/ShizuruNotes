@@ -13,8 +13,8 @@ android {
         applicationId = "com.github.nyanfantasia.shizurunotes"
         minSdk = 26
         targetSdk = 33
-        versionCode = 100
-        versionName = "1.22.2"
+        versionCode = 101
+        versionName = "1.22.2 Hotfix"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

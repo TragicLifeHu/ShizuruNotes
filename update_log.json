@@ -1,10 +1,10 @@
 {
-  "versionCode": "100",
-  "versionName": "1.22.2",
+  "versionCode": "101",
+  "versionName": "1.22.2 Hotfix",
   "recommend": "false",
-  "messageJa": "・新スキルの追加",
-  "messageZhS": "・追加新技能",
-  "messageZhT": "・新增技能",
+  "messageJa": "・新スキルの追加\n・ホットフィックス",
+  "messageZhS": "・追加新技能\n・Hotfix",
+  "messageZhT": "・新增技能\n・緊急修補",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
