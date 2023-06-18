@@ -20,8 +20,7 @@ android {
     buildTypes {
         release {
             isShrinkResources = false
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles("proguard-rules.pro")
         }
         debug {
             applicationIdSuffix = ".debug"
@@ -48,9 +47,9 @@ dependencies {
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
     implementation("org.brotli:dec:0.1.2")
     implementation("androidx.recyclerview:recyclerview:1.3.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
