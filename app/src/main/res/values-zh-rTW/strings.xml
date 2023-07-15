@@ -762,4 +762,5 @@
     <string name="Multiplies_parameter_d2_of_action_d3_by_s1_x_Number_of_allies">使 [動作%3$d] 的係數%2$d乘以 [%1$s * 友方數量]。</string>
     <string name="Deploys_a_filed_of_radius_d1_which_s2_attack_speed_of_s3_for_s4_sec">展開半徑 [%1$d] 的領域，使行動速度%2$s [%3$s%%] ，持續時間 [%4$s] 秒。本效果可與其他同種類效果疊加。</string>
     <string name="Enable_s1_to_resist_all_sorts_of_incapacity_efficacies_up_to_s2_times_in_a_period_of_s3_sec">使%1$s免疫所有控制效果，最大 [%2$s] 次，持續時間 [%3$s] 秒。</string>
+    <string name="This_damage_ignores_s1_s2_defense">本技能無視敵方 [%1$s] %2$s防禦力。</string>
 </resources>

@@ -5,6 +5,7 @@ import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 import com.github.nyanfantasia.shizurunotes.data.Property
 import com.github.nyanfantasia.shizurunotes.data.PropertyKey
 import com.github.nyanfantasia.shizurunotes.utils.Utils.roundIfNeed
+import kotlin.math.abs
 
 class DamageAction : ActionParameter() {
     private var damageClass: ClassModifier? = null
@@ -26,7 +27,7 @@ class DamageAction : ActionParameter() {
 
     override fun childInit() {
         damageClass = ClassModifier.parse(actionDetail1)
-        criticalModifier = CriticalModifier.parse(actionValue5!!.value.toInt())
+        criticalModifier = CriticalModifier.parse(abs(actionValue5!!.value.toInt()))
         decideTargetAtkType = DecideTargetAtkType.parse(actionDetail2)
         when (damageClass) {
             ClassModifier.Magic -> {
@@ -85,6 +86,9 @@ class DamageAction : ActionParameter() {
         }
         if (decideTargetAtkType == DecideTargetAtkType.LowerDef) {
             string.append(getString(R.string.This_damage_type_is_judged_by_the_lower_defence_value_of_targeted_enemy))
+        }
+        if (actionValue7!!.value != 0.0) {
+            string.append(getString(R.string.This_damage_ignores_s1_s2_defense, actionValue7!!.value, damageClass!!.description()))
         }
         return string.toString()
     }

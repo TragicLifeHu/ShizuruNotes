@@ -1,10 +1,10 @@
 {
-  "versionCode": "101",
-  "versionName": "1.22.2 Hotfix",
+  "versionCode": "102",
+  "versionName": "1.23.0",
   "recommend": "false",
-  "messageJa": "・新スキルの追加\n・ホットフィックス",
-  "messageZhS": "・追加新技能\n・Hotfix",
-  "messageZhT": "・新增技能\n・緊急修補",
+  "messageJa": "・新スキルの追加\n・一部専用装備のステータス値を修正",
+  "messageZhS": "・追加新技能\n・修正一部分专属装备属性值",
+  "messageZhT": "・新增技能\n・修正部分專用裝備數值",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
