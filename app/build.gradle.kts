@@ -13,8 +13,8 @@ android {
         applicationId = "com.github.nyanfantasia.shizurunotes"
         minSdk = 26
         targetSdk = 33
-        versionCode = 101
-        versionName = "1.22.2 Hotfix"
+        versionCode = 102
+        versionName = "1.23.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -56,7 +56,6 @@ dependencies {
     implementation("org.apache.commons:commons-compress:1.23.0")
     implementation(files("libs\\calendarview-3.7.1.aar"))
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
-
 
     ksp("com.github.bumptech.glide:ksp:4.15.1")
     implementation("com.github.bumptech.glide:glide:4.15.1")
