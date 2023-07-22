@@ -151,7 +151,11 @@ open class ActionParameter {
     }
 
     fun buildExpression(level: Int, property: Property?): String {
-        return buildExpression(level, actionValues, null, property,
+        return buildExpression(
+            level,
+            actionValues,
+            null,
+            property,
             isHealing = false,
             isSelfTPRestoring = false,
             hasBracesIfNeeded = false
@@ -159,10 +163,31 @@ open class ActionParameter {
     }
 
     fun buildExpression(level: Int, roundingMode: RoundingMode?, property: Property?): String {
-        return buildExpression(level, actionValues, roundingMode, property,
+        return buildExpression(
+            level,
+            actionValues,
+            roundingMode,
+            property,
             isHealing = false,
             isSelfTPRestoring = false,
             hasBracesIfNeeded = false
+            )
+    }
+    fun buildExpression(
+        level: Int,
+        roundingMode: RoundingMode?,
+        property: Property?,
+        isConstant: Boolean
+    ): String {
+        return buildExpression(
+            level,
+            actionValues,
+            roundingMode,
+            property,
+            isHealing = false,
+            isSelfTPRestoring = false,
+            hasBracesIfNeeded = false,
+            isConstant
         )
     }
 
@@ -174,8 +199,10 @@ open class ActionParameter {
         property: Property?,
         isHealing: Boolean = false,
         isSelfTPRestoring: Boolean = false,
-        hasBracesIfNeeded: Boolean = false
+        hasBracesIfNeeded: Boolean = false,
+        vararg redundancy: Boolean
     ): String {
+        var isConstant: Boolean = redundancy.isNotEmpty() && redundancy[0]
         var rActionValues = actionValues
         var rRoundingMode = roundingMode
         var rProperty = property
@@ -238,7 +265,7 @@ open class ActionParameter {
                 expression.delete(expression.lastIndexOf(" +"), expression.length)
                 if (hasBracesIfNeeded) bracesIfNeeded(expression.toString()) else expression.toString()
             }
-        } else if (get().getExpression() == UserSettings.EXPRESSION_ORIGINAL) {
+        } else if (get().getExpression() == UserSettings.EXPRESSION_ORIGINAL && !isConstant) {
             val expression = StringBuilder()
             for (value in rActionValues) {
                 val part = StringBuilder()

@@ -1,10 +1,10 @@
 {
-  "versionCode": "102",
-  "versionName": "1.23.0",
+  "versionCode": "103",
+  "versionName": "1.24.0",
   "recommend": "false",
-  "messageJa": "・新スキルの追加\n・一部専用装備のステータス値を修正",
-  "messageZhS": "・追加新技能\n・修正一部分专属装备属性值",
-  "messageZhT": "・新增技能\n・修正部分專用裝備數值",
+  "messageJa": "・クラッシュを修正する",
+  "messageZhS": "・修復崩潰",
+  "messageZhT": "・修復崩潰",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""

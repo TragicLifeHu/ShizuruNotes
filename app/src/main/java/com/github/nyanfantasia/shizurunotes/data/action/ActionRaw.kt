@@ -1,6 +1,6 @@
 package com.github.nyanfantasia.shizurunotes.data.action
 
-class ActionRaw     //public String description;
+class ActionRaw
     (var actionId: Int, var dependAction: Int) {
     private var classId = 0
     private var actionType = 0

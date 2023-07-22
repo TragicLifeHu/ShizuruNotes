@@ -47,7 +47,8 @@ class ChangeSpeedOverwriteFieldAction : ActionParameter() {
                 buildExpression(
                     level,
                     RoundingMode.UNNECESSARY,
-                    property
+                    property,
+                    true
                 ).toDouble() * 100
             ),
             buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)
