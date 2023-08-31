@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.Uri
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
@@ -223,7 +224,7 @@ class UpdateManager private constructor(
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val lastVersionJson = response.body.string()
+                val lastVersionJson = response.body!!.string()
                 try {
                     if (lastVersionJson.isEmpty())
                         throw Exception("No response from server.")
@@ -262,7 +263,7 @@ class UpdateManager private constructor(
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
-                val lastVersionJson = response.body.string()
+                val lastVersionJson = response.body!!.string()
                 try {
                     if (lastVersionJson.isEmpty())
                         throw Exception("No response from server.")
@@ -280,6 +281,7 @@ class UpdateManager private constructor(
     }
 
     var downloadId: Long? = null
+    @SuppressLint("UnspecifiedRegisterReceiverFlag")
     fun downloadApp(){
         val downloadManager = mContext.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         val request = DownloadManager.Request(Uri.parse(Statics.APP_PACKAGE)).apply {
@@ -291,7 +293,11 @@ class UpdateManager private constructor(
         FileUtils.checkFileAndDeleteIfExists(File(mContext.getExternalFilesDir(null), Statics.APK_NAME))
         downloadId = downloadManager.enqueue(request)
         val intentFilter = IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
-        mContext.registerReceiver(broadcastReceiver, intentFilter)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            mContext.registerReceiver(broadcastReceiver, intentFilter, Context.RECEIVER_NOT_EXPORTED)
+        } else {
+            mContext.registerReceiver(broadcastReceiver, intentFilter)
+        }
     }
 
     private val broadcastReceiver = object: BroadcastReceiver() {

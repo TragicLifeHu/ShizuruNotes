@@ -1,17 +1,17 @@
 plugins {
-    id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+    id("com.google.devtools.ksp") version "1.9.10-1.0.13" apply false
 }
 
 buildscript {
-    val agpVersion by extra("8.0.2")
+    val agpVersion by extra("8.1.1")
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:$agpVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10")
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.1")
     }
 }
 
@@ -24,5 +24,5 @@ allprojects {
 }
 
 task<Delete>("clean") {
-    delete(rootProject.buildDir)
+    delete(rootProject.layout.buildDirectory)
 }
