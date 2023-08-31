@@ -3,10 +3,10 @@
 目前已支援日版、台版、陸版資料. 額外功能尚在開發中
 
 ## 系統需求
-* Android 8+ (由於系統需求，不支援低於 Android 8 的模擬器)
+* Android 9+
 
 ## 組建
-請使用 Android Studio Giraffe (2022.3.1 Beta 2) 或更高版本，已知低於此版本的 Android Studio 會出現意外錯誤.  
+請使用 Android Studio Giraffe (2022.3.1) 或更高版本，已知低於此版本的 Android Studio 會出現意外錯誤.  
 本專案已無法輕易使用 Eclipse 進行後續開發作業.  
 
 在組建之前，你可能需要在專案根目錄下新增一个名為 `local.properties` 的檔案 (如未找到).

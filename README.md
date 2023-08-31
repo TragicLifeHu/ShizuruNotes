@@ -5,10 +5,10 @@ An **unofficial** Android tool application for "Princess Connect Re:Dive".
 It supports the server of Japan, Taiwan and Mainland China at present.
 
 ## Requirement
-* Android 8+ (Doesn't support Android Emulator lower than Android 8)
+* Android 9+
 
 ## Build
-Must use Android Studio Giraffe (2022.3.1 Beta 2) or later, or you'll get misty errors.  
+Must use Android Studio Giraffe (2022.3.1) or later, or you'll get misty errors.  
 
 Before building, you need to create a `local.properties` in project's root directory if it does not exist.
 
