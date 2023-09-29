@@ -3,7 +3,7 @@ plugins {
 }
 
 buildscript {
-    val agpVersion by extra("8.1.1")
+    val agpVersion by extra("8.1.2")
     repositories {
         google()
         mavenCentral()
@@ -11,7 +11,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:$agpVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10")
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.1")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.3")
     }
 }
 

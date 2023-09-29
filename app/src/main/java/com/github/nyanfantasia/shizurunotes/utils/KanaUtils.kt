@@ -109,7 +109,7 @@ object KanaUtils {
             "アン" to "anne",
             "クロエ" to "chloe",
             "ラビリスタ" to "labyrista",
-            "イリヤ" to "ilya",
+            "イリヤ" to "illya",
             "クレジッタ" to "creditta",
             "ランファ" to "ranpha",
             "ルナ" to "luna",
