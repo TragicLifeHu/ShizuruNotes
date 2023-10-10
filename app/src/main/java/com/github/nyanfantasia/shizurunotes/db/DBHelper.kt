@@ -1522,6 +1522,18 @@ class DBHelper private constructor(
             return result?.toInt() ?: 0
         }
 
+    val hasAction10: Boolean
+        get() {
+            val result = getOne("""
+                SELECT COUNT(*)
+                FROM sqlite_master 
+                WHERE type='table'
+                AND name='skill_data'
+                AND sql like '%action_10%';"""
+            )
+            return result == "1"
+        }
+
     /***
      * Randomly generate a 16-bit random alphanumeric string
      * @return

@@ -1,10 +1,10 @@
 {
-  "versionCode": "103",
-  "versionName": "1.24.0",
+  "versionCode": "104",
+  "versionName": "1.25.0",
   "recommend": "false",
-  "messageJa": "・クラッシュを修正する",
-  "messageZhS": "・修復崩潰",
-  "messageZhT": "・修復崩潰",
+  "messageJa": "・Skill Action 8 ~ 10 へのサポート",
+  "messageZhS": "・追加对 Skill Action 8 ~ 10 的支持",
+  "messageZhT": "・追加對 Skill Action 8 ~ 10 的支援",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
