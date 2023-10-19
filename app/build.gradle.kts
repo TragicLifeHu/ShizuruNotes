@@ -51,7 +51,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
     implementation("org.brotli:dec:0.1.2")
-    implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("org.apache.commons:commons-compress:1.24.0")
     implementation(files("libs\\calendarview-3.7.1.aar"))
@@ -62,7 +62,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("com.google.guava:guava:32.1.2-jre")
+    implementation("com.google.guava:guava:32.1.3-jre")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     implementation("com.jakewharton:process-phoenix:2.1.2")
