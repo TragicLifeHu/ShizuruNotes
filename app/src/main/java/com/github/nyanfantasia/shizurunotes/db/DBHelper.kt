@@ -58,7 +58,7 @@ class DBHelper private constructor(
                 if (cursor.isBeforeFirst) {
                     continue
                 }
-                val bean = theClass.newInstance()
+                val bean = theClass.getDeclaredConstructor().newInstance()
                 for (f in arrField) {
                     val columnName = f.name
                     val columnIdx = cursor.getColumnIndex(columnName)
@@ -125,7 +125,7 @@ class DBHelper private constructor(
     ): Cursor? {
         if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         val db = readableDatabase ?: return null
-        return if (key == null || keyValue == null || keyValue.isEmpty()) {
+        return if (key == null || keyValue.isNullOrEmpty()) {
             db.rawQuery("SELECT * FROM $tableName ", null)
         } else {
             val paraBuilder = StringBuilder()
@@ -734,7 +734,7 @@ class DBHelper private constructor(
             tableName = "unique_equipment_enhance_rate"
         }
         if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
-            return getBeanListByRaw<RawUniqueEquipmentEnhanceData>(
+            return getBeanListByRaw(
             """
                 SELECT e.* 
                 FROM $tableName AS e 
@@ -744,7 +744,7 @@ class DBHelper private constructor(
             RawUniqueEquipmentEnhanceData::class.java
             )
         }
-        return getBeanListByRaw<RawUniqueEquipmentEnhanceData>(
+        return getBeanListByRaw(
         """
             SELECT e.* 
             FROM $tableName AS e 
@@ -1210,7 +1210,7 @@ class DBHelper private constructor(
     /***
      * get specified secret dungeon quest list
      */
-    fun getSecretDungeonQuests(dungeon_area_id: Int): List<RawSecretDungeonQuestData>? {
+    fun getSecretDungeonQuests(dungeonAreaId: Int): List<RawSecretDungeonQuestData>? {
         return getBeanListByRaw(
             """
                 SELECT
@@ -1219,7 +1219,7 @@ class DBHelper private constructor(
                     secret_dungeon_quest_data AS a
                 JOIN wave_group_data AS b ON a.wave_group_id = b.wave_group_id
                 WHERE
-                    a.dungeon_area_id = $dungeon_area_id
+                    a.dungeon_area_id = $dungeonAreaId
                 AND a.wave_group_id <> 0
                 ORDER BY
                     a.difficulty DESC,

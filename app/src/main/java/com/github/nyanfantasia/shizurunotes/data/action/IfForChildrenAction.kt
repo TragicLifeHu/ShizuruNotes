@@ -14,7 +14,7 @@ class IfForChildrenAction : ActionParameter() {
             if (ifType != IfType.Unknown) {
                 trueClause = getString(
                     R.string.use_d1_to_s2_if_s3,
-                    actionDetail2 % 100,
+                    actionNum(actionDetail2),
                     targetParameter!!.buildTargetClause(true),
                     ifType!!.description()
                 )
@@ -23,7 +23,7 @@ class IfForChildrenAction : ActionParameter() {
                     in 600..699, 710 -> {
                         trueClause = getString(
                             R.string.use_d1_to_s2_in_state_of_ID_d3,
-                            actionDetail2 % 10,
+                            actionNum(actionDetail2),
                             targetParameter!!.buildTargetClause(true),
                             actionDetail1 - 600
                         )
@@ -31,13 +31,13 @@ class IfForChildrenAction : ActionParameter() {
                     700 -> {
                         trueClause = getString(
                             R.string.use_d1_to_s2_if_it_is_alone,
-                            actionDetail2 % 10, targetParameter!!.buildTargetClause(true)
+                            actionNum(actionDetail2), targetParameter!!.buildTargetClause(true)
                         )
                     }
                     in 901..999 -> {
                         trueClause = getString(
                             R.string.use_d1_if_s2_HP_is_below_d3,
-                            actionDetail2 % 10,
+                            actionNum(actionDetail2),
                             targetParameter!!.buildTargetClause(true),
                             actionDetail1 - 900
                         )
@@ -45,23 +45,23 @@ class IfForChildrenAction : ActionParameter() {
                     1300 -> {
                         trueClause = getString(
                             R.string.use_d1_to_s2_if_target_is_magic_type,
-                            actionDetail2 % 10, targetParameter!!.buildTargetClause(true)
+                            actionNum(actionDetail2), targetParameter!!.buildTargetClause(true)
                         )
                     }
                     1800 -> {
                         trueClause = getString(
                             R.string.Performs_d1_to_s2_if_it_is_a_multi_target_unit,
-                            actionDetail2 % 10, targetParameter!!.buildTargetClause()
+                            actionNum(actionDetail2), targetParameter!!.buildTargetClause()
                         )
                     }
                     1900 -> {
                         trueClause = getString(R.string.Performs_d1_on_s2_if_the_target_possesses_a_barrier,
-                            actionDetail2 % 10, targetParameter!!.buildTargetClause(true))
+                            actionNum(actionDetail2), targetParameter!!.buildTargetClause(true))
                     }
                     in 6000..6999 -> {
                         trueClause = getString(
                             R.string.use_d1_to_s2_in_state_of_ID_d3,
-                            actionDetail2 % 10,
+                            actionNum(actionDetail2),
                             targetParameter!!.buildTargetClause(true),
                             actionDetail1 - 6000
                         )
@@ -74,7 +74,7 @@ class IfForChildrenAction : ActionParameter() {
             if (ifType != IfType.Unknown) {
                 falseClause = getString(
                     R.string.use_d1_to_s2_if_not_s3,
-                    actionDetail3 % 100,
+                    actionNum(actionDetail3),
                     targetParameter!!.buildTargetClause(true),
                     ifType!!.description()
                 )
@@ -83,7 +83,7 @@ class IfForChildrenAction : ActionParameter() {
                     in 600..699, 710 -> {
                         falseClause = getString(
                             R.string.use_d1_to_s2_if_not_in_state_of_ID_d3,
-                            actionDetail3 % 10,
+                            actionNum(actionDetail3),
                             targetParameter!!.buildTargetClause(true),
                             actionDetail1 - 600
                         )
@@ -91,13 +91,13 @@ class IfForChildrenAction : ActionParameter() {
                     700 -> {
                         falseClause = getString(
                             R.string.use_d1_to_s2_if_it_is_not_alone,
-                            actionDetail3 % 10, targetParameter!!.buildTargetClause(true)
+                            actionNum(actionDetail3), targetParameter!!.buildTargetClause(true)
                         )
                     }
                     in 901..999 -> {
                         falseClause = getString(
                             R.string.use_d1_if_s2_HP_is_not_below_d3,
-                            actionDetail3 % 10,
+                            actionNum(actionDetail3),
                             targetParameter!!.buildTargetClause(true),
                             actionDetail1 - 900
                         )
@@ -105,23 +105,23 @@ class IfForChildrenAction : ActionParameter() {
                     1300 -> {
                         falseClause = getString(
                             R.string.use_d1_to_s2_if_target_is_not_magic_type,
-                            actionDetail3 % 10, targetParameter!!.buildTargetClause(true)
+                            actionNum(actionDetail3), targetParameter!!.buildTargetClause(true)
                         )
                     }
                     1800 -> {
                         trueClause = getString(
                             R.string.Performs_d1_to_s2_if_it_is_not_a_multi_target_unit,
-                            actionDetail3 % 10, targetParameter!!.buildTargetClause()
+                            actionNum(actionDetail3), targetParameter!!.buildTargetClause()
                         )
                     }
                     1900 -> {
                         trueClause = getString(R.string.Performs_d1_on_s2_if_the_target_does_not_possess_a_barrier,
-                            actionDetail3 % 10, targetParameter!!.buildTargetClause(true))
+                            actionNum(actionDetail3), targetParameter!!.buildTargetClause(true))
                     }
                     in 6000..6999 -> {
                         falseClause = getString(
                             R.string.use_d1_to_s2_if_not_in_state_of_ID_d3,
-                            actionDetail3 % 10,
+                            actionNum(actionDetail3),
                             targetParameter!!.buildTargetClause(true),
                             actionDetail1 - 6000
                         )
@@ -164,20 +164,20 @@ class IfForChildrenAction : ActionParameter() {
                 return getString(
                     R.string.Random_event_d1_chance_use_d2_otherwise_d3,
                     actionDetail1,
-                    actionDetail2 % 10,
-                    actionDetail3 % 10
+                    actionNum(actionDetail2),
+                    actionNum(actionDetail3)
                 )
             } else if (actionDetail2 != 0) {
                 return getString(
                     R.string.Random_event_d1_chance_use_d2,
                     actionDetail1,
-                    actionDetail2 % 10
+                    actionNum(actionDetail2)
                 )
             } else if (actionDetail3 != 0) {
                 return getString(
                     R.string.Random_event_d1_chance_use_d2,
                     100 - actionDetail1,
-                    actionDetail3 % 10
+                    actionNum(actionDetail3)
                 )
             }
         }

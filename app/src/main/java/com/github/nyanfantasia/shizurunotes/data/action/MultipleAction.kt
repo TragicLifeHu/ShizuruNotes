@@ -22,7 +22,7 @@ class MultipleAction : ActionParameter() {
                 isSelfTPRestoring = false,
                 hasBracesIfNeeded = true
             ),
-            actionDetail2, actionDetail1 % 10
+            actionDetail2, actionNum(actionDetail1)
         ) else if (actionValue1!!.value == 1.0) getString(
             R.string.Modifier_multiple_s1_lost_HP_max_HP_to_value_d2_of_effect_d3,
             buildExpression(
@@ -34,7 +34,7 @@ class MultipleAction : ActionParameter() {
                 isSelfTPRestoring = false,
                 hasBracesIfNeeded = true
             ),
-            actionDetail2, actionDetail1 % 10
+            actionDetail2, actionNum(actionDetail1)
         )
         else if (actionValue1!!.value == 2.0) getString(
             R.string.Modifier_multiple_s1_count_of_defeated_enemies_to_value_d2_of_effect_d3,
@@ -47,7 +47,7 @@ class MultipleAction : ActionParameter() {
                 isSelfTPRestoring = false,
                 hasBracesIfNeeded = true
             ),
-            actionDetail2, actionDetail1 % 10
+            actionDetail2, actionNum(actionDetail1)
         )
         else if (actionValue1!!.value >= 200 && actionValue1!!.value < 300) getString(
             R.string.Modifier_multiple_s1_stacks_of_mark_ID_d2_to_value_d3_of_effect_d4,
@@ -60,7 +60,7 @@ class MultipleAction : ActionParameter() {
                 isSelfTPRestoring = false,
                 hasBracesIfNeeded = true
             ),
-            actionValue1!!.value.toInt() % 200, actionDetail2, actionDetail1 % 10
+            actionValue1!!.value.toInt() % 200, actionDetail2, actionNum(actionDetail1)
         )
         else super.localizedDetail(level, property)
     }

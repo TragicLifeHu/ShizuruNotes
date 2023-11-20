@@ -35,7 +35,7 @@ class LoopTriggerAction : ActionParameter() {
         return when (triggerType) {
             TriggerType.Damaged -> getString(
                 R.string.Condition_s1_chance_use_d2_when_takes_damage_within_s3_sec,
-                buildExpression(level, property), actionDetail2 % 10, actionValue4!!.valueString()
+                buildExpression(level, property), actionNum(actionDetail2), actionValue4!!.valueString()
             )
             else -> super.localizedDetail(level, property)
         }

@@ -1,10 +1,10 @@
 {
-  "versionCode": "104",
-  "versionName": "1.25.0",
+  "versionCode": "105",
+  "versionName": "1.26.0",
   "recommend": "false",
-  "messageJa": "・Skill Action 8 ~ 10 へのサポート",
-  "messageZhS": "・追加对 Skill Action 8 ~ 10 的支持",
-  "messageZhT": "・追加對 Skill Action 8 ~ 10 的支援",
+  "messageJa": "・スキルに関連する潜在的な不具合を修正",
+  "messageZhS": "・修正技能相关潜在问题",
+  "messageZhT": "・修正技能相關潛在問題",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""

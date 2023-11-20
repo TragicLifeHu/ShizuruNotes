@@ -43,7 +43,7 @@ class ActionByHitCountAction : ActionParameter() {
         return when (conditionType) {
             ConditionType.Hit -> getString(
                 R.string.Use_d1_s2_every_s3_hits_in_next_s4_sec,
-                actionDetail2 % 10,
+                actionNum(actionDetail2),
                 limitation,
                 roundIfNeed(actionValue1!!.value),
                 buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)

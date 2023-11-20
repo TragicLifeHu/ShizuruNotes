@@ -36,7 +36,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                actionDetail2, actionDetail1 % 10
+                actionDetail2, actionNum(actionDetail1)
             )
             1 -> result = getString(
                 R.string.Modifier_add_s1_lost_HP_to_value_d2_of_effect_d3,
@@ -49,7 +49,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                actionDetail2, actionDetail1 % 10
+                actionDetail2, actionNum(actionDetail1)
             )
             2 -> {
                 /*
@@ -75,7 +75,7 @@ class AdditiveAction : ActionParameter() {
                     R.string.Modifier_add_s1_count_of_defeated_enemies_to_value_d2_of_effect_d3,
                     s1,
                     actionDetail2,
-                    actionDetail1 % 10
+                    actionNum(actionDetail1)
                 )
             }
             4 -> result = getString(
@@ -89,7 +89,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                actionDetail2, actionDetail1 % 10
+                actionDetail2, actionNum(actionDetail1)
             )
             5 -> result = getString(
                 R.string.Modifier_add_s1_count_of_damaged_to_value_d2_of_effect_d3,
@@ -102,7 +102,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                actionDetail2, actionDetail1 % 10
+                actionDetail2, actionNum(actionDetail1)
             )
             6 -> result = getString(
                 R.string.Modifier_add_s1_total_damage_to_value_d2_of_effect_d3,
@@ -115,7 +115,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                actionDetail2, actionDetail1 % 10
+                actionDetail2, actionNum(actionDetail1)
             )
             12 -> result = getString(
                 R.string.Modifier_add_s1_count_of_s2_behind_self_to_value_d3_of_effect_d4,
@@ -128,7 +128,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                targetParameter!!.buildTargetClause(), actionDetail2, actionDetail1 % 10
+                targetParameter!!.buildTargetClause(), actionDetail2, actionNum(actionDetail1)
             )
             13 -> result = getString(
                 R.string.Modifier_add_s1_lost_hp_total_hp_of_s2_behind_self_to_value_d3_of_effect_d4,
@@ -141,7 +141,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                targetParameter!!.buildTargetClause(), actionDetail2, actionDetail1 % 10
+                targetParameter!!.buildTargetClause(), actionDetail2, actionNum(actionDetail1)
             )
             102 -> result = getString(
                 R.string.Modifier_add_s1_count_of_omemes_value_d2_of_effect_d3,
@@ -154,7 +154,7 @@ class AdditiveAction : ActionParameter() {
                     isSelfTPRestoring = false,
                     hasBracesIfNeeded = true
                 ),
-                actionDetail2, actionDetail1 % 10
+                actionDetail2, actionNum(actionDetail1)
             )
             else -> if (actionValue1!!.value >= 200 && actionValue1!!.value < 300) {
                 result = getString(
@@ -168,7 +168,7 @@ class AdditiveAction : ActionParameter() {
                         isSelfTPRestoring = false,
                         hasBracesIfNeeded = true
                     ),
-                    actionValue1!!.value.toInt() % 2000, actionDetail2, actionDetail1 % 10
+                    actionValue1!!.value.toInt() % 2000, actionDetail2, actionNum(actionDetail1)
                 )
             } else if (actionValue1!!.value >= 2000 && actionValue1!!.value < 3000) {
                 result = getString(
@@ -182,7 +182,7 @@ class AdditiveAction : ActionParameter() {
                         isSelfTPRestoring = false,
                         hasBracesIfNeeded = true
                     ),
-                    actionValue1!!.value.toInt() % 200, actionDetail2, actionDetail1 % 10
+                    actionValue1!!.value.toInt() % 200, actionDetail2, actionNum(actionDetail1)
                 )
             } else if (actionValue1!!.value in 7.0..10.0) {
                 result = getString(
@@ -199,7 +199,7 @@ class AdditiveAction : ActionParameter() {
                     keyType!!.description(),
                     targetParameter!!.buildTargetClause(),
                     actionDetail2,
-                    actionDetail1 % 10
+                    actionNum(actionDetail1)
                 )
             } else if (actionValue1!!.value >= 20 && actionValue1!!.value < 30) {
                 result = getString(
@@ -213,7 +213,7 @@ class AdditiveAction : ActionParameter() {
                         isSelfTPRestoring = false,
                         hasBracesIfNeeded = true
                     ),
-                    actionValue1!!.value.toInt() % 10, actionDetail2, actionDetail1 % 10
+                    actionValue1!!.value.toInt() % 10, actionDetail2, actionNum(actionDetail1)
                 )
             }
         }

@@ -18,7 +18,7 @@ class AbnormalStateFieldAction : ActionParameter() {
             R.string.Summon_a_field_of_radius_d1_on_s2_to_cast_effect_d3_for_s4_sec,
             actionValue3!!.value.toInt(),
             targetParameter!!.buildTargetClause(),
-            actionDetail1 % 10,
+            actionNum(actionDetail1),
             buildExpression(level, durationValues, RoundingMode.UNNECESSARY, property)
         )
     }

@@ -138,6 +138,10 @@ open class ActionParameter {
         return if (content.contains("+")) String.format("(%s)", content) else content
     }
 
+    protected fun actionNum(actionDetail: Int): Int {
+        return actionDetail % 100
+    }
+
     open fun localizedDetail(level: Int, property: Property?): String? {
         return if (rawActionType == 0) {
             getString(R.string.no_effect)
@@ -202,7 +206,7 @@ open class ActionParameter {
         hasBracesIfNeeded: Boolean = false,
         vararg redundancy: Boolean
     ): String {
-        var isConstant: Boolean = redundancy.isNotEmpty() && redundancy[0]
+        val isConstant: Boolean = redundancy.isNotEmpty() && redundancy[0]
         var rActionValues = actionValues
         var rRoundingMode = roundingMode
         var rProperty = property
@@ -244,9 +248,7 @@ open class ActionParameter {
                         )
                     }
                     if (value.key != null) {
-                        if (initialValue == 0.0 && perLevelValue == 0.0) {
-                            continue
-                        } else if (initialValue == 0.0 || perLevelValue == 0.0) {
+                        if (initialValue == 0.0 || perLevelValue == 0.0) {
                             part.append(String.format(" * %s", value.key!!.description()))
                         } else {
                             val c = part.toString()
@@ -315,9 +317,7 @@ open class ActionParameter {
                         )
                     }
                     if (value.key != null) {
-                        if (initialValue == 0.0 && perLevelValue == 0.0) {
-                            continue
-                        } else if (initialValue == 0.0 || perLevelValue == 0.0) {
+                        if (initialValue == 0.0 || perLevelValue == 0.0) {
                             part.append(String.format(" * %s", value.key!!.description()))
                         } else {
                             val c = part.toString()

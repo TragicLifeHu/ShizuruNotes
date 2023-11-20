@@ -15,14 +15,14 @@ class ChangePatternAction : ActionParameter() {
             1 -> if (actionValue1!!.value > 0) {
                 getString(
                     R.string.Change_attack_pattern_to_d1_for_s2_sec,
-                    actionDetail2 % 10, roundDouble(
+                    actionNum(actionDetail2), roundDouble(
                         actionValue1!!.value
                     )
                 )
             } else {
                 getString(
                     R.string.Change_attack_pattern_to_d,
-                    actionDetail2 % 10
+                    actionNum(actionDetail2)
                 )
             }
             2 -> getString(

@@ -28,16 +28,16 @@ class ModeChangeAction : ActionParameter() {
         return when (modeChangeType) {
             ModeChangeType.Time -> getString(
                 R.string.Change_attack_pattern_to_d1_for_s2_sec,
-                actionDetail2 % 10, actionValue1!!.valueString()
+                actionNum(actionDetail2), actionValue1!!.valueString()
             )
             ModeChangeType.Energy -> getString(
                 R.string.Cost_s1_TP_sec_change_attack_pattern_to_d2_until_TP_is_zero,
                 Utils.roundDownDouble(actionValue1!!.value),
-                actionDetail2 % 10
+                actionNum(actionDetail2)
             )
             ModeChangeType.Release -> getString(
                 R.string.Change_attack_pattern_back_to_d_after_effect_over,
-                actionDetail2 % 10
+                actionNum(actionDetail2)
             )
             else -> super.localizedDetail(level, property)
         }
