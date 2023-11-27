@@ -367,7 +367,7 @@
     <string name="Confuse_s1_with_s2_chance_for_s3_sec">以 [%2$s%%] 的概率使%1$s進入混亂狀態，持續時間 [%3$s] 秒。</string>
     <string name="Change_attack_pattern_to_d1_for_s2_sec">切換至技能循環%1$d，持續時間 [%2$s] 秒。</string>
     <string name="Cost_s1_TP_sec_change_attack_pattern_to_d2_until_TP_is_zero">TP耗盡前切換至技能循環%2$d，每秒消費TP [%1$s]。</string>
-    <string name="Change_attack_pattern_back_to_d_after_effect_over">效果結束後，切換回技能循環%d。</string>
+    <string name="Change_attack_pattern_back_to_d_after_effect_over">效果結束後，切換至技能循環%d。</string>
     <string name="own_side">我方</string>
     <string name="opposite">敵方</string>
     <string name="normal_type">普通類型</string>
@@ -763,4 +763,7 @@
     <string name="Deploys_a_filed_of_radius_d1_which_s2_attack_speed_of_s3_for_s4_sec">展開半徑 [%1$d] 的領域，使行動速度%2$s [%3$s%%] ，持續時間 [%4$s] 秒。本效果可與其他同種類效果疊加。</string>
     <string name="Enable_s1_to_resist_all_sorts_of_incapacity_efficacies_up_to_s2_times_in_a_period_of_s3_sec">使%1$s免疫所有控制效果，最大 [%2$s] 次，持續時間 [%3$s] 秒。</string>
     <string name="This_damage_ignores_s1_s2_defense">本技能無視敵方 [%1$s] %2$s防禦力。</string>
+    <string name="Applies_s1_status_to_self">對自身賦予%1$s狀態。</string>
+    <string name="none">無</string>
+    <string name="flight">飛行</string>
 </resources>
