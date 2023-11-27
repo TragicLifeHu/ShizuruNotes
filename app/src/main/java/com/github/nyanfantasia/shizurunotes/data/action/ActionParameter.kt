@@ -476,6 +476,14 @@ open class ActionParameter {
                 98 -> EnergyDamageReduceAction()
                 99 -> ChangeSpeedOverwriteFieldAction()
                 100 -> UnableStateGuardAction()
+                101 -> AttackSealActionForAllEnemy()
+                102 -> AccumulativeDamageActionForAllEnemy()
+                103 -> CopyAtkParamAction()
+                104 -> EveryAttackCriticalAction()
+                105 -> EnvironmentAction()
+                106 -> ProtectAction()
+                107 -> ChangeCriticalReferenceAction()
+                108 -> IfContainsUnitGroupAction()
                 else -> ActionParameter()
             }
         }

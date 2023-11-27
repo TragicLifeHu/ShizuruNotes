@@ -96,6 +96,11 @@ class IfForAllAction : ActionParameter() {
                     R.string.Performs_d1_if_s2_is_a_multi_target_unit,
                     actionNum(actionDetail2), targetParameter!!.buildTargetClause()
                 )
+            } else if (actionDetail1 in 3000..4000) {
+                trueClause = getString(R.string.Performs_action_d1_in_case_of_the_battle_field_is_covered_by_s2,
+                    actionNum(actionDetail2),
+                    EnvironmentAction.EnvironmentType.parse(actionDetail1 - 3000).description()
+                )
             } else if (actionDetail1 in 6000..6999 && actionValue3!!.value == 0.0) {
                 trueClause = getString(
                     R.string.use_d1_to_s2_in_state_of_ID_d3,
@@ -199,6 +204,11 @@ class IfForAllAction : ActionParameter() {
                 trueClause = getString(
                     R.string.Performs_d1_if_s2_is_not_a_multi_target_unit,
                     actionNum(actionDetail3), targetParameter!!.buildTargetClause()
+                )
+            } else if (actionDetail1 in 3000..4000) {
+                falseClause = getString(R.string.Performs_action_d1_in_case_of_the_battle_field_is_not_covered_by_s2,
+                    actionNum(actionDetail3),
+                    EnvironmentAction.EnvironmentType.parse(actionDetail1 - 3000).description()
                 )
             } else if (actionDetail1 in 6000..6999 && actionValue3!!.value == 0.0) {
                 falseClause = getString(

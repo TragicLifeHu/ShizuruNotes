@@ -289,6 +289,7 @@
     <string name="Unknown_effect_d1_to_s2_with_details_s3_values_s4">Applies unknown effect [%1$d] to %2$s, doing %3$s, Parameter %4$s.</string>
     <string name="magic">Magic</string>
     <string name="physical">Physical</string>
+    <string name="both">Physical &amp; Magic</string>
     <string name="inevitable_physical">Unavoidable Physical</string>
     <string name="Deal_s1_s2_damage_to_s3">Deals [%1$s] %2$s damage to %3$s.</string>
     <string name="Deal_s1_s2_damage_to_s3_and_this_attack_is_ensured_critical">Deals [%1$s] %2$s damage to %3$s. Guaranteed to critical attack.</string>

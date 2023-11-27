@@ -392,7 +392,8 @@ enum class TargetType(val value: Int) {
     BothAtkAscending(39),
     EnergyAscBackWithoutOwner(41),
     ParentTargetParts(42),
-    AtkDecForwardWithoutOwner(43);
+    AtkDecForwardWithoutOwner(43),
+    HpAscendingExcludeSelf(44);
 
     enum class ExclusiveAllType {
         Not, Exclusive, HalfExclusive
@@ -508,6 +509,9 @@ enum class TargetType(val value: Int) {
             AtkDecForwardWithoutOwner -> getString(
                 R.string.the_highest_ATK_except_caster
             )
+            HpAscendingExcludeSelf -> getString(
+                R.string.the_lowest_hp_excludes_self
+            )
         }
     }
 
@@ -616,6 +620,9 @@ enum class TargetType(val value: Int) {
             )
             AtkDecForwardWithoutOwner -> getString(
                 R.string.s1_the_highest_ATK_except_caster
+            )
+            HpAscendingExcludeSelf -> getString(
+                R.string.the_lowest_hp_excludes_self
             )
             else -> description()
         }

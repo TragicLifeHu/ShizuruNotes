@@ -6,9 +6,14 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 import com.github.nyanfantasia.shizurunotes.utils.Utils.roundDownDouble
 import java.math.RoundingMode
 
-class AttackSealAction : ActionParameter() {
+open class AttackSealAction : ActionParameter() {
     enum class Condition(val value: Int) {
-        Unknown(-1), Damage(1), Target(2), Hit(3), CriticalHit(4);
+        Unknown(-1),
+        Damage(1),
+        Target(2),
+        DamageMulti(3),
+        CriticalHit(4),
+        Hit(5);
 
         companion object {
             fun parse(value: Int): Condition {
@@ -33,14 +38,14 @@ class AttackSealAction : ActionParameter() {
         }
     }
 
-    private var condition: Condition? = null
-    private var target: Target? = null
-    private var durationValues: MutableList<ActionValue> = ArrayList()
+    protected var condition: Condition? = null
+    protected var target: Target? = null
+    protected var durationValues: MutableList<ActionValue> = ArrayList()
     override fun childInit() {
         super.childInit()
         condition = Condition.parse(actionDetail1)
         target = Target.parse(actionDetail3)
-        durationValues.add(ActionValue(actionValue3!!, actionValue4!!, null))
+        durationValues.add(ActionValue(actionValue5!!, actionValue6!!, null))
     }
 
     override fun localizedDetail(level: Int, property: Property?): String? {

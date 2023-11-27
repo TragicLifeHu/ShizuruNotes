@@ -143,6 +143,13 @@ class AdditiveAction : ActionParameter() {
                 ),
                 targetParameter!!.buildTargetClause(), actionDetail2, actionNum(actionDetail1)
             )
+            15 -> result = getString(R.string.Modifier_add_s1_remnant_of_HP_of_s2_value_d3_of_effect_d4,
+                buildExpression(level, null, RoundingMode.UNNECESSARY, property,
+                    isHealing = false,
+                    isSelfTPRestoring = false,
+                    hasBracesIfNeeded = true
+                ),
+                targetParameter!!.buildTargetClause(), actionDetail2, actionNum(actionDetail1))
             102 -> result = getString(
                 R.string.Modifier_add_s1_count_of_omemes_value_d2_of_effect_d3,
                 buildExpression(

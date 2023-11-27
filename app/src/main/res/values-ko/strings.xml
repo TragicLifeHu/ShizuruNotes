@@ -259,6 +259,7 @@
     <string name="Unknown_effect_d1_to_s2_with_details_s3_values_s4">%2$s에 불명의 효과[%1$d], 내용%3$s, 매개변수%4$s。</string>
     <string name="magic">마법</string>
     <string name="physical">물리</string>
+    <string name="both">물리&amp;마법</string>
     <string name="inevitable_physical">반드시 명중하는 물리공격 </string>
     <string name="Deal_s1_s2_damage_to_s3">%3$s에 [%1$s]의 %2$s데미지를 준다.</string>
     <string name="Deal_s1_s2_damage_to_s3_and_this_attack_is_ensured_critical">%3$s에 [%1$s]의 %2$s데미지를 준다. 이 액션은 반드시 크리티컬이 된다.</string>
