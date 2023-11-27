@@ -480,8 +480,8 @@
     <string name="Set_a_countdown_timer_on_s1_trigger_effect_d2_after_s3_sec">對%1$s設定倒計時，[%3$s] 秒後觸發 [動作 %2$d]。</string>
     <string name="Remove_field_of_skill_d1_1_represents_the_first_skill_in_this_list_effect_d2">解除本頁面中第%1$d個技能的 [動作 %2$d] 展開的領域。</string>
     <string name="When_s1_receive_healing_deal_s2_healing_amount_damage_instead_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">%1$s受到恢復效果時，使恢復無效並給予其 [%2$s * 回復量] 傷害，持續時間 [%3$s] 秒。本效果是領域效果的場合，持續時間無限大。</string>
-    <string name="Make_s1_when_get_one_hit_by_the_caster_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">自身每次普通攻擊時，對%1$s新增1層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
-    <string name="Make_s1_when_deal_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">%1$s每次造成傷害時，新增1層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
+    <string name="Make_s1_when_get_one_hit_by_the_caster_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">自身每次普通攻擊時，對%1$s新增 1 層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
+    <string name="Make_s1_when_deal_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">%1$s每次造成傷害時，新增 1 層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
     <string name="Fear_s1_with_s2_chance_for_s3_sec">以 [%2$s%%] 的概率使%1$s進入恐慌狀態，持續時間 [%3$s] 秒。</string>
     <string name="Reduce_s1_damage_or_instant_healing_effect_of_union_burst_and_main_skills_cast_by_s2_for_s3_sec">%2$s的UB或技能對任意目標造成傷害或直接恢復時，使其效果值降低 [%1$s%%]，持續時間 [%3$s] 秒。</string>
     <string name="Reduce_s1_damage_or_instant_healing_effect_of_union_burst_cast_by_s2_for_s3_sec">%2$s的UB對任意目標造成傷害或直接恢復時，使其效果值降低 [%1$s%%]，持續時間 [%3$s] 秒。</string>
@@ -497,7 +497,7 @@
     <string name="Cast_a_barrier_on_s1_to_reduce_damage_over_s2_with_coefficient_s3_the_greater_the_less_reduced_amount_for_s4_s">為%1$s展開護盾，在一次行動中受到的傷害超過 [%2$s] 時，傷害值將會被衰減，衰減係數 [%3$s]（值越小衰減量越大），持續時間 [%4$s] 秒。</string>
     <string name="Trigger_d_on_all_targets_break">觸發條件：所有部位被Break時觸發。</string>
     <string name="Make_s1_to_be_invulnerable_to_break_for_s2_sec">對%1$s附加Break免疫效果，持續時間 [%2$s] 秒。</string>
-    <string name="Make_s1_when_deal_critical_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">%1$s每次造成暴擊時，新增1層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
+    <string name="Make_s1_when_deal_critical_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec">%1$s每次造成暴擊時，新增 1 層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
     <string name="change_energy_recovery_ratio_of_action_s1_to_s2_when_s3_get_damage">包括通過受傷獲得的TP獎勵值在內，使%3$s通過 [動作 %1$s] 獲得的所有TP恢復效果值變為 [原本的值 * %2$s]。</string>
     <string name="time_stop">時間停止</string>
     <string name="Stop_s1_for_s2_sec">使%1$s進入時間停止狀態，持續時間 [%2$s] 秒。</string>
@@ -767,7 +767,7 @@
     <string name="Applies_s1_status_to_self">對自身賦予%1$s狀態。</string>
     <string name="none">無</string>
     <string name="flight">飛行</string>
-    <string name="Make_s1_when_get_one_hit_by_the_caster_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec_for_all_enemy">自身每次對敵方進行普通攻擊時，對%1$s新增1層標記[ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
+    <string name="Make_s1_when_get_one_hit_by_the_caster_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec_for_all_enemy">自身每次對敵方進行普通攻擊時，對%1$s新增 1 層標記[ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
     <string name="Make_s1_when_deal_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec_for_all_enemy">%1$s每次對敵方造成傷害時，新增 1 層標記 [ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
     <string name="Make_s1_when_deal_critical_damage_gain_one_mark_stack_max_s2_ID_s3_for_s4_sec_for_all_enemy">%1$s每次對敵方造成暴擊時，新增 1 層標記[ID: %3$s]，持續時間 [%4$s] 秒，本效果最多疊加 [%2$s] 層。</string>
     <string name="Add_additional_s1_damage_per_attack_with_max_s2_stacks_to_current_target_for_all_enemy">每次攻擊敵方時，將會追加 [%1$s] 傷害，本效果最多疊加 [%2$s] 層。</string>
