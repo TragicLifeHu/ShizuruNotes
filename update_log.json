@@ -1,10 +1,10 @@
 {
-  "versionCode": "105",
-  "versionName": "1.26.0",
+  "versionCode": "106",
+  "versionName": "1.27.0",
   "recommend": "false",
-  "messageJa": "・スキルに関連する潜在的な不具合を修正",
-  "messageZhS": "・修正技能相关潜在问题",
-  "messageZhT": "・修正技能相關潛在問題",
+  "messageJa": "・新スキルを追加",
+  "messageZhS": "・追加新技能",
+  "messageZhT": "・追加新技能",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": ""
