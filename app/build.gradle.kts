@@ -35,6 +35,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        buildConfig = true
     }
     namespace = "com.github.nyanfantasia.shizurunotes"
 }
@@ -54,7 +55,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("org.apache.commons:commons-compress:1.25.0")
-    implementation(files("libs\\calendarview-3.7.1.aar"))
+    implementation(files("libs/calendarview-3.7.1.aar"))
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
 
     ksp("com.github.bumptech.glide:ksp:4.16.0")
