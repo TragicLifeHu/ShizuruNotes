@@ -47,7 +47,7 @@ internal class PassiveDamageUpAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): ECountType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -68,7 +68,7 @@ internal class PassiveDamageUpAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): EEffectType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

@@ -21,7 +21,7 @@ class EventNotificationSetting : PreferenceFragmentCompat(){
 
     private fun switchNotification(): (p: Preference, b: Any) -> Boolean {
         return { p , b ->
-            AppNotificationManager.get().refreshSpecificNotification(p.key, b as Boolean)
+            AppNotificationManager.instance.refreshSpecificNotification(p.key, b as Boolean)
             true
         }
     }

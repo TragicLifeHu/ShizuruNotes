@@ -12,10 +12,12 @@ import com.github.nyanfantasia.shizurunotes.utils.Utils
 class App : Application() {
     companion object {
         lateinit var localeManager: LocaleManager
+        lateinit var instance: App private set
     }
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         createNotificationChannel()
         initSingleton()
@@ -48,7 +50,7 @@ class App : Application() {
         DBHelper.with(this)
         ResourceManager.with(this)
         I18N.application = this
-        AppNotificationManager.with(this)
+        AppNotificationManager.instance
     }
 
     private fun initUserServer() {

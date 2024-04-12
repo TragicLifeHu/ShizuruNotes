@@ -5,7 +5,7 @@ import com.github.nyanfantasia.shizurunotes.data.Enemy
 import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
 import com.google.common.collect.Lists
 
-@Suppress("PropertyName", "PrivatePropertyName")
+@Suppress("PrivatePropertyName")
 class RawDungeon {
     private var dungeon_area_id = 0
     private var dungeon_name: String? = null

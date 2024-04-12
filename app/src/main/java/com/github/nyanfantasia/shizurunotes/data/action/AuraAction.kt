@@ -67,7 +67,7 @@ open class AuraAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): AuraType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return None
@@ -104,7 +104,7 @@ open class AuraAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): BreakType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

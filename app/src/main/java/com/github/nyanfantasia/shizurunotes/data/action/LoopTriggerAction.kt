@@ -16,7 +16,7 @@ class LoopTriggerAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): TriggerType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

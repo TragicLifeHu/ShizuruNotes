@@ -6,7 +6,7 @@ import com.github.nyanfantasia.shizurunotes.data.WaveGroup
 import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
 import java.util.*
 
-@Suppress("PropertyName", "PrivatePropertyName")
+@Suppress("PrivatePropertyName")
 class RawWaveGroup {
     var id = 0
     private var wave_group_id = 0

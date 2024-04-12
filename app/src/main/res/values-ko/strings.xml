@@ -19,7 +19,6 @@
         <item>English</item>
     </string-array>
     <string name="setting_skill_expression_title">스킬 계산식</string>
-    <string name="setting_skill_expression_summary">스킬 액션의 계산식을 표시</string>
     <string name="setting_appearance">표시</string>
     <string name="setting_system">시스템</string>
     <string name="setting_db_version">데이터베이스 버젼</string>
@@ -31,23 +30,18 @@
     <string name="db_update_dialog_cancel">나중에</string>
     <string name="db_update_progress_title">데이터베이스 업데이트</string>
     <string name="db_update_progress_text">업데이트중…</string>
-    <string name="db_update_finished_title">데이터베이스 업데이트</string>
     <string name="db_update_download_finished_text">다운로드완료, 압축해제중…</string>
     <string name="db_update_finished_text">업데이트를 완료했습니다</string>
-    <string name="db_update_check_failed">데이터베이스 업데이트 체크에 실패했습니다</string>
     <string name="db_update_failed">데이터베이스의 업데이트가 실패했습니다</string>
     <string name="app_update_check_failed">앱의 업데이트 체크에 실패했습니다</string>
-    <string name="ui_text_filter">검색조건</string>
     <string name="ui_text_position">위치</string>
     <string name="ui_text_atk_type">타입</string>
     <string name="ui_text_sort">분류</string>
-    <string name="ui_text_all">ALL</string>
     <string name="ui_chip_position_forward">전열</string>
     <string name="ui_chip_position_middle">중열</string>
     <string name="ui_chip_position_rear">후열</string>
     <string name="ui_chip_atk_type_physical">물리</string>
     <string name="ui_chip_atk_type_magic">마법</string>
-    <string name="ui_btn_reset">리셋</string>
     <string name="ui_chip_any">ALL</string>
     <string name="ui_chip_sort_new">갱신일</string>
     <string name="ui_chip_sort_position">포지션</string>
@@ -58,15 +52,8 @@
     <string name="ui_chip_sort_age">나이</string>
     <string name="ui_chip_sort_height">키</string>
     <string name="ui_chip_sort_weight">몸무게</string>
-    <string name="ui_chip_sort_burst_size">가슴둘레</string>
-    <string name="ui_chip_sort_way_up">오름차순</string>
-    <string name="ui_chip_sort_way_down">내림차순</string>
-    <string name="ui_switch_change_value">표시 전환</string>
-    <string name="snack_bar_cant_sort">데이터가 불충분하여 이 분류는 아직 사용할 수 없습니다</string>
     <string name="button_minion_info">소환수 정보</string>
-    <string name="text_normal_attack_only">통상공격</string>
     <string name="tab_phase">페이즈&#160;</string>
-    <string name="text_year">년</string>
     <string name="text_month">월</string>
     <string name="text_day">일</string>
     <string name="text_status">&#160;스테이터스&#160;</string>
@@ -90,10 +77,8 @@
     <string name="text_search_area_width">&#160;공격 범위&#160;</string>
     <string name="text_status_tips">*상기의 스테이터스는 ☆MAX, LvMAX, 장비&amp;전용장비 풀 강화, 스토리 능력치, &amp;Ex스킬을 포함한 능력치입니다</string>
     <string name="text_attack_pattern">&#160;행동 패턴%d&#160;</string>
-    <string name="text_normal_mode">통상 모드</string>
     <string name="text_cast_time">시전시간：</string>
     <string name="text_skill_action">스킬 액션</string>
-    <string name="text_profile">프로필</string>
     <string name="text_age">&#160;나이&#160;</string>
     <string name="text_guild">&#160;길드&#160;</string>
     <string name="text_race">&#160;종족&#160;</string>
@@ -103,8 +88,6 @@
     <string name="text_blood_type">&#160;혈액형&#160;</string>
     <string name="text_favorite">&#160;취미&#160;</string>
     <string name="text_cv">&#160;CV&#160;</string>
-    <string name="text_catch_copy">캐치프레이즈</string>
-    <string name="text_self_text">자기소개</string>
     <string name="text_normal_attack_cast_time">통상공격 시전시간：%1$ss</string>
     <string name="text_rank">Rank</string>
     <string name="text_please_download_db">데이터베이스를 다운로드 해주세요</string>
@@ -247,7 +230,6 @@
     <string name="all_front_s_targets">전방의 %1$s 모든 타겟 </string>
     <string name="s1_targets_in_range_d2">범위 [%2$d]안의 %1$s</string>
     <string name="front_s1_targets_in_range_d2">전방범위 [%2$d]안의 %1$s</string>
-    <string name="s1_s2_targets_in_range_d3">범위 [%3$d]안의 %2$s%1$s</string>
     <string name="s1_s2_target_in_range_d3">범위 [%3$d]안의 %1$s%2$s</string>
     <string name="s1_s2_s3_in_range_d4">범위 [%4$d]안의 %1$s%2$s%3$s</string>
     <string name="front_s1_s2_targets_in_range_d3">전방범위 [%3$d]안의 %2$s%1$s</string>
@@ -278,7 +260,6 @@
     <string name="Knock_s1_away_d2">%1$s를 넉백한다. 거리[%2$d]。</string>
     <string name="Draw_s1_toward_self_d2">%1$s를 끌어당긴다. 거리[%2$d]。</string>
     <string name="Restore_s1_s2_s3_HP">%1$s의 HP를 [%2$s%3$s]회복시킨다.</string>
-    <string name="Cast_an_unknown_barrier_d1_on_s2_for_s3_sec">%2$s에 타입[%1$d]의 배리어를 적용한다. 지속시간 [%3$s]초.</string>
     <string name="Cast_a_barrier_on_s1_to_nullify_s2_physical_damage_for_s3_sec">%1$s에[%2$s]데미지 상당의 물리무효 배리어를 적용한다. 지속시간 [%3$s]초.</string>
     <string name="Cast_a_barrier_on_s1_to_nullify_s2_magic_damage_for_s3_sec">%1$s에[%2$s]데미지 상당의 마법무효 배리어를 적용한다. 지속시간 [%3$s]초.</string>
     <string name="Cast_a_barrier_on_s1_to_absorb_s2_physical_damage_for_s3_sec">%1$s에[%2$s]데미지 상당의 물리흡수 배리어를 적용한다. 지속시간 [%3$s]초.</string>
@@ -320,8 +301,6 @@
     <string name="Awe">공포</string>
     <string name="Polymorph">순록화</string>
     <string name="Changing_Max_HP">HP변화</string>
-    <string name="Raise_s1_d2_attack_speed_for_s3_sec">%1$s의 행동속도를 [%2$d%%]업. 지속시간 [%3$s]초.</string>
-    <string name="Reduce_s1_d2_attack_speed_for_s3_sec">%1$s의 행동속도를 [%2$d%%]다운. 지속시간 [%3$s]초.</string>
     <string name="Make_s1_fall_asleep_for_s2_sec">%1$s을 수면상태로 만든다. 지속시간 [%2$s]초.</string>
     <string name="Make_s1_fall_into_faint_for_s2_sec">%1$s을 기절시킨다. 지속시간 [%2$s]초.</string>
     <string name="s1_s2_for_s3_sec">%2$s에 %1$s、지속시간 [%3$s]초.</string>
@@ -367,11 +346,9 @@
     <string name="use_d1_to_s2_if_s3">%2$s가 %3$s인 경우, [액션%1$d]을 사용한다.</string>
     <string name="use_d1_to_s2_in_state_of_ID_d3">%2$s가 마크 [ID：%3$d]을 가지고 있는 경우, [액션%1$d]을 사용한다.</string>
     <string name="use_d1_to_s2_if_it_is_alone">%2$s가 혼자인 경우, [액션%1$d]를 사용한다.</string>
-    <string name="use_d1_to_s2_if_HP_is_below_d">%2$s의 HP가 %3$d%%이하의 경우, [액션%1$d]을 사용한다. </string>
     <string name="use_d1_to_s2_if_not_s3">%2$s가 %3$s이지 않은 경우, [액션%1$d]을 사용한다. </string>
     <string name="use_d1_to_s2_if_not_in_state_of_ID_d3">%2$s가 마크 [ID：%3$d]을 가지고 있지 않은 경우, [액션%1$d]을 사용한다. </string>
     <string name="use_d1_to_s2_if_it_is_not_alone">%2$s가 혼자이지 않은 경우, [액션%1$d]을 사용한다. </string>
-    <string name="use_d1_to_s2_if_HP_is_not_below_d">%2$s의 HP가 %3$d%%이하가 아닌 경우, [액션%1$d]을 사용한다. </string>
     <string name="Random_event_d1_chance_use_d2_otherwise_d3">랜덤조건：[%1$d%%]의 확률로 [액션%2$d]을 사용, 그 외의 경우에는 [액션%3$d]을 사용한다. </string>
     <string name="Random_event_d1_chance_use_d2">랜덤조건：[%1$d%%]의 확률로 [액션%2$d]을 사용한다. </string>
     <string name="controlled">행동불능 상태 중 </string>
@@ -385,7 +362,6 @@
     <string name="poisoned_or_venom">독이나 맹독 상태 중</string>
     <string name="breaking">Break 상태 중</string>
     <string name="Condition_s">조건분기：%1$s</string>
-    <string name="separator">, </string>
     <string name="Revive_s1_with_d2_HP">%1$s의 HP를 [%2$d%%]회복시킨다.</string>
     <string name="Modifier_add_s1_HP_to_value_d2_of_effect_d3">[액션%3$d]의 매개변수 %2$d을[%1$s * HP]상승시킨다.</string>
     <string name="Modifier_add_s1_lost_HP_to_value_d2_of_effect_d3">[액션%3$d]의 매개변수 %2$d을 [%1$s * 잃은 HP]상승시킨다. </string>
@@ -473,8 +449,6 @@
     <string name="title_equipment">장비</string>
     <string name="title_quest">퀘스트</string>
     <string name="title_log">로그</string>
-    <string name="setting_re_download_db">데이터베이스를 재다운로드</string>
-    <string name="setting_re_download_db_summary">일반적인 상황에서는 이 기능을 사용하실 필요가 없습니다</string>
     <string name="text_drop_rarity">레어도：%1$s</string>
     <string name="text_drop_mana">마나：%d</string>
     <string name="text_condition_and">전부 드랍</string>

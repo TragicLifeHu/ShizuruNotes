@@ -17,7 +17,7 @@ open class AttackSealAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): Condition {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -30,7 +30,7 @@ open class AttackSealAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): Target {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

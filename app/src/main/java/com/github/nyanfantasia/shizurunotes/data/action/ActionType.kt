@@ -1,6 +1,5 @@
 package com.github.nyanfantasia.shizurunotes.data.action
 
-@Suppress("unused")
 enum class ActionType(val value: Int) {
     Unknown(0),
     Damage(1),
@@ -92,7 +91,7 @@ enum class ActionType(val value: Int) {
     companion object {
         @JvmStatic
         fun parse(value: Int): ActionType {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return Unknown

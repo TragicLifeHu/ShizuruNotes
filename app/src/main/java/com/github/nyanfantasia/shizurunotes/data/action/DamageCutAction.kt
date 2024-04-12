@@ -10,7 +10,7 @@ class DamageCutAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): DamageType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return All

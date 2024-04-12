@@ -40,14 +40,14 @@ class HatsuneStageFragment : Fragment(), OnHatsuneClickListener<HatsuneStage> {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedHatsune.loadData()
-        sharedHatsune.hatsuneStageList.observe(viewLifecycleOwner, {
+        sharedHatsune.hatsuneStageList.observe(viewLifecycleOwner) {
             binding.hatsuneStageProgressBar.visibility = if (it.isEmpty()) {
                 View.VISIBLE
             } else {
                 View.GONE
             }
             hatsuneStageAdapter.setUpdatedList(hatsuneStageVM.viewList)
-        })
+        }
         binding.hatsuneStageToolbar.setNavigationOnClickListener {
             it.findNavController().navigateUp()
         }

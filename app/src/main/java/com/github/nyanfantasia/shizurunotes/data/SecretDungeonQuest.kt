@@ -8,5 +8,4 @@ class SecretDungeonQuest(
     val questType: Int,
     val waveGroupId: Int,
     val waveGroup: WaveGroup
-) {
-}
+)

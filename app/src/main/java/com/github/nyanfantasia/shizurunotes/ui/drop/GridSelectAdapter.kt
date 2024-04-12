@@ -2,6 +2,7 @@ package com.github.nyanfantasia.shizurunotes.ui.drop
 
 import android.content.Context
 import android.view.View
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.github.nyanfantasia.shizurunotes.R
@@ -62,9 +63,9 @@ class GridSelectAdapter(
 
     private fun setItemStatus(view: View, selected: Boolean) {
         view.background = if (selected) {
-            mContext.getDrawable(R.drawable.shape_selected_background)
+            AppCompatResources.getDrawable(mContext, R.drawable.shape_selected_background)
         } else {
-            mContext.getDrawable(R.drawable.shape_unselected_background)
+            AppCompatResources.getDrawable(mContext, R.drawable.shape_unselected_background)
         }
     }
 }

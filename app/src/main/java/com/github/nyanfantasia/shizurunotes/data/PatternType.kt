@@ -67,7 +67,7 @@ internal enum class PatternType(val value: Int) {
 
     companion object {
         fun parse(value: Int): PatternType {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return None

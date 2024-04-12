@@ -33,14 +33,14 @@ class ComparisonListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentComparisonListBinding.inflate(inflater, container, false)
-        comparisonListVM.liveComparisonList.observe(viewLifecycleOwner, {
+        comparisonListVM.liveComparisonList.observe(viewLifecycleOwner) {
             binding.comparisonListProgressbar.visibility = if (it.isEmpty()) {
                 View.VISIBLE
             } else {
                 View.GONE
             }
             adapter.update(it.toMutableList())
-        })
+        }
         setDropdownText()
         return binding.root
     }
@@ -55,7 +55,6 @@ class ComparisonListFragment : Fragment() {
             comparisonListToolbar.title = "R" + sharedChara.rankComparisonFrom + " → " + "R" + sharedChara.rankComparisonTo
             comparisonListRecycler.apply {
                 layoutManager = LinearLayoutManager(this@ComparisonListFragment.context)
-                adapter = this@ComparisonListFragment.adapter
             }
         }
         comparisonListVM.filterDefault()

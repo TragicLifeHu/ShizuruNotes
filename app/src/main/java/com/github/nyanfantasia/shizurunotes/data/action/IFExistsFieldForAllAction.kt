@@ -5,9 +5,6 @@ import com.github.nyanfantasia.shizurunotes.common.I18N.Companion.getString
 import com.github.nyanfantasia.shizurunotes.data.Property
 
 class IFExistsFieldForAllAction : ActionParameter() {
-    override fun childInit() {
-        super.childInit()
-    }
 
     override fun localizedDetail(level: Int, property: Property?): String? {
         return if (actionDetail2 != 0 && actionDetail3 != 0) getString(

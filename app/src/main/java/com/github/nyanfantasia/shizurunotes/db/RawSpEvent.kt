@@ -5,7 +5,7 @@ import com.github.nyanfantasia.shizurunotes.data.SpEvent
 import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
 import com.google.common.collect.Lists
 
-@Suppress("PrivatePropertyName", "PropertyName")
+@Suppress("PrivatePropertyName")
 class RawSpEvent {
     private var boss_id = 0
     var name: String? = null

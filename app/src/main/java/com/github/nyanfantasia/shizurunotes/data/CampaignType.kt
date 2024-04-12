@@ -84,7 +84,7 @@ enum class CampaignType {
     companion object {
         var nextValue: Int = 0
         fun parse(value: Int): CampaignType {
-            values().forEach {
+            entries.forEach {
                 if (it.value == value) {
                     return it
                 }

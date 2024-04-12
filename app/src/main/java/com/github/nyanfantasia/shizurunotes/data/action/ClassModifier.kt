@@ -20,7 +20,7 @@ enum class ClassModifier(val value: Int) {
     companion object {
         @JvmStatic
         fun parse(value: Int): ClassModifier {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return Unknown

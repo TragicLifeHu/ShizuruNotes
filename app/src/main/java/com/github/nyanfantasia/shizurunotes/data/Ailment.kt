@@ -53,7 +53,7 @@ class Ailment(type: Int, detail: Int) {
 
         companion object {
             fun parse(value: Int): DotDetail {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -74,7 +74,7 @@ class Ailment(type: Int, detail: Int) {
 
         companion object {
             fun parse(value: Int): CharmDetail? {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return null
@@ -115,7 +115,7 @@ class Ailment(type: Int, detail: Int) {
 
         companion object {
             fun parse(value: Int): ActionDetail {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -176,7 +176,7 @@ class Ailment(type: Int, detail: Int) {
 
         companion object {
             fun parse(value: Int): AilmentType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

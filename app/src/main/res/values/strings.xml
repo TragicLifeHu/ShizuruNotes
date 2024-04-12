@@ -15,11 +15,8 @@
     <string name="title_rank_comparison">ランク比較</string>
     <string name="title_hatsune_stage">イベント</string>
     <string name="title_hatsune_wave">イベント</string>
-    <string name="title_community">コミュニティ</string>
     <string name="title_sp_event">SPイベント</string>
     <string name="title_secret_dungeon">SPダンジョン</string>
-    <string name="community_dialog_title">コミュニティに参加</string>
-    <string name="community_dialog_text">コミュニティに参加しましょう\n（飛び先中国語注意）</string>
     <string name="do_not_show_anymore">今度から表示しない</string>
     <string name="title_analyze">データ分析</string>
     <string name="setting_language" translatable="false">Language</string>
@@ -63,22 +60,18 @@
     </string-array>
     <string name="setting_limit_clan_battle_num">クラバトの表示数を制限</string>
     <string name="setting_limit_clan_battle_num_description">最も近い13期のクラバトデータのみを表示、ロード時間を短縮できます</string>
-    <string name="setting_skill_expression_summary">スキルアクションの計算式を表示</string>
     <string name="setting_appearance">表示</string>
     <string name="setting_system">システム</string>
     <string name="setting_server">サーバー</string>
     <string name="setting_server_dialog_title">サーバー切り替え</string>
     <string name="setting_db_version">データベースバージョン</string>
     <string name="setting_app_version">アプリバージョン</string>
-    <string name="setting_re_download_db">データベースを再ダウンロード</string>
-    <string name="setting_re_download_db_summary">通常の状況下ではこの機能を使う必要がありません</string>
     <string name="setting_about">シズルノートについて</string>
     <string name="about_version">Version: %1$s</string>
     <string name="about_disclaimer">This is an unofficial fan-made application, copyright of all resources associate with the game \"Princess Connect Re:Dive\" are belong to Cygames, Inc. </string>
     <string name="about_hp">Open source homepage (Fork) \nhttps://github.com/TragicLifeHu/ShizuruNotes</string>
     <string name="about_developer">Development &lt;br/>Vibbit&lt;a href=\"https://twitter.com/L8102259\">@L8102259&lt;/a>&lt;br/>Nyan Fantasia</string>
     <string name="about_translator">Localization &lt;br/>(Korean) applemintia&lt;br/>(English) &lt;a href=\"https://twitter.com/southro_p\">southrop&lt;/a> &amp; &lt;a href=\"https://github.com/MightyZanark\">MightyZanark&lt;/a>&lt;br/>(Chinese Traditional) Nyan Fantasia</string>
-    <string name="about_api" translatable="false">API by https://redive.estertion.win</string>
     <string name="about_license" translatable="false">This application is licensed under the &lt;a href=\"http://www.apache.org/licenses/LICENSE-2.0.txt\">Apache License 2.0&lt;/a></string>
     <string name="text_ok" translatable="false">OK</string>
     <string name="db_update_dialog_title">データベース更新</string>
@@ -87,26 +80,20 @@
     <string name="db_update_dialog_cancel">あとで</string>
     <string name="db_update_progress_title">データベース更新</string>
     <string name="db_update_progress_text">アップデート中…</string>
-    <string name="db_update_finished_title">データベース更新</string>
     <string name="db_update_download_finished_text">ダウンロード完了、解凍中…</string>
     <string name="db_update_finished_text">アップデート完了しました</string>
-    <string name="db_update_duplicate">アップデートが完了しましたが、データは更新されてません。数分後また試してみてください</string>
-    <string name="db_update_check_failed">データベースのアップデートチェックが失敗しました、詳細はログを参照してください</string>
     <string name="db_update_failed">データベースのアップデートが失敗しました、詳細はログを参照してください</string>
     <string name="app_update_check_failed">アプリのアップデートチェックが失敗しました</string>
     <string name="chara_load_failed">データの初期化が失敗しました、詳細はログを参照してください</string>
     <string name="abnormal_exit_message">前回実行した時に致命的なエラーが発生しました、詳細はログを参照してください</string>
-    <string name="ui_text_filter">絞り込み</string>
     <string name="ui_text_position">位置</string>
     <string name="ui_text_atk_type">タイプ</string>
     <string name="ui_text_sort">ソート</string>
-    <string name="ui_text_all">ALL</string>
     <string name="ui_chip_position_forward">前衛</string>
     <string name="ui_chip_position_middle">中衛</string>
     <string name="ui_chip_position_rear">後衛</string>
     <string name="ui_chip_atk_type_physical">物理</string>
     <string name="ui_chip_atk_type_magic">魔法</string>
-    <string name="ui_btn_reset">リセット</string>
     <string name="ui_chip_any">ALL</string>
     <string name="ui_chip_sort_new">更新日</string>
     <string name="ui_chip_sort_position">ポジション</string>
@@ -124,18 +111,9 @@
     <string name="ui_chip_sort_age">年齢</string>
     <string name="ui_chip_sort_height">身長</string>
     <string name="ui_chip_sort_weight">体重</string>
-    <string name="ui_chip_sort_burst_size">バストサイズ</string>
-    <string name="ui_chip_sort_way_up">昇順</string>
-    <string name="ui_chip_sort_way_down">降順</string>
-    <string name="ui_switch_change_value">表示切替</string>
-    <string name="snack_bar_cant_sort">データが不十分のためこのソートはまだ使えません</string>
     <string name="button_minion_info">召喚物情報</string>
-    <string name="text_normal_attack_only">通常攻撃のみ</string>
     <string name="text_level" translatable="false">Lv.</string>
-    <string name="text_loop_start" translatable="false">（</string>
-    <string name="text_loop_end" translatable="false">）</string>
     <string name="tab_phase">フェーズ&#160;</string>
-    <string name="text_year">年</string>
     <string name="text_month">月</string>
     <string name="text_day">日</string>
     <string name="text_physical_effective_hp">&#160;物理有効HP&#160;</string>
@@ -171,11 +149,9 @@
     <string name="text_search_area_width">&#160;攻撃距離&#160;</string>
     <string name="text_status_tips">*上記のステータスは☆MAX、装備&amp;専用装備フル強化、ストーリーステータス&amp;Exスキル&amp;Rank Bonusを含めての値になります。</string>
     <string name="text_attack_pattern">&#160;行動パターン%d&#160;</string>
-    <string name="text_normal_mode">通常モード</string>
     <string name="text_cast_time">待機時間：</string>
     <string name="text_cool_time">クールタイム：</string>
     <string name="text_skill_action">スキルアクション</string>
-    <string name="text_profile">プロフィール</string>
     <string name="text_age">&#160;年齢&#160;</string>
     <string name="text_guild">&#160;ギルド&#160;</string>
     <string name="text_race">&#160;種族&#160;</string>
@@ -185,8 +161,6 @@
     <string name="text_blood_type">&#160;血液型&#160;</string>
     <string name="text_favorite">&#160;趣味&#160;</string>
     <string name="text_cv">&#160;CV&#160;</string>
-    <string name="text_catch_copy">キャッチコピー</string>
-    <string name="text_self_text">自己紹介</string>
     <string name="text_normal_attack_cast_time">通常攻撃待機時間：%1$ss</string>
     <string name="text_rank">Rank</string>
     <string name="text_please_download_db">データベースをダウンロードしてください</string>
@@ -267,17 +241,14 @@
     <string name="campaign">キャンペーン</string>
     <string name="hatsune">イベント</string>
     <string name="clanBattle">クランバトル</string>
-    <string name="short_clanBattle">クラバト</string>
     <string name="tower">ルナの塔</string>
     <string name="gacha">無料ガチャ</string>
     <string name="dungeon">ダンジョン</string>
     <string name="normal">ノーマル</string>
     <string name="hatsune_normal">イベントノーマル</string>
     <string name="revival_event_normal">復刻イベントノーマル</string>
-    <string name="shiori_normal">イベントノーマル（後半）</string>
     <string name="hard">ハード</string>
     <string name="hatsune_hard">イベントハード</string>
-    <string name="shiori_hard">イベントハード（後半）</string>
     <string name="revival_event_hard">復刻イベントハード</string>
     <string name="shrine">聖跡調査</string>
     <string name="temple">神殿調査</string>
@@ -298,7 +269,6 @@
     <string name="others">その他</string>
     <string name="icon_notification">通知</string>
     <string name="title_notification_setting">通知設定</string>
-    <string name="setting_enable">通知の表示</string>
     <string name="before_summary">前日朝5時（GMT+9）、通知のみ</string>
     <string name="before_2_summary">二日前朝5時（GMT+9）、通知のみ</string>
     <string name="today_summary">当日朝5時（GMT+9）、通知のみ</string>
@@ -360,13 +330,11 @@
     <string name="transition_name" translatable="false">transItem_%d</string>
     <string name="sp_mode_d">SP MODE %d</string>
     <string name="icon_analyze">アナライズ</string>
-    <string name="status_adjust_panel">ステータス調整パネル</string>
     <string name="enemy_level_d">敵Lv.%d</string>
     <string name="enemy_accuracy_d">敵命中 %d</string>
     <string name="enemy_dodge_d">敵回避 %d</string>
     <string name="base_status">基礎ステータス</string>
     <string name="derivative_status">派生ステータス</string>
-    <string name="show_or_hide_expression">スキル倍率を表示</string>
     <string name="level_d1_rank_d2">"Lv%1$d        Rank%2$d"</string>
     <string name="message">メッセージ</string>
     <string name="chara_story_status">ストーリーステータス</string>
@@ -459,7 +427,6 @@
     <string name="all_front_s_targets">前方%1$sすべての対象</string>
     <string name="s1_targets_in_range_d2">範囲 [%2$d] 内の%1$s</string>
     <string name="front_s1_targets_in_range_d2">前方範囲 [%2$d] 内の%1$s</string>
-    <string name="s1_s2_targets_in_range_d3">範囲 [%3$d] 内の%2$s%1$s</string>
     <string name="s1_s2_target_in_range_d3">範囲 [%3$d] 内の%1$s%2$s</string>
     <string name="s1_s2_s3_in_range_d4">範囲 [%4$d] 内の%1$s%2$s%3$s</string>
     <string name="front_s1_s2_targets_in_range_d3">前方範囲 [%3$d] 内の%2$s%1$s</string>
@@ -490,7 +457,6 @@
     <string name="Knock_s1_away_d2">%1$sをノックバックする、距離 [%2$d]。</string>
     <string name="Draw_s1_toward_self_d2">%1$sを引き寄せる、距離 [%2$d]。</string>
     <string name="Restore_s1_s2_s3_HP">%1$sのHPを [%2$s%3$s] 回復させる。（この値はキャラの回復量上昇値に影響される）</string>
-    <string name="Cast_an_unknown_barrier_d1_on_s2_for_s3_sec">%2$sにタイプ [%1$d] のバリアを展開する、効果時間 [%3$s] 秒。</string>
     <string name="Cast_a_barrier_on_s1_to_nullify_s2_physical_damage_for_s3_sec">%1$sに [%2$s] ダメージ分の物理無効バリアを展開する、効果時間 [%3$s] 秒。</string>
     <string name="Cast_a_barrier_on_s1_to_nullify_s2_magic_damage_for_s3_sec">%1$sに [%2$s] ダメージ分の魔法無効バリアを展開する、効果時間 [%3$s] 秒。</string>
     <string name="Cast_a_barrier_on_s1_to_absorb_s2_physical_damage_for_s3_sec">%1$sに [%2$s] ダメージ分の物理吸収バリアを展開する、効果時間 [%3$s] 秒。</string>
@@ -535,8 +501,6 @@
     <string name="HP_Regeneration_Down">ＨＰ回復量減少</string>
     <string name="Damage_Taken_Increased">弱体被ダメージ上昇</string>
     <string name="Damage_By_Behaviour">行動時ダメージ</string>
-    <string name="Raise_s1_d2_attack_speed_for_s3_sec">%1$sの行動速度を [%2$d%%] アップ、効果時間 [%3$s] 秒。</string>
-    <string name="Reduce_s1_d2_attack_speed_for_s3_sec">%1$sの行動速度を [%2$d%%] ダウン、効果時間 [%3$s] 秒。</string>
     <string name="Make_s1_fall_asleep_for_s2_sec">%1$sを睡眠状態にする、効果時間 [%2$s] 秒。</string>
     <string name="Make_s1_fall_into_faint_for_s2_sec">%1$sを気絶状態にする、効果時間 [%2$s] 秒。</string>
     <string name="s1_s2_for_s3_sec">%2$sに%1$s、効果時間 [%3$s] 秒。</string>
@@ -582,11 +546,9 @@
     <string name="use_d1_to_s2_if_s3">%2$sが%3$sの場合、[アクション%1$d] を使う。</string>
     <string name="use_d1_to_s2_in_state_of_ID_d3">%2$sがマーク [ID: %3$d] を持っている場合、[アクション%1$d] を使う。</string>
     <string name="use_d1_to_s2_if_it_is_alone">%2$sが単独の場合、[アクション%1$d] を使う。</string>
-    <string name="use_d1_to_s2_if_HP_is_below_d">%2$sのHPが [%3$d%%] 以下の場合、[アクション%1$d] を使う。</string>
     <string name="use_d1_to_s2_if_not_s3">%2$sが%3$sでない場合、[アクション%1$d] を使う。</string>
     <string name="use_d1_to_s2_if_not_in_state_of_ID_d3">%2$sがマーク [ID: %3$d] を持っていない場合、[アクション%1$d] を使う。</string>
     <string name="use_d1_to_s2_if_it_is_not_alone">%2$sが単独でない場合、[アクション%1$d] を使う。</string>
-    <string name="use_d1_to_s2_if_HP_is_not_below_d">%2$sのHPが [%3$d%%] 以下でない場合、[アクション%1$d] を使う。</string>
     <string name="Random_event_d1_chance_use_d2_otherwise_d3">ランダム事件：[%1$d%%] の確率で [アクション%2$d] を使う、それ以外の場合は [アクション%3$d] を使う。</string>
     <string name="Random_event_d1_chance_use_d2">ランダム事件：[%1$d%%] の確率で [アクション%2$d] を使う。</string>
     <string name="controlled">行動不能状態中</string>
@@ -602,7 +564,6 @@
     <string name="breaking">Break状態中</string>
     <string name="polymorph">変身状態中</string>
     <string name="Condition_s">条件分岐：%1$s</string>
-    <string name="separator">、</string>
     <string name="Revive_s1_with_d2_HP">%1$sを復活させ、HPを [%2$d%%] 回復させる。（この値はキャラの回復量上昇値に影響される）</string>
     <string name="Modifier_add_s1_HP_to_value_d2_of_effect_d3">[アクション%3$d] の係数%2$dを [%1$s * HP] アップさせる。</string>
     <string name="Modifier_add_s1_lost_HP_to_value_d2_of_effect_d3">[アクション%3$d] の係数%2$dを [%1$s * 損失したHP] アップさせる。</string>
@@ -719,7 +680,6 @@
     <string name="Multiple_attack_speed_of_s1_with_s2_for_s3_sec">%1$sの行動速度を本来の [%2$s%%] にする、効果時間 [%3$s] 秒。</string>
     <string name="barriers">バリア</string>
     <string name="Multiple_heal_effects_from_s1_with_s2_for_s3_sec">%1$sの回復量は本来の [%2$s] 倍にする、効果時間 [%3$s] 秒。</string>
-    <string name="buff">バフ効果</string>
     <string name="debuff">デバフ効果</string>
     <string name="Passive_Whenever_s1_get_s2_seals_s3_with_d4_marks_id_d5_for_s6_sec_caps_at_d7_This_passive_skill_will_listen_for_s8_sec">パッシブ：%1$sが%2$sを受けるたび、%3$sにマーク [ID: %5$s] を [%4$s] 追加する、マークの継続時間 [%6$s] 秒、最大 [%7$s] までスタックする。このパッシブ効果は [%8$s] 秒継続する。</string>
     <string name="add">+</string>
@@ -796,7 +756,6 @@
     <string name="Decreases_s1_healing_received_by_s2_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">%2$sが回復効果を受けた時、回復効果を [%1$s]%% 低下させる、効果時間 [%3$s] 秒。フィールド効果である場合、効果時間は無限。</string>
     <string name="status_up_buffs">ステータスアップ効果</string>
     <string name="Reduces_incoming_energy_damage_down_to_s1_percent_of_s2_for_s3_sec">%2$sが受けるTP減少効果を本来の値の [%1$s] 倍にする、効果時間 [%3$s] 秒。</string>
-    <string name="Multiplies_parameter_d2_of_action_d3_by_s1_x_Number_of_allies">[アクション%3$d] の係数%2$dに [%1$s * 味方の数] を乗じる。</string>
     <string name="Deploys_a_filed_of_radius_d1_which_s2_attack_speed_of_s3_for_s4_sec">半径 [%1$d] のフィールドを展開し、行動速度を [%3$s%%] %2$sさせる、効果時間 [%4$s] 秒。この効果は他の同種類効果と重ね掛け可能。</string>
     <string name="Enable_s1_to_resist_all_sorts_of_incapacity_efficacies_up_to_s2_times_in_a_period_of_s3_sec">%1$sが受ける行動不能効果を最大 [%2$s] 回無効化にする、効果時間 [%3$s] 秒。</string>
     <string name="This_damage_ignores_s1_s2_defense">このスキルは敵の%2$s防御力を [%1$s] 無視する。</string>
@@ -818,7 +777,5 @@
     <string name="Performs_action_d1_in_case_of_the_battle_field_is_covered_by_s2">バトルフィールドの環境が%2$sの場合、[アクション%1$d] を使う。</string>
     <string name="Performs_action_d1_in_case_of_the_battle_field_is_not_covered_by_s2">バトルフィールドの環境が%1$sでない場合、[アクション%2$s] を使う。</string>
     <string name="the_lowest_hp_excludes_self">自分以外HPが一番低い</string>
-    <string name="s1_the_lowest_hp_excludes_self">自分以外HPが一番低い%1$s</string>
-    <string name="the_s1_lowest_hp_excludes_self">自分以外HPが%1$s番目低い</string>
     <string name="Modifier_add_s1_remnant_of_HP_of_s2_value_d3_of_effect_d4">[アクション%4$d] の係数%3$dを [%1$s * %2$sのHP残量] アップさせる。</string>
 </resources>

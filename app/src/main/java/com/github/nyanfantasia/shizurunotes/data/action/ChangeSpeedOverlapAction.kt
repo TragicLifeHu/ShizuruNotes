@@ -12,7 +12,7 @@ class ChangeSpeedOverlapAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): SpeedChangeType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Haste

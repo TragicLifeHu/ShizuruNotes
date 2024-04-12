@@ -6,9 +6,6 @@ import com.github.nyanfantasia.shizurunotes.data.Property
 import com.github.nyanfantasia.shizurunotes.utils.Utils.roundDouble
 
 class ChangePatternAction : ActionParameter() {
-    override fun childInit() {
-        super.childInit()
-    }
 
     override fun localizedDetail(level: Int, property: Property?): String? {
         return when (actionDetail1) {

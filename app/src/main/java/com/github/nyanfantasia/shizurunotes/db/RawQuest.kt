@@ -5,7 +5,7 @@ import com.github.nyanfantasia.shizurunotes.data.WaveGroup
 import com.github.nyanfantasia.shizurunotes.db.DBHelper.Companion.get
 import java.util.*
 
-@Suppress("PropertyName", "PrivatePropertyName")
+@Suppress("PrivatePropertyName")
 class RawQuest {
     private var quest_id = 0
     private var area_id = 0

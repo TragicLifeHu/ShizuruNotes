@@ -13,7 +13,7 @@ class InhibitHealAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): InhibitType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Inhibit
@@ -21,8 +21,8 @@ class InhibitHealAction : ActionParameter() {
         }
     }
 
-    protected var durationValues: MutableList<ActionValue> = ArrayList()
-    protected var inhibitType: InhibitType? = null
+    private var durationValues: MutableList<ActionValue> = ArrayList()
+    private var inhibitType: InhibitType? = null
     override fun childInit() {
         super.childInit()
         actionValues.add(ActionValue(actionValue1!!, actionValue4!!, null))

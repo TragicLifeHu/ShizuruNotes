@@ -2,7 +2,7 @@ package com.github.nyanfantasia.shizurunotes.db
 
 import com.github.nyanfantasia.shizurunotes.data.ClanBattlePhase
 
-@Suppress("PropertyName", "PrivatePropertyName")
+@Suppress("PrivatePropertyName")
 class RawClanBattlePhase {
     private var phase = 0
     private var wave_group_id_1 = 0

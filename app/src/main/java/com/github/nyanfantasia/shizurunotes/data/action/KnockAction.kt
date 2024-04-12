@@ -20,7 +20,7 @@ class KnockAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): KnockType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

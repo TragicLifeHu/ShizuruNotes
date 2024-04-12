@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
@@ -97,19 +98,19 @@ class DropFragment : Fragment() {
     }
 
     private fun setObservers() {
-        sharedEquipment.equipmentMap.observe(viewLifecycleOwner, {
+        sharedEquipment.equipmentMap.observe(viewLifecycleOwner) {
             if (!it.isNullOrEmpty()) {
                 dropVM.refreshList(it.values.toList())
                 mAdapter.update(dropVM.itemList)
             }
-        })
-        sharedEquipment.loadingFlag.observe(viewLifecycleOwner, {
+        }
+        sharedEquipment.loadingFlag.observe(viewLifecycleOwner) {
             binding.dropProgressBar.visibility = if (it) {
                 View.VISIBLE
             } else {
                 View.GONE
             }
-        })
+        }
     }
 
     private fun setOptionItemClickListener(toolbar: Toolbar) {
@@ -117,7 +118,7 @@ class DropFragment : Fragment() {
             when(it.itemId) {
                 R.id.menu_drop_before -> {
                     val ids = UserSettings.get().lastEquipmentIds
-                    if (!ids.isNullOrEmpty()) {
+                    if (ids.isNotEmpty()) {
                         clearRecyclerView()
                         ids.forEach { id ->
                             for (item in mAdapter.itemList) {
@@ -125,7 +126,7 @@ class DropFragment : Fragment() {
                                     sharedEquipment.selectedDrops.value?.add(item)
                                     val vh = binding.dropRecycler.findViewHolderForAdapterPosition(mAdapter.itemList.indexOf(item))
                                     vh?.let {
-                                        (vh as BaseHintAdapter.InstanceViewHolder).binding.root.background = requireContext().getDrawable(R.drawable.shape_selected_background)
+                                        (vh as BaseHintAdapter.InstanceViewHolder).binding.root.background = AppCompatResources.getDrawable(requireContext(), R.drawable.shape_selected_background)
                                     }
                                     break
                                 }
@@ -155,7 +156,7 @@ class DropFragment : Fragment() {
 
     private fun clearRecyclerView() {
         binding.dropRecycler.children.forEach {
-            it.background = requireContext().getDrawable(R.drawable.shape_unselected_background)
+            it.background = AppCompatResources.getDrawable(requireContext(), R.drawable.shape_unselected_background)
         }
         sharedEquipment.selectedDrops.value?.clear()
     }

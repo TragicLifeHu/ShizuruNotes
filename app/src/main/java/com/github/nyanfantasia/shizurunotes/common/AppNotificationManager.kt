@@ -16,21 +16,12 @@ import java.time.LocalDateTime
 import java.time.ZoneOffset
 import kotlin.concurrent.thread
 
-class AppNotificationManager private constructor(
-    private val mContext: Context
-) {
+class AppNotificationManager {
     companion object {
-        private lateinit var instance: AppNotificationManager
-
-        fun with (context: Context): AppNotificationManager {
-            instance = AppNotificationManager(context)
-            return instance
-        }
-
-        fun get(): AppNotificationManager {
-            return instance
-        }
+        val instance: AppNotificationManager by lazy { AppNotificationManager() }
     }
+
+    private val mContext: Context = App.instance
 
     private var futureSchedule: MutableList<EventSchedule> = mutableListOf()
 

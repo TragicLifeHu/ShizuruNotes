@@ -43,7 +43,7 @@ class RawSkillData {
             description!!,
             icon_type
         )
-        var iteration = if (DBHelper.get().hasAction10) 10 else 7
+        val iteration = if (DBHelper.get().hasAction10) 10 else 7
         for (i in 1..iteration) {
             val action = getValueFromObject(this, "action_$i") as Int
             if (action != 0) {

@@ -13,7 +13,6 @@
     <string name="title_sp_event">特殊活動</string>
     <string name="setting_language_dialog_title">語言</string>
     <string name="setting_skill_expression_title">技能公式</string>
-    <string name="setting_skill_expression_summary">在技能動作詳情中顯示計算公式</string>
     <string name="do_not_show_anymore">不再顯示此提示</string>
     <string-array name="setting_language_options">
         <item>跟隨系統</item>
@@ -41,35 +40,27 @@
     <string name="setting_system">系統</string>
     <string name="setting_db_version">資料庫版本</string>
     <string name="setting_app_version">應用程式版本</string>
-    <string name="setting_re_download_db">強制重新下載資料庫</string>
-    <string name="setting_re_download_db_summary">正常情況下無需使用此功能</string>
     <string name="setting_about">關於靜流筆記</string>
     <string name="db_update_dialog_title">資料庫更新</string>
     <string name="db_update_dialog_text">檢測到資料庫有新版本，需要現在更新嗎？</string>
-    <string name="db_update_duplicate">下載已完成，但資料並沒有被更新。如果遊戲資料庫剛更新不久，出現這種情況是正常的，請等待數分鐘後重試（請勿在短時間內多次嘗試更新）</string>
     <string name="db_update_dialog_confirm">更新</string>
     <string name="db_update_dialog_cancel">稍後</string>
     <string name="db_update_progress_title">資料庫更新</string>
     <string name="db_update_progress_text">正在更新…</string>
-    <string name="db_update_finished_title">資料庫更新</string>
     <string name="db_update_download_finished_text">下載完成，解壓縮中…</string>
     <string name="db_update_finished_text">更新完成</string>
-    <string name="db_update_check_failed">資料庫更新檢測失敗，詳情請參照日誌檔</string>
     <string name="db_update_failed">資料庫更新失敗，詳情請參照日誌檔</string>
     <string name="app_update_check_failed">應用程式更新檢測失敗</string>
     <string name="chara_load_failed">資料初始化失敗，詳情請參照日誌檔</string>
     <string name="abnormal_exit_message">應用程式上次執行時出現致命錯誤，錯誤詳情請參照日誌檔</string>
-    <string name="ui_text_filter">篩選</string>
     <string name="ui_text_position">位置</string>
     <string name="ui_text_atk_type">類型</string>
     <string name="ui_text_sort">排序</string>
-    <string name="ui_text_all">全部</string>
     <string name="ui_chip_position_forward">前衛</string>
     <string name="ui_chip_position_middle">中衛</string>
     <string name="ui_chip_position_rear">後衛</string>
     <string name="ui_chip_atk_type_physical">物理</string>
     <string name="ui_chip_atk_type_magic">魔法</string>
-    <string name="ui_btn_reset">重置</string>
     <string name="ui_chip_any">全部</string>
     <string name="ui_chip_sort_new">更新時間</string>
     <string name="ui_chip_sort_position">位置</string>
@@ -80,15 +71,8 @@
     <string name="ui_chip_sort_age">年齡</string>
     <string name="ui_chip_sort_height">身高</string>
     <string name="ui_chip_sort_weight">體重</string>
-    <string name="ui_chip_sort_burst_size">胸圍</string>
-    <string name="ui_chip_sort_way_up">升序</string>
-    <string name="ui_chip_sort_way_down">降序</string>
-    <string name="ui_switch_change_value">切換表示</string>
-    <string name="snack_bar_cant_sort">由於資料不足本項排序暫時無法使用</string>
     <string name="button_minion_info">召喚物資料</string>
-    <string name="text_normal_attack_only">僅普通攻擊</string>
     <string name="tab_phase">階段&#160;</string>
-    <string name="text_year">年</string>
     <string name="text_month">月</string>
     <string name="text_day">日</string>
     <string name="text_status">&#160;狀態參數&#160;</string>
@@ -112,11 +96,9 @@
     <string name="text_search_area_width">&#160;攻擊距離&#160;</string>
     <string name="text_status_tips">*上述的狀態為☆MAX，裝備 &amp; 專用裝備最大強化，且包含羈絆劇情 &amp; EX 技能 &amp; Rank Bonus 的數值。</string>
     <string name="text_attack_pattern">&#160;技能循環%d&#160;</string>
-    <string name="text_normal_mode">通常模式</string>
     <string name="text_cast_time">待機時間：</string>
     <string name="text_cool_time">冷卻時間：</string>
     <string name="text_skill_action">技能動作</string>
-    <string name="text_profile">角色詳細資訊</string>
     <string name="text_age">&#160;年齡&#160;</string>
     <string name="text_guild">&#160;公會&#160;</string>
     <string name="text_race">&#160;種族&#160;</string>
@@ -126,8 +108,6 @@
     <string name="text_blood_type">&#160;血型&#160;</string>
     <string name="text_favorite">&#160;愛好&#160;</string>
     <string name="text_cv">&#160;CV&#160;</string>
-    <string name="text_catch_copy">catch copy</string>
-    <string name="text_self_text">自我介紹</string>
     <string name="text_normal_attack_cast_time">通常攻擊待機時間：%1$ss</string>
     <string name="text_rank">Rank</string>
     <string name="text_please_download_db">請下載資料庫</string>
@@ -274,7 +254,6 @@
     <string name="all_front_s_targets">前方%1$s所有的目標</string>
     <string name="s1_targets_in_range_d2">範圍 [%2$d] 內的%1$s</string>
     <string name="front_s1_targets_in_range_d2">前方範圍 [%2$d] 內的%1$s</string>
-    <string name="s1_s2_targets_in_range_d3">範圍 [%3$d] 內的%2$s%1$s</string>
     <string name="s1_s2_target_in_range_d3">範圍 [%3$d] 內的%1$s%2$s</string>
     <string name="s1_s2_s3_in_range_d4">範圍 [%4$d] 內的%1$s%2$s%3$s</string>
     <string name="front_s1_s2_targets_in_range_d3">前方範圍 [%3$d] 內的%2$s%1$s</string>
@@ -305,7 +284,6 @@
     <string name="Knock_s1_away_d2">擊退%1$s，距離 [%2$d]。</string>
     <string name="Draw_s1_toward_self_d2">吸引%1$s，距離 [%2$d]。</string>
     <string name="Restore_s1_s2_s3_HP">恢復%1$s的HP [%2$s%3$s]（未計算回復量上升產生的影響）。</string>
-    <string name="Cast_an_unknown_barrier_d1_on_s2_for_s3_sec">對%2$s展開類型為[%1$d]的護盾，持續時間 [%3$s] 秒。</string>
     <string name="Cast_a_barrier_on_s1_to_nullify_s2_physical_damage_for_s3_sec">對%1$s展開可承受 [%2$s] 物理傷害的護盾，持續時間 [%3$s] 秒。</string>
     <string name="Cast_a_barrier_on_s1_to_nullify_s2_magic_damage_for_s3_sec">對%1$s展開可承受 [%2$s] 魔法傷害的護盾，持續時間 [%3$s] 秒。</string>
     <string name="Cast_a_barrier_on_s1_to_absorb_s2_physical_damage_for_s3_sec">對%1$s展開可吸收 [%2$s] 物理傷害的護盾，持續時間 [%3$s] 秒。</string>
@@ -347,8 +325,6 @@
     <string name="Awe">畏怖</string>
     <string name="Polymorph">變身</string>
     <string name="Changing_Max_HP">HP變化</string>
-    <string name="Raise_s1_d2_attack_speed_for_s3_sec">提高%1$s [%2$d%%] 的行動速度，持續時間 [%3$s] 秒。</string>
-    <string name="Reduce_s1_d2_attack_speed_for_s3_sec">降低%1$s [%2$d%%] 的行動速度，持續時間 [%3$s] 秒。</string>
     <string name="Make_s1_fall_asleep_for_s2_sec">使%1$s進入睡眠狀態，持續時間 [%2$s] 秒。</string>
     <string name="Make_s1_fall_into_faint_for_s2_sec">使%1$s進入氣絕狀態，持續時間 [%2$s] 秒。</string>
     <string name="s1_s2_for_s3_sec">使%2$s%1$s，持續時間 [%3$s] 秒。</string>
@@ -394,11 +370,9 @@
     <string name="use_d1_to_s2_if_s3">當%2$s在%3$s的場合，使用 [動作 %1$d]。</string>
     <string name="use_d1_to_s2_in_state_of_ID_d3">%2$s持有標記 [ID: %3$d] 的場合，使用 [動作 %1$d]。</string>
     <string name="use_d1_to_s2_if_it_is_alone">%2$s是單獨的場合，使用 [動作 %1$d]。</string>
-    <string name="use_d1_to_s2_if_HP_is_below_d">%2$s的HP在 [%3$d%%] 以下的場合，使用 [動作 %1$d]。</string>
     <string name="use_d1_to_s2_if_not_s3">%2$s不在%3$s的場合，使用 [動作 %1$d]。</string>
     <string name="use_d1_to_s2_if_not_in_state_of_ID_d3">%2$s未持有標記 [ID: %3$d] 的場合，使用 [動作 %1$d]。</string>
     <string name="use_d1_to_s2_if_it_is_not_alone">%2$s不是單獨的場合，使用 [動作 %1$d]。</string>
-    <string name="use_d1_to_s2_if_HP_is_not_below_d">%2$s的HP不在 [%3$d%%] 以下的場合，使用 [動作 %1$d]。</string>
     <string name="Random_event_d1_chance_use_d2_otherwise_d3">隨機事件：[%1$d%%] 的概率使用 [動作 %2$d]，否則使用 [動作 %3$d]。</string>
     <string name="Random_event_d1_chance_use_d2">隨機事件：[%1$d%%] 的概率使用 [動作 %2$d]。</string>
     <string name="controlled">無法行動狀態中</string>
@@ -413,7 +387,6 @@
     <string name="poisoned_or_venom">中毒或猛毒狀態中</string>
     <string name="breaking">Break 狀態中</string>
     <string name="Condition_s">條件分歧: %1$s</string>
-    <string name="separator">，</string>
     <string name="Revive_s1_with_d2_HP">使%1$s復活，並恢復其 [%2$d%%] HP（未計算回復量上升產生的影響）。</string>
     <string name="Modifier_add_s1_HP_to_value_d2_of_effect_d3">使 [動作 %3$d] 的係數%2$d提高 [%1$s * HP]。</string>
     <string name="Modifier_add_s1_lost_HP_to_value_d2_of_effect_d3">使 [動作 %3$d] 的係數%2$d提高 [%1$s * 損失的HP]。</string>
@@ -527,17 +500,14 @@
     <string name="campaign">活動</string>
     <string name="hatsune">劇情活動</string>
     <string name="clanBattle">戰隊競賽</string>
-    <string name="short_clanBattle">戰隊競賽</string>
     <string name="tower">露娜之塔</string>
     <string name="gacha">免費轉蛋</string>
     <string name="dungeon">地下城</string>
     <string name="normal">"Normal "</string>
     <string name="hatsune_normal">"活動 Normal "</string>
     <string name="revival_event_normal">"復刻活動 Normal "</string>
-    <string name="shiori_normal">活動 Normal（後半）</string>
     <string name="hard">"Hard "</string>
     <string name="hatsune_hard">"活動 Hard "</string>
-    <string name="shiori_hard">活動 Hard（後半）</string>
     <string name="revival_event_hard">"復刻活動 Hard "</string>
     <string name="shrine">聖蹟調查</string>
     <string name="temple">神殿調查</string>
@@ -558,7 +528,6 @@
     <string name="others">其它</string>
     <string name="icon_notification">通知</string>
     <string name="title_notification_setting">通知設定</string>
-    <string name="setting_enable">顯示通知</string>
     <string name="before_summary">前日5點（GMT+9），僅通知</string>
     <string name="before_2_summary">前兩日5點（GMT+9），僅通知</string>
     <string name="today_summary">當日5點（GMT+9），僅通知</string>
@@ -621,8 +590,6 @@
     <string name="base_status">基礎參數</string>
     <string name="derivative_status">衍生參數</string>
     <string name="icon_analyze">分析</string>
-    <string name="status_adjust_panel">參數控制台</string>
-    <string name="show_or_hide_expression">顯示技能公式</string>
     <string name="message">訊息</string>
     <string name="Ignore_the_other_units_taunt_when_attacking_s">攻擊%1$s時，無視其他目標的挑釁效果。</string>
     <string name="Modifier_add_s1_count_of_damaged_to_value_d2_of_effect_d3">使 [動作 %3$d] 的係數%2$d提高 [%1$s * 受到傷害的目標數量]。</string>
@@ -652,7 +619,6 @@
     <string name="Multiple_attack_speed_of_s1_with_s2_for_s3_sec">使%1$s的行動速度變為原本的 [%2$s%%]，持續時間 [%3$s] 秒。</string>
     <string name="Multiple_heal_effects_from_s1_with_s2_for_s3_sec">使%1$s的治療效果變為原本的 [%2$s] 倍，持續時間 [%3$s] 秒。</string>
     <string name="barriers">護盾</string>
-    <string name="buff">Buff 效果</string>
     <string name="debuff">Debuff 效果</string>
     <string name="Passive_Whenever_s1_get_s2_seals_s3_with_d4_marks_id_d5_for_s6_sec_caps_at_d7_This_passive_skill_will_listen_for_s8_sec">被動效果：每當%1$s受到%2$s時，為%3$s新增 [%4$s層] 標記 [ID: %5$s]，標記持續時間 [%6$s] 秒，最大疊 [%7$s] 層。本被動效果將持續監聽 [%8$s] 秒。</string>
     <string name="add">+</string>
@@ -760,7 +726,6 @@
     <string name="Decreases_s1_healing_received_by_s2_last_for_s3_sec_or_unlimited_time_if_triggered_by_field">當%2$s受到治療時，使治療效果降低 [%1$s]%%，持續 [%3$s] 秒。如果由場地效果觸發，持續時間無限。</string>
     <string name="status_up_buffs">增益效果</string>
     <string name="Reduces_incoming_energy_damage_down_to_s1_percent_of_s2_for_s3_sec">使%2$s受到的TP減少效果量變為原本的值的 [%1$s] 倍，持續時間 [%3$s] 秒。</string>
-    <string name="Multiplies_parameter_d2_of_action_d3_by_s1_x_Number_of_allies">使 [動作%3$d] 的係數%2$d乘以 [%1$s * 友方數量]。</string>
     <string name="Deploys_a_filed_of_radius_d1_which_s2_attack_speed_of_s3_for_s4_sec">展開半徑 [%1$d] 的領域，使行動速度%2$s [%3$s%%] ，持續時間 [%4$s] 秒。本效果可與其他同種類效果疊加。</string>
     <string name="Enable_s1_to_resist_all_sorts_of_incapacity_efficacies_up_to_s2_times_in_a_period_of_s3_sec">使%1$s免疫所有控制效果，最大 [%2$s] 次，持續時間 [%3$s] 秒。</string>
     <string name="This_damage_ignores_s1_s2_defense">本技能無視敵方 [%1$s] %2$s防禦力。</string>
@@ -780,9 +745,7 @@
     <string name="Sum_of_phy_and_mag">物理暴擊與魔法暴擊</string>
     <string name="Enabled_if_s1_in_group_d2_or_d3">僅當%1$s在群組%2$d或%3$d中時生效。</string>
     <string name="Performs_action_d1_in_case_of_the_battle_field_is_covered_by_s2">戰場環境在%2$s的場合，使用 [動作%1$d]。</string>
-    <string name="Performs_action_d1_in_case_of_the_battle_field_is_not_covered_by_s2">戰場環境不在%2$s的場合，使用 [動作%1$d]。</string>
+    <string name="Performs_action_d1_in_case_of_the_battle_field_is_not_covered_by_s2">戰場環境不在%2$s的場合，使用 [動作%1$s]。</string>
     <string name="the_lowest_hp_excludes_self">除自身以外HP最低的</string>
-    <string name="s1_the_lowest_hp_excludes_self">除自身以外HP最低的%1$s</string>
-    <string name="the_s1_lowest_hp_excludes_self">除自身以外HP第%1$s低的</string>
     <string name="Modifier_add_s1_remnant_of_HP_of_s2_value_d3_of_effect_d4">使 [動作%4$d] 的係數%3$d提高 [%1$s * %2$sHP的殘量]。</string>
 </resources>

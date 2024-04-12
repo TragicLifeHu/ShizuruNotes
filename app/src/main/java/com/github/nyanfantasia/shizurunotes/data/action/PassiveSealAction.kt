@@ -46,7 +46,7 @@ internal class PassiveSealAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): EPassiveTiming {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -66,7 +66,7 @@ internal class PassiveSealAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): ESealTarget {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

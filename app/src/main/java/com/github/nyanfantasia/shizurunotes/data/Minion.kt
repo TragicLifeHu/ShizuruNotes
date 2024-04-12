@@ -25,7 +25,7 @@ class Minion(
         minionProperty = Property()
             .plusEqual(propertyMap[rarity])
             .plusEqual(propertyGrowthMap[rarity]?.multiply((level + rank).toDouble()))
-            .plusEqual(promotionStatuses.get(rank) ?: Property())
+            .plusEqual(promotionStatuses[rank] ?: Property())
 
         skills.forEach { skill ->
             skill.actions.forEach { a ->

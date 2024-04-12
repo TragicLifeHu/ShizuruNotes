@@ -1,5 +1,3 @@
-@file:Suppress("EnumEntryName")
-
 package com.github.nyanfantasia.shizurunotes.data
 
 import com.github.nyanfantasia.shizurunotes.R

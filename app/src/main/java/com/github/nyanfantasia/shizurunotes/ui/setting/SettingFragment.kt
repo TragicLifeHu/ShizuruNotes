@@ -119,7 +119,7 @@ class SettingFragment : PreferenceFragmentCompat() {
                 }
             serverPreference.onPreferenceChangeListener =
                 Preference.OnPreferenceChangeListener { _, _ ->
-                    AppNotificationManager.get().cancelAllAlarm()
+                    AppNotificationManager.instance.cancelAllAlarm()
                     thread(start = true){
                         Thread.sleep(100)
                         ProcessPhoenix.triggerRebirth(activity)

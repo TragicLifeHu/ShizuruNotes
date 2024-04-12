@@ -13,7 +13,7 @@ class RatioDamageAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): HpType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

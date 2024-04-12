@@ -41,7 +41,7 @@ class UserSettings private constructor(
         const val LAST_DB_HASH = "last_db_hash"
         const val ABNORMAL_EXIT = "abnormal_exit"
 
-        private const val userDataFileName = "userData.json"
+        private const val USER_DATA_FILE_NAME = "userData.json"
 
         @Volatile
         private lateinit var instance: UserSettings
@@ -61,9 +61,9 @@ class UserSettings private constructor(
     private val json: String
         get() {
             val stringBuilder = StringBuilder()
-            if (FileUtils.checkFile(FileUtils.getFileFilePath(userDataFileName))) {
+            if (FileUtils.checkFile(FileUtils.getFileFilePath(USER_DATA_FILE_NAME))) {
                 try {
-                    application.openFileInput(userDataFileName).use { fis ->
+                    application.openFileInput(USER_DATA_FILE_NAME).use { fis ->
                         val inputStreamReader = InputStreamReader(fis, StandardCharsets.UTF_8)
                         val reader = BufferedReader(inputStreamReader)
                         var line = reader.readLine()
@@ -101,7 +101,7 @@ class UserSettings private constructor(
         thread(start = true) {
             val json = JsonUtils.getJsonFromBean(userData)
             try {
-                application.openFileOutput(userDataFileName, Context.MODE_PRIVATE).use { fos ->
+                application.openFileOutput(USER_DATA_FILE_NAME, Context.MODE_PRIVATE).use { fos ->
                     fos.write(json.toByteArray())
                 }
             } catch (e: IOException) {

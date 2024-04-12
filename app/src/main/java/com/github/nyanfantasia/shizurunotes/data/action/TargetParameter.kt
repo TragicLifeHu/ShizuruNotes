@@ -316,7 +316,7 @@ enum class TargetAssignment(val value: Int) {
 
     companion object {
         fun parse(value: Int): TargetAssignment {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return None
@@ -340,7 +340,7 @@ enum class TargetNumber(val value: Int) {
 
     companion object {
         fun parse(value: Int): TargetNumber {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return Other
@@ -719,7 +719,7 @@ enum class TargetType(val value: Int) {
 
     companion object {
         fun parse(value: Int): TargetType {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return Unknown
@@ -756,7 +756,7 @@ enum class TargetCount(val value: Int) {
 
     companion object {
         fun parse(value: Int): TargetCount {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return All
@@ -821,7 +821,7 @@ enum class DirectionType(val value: Int) {
 
     companion object {
         fun parse(value: Int): DirectionType {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return All

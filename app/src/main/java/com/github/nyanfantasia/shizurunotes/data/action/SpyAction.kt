@@ -10,7 +10,7 @@ class SpyAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): CancelType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return None

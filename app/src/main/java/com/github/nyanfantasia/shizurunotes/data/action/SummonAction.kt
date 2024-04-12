@@ -22,7 +22,7 @@ class SummonAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): Side {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -43,7 +43,7 @@ class SummonAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): UnitType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

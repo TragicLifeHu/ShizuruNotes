@@ -19,7 +19,7 @@ class EnvironmentAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): EnvironmentType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown

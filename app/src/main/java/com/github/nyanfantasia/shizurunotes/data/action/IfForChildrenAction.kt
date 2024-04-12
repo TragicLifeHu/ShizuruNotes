@@ -231,7 +231,7 @@ internal enum class IfType(val value: Int) {
     companion object {
         @JvmStatic
         fun parse(value: Int): IfType {
-            for (item in values()) {
+            for (item in entries) {
                 if (item.value == value) return item
             }
             return Unknown

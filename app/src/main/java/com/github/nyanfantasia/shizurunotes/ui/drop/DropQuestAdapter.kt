@@ -3,6 +3,7 @@ package com.github.nyanfantasia.shizurunotes.ui.drop
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.github.nyanfantasia.shizurunotes.R
@@ -44,7 +45,7 @@ class DropQuestAdapter(
                         sharedEquipment.selectedDrops.value?.let { itemList ->
                             for (item: Item in itemList) {
                                 if (it.rewardId % 10000 == item.itemId % 10000) {
-                                    rewardItem.root.background = mContext.getDrawable(R.drawable.shape_text_border)
+                                    rewardItem.root.background = AppCompatResources.getDrawable(mContext, R.drawable.shape_text_border)
                                     break
                                 }
                             }

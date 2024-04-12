@@ -12,7 +12,7 @@ class ModeChangeAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): ModeChangeType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return Unknown
@@ -32,7 +32,7 @@ class ModeChangeAction : ActionParameter() {
 
         companion object {
             fun parse(value: Int): AdditionalAbnormalType {
-                for (item in values()) {
+                for (item in entries) {
                     if (item.value == value) return item
                 }
                 return None

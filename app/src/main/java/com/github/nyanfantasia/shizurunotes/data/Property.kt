@@ -294,7 +294,7 @@ class Property {
     val nonZeroPropertiesMap: Map<PropertyKey, Int>
         get() {
             val map = HashMap<PropertyKey, Int>()
-            for (key in PropertyKey.values()) {
+            for (key in PropertyKey.entries) {
                 val value = ceil(getItem(key)).toInt()
                 if (value.toDouble() != 0.0) {
                     map[key] = value
