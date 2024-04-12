@@ -45,6 +45,7 @@ class UpdateManager private constructor(
         private const val UPDATE_DOWNLOAD_COMPLETED = 4
         private const val UPDATE_COMPLETED = 5
         private const val UPDATE_DOWNLOAD_CANCELED = 6
+        private const val UPDATE_DECRYPTING = 7
         private const val APP_UPDATE_CHECK_COMPLETED = 11
         @SuppressLint("StaticFieldLeak")
         private lateinit var updateManager: UpdateManager
@@ -104,11 +105,11 @@ class UpdateManager private constructor(
                 }
 
                 val info = when (UserSettings.get().preference.getString(UserSettings.LANGUAGE_KEY, "ja")){
-                    "zh-Hans" -> appVersionJsonInstance?.infoZhS
-                    "zh-Hant" -> appVersionJsonInstance?.infoZhT
+                    "zh-Hans" -> appVersionJsonInstance?.infoZh
+                    "zh-Hant" -> appVersionJsonInstance?.infoZh
                     else -> when (Locale.getDefault().country) {
-                        "TW", "HK", "MO" -> appVersionJsonInstance?.infoZhT
-                        "CN" -> appVersionJsonInstance?.infoZhS
+                        "TW", "HK", "MO" -> appVersionJsonInstance?.infoZh
+                        "CN" -> appVersionJsonInstance?.infoZh
                         else -> appVersionJsonInstance?.infoJa
                     }
                 }
@@ -198,6 +199,10 @@ class UpdateManager private constructor(
                 progressDialog?.cancel()
                 iActivityCallBack?.showSnackBar(R.string.db_update_failed)
             }
+
+            override fun dbDecrypting() {
+                progressDialog?.message(R.string.Decrypting_db, null, null)
+            }
         }
     }
 
@@ -208,8 +213,7 @@ class UpdateManager private constructor(
         var messageJa: String? = null
         var messageZh: String? = null
         var infoJa: String? = null
-        var infoZhS: String? = null
-        var infoZhT: String? = null
+        var infoZh: String? = null
     }
 
     fun checkAppVersion(checkDb: Boolean) {
@@ -361,7 +365,7 @@ class UpdateManager private constructor(
                     progress = totalDownload
                     updateHandler.sendMessage(updateHandler.obtainMessage(UPDATE_DOWNLOADING))
                     if (numRead <= 0) {
-                        updateHandler.sendEmptyMessage(UPDATE_DOWNLOAD_COMPLETED)
+                        updateHandler.sendEmptyMessage(UPDATE_DECRYPTING)
                         break
                     }
                     fileOutputStream.write(buf, 0, numRead)
@@ -387,7 +391,6 @@ class UpdateManager private constructor(
             updateHandler.sendEmptyMessage(UPDATE_COMPLETED)
             return
         }
-        progressDialog?.message(R.string.Decrypting_db, null, null)
         val rainbowJson = AssetUtils.readStringFromRaw(mContext, R.raw.rainbow)
         if (rainbowJson == null) {
             LogUtils.file(LogUtils.E, "Rainbow table not found, decryption skipped.")
@@ -471,6 +474,8 @@ class UpdateManager private constructor(
                 callBack.dbUpdateError()
             UPDATE_DOWNLOAD_COMPLETED ->
                 callBack.dbDownloadCompleted(true, "")
+            UPDATE_DECRYPTING ->
+                callBack.dbDecrypting()
             UPDATE_COMPLETED ->
                 callBack.dbUpdateCompleted()
             UPDATE_DOWNLOAD_CANCELED ->
@@ -489,6 +494,7 @@ class UpdateManager private constructor(
         fun dbUpdateError()
         fun dbDownloadCompleted(success: Boolean, errorMsg: CharSequence?)
         fun dbUpdateCompleted()
+        fun dbDecrypting()
     }
 
     interface IActivityCallBack {
