@@ -778,4 +778,5 @@
     <string name="Performs_action_d1_in_case_of_the_battle_field_is_not_covered_by_s2">バトルフィールドの環境が%1$sでない場合、[アクション%2$s] を使う。</string>
     <string name="the_lowest_hp_excludes_self">自分以外HPが一番低い</string>
     <string name="Modifier_add_s1_remnant_of_HP_of_s2_value_d3_of_effect_d4">[アクション%4$d] の係数%3$dを [%1$s * %2$sのHP残量] アップさせる。</string>
+    <string name="Decrypting_db">データ復号化中、本操作は数十秒掛かる場合があります…</string>
 </resources>

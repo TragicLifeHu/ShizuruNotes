@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity(),
             synchronized(DBHelper::class.java){
                 UpdateManager.get().doDecompress()
             }
+            UpdateManager.get().unHashDb()
         }
     }
 

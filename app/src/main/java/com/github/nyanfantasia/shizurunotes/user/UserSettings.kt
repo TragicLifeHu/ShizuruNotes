@@ -61,7 +61,7 @@ class UserSettings private constructor(
     private val json: String
         get() {
             val stringBuilder = StringBuilder()
-            if (FileUtils.checkFile(FileUtils.getFileFilePath(USER_DATA_FILE_NAME))) {
+            if (FileUtils.checkFile(FileUtils.getFilePath(USER_DATA_FILE_NAME))) {
                 try {
                     application.openFileInput(USER_DATA_FILE_NAME).use { fis ->
                         val inputStreamReader = InputStreamReader(fis, StandardCharsets.UTF_8)

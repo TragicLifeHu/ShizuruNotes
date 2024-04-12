@@ -748,4 +748,5 @@
     <string name="Performs_action_d1_in_case_of_the_battle_field_is_not_covered_by_s2">戰場環境不在%2$s的場合，使用 [動作%1$s]。</string>
     <string name="the_lowest_hp_excludes_self">除自身以外HP最低的</string>
     <string name="Modifier_add_s1_remnant_of_HP_of_s2_value_d3_of_effect_d4">使 [動作%4$d] 的係數%3$d提高 [%1$s * %2$sHP的殘量]。</string>
+    <string name="Decrypting_db">解密資料庫中，請稍微等候…</string>
 </resources>

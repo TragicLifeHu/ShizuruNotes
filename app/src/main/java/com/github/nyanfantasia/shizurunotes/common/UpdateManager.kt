@@ -11,13 +11,16 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import android.util.Log
 import androidx.annotation.StringRes
 import androidx.core.content.FileProvider
 import com.afollestad.materialdialogs.MaterialDialog
 import com.blankj.utilcode.util.LogUtils
 import com.github.nyanfantasia.shizurunotes.BuildConfig
 import com.github.nyanfantasia.shizurunotes.R
+import com.github.nyanfantasia.shizurunotes.db.DBHelper
 import com.github.nyanfantasia.shizurunotes.user.UserSettings
+import com.github.nyanfantasia.shizurunotes.utils.AssetUtils
 import com.github.nyanfantasia.shizurunotes.utils.BrotliUtils
 import com.github.nyanfantasia.shizurunotes.utils.FileUtils
 import com.github.nyanfantasia.shizurunotes.utils.JsonUtils
@@ -76,11 +79,11 @@ class UpdateManager private constructor(
             override fun appCheckUpdateCompleted() {
                 if (appHasNewVersion) {
                     val log = when (UserSettings.get().preference.getString(UserSettings.LANGUAGE_KEY, "ja")){
-                        "zh-Hans" -> appVersionJsonInstance?.messageZhS
-                        "zh-Hant" -> appVersionJsonInstance?.messageZhT
+                        "zh-Hans" -> appVersionJsonInstance?.messageZh
+                        "zh-Hant" -> appVersionJsonInstance?.messageZh
                         else -> when (Locale.getDefault().country){
-                            "TW", "HK", "MO" -> appVersionJsonInstance?.messageZhT
-                            "CN" -> appVersionJsonInstance?.messageZhS
+                            "TW", "HK", "MO" -> appVersionJsonInstance?.messageZh
+                            "CN" -> appVersionJsonInstance?.messageZh
                             else -> appVersionJsonInstance?.messageJa
                         }
                     }
@@ -203,8 +206,7 @@ class UpdateManager private constructor(
         var versionName: String? = null
         var recommend: Boolean? = null
         var messageJa: String? = null
-        var messageZhS: String? = null
-        var messageZhT: String? = null
+        var messageZh: String? = null
         var infoJa: String? = null
         var infoZhS: String? = null
         var infoZhT: String? = null
@@ -378,6 +380,59 @@ class UpdateManager private constructor(
         FileUtils.deleteFile(FileUtils.dbFilePath)
         LogUtils.file(LogUtils.I, "Start decompress DB.")
         BrotliUtils.deCompress(FileUtils.compressedDbFilePath, true)
+    }
+
+    fun unHashDb(){
+        if (UserSettings.get().getUserServer() != UserSettings.SERVER_JP) {
+            updateHandler.sendEmptyMessage(UPDATE_COMPLETED)
+            return
+        }
+        progressDialog?.message(R.string.Decrypting_db, null, null)
+        val rainbowJson = AssetUtils.readStringFromRaw(mContext, R.raw.rainbow)
+        if (rainbowJson == null) {
+            LogUtils.file(LogUtils.E, "Rainbow table not found, decryption skipped.")
+        } else {
+            val jsonObject = JSONObject(rainbowJson)
+            val keysIterator = jsonObject.keys()
+            LogUtils.file(LogUtils.I, "Start Decrypting DB.")
+            while (keysIterator.hasNext()) {
+                val hashedTableName = keysIterator.next()
+                val colsObject = JSONObject(jsonObject.get(hashedTableName).toString())
+                val colsIterator = colsObject.keys()
+
+                val intactTableName = colsObject.getString("--table_name")
+                var createTableStatement = DBHelper.get().getCreateTable(hashedTableName)
+                if (createTableStatement == null) {
+                    LogUtils.file(LogUtils.W, "CreateTableStatement for '$intactTableName' not found.")
+                    continue
+                }
+                val hashedCols = mutableListOf<String>()
+                val intactCols = mutableListOf<String>()
+                while (colsIterator.hasNext()) {
+                    val hashedColName = colsIterator.next()
+                    val intactColName = colsObject.getString(hashedColName)
+                    if (hashedColName != "--table_name") {
+                        hashedCols.add(hashedColName)
+                        intactCols.add(intactColName)
+                    }
+                    createTableStatement = createTableStatement?.replace(
+                        if (hashedColName == "--table_name") hashedTableName else hashedColName,
+                        if (hashedColName == "--table_name") intactTableName else intactColName
+                    )
+                }
+                val insertStatement = "INSERT INTO $intactTableName(${intactCols.joinToString("`,`", "`", "`")}) SELECT ${hashedCols.joinToString("`,`", "`", "`")} FROM $hashedTableName"
+                val dropTableStatement = "DROP TABLE $hashedTableName"
+
+                val transactionCmd = listOf(createTableStatement!!, insertStatement, dropTableStatement)
+
+                if (!DBHelper.get().execTransaction(transactionCmd)) {
+                    Log.e("shizurunotes", "Failed when executing a transaction for '$intactTableName' ($hashedTableName). Transaction: $transactionCmd")
+                    LogUtils.file(LogUtils.W, "Failed when executing a transaction for '$intactTableName' ($hashedTableName). Transaction: $transactionCmd")
+                    continue
+                }
+            }
+            LogUtils.file(LogUtils.I, "Unhashing complete.")
+        }
         updateHandler.sendEmptyMessage(UPDATE_COMPLETED)
     }
 

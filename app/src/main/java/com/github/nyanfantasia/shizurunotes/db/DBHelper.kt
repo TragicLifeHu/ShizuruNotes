@@ -251,19 +251,19 @@ class DBHelper private constructor(
      * @param db
      */
     private fun dropAll(db: SQLiteDatabase) {
-        val sqls: MutableList<String> =
+        val listSQL: MutableList<String> =
             ArrayList()
         val op = "DROP TABLE IF EXISTS "
         for (field in this.javaClass.declaredFields) {
             if (field.name.startsWith("TABLE_NAME")) {
                 try {
-                    sqls.add(op + field[this])
+                    listSQL.add(op + field[this])
                 } catch (e: IllegalAccessException) {
                     e.printStackTrace()
                 }
             }
         }
-        for (sql in sqls) {
+        for (sql in listSQL) {
             db.execSQL(sql)
         }
     }
@@ -321,6 +321,79 @@ class DBHelper private constructor(
 
 
     /************************* public field **************************/
+
+    /***
+     * Alter table name
+     * @param tableName
+     * @return
+     */
+    fun alterTableName(hashedTableName: String, intactTableName: String): Boolean {
+        return try {
+            writableDatabase.execSQL("ALTER TABLE $hashedTableName RENAME TO $intactTableName")
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
+    /***
+     * Alter table name.
+     * Note that sqlite did not support the ALTER TABLE RENAME COLUMN syntax before version 3.25.0.
+     * @param tableName
+     * @return
+     */
+    fun alterColumnName(intactTableName: String, hashedColName: String, intactColName: String): Boolean {
+        return try {
+            writableDatabase.execSQL("ALTER TABLE $intactTableName RENAME COLUMN $hashedColName TO $intactColName")
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
+    fun getCreateTable(tableName: String): String? {
+        if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
+        return try {
+            val cursor = readableDatabase.rawQuery(
+                "SELECT sql FROM sqlite_master WHERE type='table' AND name='$tableName'", null
+            )
+            cursor.moveToNext()
+            val result = cursor.getString(0)
+            cursor.close()
+            result
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    fun execSql(sql: String): Boolean {
+        return try {
+            writableDatabase.execSQL(sql)
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
+    fun execTransaction(listSQL: List<String>): Boolean {
+        writableDatabase.beginTransaction()
+        return try {
+            listSQL.forEach {
+                writableDatabase.execSQL(it)
+            }
+            writableDatabase.setTransactionSuccessful()
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        } finally {
+            writableDatabase.endTransaction()
+        }
+    }
 
     /***
      * Get Basic Character data

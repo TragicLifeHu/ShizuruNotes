@@ -19,7 +19,7 @@ object FileUtils {
     val compressedDbFilePath: String
         get() = Utils.app!!.getDatabasePath(Statics.DB_FILE_NAME_COMPRESSED).absolutePath
 
-    fun getFileFilePath(fileName: String): String {
+    fun getFilePath(fileName: String): String {
         return Utils.app!!.filesDir.absolutePath + "/" + fileName
     }
 
