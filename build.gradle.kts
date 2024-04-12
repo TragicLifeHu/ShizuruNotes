@@ -3,7 +3,7 @@ plugins {
 }
 
 buildscript {
-    val agpVersion by extra("8.2.1")
+    val agpVersion by extra("8.3.2")
     repositories {
         google()
         mavenCentral()
