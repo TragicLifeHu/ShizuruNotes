@@ -387,7 +387,7 @@ class UpdateManager private constructor(
     }
 
     fun unHashDb(){
-        if (UserSettings.get().getUserServer() != UserSettings.SERVER_JP) {
+        if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
             updateHandler.sendEmptyMessage(UPDATE_COMPLETED)
             return
         }

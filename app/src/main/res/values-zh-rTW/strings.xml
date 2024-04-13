@@ -665,7 +665,7 @@
     <string name="about_version">版本: %1$s</string>
     <string name="about_disclaimer">這是一個由第三方製作的非官方應用程式，與遊戲「超異域公主連結 Re:Dive」相關的所有資源的版權均屬於 Cygames, Inc.</string>
     <string name="about_hp">開放原始碼專案主頁面 (Fork)\nhttps://github.com/TragicLifeHu/ShizuruNotes</string>
-    <string name="about_developer">開發&lt;br/>Vibbit&lt;a href=\"https://twitter.com/L8102259\">@L8102259&lt;/a>&lt;br/>喵幻</string>
+    <string name="about_developer">開發&lt;br/>Vibbit&lt;br/>喵幻</string>
     <string name="short_magical_crt">魔爆\n%1$s</string>
     <string name="short_energy_reduce">TP輕\n%1$s</string>
     <string name="short_physical_crt">物爆\n%1$s</string>

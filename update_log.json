@@ -1,11 +1,11 @@
 {
   "versionCode": "109",
-  "versionName": "2.0.2",
+  "versionName": "2.0.2 Hotfix",
   "recommend": "false",
   "messageJa": "・データベース復号化機能を追加\n・スキル量計算の修正",
   "messageZhS": "・Deprecated text field",
   "messageZhT": "・Deprecated text field",
-  "messageZh": "・追加資料庫解密功能\n・修正技能數計算",
+  "messageZh": "・追加資料庫解密功能\n・修正技能數計算\n・修正台版資料庫為空的問題",
   "infoJa": "",
   "infoZhS": "",
   "infoZhT": "",
