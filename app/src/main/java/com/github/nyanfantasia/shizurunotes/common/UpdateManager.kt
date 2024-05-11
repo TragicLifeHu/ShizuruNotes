@@ -387,17 +387,23 @@ class UpdateManager private constructor(
     }
 
     fun unHashDb(){
+        var rainbowJson: String? = null
         if (UserSettings.get().getUserServer() == UserSettings.SERVER_CN) {
             updateHandler.sendEmptyMessage(UPDATE_COMPLETED)
             return
         }
-        val rainbowJson = AssetUtils.readStringFromRaw(mContext, R.raw.rainbow)
+        else if (UserSettings.get().getUserServer() == UserSettings.SERVER_JP) {
+            rainbowJson = AssetUtils.readStringFromRaw(mContext, R.raw.rainbow)
+        }
+        else if (UserSettings.get().getUserServer() == UserSettings.SERVER_TW) {
+            rainbowJson = AssetUtils.readStringFromRaw(mContext, R.raw.rainbow_202401)
+        }
         if (rainbowJson == null) {
-            LogUtils.file(LogUtils.E, "Rainbow table not found, decryption skipped.")
+            LogUtils.file(LogUtils.E, "Rainbow table not found, unhash skipped.")
         } else {
             val jsonObject = JSONObject(rainbowJson)
             val keysIterator = jsonObject.keys()
-            LogUtils.file(LogUtils.I, "Start Decrypting DB.")
+            LogUtils.file(LogUtils.I, "Start Unhashing DB.")
             while (keysIterator.hasNext()) {
                 val hashedTableName = keysIterator.next()
                 val colsObject = JSONObject(jsonObject.get(hashedTableName).toString())
