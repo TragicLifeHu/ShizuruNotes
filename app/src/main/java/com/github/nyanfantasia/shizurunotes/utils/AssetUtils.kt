@@ -7,7 +7,7 @@ import java.io.InputStream
 class AssetUtils {
     companion object {
         fun readStringFromRaw(context: Context, @RawRes id : Int): String? {
-            var str: String? = null
+            val str: String?
             try {
                 val inputStream: InputStream = context.resources.openRawResource(id)
                 str = inputStream.bufferedReader().use { it.readText() }

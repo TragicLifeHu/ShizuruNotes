@@ -50,13 +50,13 @@ class CharaDetailsFragment : Fragment(), View.OnClickListener {
         sharedElementEnterTransition =
             context?.let {
                 TransitionInflater.from(it)
-                    .inflateTransition(android.R.transition.move).setDuration(300)
+                    .inflateTransition(android.R.transition.move)!!.setDuration(300)
             }
 
         sharedElementReturnTransition =
             context?.let {
                 TransitionInflater.from(it)
-                    .inflateTransition(android.R.transition.move).setDuration(300)
+                    .inflateTransition(android.R.transition.move)!!.setDuration(300)
             }
     }
 
