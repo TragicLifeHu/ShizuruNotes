@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         applicationId = "com.github.nyanfantasia.shizurunotes"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 110
         versionName = "2.0.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

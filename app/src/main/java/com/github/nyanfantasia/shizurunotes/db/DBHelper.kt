@@ -215,7 +215,7 @@ class DBHelper private constructor(
         if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         try {
             val cursor =
-                readableDatabase.rawQuery(sql, null) ?: return null
+                readableDatabase.rawQuery(sql!!, null)
             val data: List<T>? = cursor2List(cursor, theClass)
             return if (data?.isNotEmpty() == true) data[0] else null
         } catch (e: Exception) {
@@ -238,7 +238,7 @@ class DBHelper private constructor(
         if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
         try {
             val cursor =
-                readableDatabase.rawQuery(sql, null) ?: return null
+                readableDatabase.rawQuery(sql!!, null)
             return cursor2List(cursor, theClass)
         } catch (e: Exception) {
             LogUtils.file(LogUtils.E, "getBeanListByRaw" + ":" + e.message, e.stackTrace)
@@ -290,7 +290,7 @@ class DBHelper private constructor(
      */
     private fun getOne(sql: String?): String? {
         if (!FileUtils.checkFile(FileUtils.dbFilePath)) return null
-        val cursor = readableDatabase.rawQuery(sql, null)
+        val cursor = readableDatabase.rawQuery(sql!!, null)
         cursor.moveToNext()
         val result = cursor.getString(0)
         cursor.close()
